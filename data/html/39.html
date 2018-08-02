@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- 云适配代码 begin -->
+<script id="allmobilize" charset="utf-8" src="http://a.yunshipei.com/77126665c1f3ae0b85e0fdaa7159a351/allmobilize.min.js"></script>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="alternate" media="handheld" href="#" />
+<!-- 云适配代码 end -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全部专辑 - 下载频道 - CSDN.NET</title>
+<meta name="description" content="下载频道 - CSDN.NET" />
+<meta name="keywords" content="" />
+<meta name="author" content="CSDN" />
+<meta name="Copyright" content="CSDN" />
+<meta name="baidu-site-verification" content="5qKL5WPafahaSFtZ" />
+<meta http-equiv="X-UA-Compatible" content="IE=8,9" />
+<meta name="renderer" content="webkit|ie-stand" />
+<link href="http://c.csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON" />
+<link href="/css/download.css" rel="stylesheet" type="text/css" />
+<script language='JavaScript' type='text/javascript' src='http://www.csdn.net/ggmm/csdn_ggmm.js'></script>
+
+<!-- test toolbar nav-->
+<link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">
+<script src="http://c.csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/css/News-nav.css">
+<!-- toolbar nav -->
+
+<script language='JavaScript' type='text/javascript' src='http://www.csdn.net/js/jquery-1.4.2.min.js'></script>
+<script language='JavaScript' type='text/javascript' src='http://www.csdn.net/js/jquery.form.js'></script>
+<script language='JavaScript' type='text/javascript' src='/js/jquery.cookie.js'></script>
+
+<!-- 请置于所有广告位代码之前 -->
+<script defer src="http://counter.csdn.net/a/js/AreaCounter.js" type="text/javascript"></script>
+
+<!--登录弹窗 -->
+<script defer type="text/javascript" src="https://passport.csdn.net/content/loginbox/login.js"></script>
+<script defer type='text/javascript'>
+$(function(){
+	$("[href$='my'], [href$='my/downloads']").click(function(){
+		var username = csdn.getCookie('UserName');
+		if(username == null)
+		{
+			username = csdn.getCookie('UserNick');
+		}
+		var href = this.href;
+		if(username == null){
+			csdn.showLogin(function(){
+				window.location.href = href;
+			});
+			return false;
+		}
+		return username;
+	});
+		
+	$("[href$='upload']").click(function(event){ 
+		event.preventDefault();
+		var username = csdn.getCookie('UserName');
+		if(username == null)
+		{
+			username = csdn.getCookie('UserNick');
+		};
+		var href = this.href;
+		if(username == null){
+			csdn.showLogin(function(){
+				$("[href$=href]").click;
+			});
+			return false;
+		};
+
+		$.getJSON("/index.php/rest/users/getUserInfo/"+ username, function(data){			
+    		if(data.up_type != 1 && data.up_type !=2)
+    		{
+        		var html = '<div id="popup_reward" class="popup_reward">'+
+        	        '<h2><span>选择上传方式</span><b class="shutoff" onclick="$(\'#popup_mask,#popup_reward\').remove();"></b></h2>'+
+        	        '<form>'+
+        	        '  <div class="modal-body clearfix">'+
+        	        '    <div class="popup_content">'+
+        	        '    <dl class="fileImgLeft">'+
+        	        '      <dt>'+
+        	        '      <a href="/uploadv2"  style="cursor: pointer;">'+
+        	        '        <input type="hidden" name="" value="2" class="fileInput" onclick="set_up_type(2)" />'+
+        	        '        <em>极速上传(推荐)</em>'+
+        	        '        </a>'+
+        	        '      </dt>'+
+        	        '      <dd>'+
+        	        '        <div>'+
+        	        '          单文件上传支持<a href="javascript:void(0)">断点续传</a><br />'+
+        	        '        <span>控件安装完成后需要重新启动浏览器</span>'+
+        	        '        </div>'+
+        	        '        <b></b>'+
+        	        '      </dd>'+
+        	        '    </dl>'+
+        	        '      <dl class="fileImgRight">'+
+        	        '        <dt>'+
+        	        '         <a href="/upload" style="cursor: pointer;">'+
+        	        '          <input type="hidden" name="" value="1" class="fileInput" onclick="set_up_type(1)" />'+
+        	        '          <em>普通上传</em>'+
+        	        '        </a>'+
+        	        '        </dt>'+
+        	        '        <dd>'+
+        	        '          浏览器单线程上传'+
+        	        '          <b></b>'+
+        	        '        </dd>'+
+        	        '      </dl>'+
+        			'	  <div class="upd"><input id="up_type" type="checkbox" checked="0">&nbsp;&nbsp;设置本次上传方式为默认上传方式。</div>'+
+        	        '    </div>'+
+        	        '  </div>'+
+        	        '</form>'+
+        	      '</div>';
+        	      $( 'body' ).append(html);
+        	      $( 'body' ).append('<div id="popup_mask" />');
+        	      var pageH = $(document).height();
+        	      $( '#popup_mask' ).css( "height", pageH );
+        	      $( '#popup_mask' ).css( "display", "block" );
+        	      $( '#popup_reward' ).fadeIn( "slow" );				
+				return false;
+    		}else if(data.up_type==1){
+    			window.location.href = "/index.php/upload";
+    		}else if(data.up_type==2){
+    			window.location.href = "/index.php/uploadv2";
+    		}
+    	});
+	})	;
+});
+function set_up_type(up_type)
+{
+	if($("#up_type").attr("checked")==true){
+		$.getJSON("/index.php/user/set_up_type/"+up_type);
+	}
+};
+</script>
+</head>
+<body>
+<!-- 全屏代码： AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=allyestest|allyestest|allyestest0410&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End-->
+<!-- toolbar nav -->
+<script id="toolbar-tpl-scriptId" prod="download" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript" domain="http://download.csdn.net"></script>
+    <script type="text/javascript">
+ 		 var protocol = window.location.protocol;
+		  document.write('<script type="text/javascript" src="' +protocol+ '//c.csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></'+'script>');
+	</script>
+<div class="news-nav">
+    <div class="container clearfix">
+        <div class="nav-bar">
+        	<a href="http://download.csdn.net/" >首页</a>
+        	<a href="http://download.csdn.net/category" >资源分类</a>
+        	<a class=" current" href="http://download.csdn.net/doc" >精品专辑</a>
+			<a href="http://download.csdn.net/rankings" >排行榜</a>
+			<a href="http://download.csdn.net/help" >帮助</a>
+			<a href="http://download.csdn.net/advanced_search" >高级搜索</a>
+			<!-- a href="http://share.csdn.net" target="_blank">讲义下载</a -->
+			<a href="http://download.csdn.net/my" >我的资源</a>
+        </div>
+	    <div class="search-download">
+        	<form action="http://download.csdn.net/search" method="get" onsubmit="return check_up(this);" name="download_search">
+	        	<input type="text" placeholder="搜索资源" value="" id="tagff" name="q"/>
+	        	<a href="javascript:check_up(download_search);void(0);" class="download-search-bth"></a>
+        	</form>
+	    </div>
+   	</div>
+</div>
+<!-- //toolbar nav -->
+<div id="wrap">
+	<!-- public topnav -->
+	<!-- //public topnav -->
+	<div class="ad_area_1">
+		<div class="ad_w728">
+		<!-- 广告位：下载频道首页头文件上 -->
+				<!--AdForward Begin:-->
+														<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_Category|banner1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+																		<!--AdForward End-->
+		</div>
+		<div class="ad_w220">
+			<!-- 广告位：下载频道首页头文件上  -->
+			<!--AdForward Begin:-->
+												<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_Category|button1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+														<!--AdForward End-->
+		</div>
+	</div>
+   
+   <link rel="stylesheet" type="text/css" href="http://c.csdnimg.cn/public/themes/default/css/common.css">
+   <link rel="stylesheet" type="text/css" href="http://c.csdnimg.cn/public/static/css/panels.css">
+  <link href="/css/doc.css" rel="stylesheet">
+  <script src="/js/jquery.min.js"></script>
+    
+    <div class="bd clearfix">
+    	 <div class="article">
+      	<div class="AD mb-bg">
+        		<!-- 广告位：下载频道资源分类页头文件下728*90 -->
+						<!--AdForward Begin:-->
+						<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_Category|banner2&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+						<!--AdForward End-->
+				</div>
+        <div class="bread-crumbs way_nav"><a href="/">下载频道</a><em class="to-icon">&gt;</em><a href="/doc">精品文档</a><em class="to-icon">&gt;</em>专辑列表</div> 
+        <div class="album">
+          <div class="section-list panel panel-default">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">全部专辑</h3>
+            </div>
+          </div>
+          <div class="bd">
+            <ul class="clearfix">
+                          <li class="clearfix"><a href="/album/detail/1703" class="img" target="_blank"><img src="http://img.download.csdn.net/uploads_album/2015/05/21/fd1b12d1cb07647350918d065896863b.png"></a>
+                <div class="ct">
+                  <h3 class="list-title"><a href="/album/detail/1703" title="C#系统应用：图片浏览下载、网络编程、图像处理、类360安全应用等源码" target="_blank">C#系统应用：图片浏览下载、网络编程、图像处理、类360安全</a></h3>
+                  <div class="dis">该专辑主要是介绍自己的采用VS2012实现的C# .NET应用项目，包括Eastmount安...</div>
+                </div>
+              </li>
+                            <li class="clearfix"><a href="/album/detail/1701" class="img" target="_blank"><img src="http://img.download.csdn.net/uploads_album/2015/05/21/cd1b5809d664db6458d2a7dcacc0928e.jpg"></a>
+                <div class="ct">
+                  <h3 class="list-title"><a href="/album/detail/1701" title="ECCV 2010论文集" target="_blank">ECCV 2010论文集</a></h3>
+                  <div class="dis">计算机视觉三大国际会议之一ECCV 2010年论文集合</div>
+                </div>
+              </li>
+                            <li class="clearfix"><a href="/album/detail/1699" class="img" target="_blank"><img src="http://img.download.csdn.net/uploads_album/2015/05/21/6598db23f27404958d40d4d47a0680a3.png"></a>
+                <div class="ct">
+                  <h3 class="list-title"><a href="/album/detail/1699" title="JavaScript学习者基地" target="_blank">JavaScript学习者基地</a></h3>
+                  <div class="dis">JavaScript 是属于网络的脚本语言！
+JavaScript 被数百万计的网页用来改进设...</div>
+                </div>
+              </li>
+                            <li class="clearfix"><a href="/album/detail/1697" class="img" target="_blank"><img src="http://img.download.csdn.net/uploads_album/2015/05/21/dbfb7b8e88c2326cad5ff66a57c8ce58.jpg"></a>
+                <div class="ct">
+                  <h3 class="list-title"><a href="/album/detail/1697" title="Android应用：包括随手拍、图像处理、百度地图、数据库处理等源码" target="_blank">Android应用：包括随手拍、图像处理、百度地图、数据库处</a></h3>
+                  <div class="dis">该专辑主要是介绍自己的Android应用项目，包括随手拍（类似微信的聊天...</div>
+                </div>
+              </li>
+                            <li class="clearfix"><a href="/album/detail/1691" class="img" target="_blank"><img src="http://img.download.csdn.net/uploads_album/2015/05/20/9aba54c188d63962f8ee5c437eaa90a7.jpg"></a>
+                <div class="ct">
+                  <h3 class="list-title"><a href="/album/detail/1691" title="HTML5+CSS" target="_blank">HTML5+CSS</a></h3>
+                  <div class="dis">HTML+CSS资源合辑</div>
+                </div>
+              </li>
+                            <li class="clearfix"><a href="/album/detail/1689" class="img" target="_blank"><img src="http://img.download.csdn.net/uploads_album/2015/05/20/d8e6ca92fe8d75cbbacf26d1f731be71.png"></a>
+                <div class="ct">
+                  <h3 class="list-title"><a href="/album/detail/1689" title="JavaScript图书最强阵容" target="_blank">JavaScript图书最强阵容</a></h3>
+                  <div class="dis">涵盖基础、库、框架、代码可维护和可测试性和函数式编程等众多话题...</div>
+                </div>
+              </li>
+                            <li class="clearfix"><a href="/album/detail/1687" class="img" target="_blank"><img src="http://img.download.csdn.net/uploads_album/2015/05/19/2cdf34fb7f91b12350eadb01c231ab77.jpg"></a>
+                <div class="ct">
+                  <h3 class="list-title"><a href="/album/detail/1687" title="信息系统等级安全保护标准体系" target="_blank">信息系统等级安全保护标准体系</a></h3>
+                  <div class="dis">信息安全等级保护是对信息和信息载体按照重要性等级分级别进行保护...</div>
+                </div>
+              </li>
+                            <li class="clearfix"><a href="/album/detail/1685" class="img" target="_blank"><img src="http://img.download.csdn.net/uploads_album/2015/05/19/898f950e8f5c6bc7e24758e57b10adc8.jpg"></a>
+                <div class="ct">
+                  <h3 class="list-title"><a href="/album/detail/1685" title="【移动开发】2015年3月热门资源" target="_blank">【移动开发】2015年3月热门资源</a></h3>
+                  <div class="dis">2015年3月份下载频道的热门资源。这些资源经过精挑细选，并考察了下载...</div>
+                </div>
+              </li>
+                            <li class="clearfix"><a href="/album/detail/1683" class="img" target="_blank"><img src="http://img.download.csdn.net/uploads_album/2015/05/18/d451477045ed067f8a670b58bea6519e.jpg"></a>
+                <div class="ct">
+                  <h3 class="list-title"><a href="/album/detail/1683" title="JAVA程序猿职业圈电子书" target="_blank">JAVA程序猿职业圈电子书</a></h3>
+                  <div class="dis">博主搜集的一些知名电子书分享专辑，看过其中大部门都是JAVA职业圈内...</div>
+                </div>
+              </li>
+                            <li class="clearfix"><a href="/album/detail/1681" class="img" target="_blank"><img src="http://img.download.csdn.net/uploads_album/2015/05/18/dce676fafad954d6ffe14ec341dcd271.jpg"></a>
+                <div class="ct">
+                  <h3 class="list-title"><a href="/album/detail/1681" title="Cocos2D开发资源" target="_blank">Cocos2D开发资源</a></h3>
+                  <div class="dis">Cocos2D，作为当下最火的移动游戏引擎之一，是一个基于MIT协议的开源框...</div>
+                </div>
+              </li>
+                          </ul>             
+          </div>
+          <div class="page_nav">共343个  &nbsp; 共35页&nbsp;<strong>1</strong>&nbsp;<a class="pageliststy" href="/album/list/2">2</a>&nbsp;<a class="pageliststy" href="/album/list/3">3</a>&nbsp;<a class="pageliststy" href="/album/list/4">4</a>&nbsp;<a class="pageliststy" href="/album/list/5">5</a>&nbsp;<a class="pageliststy" href="/album/list/2">下一页</a>&nbsp;&nbsp;<a class="pageliststy" href="/album/list/35">尾页</a></div>  
+        </div>
+      </div>
+      <div class="aside">
+      	<div class="AD mb-bg">
+      		<!-- 广告位：下载频道资源分类页头文件下220*90 -->
+					<!--AdForward Begin:-->
+					<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_Category|button2&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+					<!--AdForward End-->
+			  </div>
+      	<div class="creatBtn"><a href="/album/rule">创建专辑</a></div>
+        <div class="new-doc">
+          <div class="section-list panel panel-default">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">最新专辑</h3>
+            </div>
+            <div class="panel-body">
+                        <ul>
+                        	                          <li><span class="dot"></span><a href="/album/detail/249" target="_blank" title="AlphaControls">AlphaControls</a></li>
+                                                    <li><span class="dot"></span><a href="/album/detail/1485" target="_blank" title="Machine Learning 学习笔记">Machine Learning 学习笔记</a></li>
+                                                    <li><span class="dot"></span><a href="/album/detail/1699" target="_blank" title="JavaScript学习者基地">JavaScript学习者基地</a></li>
+                                                    <li><span class="dot"></span><a href="/album/detail/1703" target="_blank" title="C#系统应用：图片浏览下载、网络编程、图像处理、类360安全应用等源码">C#系统应用：图片浏览下载、网络编程、图像处理、类360安全应用等源码</a></li>
+                                                    <li><span class="dot"></span><a href="/album/detail/1701" target="_blank" title="ECCV 2010论文集">ECCV 2010论文集</a></li>
+                                                    <li><span class="dot"></span><a href="/album/detail/1689" target="_blank" title="JavaScript图书最强阵容">JavaScript图书最强阵容</a></li>
+                                                    <li><span class="dot"></span><a href="/album/detail/1697" target="_blank" title="Android应用：包括随手拍、图像处理、百度地图、数据库处理等源码">Android应用：包括随手拍、图像处理、百度地图、数据库处理等源码</a></li>
+                                                    <li><span class="dot"></span><a href="/album/detail/1595" target="_blank" title="机器学习">机器学习</a></li>
+                                                    <li><span class="dot"></span><a href="/album/detail/1629" target="_blank" title="ECCV 2008论文集">ECCV 2008论文集</a></li>
+                                                    <li><span class="dot"></span><a href="/album/detail/1603" target="_blank" title="ECCV2014论文集">ECCV2014论文集</a></li>
+                                                  </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   	<!-- public footer -->
+	<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+	
+	<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-download.js"></script>
+
+	<!-- //public footer -->
+</div>
+<script type="text/javascript">
+		document.write('<script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date()/120000).toString(36) + '="></'+'script>');
+	</script>
+<script type="text/javascript">
+
+	function setTab(m,n){
+		var tli=document.getElementById("menu"+m).getElementsByTagName("a");
+		var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+		for(i=0;i<tli.length;i++){
+			tli[i].className=i==n?"current1 current2":"";
+			mli[i].style.display=i==n?"block":"none";
+		}
+	}
+
+	function check_up(thisform){
+		var key=$.trim(thisform.q.value);
+		if(key==""){
+			alert("关键字不能为空！");
+		}
+		else{
+			//key=key.replace(/\+/g,"%2B").replace(/\//g,"%2F");
+			key =  encodeURIComponent(key)
+			var url="http://download.csdn.net/search?q="+key;
+			window.location.href=url;
+		}
+		return false;
+	}
+
+</script>
+
+<script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>
+  <!-- ask 全局悬浮按钮  -->
+   					<link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" rel="stylesheet" type="text/css" />
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/wmd.js"></script>
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/showdown.js"></script>
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/prettify.js"></script>
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js"></script>
+    </body>
+</html>

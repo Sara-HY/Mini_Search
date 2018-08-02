@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"><!--begin-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://image.job.csdn.net/b2d-job/css/common.css">
+    <link rel="stylesheet" type="text/css" href="http://image.job.csdn.net/b2d-job/css/layout.css" />
+    <script type="text/javascript" src="http://js.job.csdn.net/common/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="http://image.job.csdn.net/b2d-job/js/bootstrap.min.js"></script>
+    <title>企业服务中心-CSDN</title>
+    
+    <link rel="stylesheet" type="text/css" href="/Content/b2d-job/css/com_center_unload.css" />
+    <style>
+        .csdn-toolbar .logo .img {
+          background: url("http://image.job.csdn.net/job-b/images/hire-logo.gif") no-repeat 0 8px;
+        }
+
+    </style>
+    <script type="text/javascript" src="http://js.job.csdn.net/common/modaldialog/jquery.modaldialog.js"></script>
+    <script type="text/javascript" src="http://js.job.csdn.net/common/ScrollList/clickscroller.js"></script>
+    <script type="text/javascript">
+        function OpenApplyPanel() {
+            if (window.applyPanel) {
+                window.applyPanel.Show();
+            }
+        }
+
+        $(function () {
+            window.applyPanel = new jsModelDialog({
+                Instance: document.getElementById("applyPanel")
+                    , Title: "申请加入企业会员"
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+    $(function () {
+        var logouturl = $("li.profile .pull-right").attr("href");
+        $("li.profile .pull-right").attr("href", logouturl + "&from=http%3A%2F%2Fbiz.csdn.net");
+        $("div.csdn-toolbar .loginlink a:contains('注册')").attr("href", "https://passport.csdn.net/account/register");
+    });
+    </script>
+    <style type="text/css">
+        /*提示窗*/ /*遮罩*/
+        .mask {
+            background: #7f7a68;
+            height: 600px;
+            left: 0;
+            filter: alpha(opacity=50);
+            -moz-opacity: 0.6;
+            -khtml-opacity: 0.6;
+            opacity: 0.6;
+            position: absolute;
+            top: 0;
+            width: 800px;
+            z-index: 1;
+        }
+
+        .floa {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            margin: -130px 0 0 -200px;
+            background-color: #fff;
+            border: solid 3px #2ce024;
+            padding-bottom: 25px;
+        }
+
+            .floa p.suctit {
+                color: #E20000;
+                font-size: 36px;
+                text-align: center;
+                line-height: 60px;
+                margin-top: 20px;
+            }
+
+            .floa p.sucnr {
+                color: #4F4F4F;
+                font-size: 18px;
+                font-weight: bold;
+                height: 72px;
+                line-height: 24px;
+                margin: 0 auto;
+                width: 310px;
+                overflow: hidden;
+            }
+
+            .floa p.subbtnbox {
+                margin-top: 12px;
+                text-align: center;
+            }
+
+                .floa p.subbtnbox a {
+                    background-color: #808080;
+                    color: #000;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-size: 18px;
+                    height: 42px;
+                    line-height: 42px;
+                    margin: 0 20px;
+                    text-align: center;
+                    width: 105px;
+                }
+
+        .tik_tok {
+            font-size: 12px;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            right: 130px;
+            line-height: 56px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <script id="toolbar-tpl-scriptId" skin="black" fixed="true" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+    <!-- 内容区 -->
+    
+
+
+<div class="popup_has_account" id="applyPanel" style="display:none;">
+    <h2><span style="font-weight:normal;">请选择您的用户类型</span><b class="dialog-close"></b></h2>
+    <div class="popup_content" style="height:80px;">
+        <a href="https://passport.csdn.net/account/login?from=http%3a%2f%2fbiz.csdn.net" class="has_btn">已有CSDN账号</a>
+        <a href="/apply/accounthire" class="hasnot_btn">没有CSDN账号</a>
+    </div>
+</div>
+<div class="top_banner">
+    <img src="/Content/b2d-job/images/banner_word.png" style="width:470px!important;" />
+    <a class="apply_btn" href="javascript:void(0)" onclick="OpenApplyPanel()">立即申请</a>
+</div>
+<div class="center_con">
+    <dl class="detail_list_l">
+        <dt><img src="/Content/b2d-job/images/frontpage_pic.png"></dt>
+        <dd>
+            <h3>企业主页</h3>
+            <p>企业技术名片，面向开发者的信息窗口，让开发者了解企业、关注企业申请即得，快速构建！</p>
+        </dd>
+    </dl>
+</div>
+<div class="center_con">
+    <dl class="detail_list_r">
+        <dt><img src="/Content/b2d-job/images/jobserver_pic.png"></dt>
+        <dd>
+            <h3>招聘服务</h3>
+            <p>
+                依托CSDN技术社区3000万会员，汇聚全国90%的开发者，<br />为企业提供强大技术人才库；<br />
+                数据挖掘支撑精准人才推荐，减少海选的烦恼。
+            </p>
+        </dd>
+    </dl>
+</div>
+<div class="nobg center_con">
+    <dl class="detail_list_l">
+        <dt><img src="/Content/b2d-job/images/prserver_pic.png"></dt>
+        <dd>
+            <h3>PR服务</h3>
+            <p>借助CSDN社区平台和媒体优势，邀请技术专家和优质编辑坐镇，为企业提供品牌和产品推广服务。</p>
+        </dd>
+    </dl>
+</div>
+
+
+
+    <script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js"></script>
+    <script type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+    <script src="/Scripts/jobCommon.js"></script>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc408398c89a55154915923d4344d020b' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>
+</body>
+</html>

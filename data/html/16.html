@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang='en' xmlns:wb='http://open.weibo.com/wb'>
+<head>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<title>
+
+CODE
+</title>
+<link href="//csdnimg.cn/public/favicon-b.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<script src='//csdnimg.cn/pubfooter/js/tracking.js?4774662'></script>
+<link href="/assets/base-a29a38fceeed1116524469aa64785b8f.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="//csdnimg.cn/public/common/toolbar/css/index.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/code-4957a63c0636112dde6d61e0969dc76c.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/feature_groups/home-090613407324753bab96a6cab5488e27.css" media="screen" rel="stylesheet" type="text/css" />
+<meta content='git,代码托管, 代码片, 社交编程, 版本管理, 开发工具' name='keywords'>
+<meta content='CSDN CODE code.csdn.net 是CSDN旗下的开发服务平台，面向国内开发者提供代码托管、代码片、社交编程、组织管理、社区讨论、知识库等开发服务。' name='Description'>
+<style type='text/css'>
+body {background:#fff;}
+body .container.main_container {width:100% !important;}
+</style>
+
+<script src="/assets/application-289f274928a42c4822a22eadecb690d1.js" type="text/javascript"></script>
+<script src='https://code.csdn.net/open/api/js/wb.js'></script>
+
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="K0H7rWTWRdBOqzhjOQryBCS40NAFJldQDEEY2BM9g3c=" name="csrf-token" />
+</head>
+
+<body>
+<script fixed='true' id='toolbar-tpl-scriptId' prod='code' skin='black' src='//csdnimg.cn/public/common/toolbar/js/html.js' type='text/javascript'></script>
+<script>
+  //<![CDATA[
+    var protocol = window.location.protocol;
+    document.write('<script type="text/javascript" src="' +protocol+ '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></'+'script>');
+  //]]>
+</script>
+<header class='csdn-nav navbar navbar-static-top' role='banner'>
+<div class='container'>
+<nav class='navbar-collapse pull-left' role='navigation'>
+<ul class='navbar-nav'>
+<li class=''>
+<a href="/explore/projects">发现</a>
+</li>
+<li class=''>
+<a href='/openkb'>知识库</a>
+</li>
+<li class=''>
+<a href='/group'>讨论组</a>
+</li>
+<li class=''>
+<a href="/translations">翻译</a>
+</li>
+</ul>
+</nav>
+<div class='search pull-left'>
+<form action='/search' method='get'>
+<input accesskey='s' class='new' id='s' name='search' placeholder='搜索' required='required' size='30' tabindex='1' type='text'>
+<button type='submit'>
+<i class='icon-search'></i>
+</button>
+</form>
+</div>
+<div class='pull-right'>
+<a href="/dashboard/index" style="border-right: 0px;">我的CODE</a>
+</div>
+</div>
+</header>
+<script>
+  //<![CDATA[
+    $('.dropdown-menu > li > a[name=aaa]').click(function(){
+           $('#search_form').attr('action', '/search');
+    
+          });
+    $('.dropdown-menu > li > a[name=bbb]').click(function(){
+           $('#search_form').attr('action', '/search_project');
+    
+          });
+    function btnclick(str){
+      var url = (str == "1" ? "/search" : "/search_project");
+      $('#search_form').attr('action', url).submit();
+    }
+  //]]>
+</script>
+<!--[if lt IE 9]> <div class="no-ie8 alert alert-block"><h4>请注意：</h4><p>Code不支持ie8及以下版本；建议您升级到最新的ie浏览器，或者谷歌Chrome、Firefox、Safari等；如果您使用的是IE 9+，请关闭“兼容性视图”。</p></div> <![endif]-->
+
+<!-- = render "sdev_toolshared/user_diskspace_over_limit" -->
+
+<div class='container main_container'>
+<div class='top_banner clearfix'>
+<div class='banner_con'>
+<div class='con960'>
+<p class='ad_word'>筑就非凡的代码世界</p>
+<a class='go_btn' href='/dashboard/index'>进 入</a>
+</div>
+</div>
+</div>
+<div class='service_list_con clearfix'>
+<dl class='service_list clearfix'>
+<dt>代码托管</dt>
+<dd>
+基于Git，免费的代码托管平台
+<br>
+支持公开、私有项目
+<br>
+大型代码项目优化支持
+</dd>
+<dd class='deposit_icon'></dd>
+</dl>
+<dl class='service_list clearfix'>
+<dt>协作编程</dt>
+<dd>
+优化的合并请求
+<br>
+组织团队形式协作
+<br>
+团队权限管理
+</dd>
+<dd class='cooperate_icon'></dd>
+</dl>
+<dl class='service_list clearfix'>
+<dt>代码片段</dt>
+<dd>
+组织有序的管理代码片
+<br>
+约百万代码片资源
+<br>
+方便在其他站点直接引用
+</dd>
+<dd class='piececode_icon'></dd>
+</dl>
+<dl class='service_list clearfix'>
+<dt>社区支持</dt>
+<dd>
+提供讨论组管理自己的社区
+<br>
+知识库方便学习
+<br>
+英文文档翻译协作
+</dd>
+<dd class='support_icon'></dd>
+</dl>
+</div>
+<div class='project_list_con clearfix'>
+<div class='project_list con960'>
+<h3 class='com_title'>这些项目也在CODE上</h3>
+<div class='projects clearfix'>
+<ul>
+<li>
+<a href="/dwzteam/dwz_jui" target="_blank">dwzteam/dwz_jui</a>
+<span>
+DWZ富客户端框架(jQuery RIA framework)
+</span>
+</li>
+<li>
+<a href="/topthink2011/ThinkPHP" target="_blank">ThinkPHP流年/ThinkPHP</a>
+<span>
+基于PHP5的开源WEB应用开发框架
+</span>
+</li>
+<li>
+<a href="/RT-Thread/rt-thread" target="_blank">RT-Thread/rt-thread</a>
+<span>
+RT-Thread is an open source real-time operating system for embedded devices from China.
+</span>
+</li>
+<li>
+<a href="/SequoiaDB/sequoiadb" target="_blank">SequoiaDB/SequoiaDB</a>
+<span>
+SequoiaDB是一款文档类NoSQL数据库
+</span>
+</li>
+<li>
+<a href="/Tencent/rapidjson" target="_blank">Tencent/RapidJSON</a>
+<span>
+RapidJSON是一个C++的JSON解析器及生成器
+</span>
+</li>
+<li>
+<a href="/Genesis-3D/genesis-3d_engine" target="_blank">Genesis-3D/genesis-3d_engine</a>
+<span>
+Genesis-3D开源游戏引擎，一键发布，多平台运行。
+</span>
+</li>
+<li>
+<a href="/wang_chun_sheng/zentaopms" target="_blank">易软天创/zentaopms</a>
+<span>
+禅道是第一款国产的开源项目管理软件。它集产品管理、项目管理、质量管理、文档管理、组织管理和事务管理于一体，是一款专业的研发项目管理软件，完整地覆盖了项目管理的核心流程。注重实效的管理思想，合理的软件架构，简洁高效的操作，优雅的代码实现，灵活的扩展机制，强大而易用的api调用机制，多语言支持，多风格支持，搜索功能，统计功能——这一切，您通过禅道，都可以拥有！禅道在手，项目无忧！
+</span>
+</li>
+<li>
+<a href="/jfinal/jfinal" target="_blank">jfinal/JFinal</a>
+<span>
+JFinal 是基于 Java 语言的极速 WEB + ORM 框架，其核心设计目标是开发迅速、代码量少、学习简单、功能强大、轻量级、易扩展、Restful。在拥有Java语言所有优势的同时再拥有ruby、python、php等动态语言的开发效率！为您节约更多时间，去陪恋人、家人和朋友 :) 
+</span>
+</li>
+<li>
+<a href="/Tencent/behaviac" target="_blank">Tencent/Behaviac</a>
+<span>
+behaviac是对行为树的一种解决方案，包含编辑器和运行时库两大部分
+</span>
+</li>
+<li>
+<a href="/dwzteam/dwz_springmvc" target="_blank">dwzteam/dwz_springmvc</a>
+<span>
+dwz4j企业级Java Web快速开发框架(Mybatis + SpringMVC) + DWZ富客户端框架 整合应用
+</span>
+</li>
+<li>
+<a href="/limodou/uliweb" target="_blank">limodou/uliweb</a>
+<span>
+简单易用的Python Web Framework
+</span>
+</li>
+<li>
+<a href="/Linux-Deepin/deepinterminal" target="_blank">Linux-Deepin/DeepinTerminal</a>
+<span>
+Terminal for Linux Deepin.
+</span>
+</li>
+<li>
+<a href="/99263/anychat" target="_blank">99263/anychat</a>
+<span>
+AnyChat，跨平台的音视频解决方案！
+</span>
+</li>
+<li>
+<a href="/etootle_4x/etootle_4x_2014" target="_blank">etootle_4x/etootle_4x_2014</a>
+<span>
+圆点博士小四轴2014版：
+&gt;&gt;&gt;硬件篇:
+1. 采用72MHz主频的STM32F103RC控制芯片 
+2. 采用了三轴陀螺仪和三轴加速度传感器的MPU6050
+3. 可兼容九轴(陀螺仪/加速度/磁力计)传感器MPU9150
+4. 集成蓝牙4.0通讯系统，可以和电脑/手机进行通讯 
+5. 集成锂电池充电系统，使用USB接口直接充电 
+6. 预留视频接口，用于扩展WIFI无线视频模块等
+7. 预留SPI接口，用于扩展2.4G NRF24L01+ 无线通讯等 
+8. 预留超声波模块接口，方便扩展定高定点飞行功能
+9. 全机重约100多克，对角电机中心点相距20厘米左右
+10.支持+字和X字飞行模式
+11.采用400mAh左右锂电池，飞行时间6分钟左右
+&gt;&gt;&gt;软件篇 
+1. 采用四元数进行姿态解算，支持通过USB更新固件
+2. 基于windows的上位机，能够控制小四轴飞行
+3. 基于Android的上位机，可以实现对小四轴的飞行控制
+</span>
+</li>
+<li>
+<a href="/jinnianshilongnian/es" target="_blank">jinnianshilongnian/es</a>
+<span>
+JavaEE项目开发脚手架
+</span>
+</li>
+<li>
+<a href="/zhangdaiscott/jeewx" target="_blank">jeecg-scott/jeewx</a>
+<span>
+JAVA版本微信二次开发平台-开源免费
+</span>
+</li>
+</ul>
+</div>
+<div class='points'></div>
+<a class='more_pro' href='/explore/projects'>发现更多</a>
+</div>
+</div>
+<div class='con960 clearfix'>
+<div class='partners_con'>
+<h3 class='partners_title'>战略合作伙伴</h3>
+<ul class='partners_list'>
+<li>
+<a href='http://www.tencent.com' target='_blank'>
+<img src='/assets/partner01.jpg'>
+</a>
+</li>
+<li>
+<a href='http://www.qcloud.com' target='_blank'>
+<img src='/assets/partner02.jpg'>
+</a>
+</li>
+<li>
+<a href='http://gongyi.qq.com/jjhgy/index.htm' target='_blank'>
+<img src='/assets/partner03.jpg'>
+</a>
+</li>
+</ul>
+</div>
+<div class='qq_cloud'>
+<a href='http://bss.csdn.net/cview/reg/?project_id=1006&amp;identy_id=1046' target='_blank'>马上申请</a>
+</div>
+<script>
+  //<![CDATA[
+    $(function(){
+    
+      var oProjects = document.querySelector('.projects');
+      var oList = document.querySelector('.projects ul');
+      var aLi = oList.children;
+      var liNum = aLi.length; //项目列表个数  13
+      var liColum = Math.ceil(liNum/4); //可以分多少栏
+    
+      var liScreens = Math.ceil(liColum/2);//可以分多少屏
+      var oPoints = document.querySelector('.points');
+      oProjects.style.width = liScreens*1200 + 'px';
+    
+    
+      var liArr = []; //用选择集appendChild会出现问题，用数组就没问题。
+    
+      for(var i=0;i<liNum;i++)
+      {
+        liArr.push(aLi[i].innerHTML);
+      }
+      oProjects.innerHTML = '';
+    
+    
+    
+    
+      for(var i=0;i<liColum;i++)
+      {
+        var oUl = document.createElement('ul');
+    
+        for(var j=i*4;j<i*4+4;j++)
+        {
+          if(j>liNum-1)
+          {
+            break;
+          }
+    
+          oUl.innerHTML += '<li>'+liArr[j]+'</li>';
+        }
+        oProjects.appendChild(oUl);
+      }
+    
+    
+      for(var i=0;i<liScreens;i++)
+      {
+        var oSpan = document.createElement('span');
+        if(i==0)
+        {
+          oSpan.className = "cur_p";
+        }
+    
+        oPoints.appendChild(oSpan);
+      }
+    
+      var oProjects_con = document.querySelector('.project_list');
+      var aPoints = document.querySelectorAll('.points span');
+      var sreens = aPoints.length;
+    
+      var iNow = 0;
+      var timer = null;
+    
+    
+      function nextScreen()
+      {
+        if(iNow>sreens-1)iNow=0;
+    
+        for(var i=0;i<aPoints.length;i++)
+        {
+          aPoints[i].className = '';
+        }
+    
+        oProjects.style.transform = 'translate(' +(-1)*(iNow*1050+45) + 'px,' + 0 + 'px)';
+        oProjects.style.msTransform = 'translate(' + (-1)*(iNow*1050+45) + 'px,' + 0 + 'px)';
+        oProjects.style.webkitTransform = 'translate(' + (-1)*(iNow*1050+45) + 'px,' + 0 + 'px)';
+        aPoints[iNow].className = 'cur_p';
+    
+      }
+    
+      timer = setInterval(function(){
+        iNow++;
+        nextScreen();
+      },5000);
+    
+    
+      oProjects_con.onmouseover = function()
+      {
+        clearInterval(timer);
+      }
+    
+      oProjects_con.onmouseout = function()
+      {
+        timer = setInterval(function(){
+          iNow++;
+          nextScreen();
+        },5000);
+      }
+    
+      for(var i=0;i<aPoints.length;i++)
+      {
+        aPoints[i].index = i;
+        aPoints[i].onclick = function(){
+    
+          iNow = this.index;
+          nextScreen();
+        }
+      }
+    
+    
+    })
+  //]]>
+</script>
+</div>
+<script src='//code.csdn.net/snippets/H1s3t9e8G2r2Z5y2b4D0/master/announce.js/raw?4774662' type='text/javascript'></script>
+
+</div>
+<div class='footer'>
+<div class='container'>
+<ul class='pull-left'>
+<li>
+<a href='/CSDN_Code/code_support/issues'>反馈</a>
+</li>
+<li>
+<a href="/help">帮助</a>
+</li>
+</ul>
+<div class='pull-right'>Copyright &copy; 2015, CSDN.NET, All Rights Reserved</div>
+</div>
+</div>
+<script btnid='header_notice_num' count='5' id='noticeScript' src='//csdnimg.cn/rabbit/notev2/js/notify.js?4774662' subcount='5' type='text/javascript' wrapid='note1'></script>
+<script btnId='header_notice_num' count='5' id='csdn-toolbar-id' src='//csdnimg.cn/public/common/toolbar/js/toolbar.js' subCount='5' type='text/javascript' wrapId='note1'></script>
+
+</body>
+</html>

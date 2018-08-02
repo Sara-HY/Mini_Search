@@ -1,0 +1,1249 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    
+<meta name="keywords" content="计算机 互联网 IT技术 软件开发 硬件开发  程序员  编程" />
+
+<title>英雄会-在线编程挑战平台</title> 
+<meta name="description" content="中国最专业的在线编程挑战平台，尽在CSDN英雄会" />
+ 
+    <!-- toolbar begin-->
+<link rel="stylesheet" href="http://csdnimg.cn/public/themes/csdn-themes-defalut.css" />
+<link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css" />
+<!-- toolbar end-->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    
+    <link type="text/css" href="http://image.job.csdn.net/hero/css/commen.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://js.job.csdn.net/common/jquery-1.7.1.js?v=1119799767"></script>
+    <script type="text/javascript" src="http://js.job.csdn.net/hero/showClose.js?v=1119799767"></script>
+    <script type="text/javascript" src="http://js.job.csdn.net/common/modaldialog/jquery.modaldialog.js?v=1119799767"></script>
+    <script src="../../Scripts/ViewJs/feedback.js?v=1119799767" type="text/javascript"></script>
+    <script src="../../Scripts/Comm/jshelper.js?v=1119799767" type="text/javascript"></script>
+    <script src="http://js.job.csdn.net/common/pop/jquery.larkyPopWindow.js?v=1119799767" type="text/javascript"></script>
+    <script src="http://js.job.csdn.net/common/pop/jquery.larkyPopWindow.DropList.js?v=1119799767"
+        type="text/javascript"></script>
+    
+    
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var rn = '';
+            var mobile = '';
+            var email = '';
+
+            $.ajax({
+                type: 'GET',
+                url: '/Layer/GetFeed',
+                async: false,
+                dataType: "json",
+                success: function (ret) {
+                    if (ret != undefined) {
+                        if (ret.feed_rn != undefined) {
+                            rn = ret.feed_rn;
+                        }
+                        if (ret.feed_rn != undefined) {
+                            mobile = ret.feed_mobile;
+                        }
+                        if (ret.feed_rn != undefined) {
+                            email = ret.feed_email;
+                        }
+                    }
+                }
+            });
+
+            $feedback.Init("popfeed", rn, email, mobile);
+            /*定义弹出层（邀请）*/
+            window.popfeed = new jsModelDialog({
+                Instance: $("#div_feed")[0]
+            });
+            $('.my_feedbtn').unbind("click").bind("click", function () {
+                window.popfeed.Show();
+            })
+        });
+    </script>
+</head>
+<body>
+    <!-- toolbar begin-->
+<script id="toolbar-tpl-scriptId" prod="hero" skin="black" src="http://static.csdn.net/public/common/toolbar/js/html.js?v=1119799767"
+    type="text/javascript"></script>
+<!-- toolbar end-->
+
+    <a class="my_feedbtn" href="javascript:void(0)">反馈意见给我们</a>
+     
+    
+<div class="nav">
+    <ul class="menu">
+        
+        <li><span><a href="/home/index"     class="on"
+>
+            首页</a></span></li>
+        <li><span><a href="/hero/index" >
+            英雄榜</a></span></li>
+        <li><span><a href="/hero/Awards"  >
+            获奖名单</a></span></li>
+        <li><span><a href="/Exam/List">我的英雄会</a></span></li>
+        <li><span><a href="/Publish/mylist">我贡献的题目</a></span></li>
+        <li><span><a href="/Examine/Apply" >
+            审题专家组</a></span></li>
+        
+        
+    </ul>
+</div>
+
+    
+<link type="text/css" href="http://image.job.csdn.net/hero/css/xixi.css" rel="stylesheet" />
+<script language="javascript" src="/Scripts/Time/Time.js?v=1119799767"></script>
+<script language="javascript" src="/Scripts/Time/TimeQuestionListProvider.js?v=1119799767"></script>
+
+<script language="javascript" src="/Scripts/Question/QuestionList.js?v=1119799767"></script>
+
+<script type="text/javascript" src="http://js.job.csdn.net/common/focus.js?v=1119799767"></script>
+
+<script type=text/javascript charset=utf-8 src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=c67b1e48-2210-48d3-aa2c-20cd470b9d33&amp;pophcol=2&amp;lang=zh"></script>
+<script type=text/javascript charset=utf-8 src="http://static.bshare.cn/b/bshareC0.js?v=1119799767"></script>
+
+
+<div class="bg_gary">
+    <div class="warp">
+        
+        <!-- left begin -->
+        <div class="her_topic_left">
+
+            <!--
+                <div class="topic">
+                    <div class="topic_zi">
+                    <span class="t_zi">首届创想家应用设计大赛</span> <span class="t_zi1">2013.03.12</span><span class="t_black">&nbsp;至&nbsp;</span><span class="t_zi1">2013.4.12</span>
+                    </div>
+                    <div class="topic_img">
+                        <img src="http://image.job.csdn.net/hero/images/topic01.jpg">
+                    </div>
+                </div>
+                -->
+            <div class="her_pk"><img src="http://image.job.csdn.net/hero/images/pk.gif" width="29" height="27">正在进行的挑战...</div>
+            <div style="display: none" id="ItemCount">5</div>
+    <div class="topic_ing" id="612">
+        <div class="t_ing_bj">
+            <div class="t_ing_zi">
+                <a href="/Question/Details?ID=617&amp;ExamID=612&amp;from=4" target="_blank" style="color:White" title="第五届在线编程大赛月赛第三题：石子游戏（1）">第五届在线编程大赛月赛第三题：石子游戏（1）&nbsp;</a></div>
+                <div class="t_ing_shu" title="第一次挑战通过可以获得15积分">15</div>
+            <div class="t_ing_time">
+                
+                <span id="ExamID612"></span>
+            </div>
+        </div>
+        <div class="t_top">
+            <div class="her_t_con">
+                <span>编程语言：</span><span class="juhuang">C C++ Java C# </span></div>
+            <div class="her_t_cons">
+                <span class="duiqi">答题时长：</span><span class="juhuang">120
+                    分钟</span> <span class="gary1">│</span>难度等级：<span title="一般"><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_of.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_of.png" width="15" height="15" /></span>
+            </div>
+        </div>
+        <div class="t_conter">
+            <div class="t_c_z">
+                <div class="particulars"  id="content617" style="height:146px; overflow:hidden;">
+                    <div class="zy">
+                        
+	甲乙两人面对若干堆石子，其中每一堆石子的数目可以任意确定。
+
+
+	两人轮流按下列规则取走一些石子，游戏的规则如下：
+
+
+	1.每一步应取走至少一枚石子；
+
+
+	2.每一步只能
+                        <a href="javascript:void(0);" onclick="contentShow(617)" >
+                            <span class="zhankai" id="contentControlOpen617">展开更多介绍</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="particulars"  id="contentMore617" style="display:none;">
+                    <div class="zy">
+                        
+	甲乙两人面对若干堆石子，其中每一堆石子的数目可以任意确定。
+
+
+	两人轮流按下列规则取走一些石子，游戏的规则如下：
+
+
+	1.每一步应取走至少一枚石子；
+
+
+	2.每一步只能从某一堆中取走部分或全部石子；
+
+
+	3.如果谁无法按规则取子，谁就是输家。
+
+
+	如果甲乙两人都采取最优的策略,甲先拿，请问,是甲必胜还是乙必胜.
+
+
+	输入格式：
+
+
+	多组数据，每组数据两行，第一行是一个整数N, 2&lt;=N&lt;=10000
+
+
+	下一行是N个正整数，代表每堆的石子数，石子数在32位整数内。
+
+
+	输出格式：
+
+
+	每组测试数据输出一行,如果甲存在必胜策略,输出&quot;Win&quot;,否则输出&quot;Lost&quot;
+
+                        <br />
+                            <strong>挑战规则：</strong> <br />
+
+	输入样例
+
+
+	3
+
+
+	3 3 1
+
+
+	输出样例：
+
+
+	Win
+
+
+	
+                        <a href="javascript:void(0);" onclick="contentHide(617)" >
+                            <span class="shouqi" id="contentControlClose617">收起更多介绍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                <!-- focus begin  -->
+                <div class="sub_box">
+                    <div class="sub_nav">
+                        <div class="sub_no" id="bd1lfsj612" style="display:none">
+                            <ul>
+                                    <li class="show"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="bd1lfimg612" class="bd1lfimg">
+                        <div>
+                            <dl class="show">
+                            </dl>
+                                <dl class="">
+                                    <dt><a href="http://org.job.csdn.net/Org/Details?ID=32" title="CSDN" target="_blank"><span class="hir_x_white">查看该公司招聘信息</span>
+                                        <img src="http://hire.job.csdn.net/image/AttachFile?fileid=38411" alt="CSDN"/>
+                                    </a></dt>
+                                    <dd>
+                                        <h2>
+                                            <a href="#" target="_blank"></a>
+                                        </h2>
+                                        <tt><a href="#" target="_blank"></a></tt>
+                                    </dd>
+                                </dl>
+                        </div>
+                    </div>
+                    <script type="text/javascript">                        movecMore("bd1lfsj612", "bd1lfimg612");</script>
+                </div>
+                <!-- focus end  --> 
+            
+            <div class="her_tag_add">
+                <a  href="/ProfileOperation/ShortProfile?title=%e7%ac%ac%e4%ba%94%e5%b1%8a%e5%9c%a8%e7%ba%bf%e7%bc%96%e7%a8%8b%e5%a4%a7%e8%b5%9b%e6%9c%88%e8%b5%9b%e7%ac%ac%e4%b8%89%e9%a2%98%ef%bc%9a%e7%9f%b3%e5%ad%90%e6%b8%b8%e6%88%8f%ef%bc%881%ef%bc%89&amp;QID=617&amp;ExamID=612" id="a_612" target="_blank">现在挑战</a>
+                <div class="her_x_defiance">
+                    已有<span class="juhuang">2657</span>人参与挑战，<span class="juhuang">160</span>人挑战成功
+                    &nbsp;&nbsp; <span title="分享到新浪微博" style="cursor:pointer; color:black"
+                 ExamID="612" QuestionID="617" Topic="第五届在线编程大赛月赛第三题：石子游戏（1）" Content="
+	甲乙两人面对若干堆石子，其中每一堆石子的数目可以任意确定。
+
+
+	两人轮流按下列规则取走一些石子，游戏的规则如下：
+
+
+	1.每一步应取走至少一枚石子；
+
+
+	2.每一步只能从某一堆中取走部分或全部石子；
+
+
+	3.如果谁无法按规则取子，谁就是输家。
+
+
+	如果甲乙两人都采取最优的策略,甲先拿，请问,是甲必胜还是乙必胜.
+
+
+	输入格式：
+
+
+	多组数据，每组数据两行，第一行是一个整数N, 2&lt;=N&lt;=10000
+
+
+	下一行是N个正整数，代表每堆的石子数，石子数在32位整数内。
+
+
+	输出格式：
+
+
+	每组测试数据输出一行,如果甲存在必胜策略,输出&quot;Win&quot;,否则输出&quot;Lost&quot;
+"  id="share612">
+                        <img src="http://static.bshare.cn/frame/images/logos/s4/sinaminiblog.gif" style="height: 16px;width: 16px;">
+                        <span style="padding-left: 2px; vertical-align: middle;">分享到新浪微博</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="topic_ing" id="611">
+        <div class="t_ing_bj">
+            <div class="t_ing_zi">
+                <a href="/Question/Details?ID=616&amp;ExamID=611&amp;from=4" target="_blank" style="color:White" title="第五届在线编程大赛月赛指定题目：反向互补子串">第五届在线编程大赛月赛指定题目：反向互补子串&nbsp;</a></div>
+                <div class="t_ing_shu" title="第一次挑战通过可以获得20积分">20</div>
+                <div class="t_ing_tu" style="cursor: pointer">
+                    奖
+                    <div class="her_smap" style="display: none">
+                        <div class="her_pop_arrt">
+                        </div>
+                        <ul class="her_ico_num">
+                                <li class="row1" title="一等奖 1名 价值4999的诺基亚Lumia1020手机一台。">一等奖 1名 价值4999的诺基亚Lumia1020手机一台。</li>
+                                <li class="row2" title="二等奖 3名 价值799的平板电脑一台。">二等奖 3名 价值799的平板电脑一台。</li>
+                                <li class="row3" title="三等奖 5名 价值199的移动电源一个。">三等奖 5名 价值199的移动电源一个。</li>
+                        </ul>
+                    </div>
+                </div>       
+            <div class="t_ing_time">
+                
+                <span id="ExamID611"></span>
+            </div>
+        </div>
+        <div class="t_top">
+            <div class="her_t_con">
+                <span>编程语言：</span><span class="juhuang">C C++ Java C# </span></div>
+            <div class="her_t_cons">
+                <span class="duiqi">答题时长：</span><span class="juhuang">120
+                    分钟</span> <span class="gary1">│</span>难度等级：<span title="较难"><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_of.png" width="15" height="15" /></span>
+            </div>
+        </div>
+        <div class="t_conter">
+            <div class="t_c_z">
+                <div class="particulars"  id="content616" style="height:146px; overflow:hidden;">
+                    <div class="zy">
+                        
+	这是个字符串问题。我们的字符串只包含大写字母。我们定义一个字母和它13位以后的字母互补。即A与N互补，B与O互补，C与P互补……，我们需要找一个字符串的两个不重叠的子串，其中
+                        <a href="javascript:void(0);" onclick="contentShow(616)" >
+                            <span class="zhankai" id="contentControlOpen616">展开更多介绍</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="particulars"  id="contentMore616" style="display:none;">
+                    <div class="zy">
+                        
+	这是个字符串问题。我们的字符串只包含大写字母。我们定义一个字母和它13位以后的字母互补。即A与N互补，B与O互补，C与P互补……，我们需要找一个字符串的两个不重叠的子串，其中一个和另外一个的翻转全互补。另外，因为我们的问题来自生物学，所以我们允许这两个字符串的一个可以删掉两个字符（注意：仅允许一个字符串删掉任意位置的两个字符，另外一个必须全部互补上）。我们的目的是求最长的反向互补子串的长度。
+
+
+	输入格式：
+
+
+	多组数据，每组数据一行，有一个字符串。每个字符串长度不超过2000，只有大写英文字母组成。
+
+
+	输出格式：
+
+
+	每组数据输出一行包含一个整数，表示最长的反向互补子串长度。
+
+                        <br />
+                            <strong>挑战规则：</strong> <br />
+
+	
+
+
+	输入样例
+
+
+	ABCD
+
+
+	ABCDQOPN
+
+
+	ABON
+
+
+	输出样例：
+
+
+	0
+
+
+	2
+
+
+	2
+
+
+	解释：
+
+
+	第一个样例，没有互补的子串。
+
+
+	第二个样例，AB和NO互补，所以反向互补子串的时候我们可以选择NPO，删掉一个P即可。
+
+
+	第三个样例，AB与ON反向互补。
+
+
+	
+                            <br />
+                            <strong>获奖规则：</strong> <br />
+&#183;月增新题通过三道及三道以上
+&#183;通过月赛指定题目
+符合以上两个条件可以获得评奖资格。
+在获得评奖资格的挑战者中，以通过月赛指定题目的先后顺序为排名依据。                        <a href="javascript:void(0);" onclick="contentHide(616)" >
+                            <span class="shouqi" id="contentControlClose616">收起更多介绍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                <!-- focus begin  -->
+                <div class="sub_box">
+                    <div class="sub_nav">
+                        <div class="sub_no" id="bd1lfsj611" style="display:none">
+                            <ul>
+                                    <li class="show"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="bd1lfimg611" class="bd1lfimg">
+                        <div>
+                            <dl class="show">
+                            </dl>
+                                <dl class="">
+                                    <dt><a href="http://org.job.csdn.net/Org/Details?ID=32" title="CSDN" target="_blank"><span class="hir_x_white">查看该公司招聘信息</span>
+                                        <img src="http://hire.job.csdn.net/image/AttachFile?fileid=38411" alt="CSDN"/>
+                                    </a></dt>
+                                    <dd>
+                                        <h2>
+                                            <a href="#" target="_blank"></a>
+                                        </h2>
+                                        <tt><a href="#" target="_blank"></a></tt>
+                                    </dd>
+                                </dl>
+                        </div>
+                    </div>
+                    <script type="text/javascript">                        movecMore("bd1lfsj611", "bd1lfimg611");</script>
+                </div>
+                <!-- focus end  --> 
+            
+            <div class="her_tag_add">
+                <a  href="/ProfileOperation/ShortProfile?title=%e7%ac%ac%e4%ba%94%e5%b1%8a%e5%9c%a8%e7%ba%bf%e7%bc%96%e7%a8%8b%e5%a4%a7%e8%b5%9b%e6%9c%88%e8%b5%9b%e6%8c%87%e5%ae%9a%e9%a2%98%e7%9b%ae%ef%bc%9a%e5%8f%8d%e5%90%91%e4%ba%92%e8%a1%a5%e5%ad%90%e4%b8%b2&amp;QID=616&amp;ExamID=611" id="a_611" target="_blank">现在挑战</a>
+                <div class="her_x_defiance">
+                    已有<span class="juhuang">1462</span>人参与挑战，<span class="juhuang">75</span>人挑战成功
+                    &nbsp;&nbsp; <span title="分享到新浪微博" style="cursor:pointer; color:black"
+                 ExamID="611" QuestionID="616" Topic="第五届在线编程大赛月赛指定题目：反向互补子串" Content="
+	这是个字符串问题。我们的字符串只包含大写字母。我们定义一个字母和它13位以后的字母互补。即A与N互补，B与O互补，C与P互补……，我们需要找一个字符串的两个不重叠的子串，其中一个和另外一个的翻转全互补。另外，因为我们的问题来自生物学，所以我们允许这两个字符串的一个可以删掉两个字符（注意：仅允许一个字符串删掉任意位置的两个字符，另外一个必须全部互补上）。我们的目的是求最长的反向互补子串的长度。
+
+
+	输入格式：
+
+
+	多组数据，每组数据一行，有一个字符串。每个字符串长度不超过2000，只有大写英文字母组成。
+
+
+	输出格式：
+
+
+	每组数据输出一行包含一个整数，表示最长的反向互补子串长度。
+
+奖品：
+一等奖 1名 价值4999的诺基亚Lumia1020手机一台。
+二等奖 3名 价值799的平板电脑一台。
+三等奖 5名 价值199的移动电源一个。
+"  id="share611">
+                        <img src="http://static.bshare.cn/frame/images/logos/s4/sinaminiblog.gif" style="height: 16px;width: 16px;">
+                        <span style="padding-left: 2px; vertical-align: middle;">分享到新浪微博</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="topic_ing" id="605">
+        <div class="t_ing_bj">
+            <div class="t_ing_zi">
+                <a href="/Question/Details?ID=610&amp;ExamID=605&amp;from=4" target="_blank" style="color:White" title="第五届在线编程大赛月赛第二题：走格子">第五届在线编程大赛月赛第二题：走格子&nbsp;</a></div>
+                <div class="t_ing_shu" title="第一次挑战通过可以获得15积分">15</div>
+            <div class="t_ing_time">
+                
+                <span id="ExamID605"></span>
+            </div>
+        </div>
+        <div class="t_top">
+            <div class="her_t_con">
+                <span>编程语言：</span><span class="juhuang">C C++ Java C# </span></div>
+            <div class="her_t_cons">
+                <span class="duiqi">答题时长：</span><span class="juhuang">120
+                    分钟</span> <span class="gary1">│</span>难度等级：<span title="一般"><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_of.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_of.png" width="15" height="15" /></span>
+            </div>
+        </div>
+        <div class="t_conter">
+            <div class="t_c_z">
+                <div class="particulars"  id="content610" style="height:146px; overflow:hidden;">
+                    <div class="zy">
+                        
+	我们有一个两行n列格子的棋盘，你可以从任何位置出发。每次你可以沿着上下左右以及对角线的方向走一格（不能出去），求有多少条可能的哈密尔顿路？（即所有的格子只经过一次的路。
+                        <a href="javascript:void(0);" onclick="contentShow(610)" >
+                            <span class="zhankai" id="contentControlOpen610">展开更多介绍</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="particulars"  id="contentMore610" style="display:none;">
+                    <div class="zy">
+                        
+	我们有一个两行n列格子的棋盘，你可以从任何位置出发。每次你可以沿着上下左右以及对角线的方向走一格（不能出去），求有多少条可能的哈密尔顿路？（即所有的格子只经过一次的路。）
+
+
+	例如：
+
+
+	a b c
+
+
+	d e f
+
+
+	一条可能的路径是b,f,c,e,d,a
+
+
+	输入格式：
+
+
+	多组数据，每组数据1行，包含一个正整数n表示列数。 (n &lt;= 1000)
+
+
+	输出格式：
+
+
+	每组数据输出一行包含一个整数，可能的路径条数。结果比较大，输出对10^9 + 7的结果
+
+
+	
+
+                        <br />
+                            <strong>挑战规则：</strong> <br />
+
+	输入样例
+
+
+	1
+
+
+	2
+
+
+	3
+
+
+	输出样例：
+
+
+	2
+
+
+	24
+
+
+	96
+
+
+	
+                        <a href="javascript:void(0);" onclick="contentHide(610)" >
+                            <span class="shouqi" id="contentControlClose610">收起更多介绍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                <!-- focus begin  -->
+                <div class="sub_box">
+                    <div class="sub_nav">
+                        <div class="sub_no" id="bd1lfsj605" style="display:none">
+                            <ul>
+                                    <li class="show"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="bd1lfimg605" class="bd1lfimg">
+                        <div>
+                            <dl class="show">
+                            </dl>
+                                <dl class="">
+                                    <dt><a href="http://org.job.csdn.net/Org/Details?ID=32" title="CSDN" target="_blank"><span class="hir_x_white">查看该公司招聘信息</span>
+                                        <img src="http://hire.job.csdn.net/image/AttachFile?fileid=38411" alt="CSDN"/>
+                                    </a></dt>
+                                    <dd>
+                                        <h2>
+                                            <a href="#" target="_blank"></a>
+                                        </h2>
+                                        <tt><a href="#" target="_blank"></a></tt>
+                                    </dd>
+                                </dl>
+                        </div>
+                    </div>
+                    <script type="text/javascript">                        movecMore("bd1lfsj605", "bd1lfimg605");</script>
+                </div>
+                <!-- focus end  --> 
+            
+            <div class="her_tag_add">
+                <a  href="/ProfileOperation/ShortProfile?title=%e7%ac%ac%e4%ba%94%e5%b1%8a%e5%9c%a8%e7%ba%bf%e7%bc%96%e7%a8%8b%e5%a4%a7%e8%b5%9b%e6%9c%88%e8%b5%9b%e7%ac%ac%e4%ba%8c%e9%a2%98%ef%bc%9a%e8%b5%b0%e6%a0%bc%e5%ad%90&amp;QID=610&amp;ExamID=605" id="a_605" target="_blank">现在挑战</a>
+                <div class="her_x_defiance">
+                    已有<span class="juhuang">379</span>人参与挑战，<span class="juhuang">29</span>人挑战成功
+                    &nbsp;&nbsp; <span title="分享到新浪微博" style="cursor:pointer; color:black"
+                 ExamID="605" QuestionID="610" Topic="第五届在线编程大赛月赛第二题：走格子" Content="
+	我们有一个两行n列格子的棋盘，你可以从任何位置出发。每次你可以沿着上下左右以及对角线的方向走一格（不能出去），求有多少条可能的哈密尔顿路？（即所有的格子只经过一次的路。）
+
+
+	例如：
+
+
+	a b c
+
+
+	d e f
+
+
+	一条可能的路径是b,f,c,e,d,a
+
+
+	输入格式：
+
+
+	多组数据，每组数据1行，包含一个正整数n表示列数。 (n &lt;= 1000)
+
+
+	输出格式：
+
+
+	每组数据输出一行包含一个整数，可能的路径条数。结果比较大，输出对10^9 + 7的结果
+
+
+	
+
+奖品：
+一等奖 1名 价值4999的诺基亚Lumia1020手机一台。
+二等奖 3名 价值799的平板电脑一台。
+三等奖 5名 价值199的移动电源一个。
+"  id="share605">
+                        <img src="http://static.bshare.cn/frame/images/logos/s4/sinaminiblog.gif" style="height: 16px;width: 16px;">
+                        <span style="padding-left: 2px; vertical-align: middle;">分享到新浪微博</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="topic_ing" id="603">
+        <div class="t_ing_bj">
+            <div class="t_ing_zi">
+                <a href="/Question/Details?ID=608&amp;ExamID=603&amp;from=4" target="_blank" style="color:White" title="第五届在线编程大赛月赛第一题：完全平方数的个数">第五届在线编程大赛月赛第一题：完全平方数的个数&nbsp;</a></div>
+                <div class="t_ing_shu" title="第一次挑战通过可以获得10积分">10</div>
+            <div class="t_ing_time">
+                
+                <span id="ExamID603"></span>
+            </div>
+        </div>
+        <div class="t_top">
+            <div class="her_t_con">
+                <span>编程语言：</span><span class="juhuang">C C++ Java C# </span></div>
+            <div class="her_t_cons">
+                <span class="duiqi">答题时长：</span><span class="juhuang">120
+                    分钟</span> <span class="gary1">│</span>难度等级：<span title="容易"><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_of.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_of.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_of.png" width="15" height="15" /></span>
+            </div>
+        </div>
+        <div class="t_conter">
+            <div class="t_c_z">
+                <div class="particulars"  id="content608" style="height:146px; overflow:hidden;">
+                    <div class="zy">
+                        
+	给定整数区间[A,B]问其中有多少个完全平方数。
+
+
+	输入格式：
+
+
+	多组数据，包含两个正整数A,B1&lt;=A&lt;=B&lt;=2000000000。
+
+
+	输出格式：
+
+
+	每组数据输出一行包含一个整数
+                        <a href="javascript:void(0);" onclick="contentShow(608)" >
+                            <span class="zhankai" id="contentControlOpen608">展开更多介绍</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="particulars"  id="contentMore608" style="display:none;">
+                    <div class="zy">
+                        
+	给定整数区间[A,B]问其中有多少个完全平方数。
+
+
+	输入格式：
+
+
+	多组数据，包含两个正整数A,B 1&lt;=A&lt;=B&lt;=2000000000。
+
+
+	输出格式：
+
+
+	每组数据输出一行包含一个整数，表示闭区间[A,B]中包含的完全平方数的个数。
+
+                        <br />
+                            <strong>挑战规则：</strong> <br />
+
+	输入样例
+
+
+	1 1
+
+
+	1 2
+
+
+	3 10
+
+
+	3 3
+
+
+	输出样例：
+
+
+	1
+
+
+	1
+
+
+	2
+
+
+	0
+                        <a href="javascript:void(0);" onclick="contentHide(608)" >
+                            <span class="shouqi" id="contentControlClose608">收起更多介绍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                <!-- focus begin  -->
+                <div class="sub_box">
+                    <div class="sub_nav">
+                        <div class="sub_no" id="bd1lfsj603" style="display:none">
+                            <ul>
+                                    <li class="show"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="bd1lfimg603" class="bd1lfimg">
+                        <div>
+                            <dl class="show">
+                            </dl>
+                                <dl class="">
+                                    <dt><a href="http://org.job.csdn.net/Org/Details?ID=32" title="CSDN" target="_blank"><span class="hir_x_white">查看该公司招聘信息</span>
+                                        <img src="http://hire.job.csdn.net/image/AttachFile?fileid=38411" alt="CSDN"/>
+                                    </a></dt>
+                                    <dd>
+                                        <h2>
+                                            <a href="#" target="_blank"></a>
+                                        </h2>
+                                        <tt><a href="#" target="_blank"></a></tt>
+                                    </dd>
+                                </dl>
+                        </div>
+                    </div>
+                    <script type="text/javascript">                        movecMore("bd1lfsj603", "bd1lfimg603");</script>
+                </div>
+                <!-- focus end  --> 
+            
+            <div class="her_tag_add">
+                <a  href="/ProfileOperation/ShortProfile?title=%e7%ac%ac%e4%ba%94%e5%b1%8a%e5%9c%a8%e7%ba%bf%e7%bc%96%e7%a8%8b%e5%a4%a7%e8%b5%9b%e6%9c%88%e8%b5%9b%e7%ac%ac%e4%b8%80%e9%a2%98%ef%bc%9a%e5%ae%8c%e5%85%a8%e5%b9%b3%e6%96%b9%e6%95%b0%e7%9a%84%e4%b8%aa%e6%95%b0&amp;QID=608&amp;ExamID=603" id="a_603" target="_blank">现在挑战</a>
+                <div class="her_x_defiance">
+                    已有<span class="juhuang">1606</span>人参与挑战，<span class="juhuang">292</span>人挑战成功
+                    &nbsp;&nbsp; <span title="分享到新浪微博" style="cursor:pointer; color:black"
+                 ExamID="603" QuestionID="608" Topic="第五届在线编程大赛月赛第一题：完全平方数的个数" Content="
+	给定整数区间[A,B]问其中有多少个完全平方数。
+
+
+	输入格式：
+
+
+	多组数据，包含两个正整数A,B 1&lt;=A&lt;=B&lt;=2000000000。
+
+
+	输出格式：
+
+
+	每组数据输出一行包含一个整数，表示闭区间[A,B]中包含的完全平方数的个数。
+
+奖品：
+一等奖 1名 价值4999的诺基亚Lumia1020手机一台。
+二等奖 3名 价值799的平板电脑一台。
+三等奖 5名 价值199的移动电源一个。
+"  id="share603">
+                        <img src="http://static.bshare.cn/frame/images/logos/s4/sinaminiblog.gif" style="height: 16px;width: 16px;">
+                        <span style="padding-left: 2px; vertical-align: middle;">分享到新浪微博</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="topic_ing" id="601">
+        <div class="t_ing_bj">
+            <div class="t_ing_zi">
+                <a href="/Question/Details?ID=606&amp;ExamID=601&amp;from=4" target="_blank" style="color:White" title="AB串">AB串&nbsp;</a></div>
+                <div class="t_ing_shu" title="第一次挑战通过可以获得15积分">15</div>
+            <div class="t_ing_time">
+                
+                <span id="ExamID601"></span>
+            </div>
+        </div>
+        <div class="t_top">
+            <div class="her_t_con">
+                <span>编程语言：</span><span class="juhuang">C C++ Java C# </span></div>
+            <div class="her_t_cons">
+                <span class="duiqi">答题时长：</span><span class="juhuang">120
+                    分钟</span> <span class="gary1">│</span>难度等级：<span title="一般"><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_on.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_of.png" width="15" height="15" /><img src="http://image.job.csdn.net/www/star_of.png" width="15" height="15" /></span>
+            </div>
+        </div>
+        <div class="t_conter">
+            <div class="t_c_z">
+                <div class="particulars"  id="content606" style="height:146px; overflow:hidden;">
+                    <div class="zy">
+                        
+	给定n个A和2n个B，用这些字符拼成一个字符串，要求这个串的所有前缀和后缀B的个数始终不少于A。
+
+
+	（一个字符串的前缀是只从开头到某个位置为止的子串，后缀是只从某个位置到
+                        <a href="javascript:void(0);" onclick="contentShow(606)" >
+                            <span class="zhankai" id="contentControlOpen606">展开更多介绍</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="particulars"  id="contentMore606" style="display:none;">
+                    <div class="zy">
+                        
+	给定n个A和2n个B，用这些字符拼成一个字符串，要求这个串的所有前缀和后缀B的个数始终不少于A。
+
+
+	（一个字符串的前缀是只从开头到某个位置为止的子串，后缀是只从某个位置到结尾的子串）。
+
+
+	输入格式
+
+
+	多组数据，每组数据只有一行，包含一个正整数n。（n&lt;=10^17)。
+
+
+	输出格式
+
+
+	每组数据输出一行，最终结果对99991取余数的结果。
+
+
+	
+
+
+	
+
+                        <br />
+                            <strong>挑战规则：</strong> <br />
+
+	输入样例 &#160;
+
+
+	1
+
+
+	2
+
+
+	输出样例 &#160;
+
+
+	1
+
+
+	4
+
+
+	解释 &#160;
+
+
+	第一个样例只有BAB
+
+
+	第二个样例只有BBAABB &#160;BABABB &#160;BBABAB &#160;BABBAB
+                        <a href="javascript:void(0);" onclick="contentHide(606)" >
+                            <span class="shouqi" id="contentControlClose606">收起更多介绍</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                <!-- focus begin  -->
+                <div class="sub_box">
+                    <div class="sub_nav">
+                        <div class="sub_no" id="bd1lfsj601" style="display:none">
+                            <ul>
+                                    <li class="show"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="bd1lfimg601" class="bd1lfimg">
+                        <div>
+                            <dl class="show">
+                            </dl>
+                                <dl class="">
+                                    <dt><a href="http://org.job.csdn.net/Org/Details?ID=32" title="CSDN" target="_blank"><span class="hir_x_white">查看该公司招聘信息</span>
+                                        <img src="http://hire.job.csdn.net/image/AttachFile?fileid=38411" alt="CSDN"/>
+                                    </a></dt>
+                                    <dd>
+                                        <h2>
+                                            <a href="#" target="_blank"></a>
+                                        </h2>
+                                        <tt><a href="#" target="_blank"></a></tt>
+                                    </dd>
+                                </dl>
+                        </div>
+                    </div>
+                    <script type="text/javascript">                        movecMore("bd1lfsj601", "bd1lfimg601");</script>
+                </div>
+                <!-- focus end  --> 
+            
+            <div class="her_tag_add">
+                <a  href="/ProfileOperation/ShortProfile?title=AB%e4%b8%b2&amp;QID=606&amp;ExamID=601" id="a_601" target="_blank">现在挑战</a>
+                <div class="her_x_defiance">
+                    已有<span class="juhuang">185</span>人参与挑战，<span class="juhuang">5</span>人挑战成功
+                    &nbsp;&nbsp; <span title="分享到新浪微博" style="cursor:pointer; color:black"
+                 ExamID="601" QuestionID="606" Topic="AB串" Content="
+	给定n个A和2n个B，用这些字符拼成一个字符串，要求这个串的所有前缀和后缀B的个数始终不少于A。
+
+
+	（一个字符串的前缀是只从开头到某个位置为止的子串，后缀是只从某个位置到结尾的子串）。
+
+
+	输入格式
+
+
+	多组数据，每组数据只有一行，包含一个正整数n。（n&lt;=10^17)。
+
+
+	输出格式
+
+
+	每组数据输出一行，最终结果对99991取余数的结果。
+
+
+	
+
+
+	
+
+奖品：
+一等奖 1名 价值4999的诺基亚Lumia1020手机一台。
+二等奖 3名 价值799的平板电脑一台。
+三等奖 5名 价值199的移动电源一个。
+"  id="share601">
+                        <img src="http://static.bshare.cn/frame/images/logos/s4/sinaminiblog.gif" style="height: 16px;width: 16px;">
+                        <span style="padding-left: 2px; vertical-align: middle;">分享到新浪微博</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="hero_page"><span>共5条数据</span><a href="?pn=1"  class="on">1</a><span>到第</span><input type="text" class="hero_pageinp" id="pageNum"/><span>页</span><a href="javascript:void(0);"  onclick="javascript:gotoPageNum(15,1)" class="go">Go</a></div><script type="text/javascript">
+
+    function gotoPageNum(pageSize, pageNum) {
+        var pagev = $("#pageNum").val();
+        var reg = /^(-|\+)?\d+$/;
+        if (!reg.test(pagev)) {
+            alert("请输入正确的页码！");
+            return;
+        }
+        if (parseInt(pagev) < 1) {
+            pagev = 1;
+            $("#pageNum").val("1");
+        }
+        if (parseInt(pagev) > pageNum) {
+            pagev = pageNum;
+        }
+        location.href = "?pn=" + pagev;
+    }
+
+
+</script>
+
+
+            <div id="hero"></div>
+        </div>
+        <!-- left end -->
+        <!-- right begin -->
+        <div class="her_right">
+            <div class="her_topic_right">
+                <img src="http://image.job.csdn.net/hero/images/her_topic_left_bj.jpg" class="her_tlbj">
+                <ul class="t_l_text">
+                    <li>面向广大程序员，定期发布挑战题目或比赛，并有指明其赞助</li>
+                    <li>真刀真枪，挑战成功在万千程序员中显露头角</li>
+                    <li>头衔、奖品、甚至名企职位，只要你能通过挑战，这些都是你的</li>
+                </ul>
+                
+            </div>
+
+               <div class="her_topic_right">
+	    <h3 class="haping_t"><b>本期奖品</b></h3>
+        <p style="margin-left:19px;font-size:15px;color:#00cb00">
+            <b>
+                <a href="http://student.csdn.net/mcd/topic/163587/1117941" target="_blank">渣打科营“Mini Code Marathon”<br/>获奖信息</a>
+            
+            </b>
+        </p>
+        <p style="margin-left:19px;margin-top:5px;margin-bottom:5px;color:#000000"><b>评奖资格：</b></p>
+        <ul class="t_l_text">
+	        <li>按照通过指定题目的答案代码的完整性，高效性，可实现性来评比结果。</li>
+	        <li>活动最终解释权归渣打银行金融市场软件开发部（中国）所有。</li>
+        </ul>
+       <p style="margin-left:19px;margin-top:5px;margin-bottom:5px;color:#ff6a00">本次比赛仅包含一道指定赛题</p>
+       <p style="margin-left:19px;margin-bottom:5px;color:#000000"><b>奖励方式：</b></p>
+       <ul class="t_l_text">
+	        <li>价值5288元的iphone6一部。</li>
+	        <li>价值2888元的iPad mini 3一部。</li>
+            <li>京东800代金券一张</li>
+        </ul>
+    </div>
+    <div class="her_topic_right">
+		<h3 class="haping_t">贡献题目</h3>
+		<div class="her_platform">英雄会是一个开放的平台，我们欢迎您将好题目发布出来，大家共同参与挑战。</div>
+        <a href="/Publish/Create" target="_blank" class="her_challen">我要发布</a>
+		<div class="her_wline"></div>
+    </div>
+    <div class="her_topic_right">
+		<h3 class="haping_t">高校俱乐部</h3>
+		<div class="her_platform">高校俱乐部面向在校大学生推出线上编程挑战赛，月度、季度个人与高校大奖等你来拿，立即开始挑战！</div>
+        <a href="http://club.csdn.net/module/club/student/programming_challenges" target="_blank"><img src="http://image.job.csdn.net/hero/images/gxjlb.gif" style="float:right; margin:0 20px 0 0;" /></a>
+		<div class="her_wline"></div>
+	</div>
+
+            
+<script type="text/javascript" src="http://passport.csdn.net/content/loginbox/loginapi.js?v=1119799767"></script>
+<script type="text/javascript" src="/Scripts/SyncUserName.js?v=1119799767"></script>
+<script type="text/javascript" src="http://js.job.csdn.net/common/scrolllist/linescroller.js?v=1119799767"></script>
+<script type="text/javascript">
+    $(function () {
+        $.each($(".fb"), function (item, index) {
+            GetNicknameByUserName($(this).html());
+        });
+        setTimeout(function () {
+            $("#cooperlist").ScrollLine({ height: 800, lineselector: "dl.haping_c:last", timer: 2000, speed: 1500, directionupdown: "down" });
+        },200);
+    });
+</script>
+
+<div class="her_topic_right">
+	 <h3 class="haping_t">正在发生</h3>  
+     <div style="width:auto; height:auto; margin:0; padding:0; margin-bottom" id="cooperlist">     
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/qq_21441459" target="_blank"><img src="http://avatar.csdn.net/4/9/B/2_qq_21441459.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="qq_21441459" title="qq_21441459">qq_21441459</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=608&amp;ExamID=603" target="_blank" title="第五届在线编程大赛月赛第一题：完全平方数的个数"> 第五届在线编程大赛月赛第一题：完全平方数的个数</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/u012140512" target="_blank"><img src="http://avatar.csdn.net/0/B/3/2_u012140512.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="u012140512" title="u012140512">u012140512</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=608&amp;ExamID=603" target="_blank" title="第五届在线编程大赛月赛第一题：完全平方数的个数"> 第五届在线编程大赛月赛第一题：完全平方数的个数</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/jhyft6yhj" target="_blank"><img src="http://avatar.csdn.net/C/2/7/2_jhyft6yhj.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="jhyft6yhj" title="jhyft6yhj">jhyft6yhj</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/" target="_blank"><img src="http://avatar.csdn.net/0/8/4/2_guest.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="" title=""></dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/Dream_angel_Z" target="_blank"><img src="http://avatar.csdn.net/1/2/8/2_dream_angel_z.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="Dream_angel_Z" title="Dream_angel_Z">Dream_angel_Z</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=608&amp;ExamID=603" target="_blank" title="第五届在线编程大赛月赛第一题：完全平方数的个数"> 第五届在线编程大赛月赛第一题：完全平方数的个数</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/yuntianfan90" target="_blank"><img src="http://avatar.csdn.net/5/5/B/2_yuntianfan90.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="yuntianfan90" title="yuntianfan90">yuntianfan90</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/u013394489" target="_blank"><img src="http://avatar.csdn.net/9/D/6/2_u013394489.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="u013394489" title="u013394489">u013394489</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=606&amp;ExamID=601" target="_blank" title="AB串"> AB串</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/cgl616165946" target="_blank"><img src="http://avatar.csdn.net/4/B/8/2_cgl616165946.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="cgl616165946" title="cgl616165946">cgl616165946</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=608&amp;ExamID=603" target="_blank" title="第五届在线编程大赛月赛第一题：完全平方数的个数"> 第五届在线编程大赛月赛第一题：完全平方数的个数</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/cchd0001" target="_blank"><img src="http://avatar.csdn.net/8/6/C/2_cchd0001.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="cchd0001" title="cchd0001">cchd0001</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=616&amp;ExamID=611" target="_blank" title="第五届在线编程大赛月赛指定题目：反向互补子串"> 第五届在线编程大赛月赛指定题目：反向互补子串</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/u012288867" target="_blank"><img src="http://avatar.csdn.net/D/C/5/2_u012288867.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="u012288867" title="u012288867">u012288867</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/muier" target="_blank"><img src="http://avatar.csdn.net/8/8/A/2_muier.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="muier" title="muier">muier</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=606&amp;ExamID=601" target="_blank" title="AB串"> AB串</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/" target="_blank"><img src="http://avatar.csdn.net/0/8/4/2_guest.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="" title=""></dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=606&amp;ExamID=601" target="_blank" title="AB串"> AB串</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/" target="_blank"><img src="http://avatar.csdn.net/0/8/4/2_guest.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="" title=""></dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/u013503644" target="_blank"><img src="http://avatar.csdn.net/0/8/B/2_u013503644.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="u013503644" title="u013503644">u013503644</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/u012809800" target="_blank"><img src="http://avatar.csdn.net/1/9/F/2_u012809800.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="u012809800" title="u012809800">u012809800</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/wsyzn" target="_blank"><img src="http://avatar.csdn.net/8/F/0/2_wsyzn.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="wsyzn" title="wsyzn">wsyzn</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/zhao_120" target="_blank"><img src="http://avatar.csdn.net/1/4/3/2_zhao_120.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="zhao_120" title="zhao_120">zhao_120</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=608&amp;ExamID=603" target="_blank" title="第五届在线编程大赛月赛第一题：完全平方数的个数"> 第五届在线编程大赛月赛第一题：完全平方数的个数</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/hzr_cucumber" target="_blank"><img src="http://avatar.csdn.net/4/1/1/2_hzr_cucumber.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="hzr_cucumber" title="hzr_cucumber">hzr_cucumber</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/hndsdz" target="_blank"><img src="http://avatar.csdn.net/5/7/B/2_hndsdz.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="hndsdz" title="hndsdz">hndsdz</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=608&amp;ExamID=603" target="_blank" title="第五届在线编程大赛月赛第一题：完全平方数的个数"> 第五届在线编程大赛月赛第一题：完全平方数的个数</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/android_Text" target="_blank"><img src="http://avatar.csdn.net/F/4/1/2_android_text.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="android_Text" title="android_Text">android_Text</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/mayaoqi" target="_blank"><img src="http://avatar.csdn.net/3/F/5/2_mayaoqi.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="mayaoqi" title="mayaoqi">mayaoqi</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/u014766367" target="_blank"><img src="http://avatar.csdn.net/9/1/C/2_u014766367.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="u014766367" title="u014766367">u014766367</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/show3" target="_blank"><img src="http://avatar.csdn.net/5/B/7/2_show3.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="show3" title="show3">show3</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=608&amp;ExamID=603" target="_blank" title="第五届在线编程大赛月赛第一题：完全平方数的个数"> 第五届在线编程大赛月赛第一题：完全平方数的个数</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/sssarss99" target="_blank"><img src="http://avatar.csdn.net/4/E/D/2_sssarss99.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="sssarss99" title="sssarss99">sssarss99</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=608&amp;ExamID=603" target="_blank" title="第五届在线编程大赛月赛第一题：完全平方数的个数"> 第五届在线编程大赛月赛第一题：完全平方数的个数</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/" target="_blank"><img src="http://avatar.csdn.net/0/8/4/2_guest.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="" title=""></dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/kcj991932907" target="_blank"><img src="http://avatar.csdn.net/0/6/1/2_kcj991932907.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="kcj991932907" title="kcj991932907">kcj991932907</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/onewaveyanlei" target="_blank"><img src="http://avatar.csdn.net/B/8/3/2_onewaveyanlei.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="onewaveyanlei" title="onewaveyanlei">onewaveyanlei</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/eewcee" target="_blank"><img src="http://avatar.csdn.net/4/3/3/2_eewcee.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="eewcee" title="eewcee">eewcee</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/huang1900z" target="_blank"><img src="http://avatar.csdn.net/8/A/0/2_huang1900z.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="huang1900z" title="huang1900z">huang1900z</dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+	        <dl class="haping_c">
+		        <dt><a href="http://my.csdn.net/" target="_blank"><img src="http://avatar.csdn.net/0/8/4/2_guest.jpg" alt="" width="58" height="58"/></a></dt>
+		        <dd class="fb" name="" title=""></dd>
+		        <dd class="gary1">正在挑战：</dd>
+		        <dd class="green1"><a href="/Question/Details?ID=617&amp;ExamID=612" target="_blank" title="第五届在线编程大赛月赛第三题：石子游戏（1）"> 第五届在线编程大赛月赛第三题：石子游戏（1）</a></dd>					
+	        </dl>	
+    </div>	  
+</div>
+
+
+
+            
+        </div>
+        <!-- right end -->
+    </div>
+</div>
+
+
+    <script type="text/javascript">
+    document.write('<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date() / 120000).toString(36) + '="></' + 'script>');
+</script>
+<script id="csdn-toolbar-id" btnid="header_notice_num" wrapid="note1" count="5" subcount="5"
+    type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js?v=1119799767"></script>
+
+</body>
+</html>

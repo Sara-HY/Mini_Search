@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="mini_search">
+    <file>images/back.png</file>
+    <file>images/dialog_2.jpg</file>
+    <file>images/back_3.png</file>
+    <file>images/dialog.jpg</file>
+    <file>images/dialog_back.png</file>
+    <file>images/back_2.png</file>
+    <file>images/back.jpg</file>
+    <file>images/cloud.jpg</file>
+  </qresource>
+</RCC>

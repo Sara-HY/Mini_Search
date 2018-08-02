@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>俱乐部编程挑战群话题-高校俱乐部</title>
+<meta name="description" content="CSDN高校俱乐部（以下简称“俱乐部”）是由全球最大中文IT技术社区CSDN发起的，由全国各高校在校生代表自发加入的IT技术学习型组织" />
+<meta name="keywords" content="高校阵营、巡讲讲师、讨论、CSDN.NET、全球最大中文IT社区" />
+<link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">
+    <link rel="stylesheet" href="http://club.csdn.net/css/club/club/student/club.css"/>
+<!-- 报名 -->
+<script src="http://club.csdn.net/js/jquery.1.8.2.min.js" type="text/javascript"></script>
+<!--<script src="http://club.csdn.net/js/club/student/group.js" type="text/javascript"></script>-->
+
+<!-- 报名 -->
+</head>
+<body>
+  <!--[if lt IE 9]>
+<div style="background-color:#fcf8e1;text-align:center;font-size:16px;color:#ff9900;height:48px;line-height:48px;overflow:hidden;">你使用的浏览器版本过低，推荐使用新浏览器：<a style="color:#ff9900;font-weight:bold;" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">IE9+</a>，<a style="font-weight:bold;color:#ff9900;" href="http://www.google.com/intl/zh-CN/chrome/" target="_blank">谷歌浏览器</a>，<a href="http://www.firefox.com.cn/" style="font-weight:bold;color:#ff9900;" target="_blank">火狐</a>。</div>
+<![endif]-->
+  <script id="toolbar-tpl-scriptId" skin="black" fixed="true" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+<div class='alert alert-success' style='display: none;'>
+	<span style='display: block;text-align: center;' id="shownoticeinfo">
+	
+	</span>
+</div>
+
+<div role="banner" class="hclub-nav">
+  <div class="container">
+    <div role="navigation" class="navbar-collapse">
+      <ul class="navbar-nav">
+        <li ><a href="http://student.csdn.net/">首页</a></li>
+        <!--  <li ><a href="http://student.csdn.net/mcs/s_recruit">校园招聘</a></li>-->
+        <li ><a href="http://student.csdn.net/mcs/imaginecup2015">微软创新杯</a></li>
+        <li ><a href="http://student.csdn.net/mcs/programming_challenges">编程挑战</a></li>
+        <li ><a href="http://student.csdn.net/mcs/self_testing">自测</a></li>
+        <li class="active"><a href="http://student.csdn.net/mcg/home">讨论组</a></li>
+        <li ><a href="http://student.csdn.net/mcs/schools">高校阵营</a></li>
+        <li ><a href="http://student.csdn.net/mcs/help">帮助</a></li>
+        <li ><a href="http://student.csdn.net/myclub">我的俱乐部</a></li>
+      </ul>
+      <form class="pull-right" action="http://student.csdn.net/mcs/search/1">
+        <div class="input-group">
+          <input type="text" class="form-control" name='q' value="">
+          <span class="input-group-btn">
+          <button class="btn btn-default" ><span class="icon-search"></span></button>
+          </span>
+        </div>
+    </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  function showAlertSuccess(msg){
+	  $("#shownoticeinfo").text(msg);
+	  $(".alert.text-center, .alert.alert-error, .alert.alert-success").show();
+	  $(".alert.text-center, .alert.alert-error, .alert.alert-success").delay(1000).fadeOut("slow");
+  }
+  </script><style>
+img {
+	max-width:100% 
+}
+.loading {
+    background: url('http://student.csdn.net/images/club/student/replay_users_loading.gif') no-repeat center 5px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+</style>
+<script>
+document.domain = "csdn.net";
+</script>
+<script src="http://student.csdn.net/js/new_ckeditor/ckeditor.js"></script>
+<script id="application_js" src="http://student.csdn.net/js/club/student/application.js"></script>
+<link rel="stylesheet" href="http://student.csdn.net/css/club/club/student/font-awesome.css">
+<link rel="stylesheet" href="http://student.csdn.net/js/new_ckeditor/contents.css">
+<link rel="stylesheet" href="http://student.csdn.net/css/club/club/student/group.css">
+<div class="club_wrap">
+  <div class='container wrap_body'>
+    <div class='container-fluid'>
+      <div class='row-fluid'>
+        <link href="http://student.csdn.net/css/club/club/student/application-t.css" media="all" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="http://student.csdn.net/css/club/club/student/group_index.css" />
+<div class="group_header hclub-hall-tit">
+<img class='group_ico' src='http://csdn-groups.csdn.net/group_logo_235300'>
+<a class="group_name" href="http://student.csdn.net/mcg/home/235300">俱乐部编程挑战群</a>
+     <span class="icon-v-gold"></span>
+                        	            	<a href="javascript:void(0)" data_groupid="235300" class="btn btn-success group_operation_add" data-method="post"
+            	rel="nofollow">加入</a>
+            	                        
+            <div class='header_nav'>
+                                                            		            		            		            	<span class=''> <a href="http://student.csdn.net/mcd/get_discuss_list/235300"><i class="icon-comments"></i>  讨论</a> </span>
+	            	            	                        	                        <!-- 判断是否有权限 并且添加app不为空 -->
+                                    </div>
+          </div>
+ <script>
+ $(function(){
+ 	//	退出群组ajax
+ 	$(".group_operation_exit").click(function(){
+	 	$.ajax({
+	      type: "POST",
+	      url: "http://student.csdn.net/mcs/exit_group/",
+	      data: 'group_id='+$(this).attr("data_groupid"),
+	      dataType: "json",
+	      success: function(data){
+	    	  if(data.id==3||data.id==4){
+	    		 showAlertSuccess(data.msg)
+	    	 	 window.setTimeout("goToUrl("+data.id+")",2000);
+		      }else{
+		    	 window.location.reload();
+		      }
+	      }
+	   });
+ 	})
+ 	//加入群组ajax
+ 	$(".group_operation_add").click(function(){
+	 	$.ajax({
+	      type: "POST",
+	      url: "http://student.csdn.net/mcs/add_group/",
+	      data: 'group_id='+$(this).attr("data_groupid"),
+	      dataType: "json",
+	      success: function(data){
+	    	  if(data.id==3||data.id==4){
+	    		 showAlertSuccess(data.msg)
+		    	 window.setTimeout("goToUrl("+data.id+")",2000);
+			  }else{
+			     window.location.reload();
+			  }
+	      }
+	  });
+ 	});
+ })
+ //跳转页面
+ function goToUrl(statuse){
+	 if(statuse==3){
+		 window.location.href="https://passport.csdn.net/account/login?from="+window.location.href;
+	 }else if(statuse==4){
+		 window.location.href="http://student.csdn.net/m/club/student/member/apply/4/4/";
+	 }else{
+		 window.location.reload();
+	 }
+ }
+ </script>                <h1> 一道仅有7人通过的超5星微软比赛题目-------解题思路&优秀代码分享，邀你来“找茬儿” </h1>
+        <div class='tags_box'> 
+        <span>编程挑战</span>&nbsp;<span>题目解析</span>&nbsp;        </div>
+        <div class='discuss_box'>
+                  <div class='discuss_user'> <a href='http://my.csdn.net/u013951998' target='_blank'> <img src='http://avatar.csdn.net/p/u013951998/2'>
+            <p>SophyJ</p>
+            </a>
+            
+                        <span>管理员</span><span class="reply_school_name" title="CSDN高校俱乐部">CSDN高校</span>            
+            </div>
+          <div class='discuss_main'>
+            <div class='discuss_body'>
+              <div class='discuss_cont'>
+                <div class='content_box'>
+                 	<p>6月23日英雄会平台发布了一道难度为超5星的微软比赛题目，截止活动结束共有300多名编程爱好者参与线上答题，而最终通过者仅有7人，通过率仅为2%。为什么成绩如此出人意料？是因为题目的英文描述难以理解？还是题目本身的难度太高让很多人望而生畏知难而退？</p>
+
+<hr />
+<p>为此我们诚邀各路英雄豪杰前来切磋探讨，共同发现：</p>
+
+<h3><strong>1.解题思路：本次大赛一等奖获得者-大连理工大学学生__newSolar，提供两种解题思路；</strong></h3>
+
+<h3><strong>2.代码样本：雅虎刷题狂人曹鹏专家的代码将作为样本展示，供学习借鉴；</strong></h3>
+
+<h3><strong>3.&ldquo;一起来找茬儿&rdquo;：在所有答题者中，抽选部分未通过的错误代码，邀你来&ldquo;找茬&rdquo;；</strong></h3>
+
+<hr />
+<h3><strong>题目描述：</strong></h3>
+
+<p>在微软云计算服务的机房，有很多机器上跑着一个或者多个的虚拟机。在一段时间里，有很多用户会来请求建立虚拟机，或者把虚拟机关闭。这个时候，一个最重要的问题，是如何把用户的请求分配到不同的机器上。这里我们把实际的问题简化成对CPU的申请。</p>
+
+<p>假定有M台机器用来服务用户，我们把机器编号成0到M。每台机器有多个CPU核，我们把核编号为0到Cm。</p>
+
+<p>当用户在申请资源的时候，会生成一个请求 &ldquo;申请&lt;k&gt;个核&rdquo;，并且每个请求编号为m如果我们在现有的机器中能找到一台机器能满足，这台机器的空余的连续的核能满足要求的话，就返回&lt;M, C&gt;作为结果。M是机器的下标，C是申请的第一个核的下标。如果没有找到能满足请求的机器，&lt;-1,</p>
+
+<p>-1&gt;作为结果。</p>
+
+<p>当用户释放资源的时候，生成一个请求&rdquo;第m个请求的资源释放&rdquo;。保证一个请求释放最多一次。如果请求没有满足，忽略释放的请求。</p>
+
+<p>输入</p>
+
+<p>第一行是T, 总共的测试的个数</p>
+
+<p>每个测试，第一行给出M 和Q，机器的总数和请求的个数</p>
+
+<p>接下来是M行给出每一台机器的核数 Ci</p>
+
+<p>接下来Q行给出请求。请求两种格式，</p>
+
+<p>1. &nbsp; &nbsp; &nbsp; A k &nbsp; &nbsp;表示申请k个核</p>
+
+<p>2. &nbsp; &nbsp; &nbsp; F m &nbsp; 表示释放第m个请求申请的核</p>
+
+<p>输出</p>
+
+<p>对于每一个测试，首先输出</p>
+
+<p>&ldquo;Case #i:&rdquo; &nbsp;i是测试的标号，从1开始。</p>
+
+<p>接下来对于所有申请的请求，输出m c 或者-1</p>
+
+<p>-1</p>
+
+<p>[限制条件]</p>
+
+<p>1 &lt;= T &lt;= 20</p>
+
+<p>1 &lt;= M &lt;= 100000</p>
+
+<p>1 &lt;= Ci &lt;= 128</p>
+
+<p>1 &lt;= Q &lt;= 1000000</p>
+
+<p>1 &lt;= k &lt;= 128</p>
+
+<p>1 &lt;= m &lt;= M</p>
+
+<p>The number of queries of type 1 is the same</p>
+
+<p>as that of type 2.</p>
+
+<hr />
+<h3><strong>题目解析：</strong></h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 考虑到数据范围，共有10W个机器，100W次查询，时间上不足以在每次询问中遍历所有的机器，但考虑到CPU的数量只有128</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 可以从这里入手加快查询效率。</p>
+
+<h3><strong>解法一：</strong></h3>
+
+<p>我们维护128个集合，每个集合存储不同的最长连续空闲核数的机器，(eg, 集合1存最长空闲数为1的机器，集合2存最长空闲数为2的机器）。对于每次A询问，申请核数为k，我们只需枚举从k到128的所有集合中机器编号最小的，为了查找效率，我们可以使用</p>
+
+<p>c++STL的set (或者java的TreeSet), 内部是树形结构，每个集合的第一个元素即为最小元素，查找到之后暴力更新这个机器使用情况并把新的机器信息加入到集合中，同时为了F操作保存询问信息。对于F操作相对简单，直接恢复记录的信息并更新机器信息就可以了。</p>
+
+<p>此方法每次询问的复杂度大约为O(128*log(n))。</p>
+
+<h3><strong>解法二：</strong></h3>
+
+<p>对于每次询问，我们直接从10W个机器下手，为了提高效率可以使用线段树，线段树的每个节点维护当前区间所有机器最长空闲数，对于A查询，申请核数为k，如果当前节点左儿子值&gt;=k，则在左子树中查询，否则在右子树查询，可以很容易在log(n)时间内查询到所需要的机器。其他操作和上一种解法类似。</p>
+
+<hr />
+<h3><strong>代码展示（解法一）：</strong></h3>
+
+<p><a href="http://student.csdn.net/mcd/topic/235300/937965">http://student.csdn.net/mcd/topic/235300/937965</a></p>
+
+<h3><strong>代码展示（解法二）：</strong></h3>
+
+<p><a href="http://student.csdn.net/mcd/topic/235300/937980">http://student.csdn.net/mcd/topic/235300/937980</a></p>
+
+<h3><strong>雅虎刷题狂人曹鹏专家代码展示：</strong></h3>
+
+<p><a href="http://student.csdn.net/mcd/topic/235300/937984">http://student.csdn.net/mcd/topic/235300/937984</a></p>
+
+<hr />
+<h3><strong>&ldquo;一起来找茬儿&rdquo;:在所有答题者中，抽选部分未通过的错误代码，邀你来&ldquo;找茬&rdquo;</strong></h3>
+
+<p>错误代码一：<a href="http://student.csdn.net/mcd/topic/235300/937968">http://student.csdn.net/mcd/topic/235300/937968</a></p>
+
+<p>错误代码二：<a href="http://student.csdn.net/mcd/topic/235300/937971">http://student.csdn.net/mcd/topic/235300/937971</a></p>
+
+<p>错误代码三：<a href="http://student.csdn.net/mcd/topic/235300/937972">http://student.csdn.net/mcd/topic/235300/937972</a></p>
+                </div>
+              </div>
+              <div class='discuss_floor clearfix'>
+                <ul class='pull-right inline'>
+                  <li class='share tip' data-original-title='分享到'> <span> <span class='btn-group'> <i class='icon-share'>
+                    <ul class='dropdown-menu'>
+                      <div class='social-share-button' data-title='一道仅有7人通过的超5星微软比赛题目-------解题思路&优秀代码分享，邀你来“找茬儿”' data-img='' data-url=''> <a href="#" class="social-share-button-weibo" data-site="weibo" onclick="return SocialShareButton.share(this);" rel="nofollow " title="分享到新浪微博"></a> <a href="#" class="social-share-button-douban" data-site="douban" onclick="return SocialShareButton.share(this);" rel="nofollow " title="分享到豆瓣"></a> <a href="#" class="social-share-button-tqq" data-site="tqq" onclick="return SocialShareButton.share(this);" rel="nofollow " title="分享到腾讯微博"></a> <a href="#" class="social-share-button-renren" data-site="renren" onclick="return SocialShareButton.share(this);" rel="nofollow " title="分享到人人网"></a> <a href="#" class="social-share-button-qq" data-site="qq" onclick="return SocialShareButton.share(this);" rel="nofollow " title="分享到QQ空间"></a> <a href="#" class="social-share-button-kaixin001" data-site="kaixin001" onclick="return SocialShareButton.share(this);" rel="nofollow " title="分享到开心网"></a> <a href="#" class="social-share-button-baidu" data-site="baidu" onclick="return SocialShareButton.share(this);" rel="nofollow " title="分享到百度收藏"></a> </div>
+                    </ul>
+                    </i> </span> </span> </li>
+                                                                                         <li style="height:44px;">
+                  	<a class='tip'  data-original-title='称赞' onclick="start_topic(937958);">
+                   	<span class="hclub-icon-blue-zan"></span>
+                    <span  class="hclub-icon-blue-txt">3</span>
+                   </a> 
+                  </li>
+                                                                                                                                             </ul>
+              </div>
+            </div>
+            <div class='discuss_info clearfix' id='UserFilter'>
+                          <dl>
+                <dt>创建</dt>
+                <dd> <a href='http://my.csdn.net/u013951998' target='_blank'> <img class='tip' data-original-title='ru013951998' data-placement='bottom' src='http://avatar.csdn.net/p/u013951998/2'> </a> 2014-08-28 </dd>
+              </dl>
+              <dl>
+                <dt>浏览</dt>
+                <dd> 73750次 </dd>
+              </dl>
+              <dl>
+                <dt> 最新回复 <a href="http://student.csdn.net/mcd/topic/235300/937958?order=new&page=1" class="tip active" data-original-title="点击按回复时间降序排序"><i class='icon-arrow-up'></i> </a></dt>
+                <dd> 2014-08-28 </dd>
+              </dl>
+              <dl>
+                <dt> 回复 <a href="http://student.csdn.net/mcd/topic/235300/937958?order=reply_count&page=1" class="tip " data-original-title="按回复数排序"><i class='icon-arrow-down'></i> </a></dt>
+                <dd> <a>0</a> </dd>
+              </dl>
+              <dl>
+                <dt> 赞 <a href="http://student.csdn.net/mcd/topic/235300/937958?order=star_count&page=1" class="tip " data-original-title="按称赞数排序"><i class='icon-arrow-down'></i> </a></dt>
+                <dd> <a>3</a> </dd>
+              </dl>
+              <ul class='user_list user-filter'>
+                            </ul>
+              
+            </div>
+          </div>
+        </div>
+       
+        <div class='reply_div'>
+                
+  <script>
+  $('.tip').tooltip();
+  
+  function replyAjax ( item ) {
+	  
+	var url = item.find( '.expand_s' ).attr( 'href' );
+	
+	$.post(url, function(data){
+			//async : false,
+		if(data !=0){
+			var dataObj = eval("("+data+")");
+				//$("#'.reply_id.' .discuss_body").append
+			$('#'+dataObj.reply_id+' .discuss_body').append(dataObj.msg);
+		}else{
+			alert('该回复已经被删除');
+			return false;
+		}	
+	});
+  }
+
+  function remove_html(dataObj){
+	  $('#'+dataObj.reply_id+' .discuss_body .discuss_box').remove();
+  }
+  
+  $( '.discuss_floor').bind( 'click', function (e) {
+	  	//if(!$(e.target).hasClass('reply_count')||!$(e.target).parents().filter('.reply_count')){ return};
+	  	if(!$(e.target).hasClass('reply_count')){ 
+		  	if($(e.target).parents().filter('.reply_count').length==0){ 
+		 		return;
+		 	}
+		};
+	  	
+	  	
+	    var item = $( this );
+		
+		if ( item.hasClass( 'opened' ) )
+		{
+			item.removeClass( 'opened' );
+			item.addClass( 'closed' );
+			return false;
+		}
+		else if ( item.hasClass( 'closed' ) )
+		{
+			item.removeClass( 'closed' );
+			item.addClass( 'opened' );
+			replyAjax( item );
+			return false;
+		}
+  } );
+
+  
+  $('.expand_s').click(function(){
+    if ($(this).attr('href') == 'javascript:void(0);'){
+      return false;
+    }
+    var that = $(this);
+    var href = $(this).attr('href');
+    setTimeout(function(){that.attr('href', 'javascript:void(0);');}, 0);
+    setTimeout(function(){that.attr('href', href);}, 1000);
+    return true;
+  });
+</script> 
+
+</div>
+<div class='discuss_box reply_form'>
+<!-- 获取用户头像信息 -->
+  <div class='discuss_user'> <a> <img src='http://avatar.csdn.net/p//2'>
+    <p></p>
+    </a>
+    <span>
+            </div>
+  <div class='discuss_main'>
+    <div class='discuss_body'>
+      <form accept-charset="UTF-8" action="http://student.csdn.net/mcd/reply_discources/235300/937958" class="form-inline" id="reply_form" method="post">
+        <div class='discuss_form'>
+          <textarea cols="40" id="ckeditors" name="reply[content]" rows="20">
+		  </textarea>
+		  <script type="text/javascript">CKEDITOR.replace('ckeditors');</script>
+        </div>
+        <div class='discuss_floor clearfix'>
+          <div class='pull-right'>
+            <input class='btn cancel_reply' type='button' value='取消'>
+            <input class="btn btn-success" id="submit_reply" name="commit" type="submit" value="提交" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<script><!--
+  function collapse(id) {
+    $(id + " .discuss_box").remove();
+    var li = $(id + " .opened");
+    li.removeClass("opened");
+    li.addClass("closed");
+  };
+
+  $('.reply_show').click(function(){
+    var self = arguments.callee;
+    var $user_list = $('.user_list_all');
+    var $icon = $( this ).find( 'i' );
+    var _this = this;
+
+    if ( $user_list.length > 0 )
+    {
+        $('.user_list_all').toggleClass('opened');
+        $(this).children('i').toggleClass('icon-chevron-down').toggleClass('icon-chevron-up');
+    }
+    else
+    {
+        $( _this ).unbind( 'click', self );
+        $icon.removeClass( 'icon-chevron-down' );
+        $icon.addClass( 'loading' );
+        $.post('http://student.csdn.net/mcd/open_replay_users/235300/937958',function(data){
+            var $pull_right = $( '#pull_right_last_001' );
+
+            ( $pull_right.next().length > 0 ) && $pull_right.next().remove();
+
+            $pull_right.after( data );
+            $('.tip').tooltip();
+            $icon.addClass( 'icon-chevron-down' );
+            $icon.removeClass( 'loading' );
+            $( _this ).bind( 'click', self );
+        });
+        $( document ).ajaxSend(function() {
+            //alert( 888 );
+        });
+    }
+
+  });
+  //window.parent.CKEDITOR.tools.callFunction(#{params['CKEditorFuncNum']}, 'http://csdn-groups.csdn.net/group_attachment_2451c44856ac88d45ec987fdece4c158', 'error');
+  
+  function doEdit(obj, action, reply_user){
+	  //console.log(reply_user);
+    //$('.reply_form').fadeOut(500);
+    //$('.cke').remove();
+	    //debugger
+    $('.reply_edit_btn,.content_box').show();
+    $('.reply_save_btn,.reply_cancel_btn').hide();
+  
+    if(action != false)
+      $('.reply_form form.form-inline').attr('action', action);
+    if(reply_user != '') {
+      $('.reply_form .reply_user.pull-left').html(reply_user);
+      $('.reply_form .reply_user.pull-left').show();
+    } else {
+      $('.reply_form .reply_user.pull-left').hide();
+    }
+  
+    $('.reply_form').insertAfter($(obj).parents('.discuss_box'));
+    $('.reply_form').show();
+    $('.cke').remove();
+    var instance = CKEDITOR.instances['ckeditors'];
+    $("#ckeditors").val($(obj).parents().filter(".discuss_body").find(".content_box").html());
+     $("#reply_form").attr("lang",$(obj).parents().filter(".discuss_box").attr("id"));
+     $(obj).parents().filter(".discuss_box").hide();
+	 if ( instance) {
+	    CKEDITOR.remove( instance);
+	 }
+  	CKEDITOR.replace('ckeditors');
+    
+  }
+
+  function reply(obj, action, reply_user){
+    //$('.reply_form').fadeOut(500);
+    //$('.cke').remove();
+    $('.reply_edit_btn,.content_box').show();
+    $('.reply_save_btn,.reply_cancel_btn').hide();
+
+    if(action != false)
+      $('.reply_form form.form-inline').attr('action', action);
+    if(reply_user != '') {
+      $('.reply_form .reply_user.pull-left').html(reply_user);
+      $('.reply_form .reply_user.pull-left').show();
+    } else {
+      $('.reply_form .reply_user.pull-left').hide();
+    }
+
+    $('.reply_form').insertAfter($(obj).parents('.discuss_box'));
+    $('.reply_form').show();
+    $('.cke').remove();
+    var instance = CKEDITOR.instances['ckeditors'];
+    if ( instance) {
+      CKEDITOR.remove( instance);
+    }
+    CKEDITOR.replace('ckeditors');
+  }
+  
+  $('.cancel_reply').click(function(e){
+	var _id = $("#reply_form").attr("lang");
+	$("#ckeditors").val("");
+	$("#"+_id).show();
+    $('.reply_form').fadeOut(500);
+    $('.cke').remove();
+  });
+  
+  $('.reply_edit_btn').click(function(){
+    $('.content_box,.reply_edit_btn').show();
+    $(this).parents('.discuss_box').find('.reply_user').hide();
+    $('.content_input,.reply_save_btn,.reply_cancel_btn,.reply_form').hide();
+    $('.cke').remove();
+    $(this).parents('.discuss_box').find('.content_box').hide();
+
+    $(this).parents('.discuss_box').find('.content_box').attr("id");
+    
+    var _thisId = $(this).parents('.discuss_box').find('.content_input').attr('id');
+  
+    var instance = CKEDITOR.instances[_thisId];
+    if ( instance) {
+      CKEDITOR.remove( instance);
+    }
+    CKEDITOR.replace(_thisId, {toolbar : 'Full' });
+    $(this).hide();
+    $(this).siblings('.reply_save_btn, .reply_cancel_btn').show();
+  });
+  
+  $('.reply_save_btn').click(function(){
+    var _thisIds = $(this).parents('form').find('.discuss_cont').attr('id');
+    var instance = CKEDITOR.instances['_thisIds'];
+    CKEDITOR.remove( instance);
+    $(this).hide();
+    $(this).siblings('.reply_edit_btn').show();
+  });
+  
+  $('.reply_cancel_btn').click(function(){
+    $('.content_box').show();
+    $('.content_input').hide();
+    $('.cke').remove();
+    $('.reply_edit_btn').show();
+    $('.reply_save_btn').hide();
+    $(this).hide();
+    $(this).parents('.discuss_box').find('.reply_user').show();
+    //window.location.reload();
+  });
+  
+  $('#reply_form').submit(function(){
+    $('#submit_reply').val('提交中...');
+    $('#submit_reply').attr('disabled', true);
+    return true;
+  });
+
+function star_reply(topic_id,reply_id){
+	$.post('http://student.csdn.net/mcd/star_reply/235300/'+topic_id+'/'+reply_id, function(data){
+		  if(data==1){
+			  location.reload();
+		  }
+	});
+	return false;
+}
+function unstar_reply(topic_id,reply_id){
+	$.post('http://student.csdn.net/mcd/unstar_reply/235300/'+topic_id+'/'+reply_id, function(data){
+		  if(data==1){
+			  location.reload();
+		  }
+	});
+	return false;
+}
+function delete_reply(topic_id,reply_id){
+	$.post('http://student.csdn.net/mcd/delete_reply/235300/'+topic_id+'/'+reply_id, function(data){
+		  if(data==1){
+			  location.reload();
+		  }
+	});
+	return false;
+}
+
+
+  function start_topic(topic_id){
+	//console.log(topic_id);
+        alert("群成员才可以称赞哦~");
+      return false;
+  	$.post('http://student.csdn.net/mcd/d_star/235300/'+topic_id, function(data){
+		  if(data==1){
+			 
+        window.location.href="http://student.csdn.net/mcd/topic/235300/"+topic_id;
+		  }
+	});
+	return false;	
+  }
+
+  function unstart_topic(topic_id){
+		//console.log(topic_id);
+		$.post('http://student.csdn.net/mcd/d_unstar/235300/'+topic_id, function(data){
+			  if(data==1){
+				  location.reload();
+			  }
+		});
+		return false;	
+	}
+  function ontop(topic_id){
+		//console.log(topic_id);
+		$.post('http://student.csdn.net/mcd/top_discuss/235300/'+topic_id, function(data){
+			  if(data==1){
+				  location.reload();
+			  }
+		});
+		return false;	
+	}
+  function unontop(topic_id){
+		//console.log(topic_id);
+		$.post('http://student.csdn.net/mcd/untop_discuss/235300/'+topic_id, function(data){
+			  if(data==1){
+				  location.reload();
+			  }
+		});
+		return false;	
+	}
+  function lock_topic(topic_id){
+		//console.log(topic_id);
+		$.post('http://student.csdn.net/mcd/lock_discuss/235300/'+topic_id, function(data){
+			  if(data==1){
+				  location.reload();
+			  }
+		});
+		return false;
+	}
+  function unlock_topic(topic_id){
+		//console.log(topic_id);
+		$.post('http://student.csdn.net/mcd/unlock_discuss/235300/'+topic_id, function(data){
+			  if(data==1){
+				  location.reload();
+			  }
+		});
+		return false;	
+	}
+--></script>
+</div>
+<div class="page_nav">0条数据 共0页<a  class='first'>首页</a><a class='pre'>上一页</a> <a  class='next'>下一页</a><a  class='last'>尾页</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  if (document.addEventListener)  
+  {//如果是Firefox   
+      document.addEventListener("keypress", fireFoxHandler, true);   
+  } else  
+  {   
+      document.attachEvent("onkeypress", ieHandler);   
+  }   
+  function fireFoxHandler(evt)  
+  {   
+      //alert("firefox");   
+      if (evt.keyCode == 13)  
+      {   
+          //document.forms[0].submit();  
+		  $(evt.target).parents().filter("form").submit();
+      }   
+  }   
+  function ieHandler(evt)  
+  {   
+      //alert("IE");   
+      if (evt.keyCode == 13)  
+      {   
+          document.forms[0].submit();
+
+      }   
+  }  
+
+</script>
+
+<!--返回顶部 css begin-->
+<img alt="Top_arrow" id="top_arrow" class="top_arrow" src="/images/club/top_arrow.png" style="display: block; cursor: pointer;">
+<style type="text/css">
+.top_arrow {
+    border: 0 none;
+    bottom: 150px;
+    cursor: pointer;
+    display: block;
+    height: auto;
+    margin: 0;
+    opacity: 0.5;
+    padding: 0;
+    position: fixed;
+    right: 40px;
+    width: 35px;
+    z-index: 2147483647;
+}
+
+</style>
+<!--返回顶部 css end-->
+<script type="text/javascript">
+/*返回顶部 begin */
+$(document).ready(function(){
+	//首先将#top_arrow隐藏
+	    $("#top_arrow").hide();
+	//当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+	    $(function () {
+	        $(window).scroll(function(){
+	            if ($(window).scrollTop()>100){
+	                $("#top_arrow").fadeIn(400);
+	            }
+	            else
+	            {
+	                $("#top_arrow").fadeOut(400);
+	            }
+	        });
+	//当点击跳转链接后，回到页面顶部位置
+	        $("#top_arrow").click(function(){
+	            $('body,html').animate({scrollTop:0},400);
+	            return false;
+	        });
+	    });
+	});
+
+/*返回顶部  end */
+
+//分页跳转
+function  skip(){
+     var page = $('#skip').val();
+     }
+
+</script> 
+<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js"></script>
+<script type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+<div style='display:none;'>
+<!--高校俱乐部-->
+<script src="http://s15.cnzz.com/stat.php?id=5191758&web_id=5191758&show=pic" language="JavaScript"></script>
+<!-- 俱乐部 -->
+<script src="http://s9.cnzz.com/stat.php?id=2568957&web_id=2568957&show=pic" language="JavaScript"></script>
+</div>
+<!-- bss  -->
+<div style="display:none;"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5752922'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D5752922%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div><!-- bss  --></body>
+</html>
+<div class='modal hide fade' id='modal-dialog'>
+  <div class='modal-header'>
+    <button aria-hidden='true' class='close' data-dismiss='modal' type='button'>&times;</button>
+    <h3 id='modal-title'>对话框标题</h3>
+  </div>
+  <div class='modal-body'>
+    <p id='modal-content'>对话框内容</p>
+  </div>
+</div>
+<script>
+  $(function(){
+    $(".alert.text-center").fadeOut("slow");
+    $(".alert.alert-error").fadeOut("slow");
+    $(".alert.alert-success").fadeOut("slow");
+  });
+</script>

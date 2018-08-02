@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第七届云计算大会</title>
+  <script src="http://static.csdn.net/cdn/201502/js/jquery-1.11.2.min.js"></script>
+  <link href="http://static.csdn.net/cdn/201502/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="http://static.csdn.net/cdn/201502/css/bootstrap.min.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link href="http://bss.csdn.net/themes/zone/ciecloud_2015/css/index.css" rel="stylesheet">
+  <!--右侧边栏-->
+  <link href="http://bss.csdn.net/themes/zone/ciecloud_2015/css/right_side.css" rel="stylesheet">
+  <!--右侧边栏-->
+  <!--头-->
+  <link href="http://bss.csdn.net/themes/zone/ciecloud_2015/css/header.css" rel="stylesheet" />
+  <!--头-->
+  <!--浮动工具条-->
+  <link href="http://bss.csdn.net/themes/zone/ciecloud_2015/css/toolbar.css" rel="stylesheet" />
+  <!--浮动工具条-->
+</head>
+<body>
+<!--头-->
+<div class="header">
+  <div class="container head-cont">
+    <div class="row">
+      <div class="col-xs-2"><a href="http://www.ciecloud.org/2015" class="logo"></a></div>
+      <h4 class="visible-xs col-xs-7">第七届云计算大会</h4>
+      <div class="col-xs-4 col-sm-3"></div>
+      <div class="col-xs-6 col-sm-7 top-cont hidden-xs text-right">
+        <ul class="list-inline">
+          <li><i class="fa fa-clock-o"></i>2015年6月3-5日</li>
+          <li><i class="fa fa-map-marker"></i>国家会议中心·北京</li>
+        </ul>
+        <h1>第七届中国云计算大会</h1>
+        <p>促进云计算创新发展  培育信息产业新业态</p>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-inverse navbar-static-top hidden-print">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">切换导航</span><i class="fa fa-bars fa-lg"></i></button>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="visible-lg"><a href="http://www.ciecloud.org/2015"><i class="fa fa-home"></i></a></li>
+          <li class="dropdown dropdown-split-right  ">
+            <div href="#" data-toggle="dropdown" class="dropdown-toggle">
+              <div class="clearfix">
+                <div class="pull-left">
+                  <h3>关于云计算大会<i class="fa fa-caret-down hidden-xs"></i></h3>
+                  <h4>组织机构与回顾</h4>
+                </div>
+                <i class="fa fa-plus pull-right visible-xs"></i></div>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.ciecloud.org/2015/sponsors"><i class="fa fa-chevron-right"></i>组织机构</a></li>
+              <li><a href="http://www.ciecloud.org/2015/review"><i class="fa fa-chevron-right"></i>往期回顾</a></li>
+              <li><a href="http://www.ciecloud.org/2014/index.html" target="_blank"><i class="fa fa-chevron-right"></i>2014年第六届大会回顾</a></li>
+              <li><a href="http://www.ciecloud.org/2013/index.html" target="_blank"><i class="fa fa-chevron-right"></i>2013年第五届大会回顾</a></li>
+              <li><a href="http://www.ciecloud.org/2012/index.html" target="_blank"><i class="fa fa-chevron-right"></i>2012年第四届大会回顾</a></li>
+              <li><a href="http://www.ciecloud.org/2011/index.html" target="_blank"><i class="fa fa-chevron-right"></i>2011年第三届大会回顾</a></li>
+              <li><a href="http://www.ciecloud.org/2010" target="_blank"><i class="fa fa-chevron-right"></i>2010年第二届大会回顾</a></li>
+              <li><a href="http://subject.it168.com/survey/yit/index.html" target="_blank"><i class="fa fa-chevron-right"></i>2009年第一届大会回顾</a></li>
+            </ul>
+          </li>
+          <li class="dropdown dropdown-split-right  ">
+            <div href="#" data-toggle="dropdown" class="dropdown-toggle">
+              <div class="clearfix">
+                <div class="pull-left">
+                  <h3>注册参会<i class="fa fa-caret-down hidden-xs"></i></h3>
+                  <h4>购票与其他参会方式</h4>
+                </div>
+                <i class="fa fa-plus pull-right visible-xs"></i></div>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.ciecloud.org/2015/guide_ticket"><i class="fa fa-chevron-right"></i>票种及票价</a></li>
+              <li><a href="http://www.ciecloud.org/2015/volunteer"><i class="fa fa-chevron-right"></i>志愿者招募</a></li>
+              <li><a href="http://huiyi.csdn.net/activity/lecturer/reg?aid=1357" target="_blank"><i class="fa fa-chevron-right"></i>申请演讲机会</a></li>
+              <li><a href="http://www.ciecloud.org/2015/guide_ticket#traffic"><i class="fa fa-chevron-right"></i>参会指南</a></li>
+            </ul>
+          </li>
+          <li class="dropdown dropdown-split-right hot  ">
+            <div href="#" data-toggle="dropdown" class="dropdown-toggle">
+              <div class="clearfix">
+                <div class="pull-left">
+                  <h3>会议<i class="fa fa-caret-down hidden-xs"></i></h3>
+                  <h4>日程、嘉宾与展览</h4>
+                </div>
+                <i class="fa fa-plus pull-right visible-xs"></i></div>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.ciecloud.org/2015/overview"><i class="fa fa-chevron-right"></i>会议概览</a></li>
+
+              <li><a href="http://www.ciecloud.org/2015/schedule"><i class="fa fa-chevron-right"></i>大会日程</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown dropdown-split-right  ">
+            <div href="#" data-toggle="dropdown" class="dropdown-toggle">
+              <div class="clearfix">
+                <div class="pull-left">
+                  <h3>合作<i class="fa fa-caret-down hidden-xs"></i></h3>
+                  <h4>赞助、合作与服务</h4>
+                </div>
+                <i class="fa fa-plus pull-right visible-xs"></i></div>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.ciecloud.org/2015/opportunity"><i class="fa fa-chevron-right"></i>合作机会</a></li>
+                            <li><a href="http://www.ciecloud.org/2015/partners"><i class="fa fa-chevron-right"></i>合作伙伴</a></li>
+              
+              <li><a href="http://www.ciecloud.org/2015/conference_media"><i class="fa fa-chevron-right"></i>大会媒体</a></li>
+            </ul>
+          </li>
+          <li class="dropdown dropdown-split-right  ">
+            <div href="#" data-toggle="dropdown" class="dropdown-toggle">
+              <div class="clearfix">
+                <div class="pull-left">
+                  <h3>活动<i class="fa fa-caret-down hidden-xs"></i></h3>
+                  <h4>培训、项目评选</h4>
+                </div>
+                <i class="fa fa-plus pull-right visible-xs"></i></div>
+            </div>
+            <ul class="dropdown-menu">
+            	<li><a href="http://www.ciecloud.org/2015/docker"><i class="fa fa-chevron-right"></i>Docker 实战技术</a></li>
+              <li><a href="http://www.ciecloud.org/2015/hadoop"><i class="fa fa-chevron-right"></i>Hadoop 2.0 运维管理与集群安装监控 </a></li>
+              <li><a href="http://www.ciecloud.org/2015/enterprise"><i class="fa fa-chevron-right"></i>企业高管商业变革实战</a></li>
+              
+              <li style="display: none"><a href="http://www.ciecloud.org/2015/spark"><i class="fa fa-chevron-right"></i>Spark 技术培训</a></li>
+              <li style="display: none"><a href="http://cloudpx.zdnet.com.cn/" target="_blank"><i class="fa fa-chevron-right"></i>创新项目评选</a></li>
+            </ul>
+          </li>
+          <li class="dropdown dropdown-split-right  ">
+            <div href="#" data-toggle="dropdown" class="dropdown-toggle">
+              <div class="clearfix">
+                <div class="pull-left">
+                  <h3>专委会<i class="fa fa-caret-down hidden-xs"></i></h3>
+                  <h4>专委会与联盟</h4>
+                </div>
+              </div>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.cloudec.org" target="_blank"><i class="fa fa-chevron-right"></i>中国电子学会云计算专家委员会</a></li>
+              <li><a href="http://www.bigdataec.org" target="_blank"><i class="fa fa-chevron-right"></i>中国大数据专家委员会</a></li>
+              <li><a href="http://www.cloudtia.org" target="_blank"><i class="fa fa-chevron-right"></i>中国云计算技术与产业联盟</a></li>
+            </ul>
+          </li>
+  
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--头-->
+<div style="display:none;">
+<script src="http://s95.cnzz.com/stat.php?id=1254449558&web_id=1254449558" language="JavaScript"></script>
+</div>
+<!-- 立即投票 -->
+  <div class="container cloud-main">
+    <!-- 立即购票三个按钮 中尺寸使用
+    <div class="row index-big-item middle-toolbar-box">
+      <div class="col-md-4 col-sm-4 col-xs-4">
+        <a class="middle-btn-a" href="www.csdn.net"><img src="http://bss.csdn.net/themes/zone/ciecloud_2015/images/btn-bottom-middle-1.png"/></a>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-4">
+        <a class="middle-btn-a" href="www.csdn.net"><img src="http://bss.csdn.net/themes/zone/ciecloud_2015/images/btn-bottom-middle-2.png"/></a>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-4">
+        <a class="middle-btn-a" href="www.csdn.net"><img src="http://bss.csdn.net/themes/zone/ciecloud_2015/images/btn-bottom-middle-3.png"/></a>
+      </div>
+    </div>-->
+    <!-- 立即投票票 小尺寸使用 -->
+    <div class="row index-big-item small-toolbar-box ">
+      <div class="col-xs-12">
+        <a class="middle-btn-a" href="http://www.ciecloud.org/2015/guide_ticket"><img src="http://bss.csdn.net/themes/zone/ciecloud_2015/images/btn-bottom-small-1.png"/></a>
+      </div>
+    </div>    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="left_content">
+          <div class="row index-tu">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                  </li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1">
+                  </li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2">
+                  </li>
+                </ol>
+                <!-- 轮播图顺序大中小  大中小  大中小-->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                                            <a class="index-lb-a" target="_blank" href="http://www.ciecloud.org/2015/sponsors" ><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150413/20150413103928_95549.jpg" alt=" 组织机构" class="banner01" /></a>
+                        <a class="index-lb-a"  target="_blank" href="http://www.ciecloud.org/2015/sponsors" ><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150413/20150413103928_95549.jpg" alt=" 组织机构" class="banner02" /></a>
+                                                                <a class="index-lb-a"  target="_blank" href="http://www.ciecloud.org/2015/sponsors" ><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150331/20150331100425_63431.jpg" alt="321" class="banner03" /></a>
+                                        <div class="carousel-caption">
+                    </div>
+                  </div>
+                  <div class="item">
+                                            <a class="index-lb-a"  target="_blank"  href="http://events.csdn.net/五号文件.pdf" ><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150313/20150313181612_63679.jpg" alt="五号文件" class="banner01" /></a>
+                        <a class="index-lb-a"  target="_blank" href="http://events.csdn.net/五号文件.pdf" ><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150313/20150313181612_63679.jpg" alt="五号文件" class="banner02" /></a>
+                                                                <a class="index-lb-a"  target="_blank" href="http://events.csdn.net/五号文件.pdf" ><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150331/20150331100701_22069.jpg" alt="12" class="banner03" /></a>
+                                      </div>
+                  <div class="item">
+                                            <a class="index-lb-a"  target="_blank"  href="http://v.csdn.hudong.com/ciecloud2014/livevideo.html" ><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150313/20150313180842_84670.jpg" alt="第六届云计算大会视频回顾" class="banner01" /></a>
+                        <a class="index-lb-a"  target="_blank" href="http://v.csdn.hudong.com/ciecloud2014/livevideo.html" ><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150313/20150313180842_84670.jpg" alt="第六届云计算大会视频回顾" class="banner02" /></a>
+                                                                <a class="index-lb-a"  target="_blank" href="http://v.csdn.hudong.com/ciecloud2014/livevideo.html" ><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150331/20150331100750_98452.jpg" alt="banner1" class="banner03" /></a>
+                                      </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+              <div id="focus" style="display: none">
+                <ul>
+                                                                  <li class="banner01"><a  target="_blank" href="http://www.ciecloud.org/2015/sponsors"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150413/20150413103928_95549.jpg"/></a></li>
+                          <li class="banner02"><a href="http://www.ciecloud.org/2015/sponsors"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150413/20150413103928_95549.jpg"/></a></li>
+                                                                      <li class="banner03"><a  target="_blank" href="http://www.ciecloud.org/2015/sponsors"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150331/20150331100425_63431.jpg"/></a></li>
+                                                                                        <li class="banner01"><a  target="_blank" href="http://events.csdn.net/五号文件.pdf"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150313/20150313181612_63679.jpg"/></a></li>
+                          <li class="banner02"><a href="http://events.csdn.net/五号文件.pdf"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150313/20150313181612_63679.jpg"/></a></li>
+                                                                      <li class="banner03"><a  target="_blank" href="http://events.csdn.net/五号文件.pdf"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150331/20150331100701_22069.jpg"/></a></li>
+                                                                                        <li class="banner01"><a  target="_blank" href="http://v.csdn.hudong.com/ciecloud2014/livevideo.html"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150313/20150313180842_84670.jpg"/></a></li>
+                          <li class="banner02"><a href="http://v.csdn.hudong.com/ciecloud2014/livevideo.html"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150313/20150313180842_84670.jpg"/></a></li>
+                                                                      <li class="banner03"><a  target="_blank" href="http://v.csdn.hudong.com/ciecloud2014/livevideo.html"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150331/20150331100750_98452.jpg"/></a></li>
+                                                          <!--<li><img src="http://articles.csdn.net/uploads/allimg/140121/210-1401211JQ1.jpg"alt="轮播图1" /></li>
+                  <li><a href="http://cloudpx.zdnet.com.cn/" target="_blank"><img src="http://articles.csdn.net/uploads/allimg/140306/210-1403061AA7.jpg"/></a></li>
+                  <li><a href="" target="_blank"><img src="http://articles.csdn.net/uploads/allimg/140213/210-140213110Q5.jpg"/></a></li>-->
+                </ul><!--<img src="images/index-lb1.png"/>-->
+              </div>
+            </div>
+          </div>
+          <!-- 大会介绍 -->
+          <div class="row index-big-item">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+ <div class="index-title">
+  大会介绍</div>
+ <div class="index-subtitle">
+  <div class="index-st-icon">
+   <img src="http://bss.csdn.net/uploadfile/2015/0227/20150227105204212.png" /></div>
+  <div class="index-st-text">
+   2015年6月3-5日，国家会议中心&middot;北京</div>
+ </div>
+ <div class="index-context">
+  <p>
+   在学术界和产业界的不断努力下，历经8年发展，云计算已经成为人们按需使用信息处理、信息存储、信息交互资源的重要模式，也是进行大数据处理和深度挖掘的重要平台。公用云、专用云与行业结合，形成了形态各异、特色鲜明的政务云、教育云、金融云、工业云、城市管理云、医疗健康云、位置服务云、环保云等云计算服务。2015年初国务院颁布《国务院关于促进云计算创新发展，培育信息产业新业态的意见》5号文件，更是展现出云计算大数据更为广阔的发展空间。</p>
+  <p>
+   为了更好地推进云计算大数据的技术创新，展示国内外云计算大数据的产业成果，交流云计算大数据的应用经验，在国家发展和改革委员会、科学技术部、工业和信息化部、北京市人民政府的指导下，由中国电子学会主办，中国云计算技术与产业联盟、中国电子学会云计算专家委员会、中国大数据专家委员会承办，CSDN、ZDNet至顶网、计世资讯、ITValue协办的&ldquo;第七届中国云计算大会&rdquo;将于2015年6月3-5日在北京举办。</p>
+  <p>
+   此次会议将承续前六届大会的成功经验，邀请国内外知名专家出席会议并作演讲。以更加前瞻性视野，分享国内外云计算大数据的技术趋势和实践经验，推动云计算大数据的发展和进步。</p>
+  <a class="index-more" href="#">&gt;&gt;查看更多</a></div>
+</div>
+<p>
+ &nbsp;</p>
+          </div>
+          <!-- 整体日程安排 -->
+          <div class="row index-big-item">
+            <div class="row index-big-item">
+ <div class="col-lg-12 col-md-12 col-xs-12">
+  <div class="index-title">
+   全体大会议程（拟）</div>
+  <div class="index-mobile-schdl">
+   <div class="schdl-big-item">
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>6月3日（全天）</strong></div>
+    </div>
+     <div class="schdl-item2">
+     <div class="schdl-item-content">
+                        <strong>时间：</strong><br />
+      <strong>内容：</strong>欢迎致辞<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">吴基传</font>&nbsp;&nbsp;&nbsp;中国电子学会名誉理事长</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>领导讲话<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">娄勤俭</font>&nbsp;&nbsp;&nbsp;中国电子学会理事长<br />
+                        <font color="#009DD0">怀进鹏</font>&nbsp;&nbsp;&nbsp;工业和信息化部副部长<br />
+                        <font color="#009DD0">国家发改委、北京市政府</font></div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>云计算再思考<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">李德毅</font>&nbsp;&nbsp;&nbsp;中国电子学会云计算专家委员会名誉主任委员、中国工程院院士</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>打造面向未来的云服务商<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">吴湘东</font>&nbsp;&nbsp;&nbsp;中国电信集团云计算分公司总经理</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>云计算与大数据的展望与实践 <br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">Joao Crespo</font>&nbsp;&nbsp;&nbsp;Teradata国际部云计算解决方案专家<br />
+                        <font color="#009DD0">辛儿伦</font>&nbsp;&nbsp;&nbsp;中国大数据专家委员会副主任委员</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>中国移动“互联网 + ”云解决方案 <br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">戴&nbsp;&nbsp;&nbsp;忠</font>&nbsp;&nbsp;&nbsp;中国移动通信集团公司政企客户分公司总经理</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>IBM云领新未来 <br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">Douglas M Balog</font>&nbsp;&nbsp;&nbsp;IBM 系统部Power Systems全球总经理</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>中国联通“沃云”助力“互联网+”行动计划<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">焦&nbsp;&nbsp;&nbsp;刚</font>&nbsp;&nbsp;&nbsp;中国大数据专委会委员、中国联通云公司总经理</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>午餐</strong></div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>大数据城市的智能转型<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">李&nbsp;&nbsp;&nbsp;未</font>&nbsp;&nbsp;&nbsp;中国大数据专家委员会顾问、中国科学院院士</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>浪潮云计算技术创新与应用 <br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">王柏华</font>&nbsp;&nbsp;&nbsp;浪潮集团执行总裁兼CTO</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>云计算创新发展与服务落地<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">贺乐赋</font>(Ralph Haupter)&nbsp;&nbsp;&nbsp;微软全球资深副总裁、大中华区董事长兼首席执行官</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>阿里公共云与大数据服务<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">王&nbsp;&nbsp;&nbsp;坚</font>&nbsp;&nbsp;&nbsp;中国大数据专家委员会副主任委员、阿里集团副总裁</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>数据梦想与实践 <br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">王&nbsp;&nbsp;&nbsp;巍</font>&nbsp;&nbsp;&nbsp;杭州数梦工场创始人</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>腾讯云，成就创业家之路<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">邱跃鹏</font>&nbsp;&nbsp;&nbsp;腾讯公司副总裁</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>西部大数据中心建设实践<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">刘宇斌</font>&nbsp;&nbsp;&nbsp;陕西省西咸新区管委会副主任</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>云计算大数据应用实践分享之二——专用云金融应用实践分享<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">柴洪峰</font>&nbsp;&nbsp;&nbsp;中国银联股份有限公司执行副总裁</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>6月4日（上午）</strong></div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>大数据与人工智能研究的思考<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">张&nbsp;&nbsp;&nbsp;钹</font>&nbsp;&nbsp;&nbsp;中国科学院院士</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>百度大数据与人工智能<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">王&nbsp;&nbsp;&nbsp;劲</font>&nbsp;&nbsp;&nbsp;百度公司高级副总裁</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>Intel与云计算数据中心建设<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">Jason P. Waxman</font>&nbsp;&nbsp;&nbsp;Intel全球数据中心事业部副总裁、云平台事业部总经理</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>云计算与软件定义网络<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">吴&nbsp;&nbsp;&nbsp;健</font>&nbsp;&nbsp;&nbsp;H3C云计算产品线总裁</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>面向未来的企业级云计算 <br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">黄允松</font>&nbsp;&nbsp;&nbsp;青云公司联合创始人兼CEO</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>OpenStack行业实践和发展趋势<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">陈喜伦</font>&nbsp;&nbsp;&nbsp;EasyStack联合创始人兼CEO</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>云计算大数据应用实践分享之三<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">国内中小互联网用户</font>&nbsp;&nbsp;&nbsp;</div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>6月5日（上午）</strong></div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>大数据分析与智慧交通<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">高&nbsp;&nbsp;&nbsp;文</font>&nbsp;&nbsp;&nbsp;国家自然基金委副主任、中国工程院院士</div>
+    </div>
+                <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>360云计算的安全与大数据应用<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">谭晓生</font>&nbsp;&nbsp;&nbsp;360公司技术副总裁、首席隐私官</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>希捷，为人类体验创造空间<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">孙&nbsp;&nbsp;&nbsp;丹</font>&nbsp;&nbsp;&nbsp;希捷科技全球副总裁暨中国区总裁</div>
+    </div>
+                <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>重新定义CDN<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">陈&nbsp;&nbsp;&nbsp;磊</font>&nbsp;&nbsp;&nbsp;迅雷CTO</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>云计算与大数据最新研究方向<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">王可言</font>&nbsp;&nbsp;&nbsp;台湾云端运算产业协会副理事长</div>
+    </div>
+                <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>云计算安全发展趋势<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">Jim Reveals</font>&nbsp;&nbsp;&nbsp;CSA云安全联盟CEO</div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>时间：</strong><br />
+      <strong>内容：</strong>云计算大数据应用实践分享之四<br />
+      <strong>演讲嘉宾：</strong><font color="#009DD0">国内大型互联网用户</font>&nbsp;&nbsp;&nbsp;中国电子学会名誉理事长</div>
+    </div>
+   </div>
+  </div>
+  <div class="index-pad-pc-schdl">
+   <table border="0" cellpadding="0" cellspacing="0" class="index-tab1" width="100%">
+    <thead>
+     <tr>
+      <th colspan="2">
+       6月3日（全天）</th>
+     </tr>
+     <tr>
+      <th width="50%">
+       演讲嘉宾（拟）</th>
+      <th width="50%">
+       演讲内容（拟）</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>吴基传</strong>部长&nbsp;&nbsp;&nbsp;中国电子学会名誉理事长</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       欢迎致辞&nbsp;</td>
+     </tr>
+    </tbody>
+                <tbody>
+     <tr>
+      <td align="center">
+       <div align="left">
+        <strong>娄勤俭</strong>省长&nbsp;&nbsp;&nbsp;中国电子学会理事长<br />
+        <strong>怀进鹏</strong>&nbsp;&nbsp;&nbsp;工业和信息化部副部长<br />
+        <strong>国家发改委、北京市政府</strong></div>
+      </td>
+      <td>
+       <p>
+        领导讲话</p>
+      </td>
+     </tr>
+    </tbody>
+                <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>李德毅</strong>&nbsp;&nbsp;&nbsp;中国电子学会云计算专家委员会名誉主任委员、中国工程院院士</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       云计算再思考</td>
+     </tr>
+    </tbody>
+                <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>吴湘东</strong>&nbsp;&nbsp;&nbsp;中国电信集团云计算分公司总经理</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       打造面向未来的云服务商</td>
+     </tr>
+    </tbody>
+                <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+        <div align="left">
+        <strong>Joao Crespo</strong>&nbsp;&nbsp;&nbsp;Teradata国际部云计算解决方案专家<br />
+                              <strong>辛儿伦</strong></font>&nbsp;&nbsp;&nbsp;中国大数据专家委员会副主任委员</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       云计算与大数据的展望与实践
+</td>
+     </tr>
+    </tbody> 
+                <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>戴&nbsp;&nbsp;&nbsp;忠&nbsp;</strong>&nbsp;&nbsp;中国移动通信集团公司政企客户分公司总经理</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       中国移动&ldquo;互联网 + &rdquo;云解决方案</td>
+     </tr>
+    </tbody> 
+                <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>Douglas M Balog</strong>&nbsp;&nbsp;&nbsp;IBM 系统部Power Systems全球总经理</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       IBM云领新未来</td>
+     </tr>
+    </tbody> 
+                <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>焦&nbsp;&nbsp;&nbsp;刚</strong>&nbsp;&nbsp;&nbsp;中国大数据专委会委员、中国联通云公司总经理</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       中国联通“沃云”助力“互联网+”行动计划</td>
+     </tr>
+    </tbody> 
+                <tbody>
+     <tr>
+      <td align="center" colspan="2">
+       午餐</td>
+     </tr>
+    </tbody>
+                <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>李&nbsp;&nbsp;&nbsp;未</strong>&nbsp;&nbsp;&nbsp;中国大数据专家委员会顾问、中国科学院院士</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       大数据城市的智能转型</td>
+     </tr>
+    </tbody>
+                <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+
+       <div align="left">
+        <strong>王柏华</strong>&nbsp;&nbsp;&nbsp;浪潮集团执行总裁兼CTO</div>
+      </td>
+     </tr>
+     <tr>
+      <td>浪潮云计算技术创新与应用</td>
+     </tr>
+    </tbody>
+                <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>贺乐赋(Ralph Haupter) </strong>&nbsp;&nbsp;&nbsp;微软全球资深副总裁、大中华区董事长兼首席执行官</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       云计算创新发展与服务落地</td>
+     </tr>
+    </tbody>
+                <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>王&nbsp;&nbsp;&nbsp;坚</strong>&nbsp;&nbsp;&nbsp;中国大数据专家委员会副主任委员、阿里集团副总裁</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       阿里公共云与大数据服务</td>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>王&nbsp;&nbsp;&nbsp;巍</strong>&nbsp;&nbsp;&nbsp;杭州数梦工场创始人</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       数据梦想与实践</td>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>邱跃鹏</strong>&nbsp;&nbsp;&nbsp;腾讯公司副总裁</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       腾讯云，成就创业家之路</td>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>刘宇斌</strong>&nbsp;&nbsp;&nbsp;陕西省西咸新区管委会副主任</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       西部大数据中心建设实践</td>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>柴洪峰</strong>&nbsp;&nbsp;&nbsp;中国银联股份有限公司执行副总裁</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       云计算大数据应用实践分享之二 <br>
+        专用云金融应用实践分享</td>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <th align="center" colspan="2">
+       <div align="center" class="index-tab1">
+        <strong>6月4日（上午）</strong></div>
+      </th>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>张&nbsp;&nbsp;&nbsp;钹</strong>&nbsp;&nbsp;&nbsp;中国科学院院士</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       大数据与人工智能研究的思考</td>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>王&nbsp;&nbsp;&nbsp;劲</strong>&nbsp;&nbsp;&nbsp;百度公司高级副总裁</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       百度大数据与人工智能</td>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>Jason P. Waxman</strong>&nbsp;&nbsp;&nbsp;Intel全球数据中心事业部副总裁、云平台事业部总经理</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Intel与云计算数据中心建设</td>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>吴&nbsp;&nbsp;&nbsp;健</strong>&nbsp;&nbsp;&nbsp;H3C云计算产品线总裁</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       云计算与软件定义网络</td>
+     </tr>
+    </tbody>
+    
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>黄允松</strong>&nbsp;&nbsp;&nbsp;青云公司联合创始人兼CEO</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       面向未来的企业级云计算</td>
+     </tr>
+    </tbody>
+    
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>陈喜伦</strong>&nbsp;&nbsp;&nbsp;EasyStack联合创始人兼CEO</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       OpenStack行业实践和发展趋势</td>
+     </tr>
+    </tbody>
+    
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>国内中小互联网用户</strong></div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       云计算大数据应用实践分享之三</td>
+     </tr>
+    </tbody>
+    
+    <tbody>
+     <tr>
+      <th align="center" colspan="2">
+       <div align="center">
+        <strong>6月5日（上午）</strong></div>
+      </th>
+     </tr>
+    </tbody>
+    
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>高&nbsp;&nbsp;&nbsp;文</strong>&nbsp;&nbsp;&nbsp;国家自然基金委副主任、中国工程院院士</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       大数据分析与智慧交通</td>
+     </tr>
+    </tbody>
+    
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>谭晓生</strong>&nbsp;&nbsp;&nbsp;360公司技术副总裁、首席隐私官</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       360云计算的安全与大数据应用</td>
+     </tr>
+    </tbody>
+    
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>孙&nbsp;&nbsp;&nbsp;丹</strong>&nbsp;&nbsp;&nbsp;希捷科技全球副总裁暨中国区总裁</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       希捷，为人类体验创造空间</td>
+     </tr>
+    </tbody>
+    
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>陈&nbsp;&nbsp;&nbsp;磊</strong>&nbsp;&nbsp;&nbsp;迅雷CTO</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       重新定义CDN</td>
+     </tr>
+    </tbody>
+    
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>王可言</strong>&nbsp;&nbsp;&nbsp;台湾云端运算产业协会副理事长</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       云计算与大数据最新研究方向</td>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>Jim Reveals</strong>&nbsp;&nbsp;&nbsp;CSA云安全联盟CEO</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       云计算安全发展趋势</td>
+     </tr>
+    </tbody>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       <div align="left">
+        <strong>国内大型互联网用户</strong>&nbsp;&nbsp;&nbsp;</div>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       云计算大数据应用实践分享之四</td>
+     </tr>
+    </tbody>
+    
+   </table>
+  </div>
+ </div>
+</div>
+<p>&nbsp;
+ </p>
+<div class="row index-big-item">
+ <div class="col-lg-12 col-md-12 col-xs-12">
+  <div class="index-title">
+   整体日程安排</div>
+  <div class="index-mobile-schdl">
+   <div class="schdl-big-item">
+    <div class="schdl-date">
+     6月2日(周二)</div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      技术培训:<br />
+      <a href="http://www.ciecloud.org/2015/docker" target="blank">Docker 实战技术</a><br />
+      <a href="http://www.ciecloud.org/2015/hadoop" target="blank">Hadoop 2.0 运维管理与集群安装监控</a><br />
+      <a href="http://www.ciecloud.org/2015/enterprise" target="blank">企业高管商业变革实战</a></div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>封闭会议</strong>（仅限受邀嘉宾）<br />
+      SaaS产业发展论坛<br />
+      IFIP云计算专家委员会全体会议<br />
+      第二届国际云计算标准化论坛<br />
+      第六届海峡两岸云计算合作论坛</div>
+    </div>
+   </div>
+   <div class="schdl-big-item">
+    <div class="schdl-date">
+     6月3日(周三)</div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>全体大会 </strong></div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>展览展示</strong></div>
+    </div>
+   </div>
+   <div class="schdl-big-item">
+    <div class="schdl-date">
+     6月4日(周四)</div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>全体大会</strong></div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>分论坛 </strong></div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>展览展示</strong></div>
+    </div>
+   </div>
+   <div class="schdl-big-item">
+    <div class="schdl-date">
+     6月5日(周五)</div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>全体大会 </strong></div>
+    </div>
+    <div class="schdl-item2">
+     <div class="schdl-item-content">
+      <strong>分论坛 </strong></div>
+    </div>
+    <div class="schdl-item1">
+     <div class="schdl-item-content">
+      <strong>展览展示</strong></div>
+    </div>
+   </div>
+   <div class="schdl-big-item">
+    <div class="schdl-date">
+     会议说明</div>
+    <div class="schdl-item2" style="padding: 0">
+      <div class="schdl-item-content">
+      6月2-5日分论坛包括：<br />
+      技术专题论坛<br />
+      大数据核心技术与应用论坛<br />
+      云计算平台构建与实践<br />
+      云计算核心技术架构论坛<br />
+      云计算安全与可信计算论坛<br />
+      云计算IT基础设施与自动化运维<br />
+      行业应用论坛<br />
+      混合云应用与实践论坛（电信专场）<br />
+      云计算大数据与互联网金融论坛<br />
+      基于新技术的远程医疗建设与实践论坛<br />
+      &ldquo;互联网＋&rdquo;高峰论坛<br />
+      云计算大数据智能交通行业应用论坛<br />
+       <a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=1960">云计算与云存储核心架构与应用论坛<br>
+       （PMC专场，需单独申请）</a></div>
+    </div>
+   </div>
+  </div>
+  <div class="index-pad-pc-schdl">
+   <table border="0" cellpadding="0" cellspacing="0" class="index-tab1" width="100%">
+    <thead>
+     <tr>
+      <th width="25%">
+       日期</th>
+      <th width="75%">
+       内容</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center" rowspan="2">
+       6月2日（周二）</td>
+      <td>
+       <h3>
+        技术培训</h3>
+       <p>
+        <span>&bull; <a href="http://www.ciecloud.org/2015/docker" target="blank">Docker 实战技术</a></span> <span>&bull; <a href="http://www.ciecloud.org/2015/hadoop" target="blank">Hadoop 2.0 运维管理与集群安装监控</a></span> <span>&bull; <a href="http://www.ciecloud.org/2015/enterprise" target="blank">企业高管商业变革实战</a></span></p>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <h3>
+        封闭会议<em>（仅限受邀嘉宾）（<a href="http://www.ciecloud.org/2015/schedule">详情</a>）</em></h3>
+       <p>
+        <span>&bull; <a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=1916">SaaS产业发展论坛</a></span> <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &bull; IFIP云计算专家委员会全体会议</span> <span>&bull; <a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=1927" target="_blank">第二届国际云计算标准化论坛</a></span> <span>&bull; 第六届海峡两岸云计算合作论坛</span></p>
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       6月3日 （周三）</td>
+      <td>
+       <h3>
+        全体大会/展览展示</h3>
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       6月4日（周四）<br />
+       6月5日（周五）</td>
+      <td>
+       <table border="0" cellpadding="0" cellspacing="0" class="index-tab1_tab" width="100%">
+        <thead>
+         <tr>
+          <th align="center" colspan="2">
+           <div align="left">
+            全体大会/专题论坛/展览展示</div>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td valign="top">
+           <h3>
+            技术专题论坛（<a href="http://www.ciecloud.org/2015/schedule">详情</a>）</h3>
+           <p>
+            &bull; 大数据核心技术与应用论坛<br />
+            &bull; 云计算平台构建与实践<br />
+            &bull; 云计算核心技术架构论坛<br />
+            &bull; 云计算安全与可信计算论坛<br />
+            &bull; 云计算IT基础设施与自动化运维</p>
+          </td>
+          <td valign="top">
+           <h3>
+            行业应用论坛（<a href="http://www.ciecloud.org/2015/schedule">详情</a>）</h3>
+           <p>
+            &bull; 混合云应用与实践论坛（电信专场）<br />
+            &bull; 云计算大数据与互联网金融论坛<br />
+            &bull; 云计算大数据智能交通行业应用论坛<br />
+            &bull; &ldquo;互联网＋&rdquo;高峰论坛<br />
+            &bull; 基于新技术的远程医疗建设与实践论坛<br />
+            &bull; <a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=1960">云计算与云存储核心架构与应用论坛<br />
+            （PMC专场，需单独申请）</a></p>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</div>
+<p>&nbsp;
+ </p>
+
+          </div>
+          <!-- 大会新闻 -->
+          <div class="row index-big-item">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+ <div class="index-title">
+  大会新闻</div>
+ <div class="index-news-list">
+  <div class="index-news-item">
+   <div class="row">
+    <div class="col-lg-6 col-md-6 col-xs-12">
+     <a class="news-item-a" href="http://www.csdn.net/article/2015-05-12/2824663-cccc7th-speaker">&gt;&nbsp;云集百位核心专家 中国云计算大会演讲议题公布</a></div>
+    <div class="col-lg-6 col-md-6 col-xs-12">
+     <a class="news-item-a" href="http://www.csdn.net/article/2015-05-04/2824606-cccc-keynote-speaker">&gt;&nbsp;第七届中国云计算大会 | 首批主会演讲嘉宾和议题公布</a></div>
+   </div>
+   <div class="row">
+    <div class="col-lg-6 col-md-6 col-xs-12">
+     <a class="news-item-a" href="http://www.csdn.net/article/2015-02-28/2824060">&gt;&nbsp;历届中国云计算大会PPT集萃（四）：教育、医疗、智慧城市</a></div>
+    <div class="col-lg-6 col-md-6 col-xs-12">
+     <a class="news-item-a" href="http://www.csdn.net/article/2015-02-16/2823987">&gt;&nbsp;历届中国云计算大会PPT集萃（三）：大数据、云安全、混合云</a></div>
+   </div>
+   <div class="row">
+    <div class="col-lg-6 col-md-6 col-xs-12">
+     <a class="news-item-a" href="http://www.csdn.net/article/2015-02-15/2823981">&gt;&nbsp;历届中国云计算大会PPT集萃（二）：云计算核心技术架构与实践</a></div>
+    <div class="col-lg-6 col-md-6 col-xs-12">
+     <a class="news-item-a" href="http://www.csdn.net/article/2015-03-19/2824262-the-7th-cccc">&gt;&nbsp;第七届中国云计算大会将于6月3-5日在北京召开</a></div>
+   </div>
+  </div>
+ </div>
+</div>
+<p>
+ &nbsp;</p>
+          </div>
+          <!-- 4个轮播图 -->
+          <div class="row index-big-item">
+                      </div>
+
+          <div class="row index-big-item">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+              <div id="thisjb-btn" class="index-title index-titlea tab curr">
+                本届嘉宾
+              </div>
+              <div id="thatjb-btn" class="index-title index-titlea tab2 tab">
+                历届特邀嘉宾
+              </div>
+            </div>
+          </div>
+          <!--本届嘉宾-->
+          <div id="thisjb" class="row index-big-item">
+                          <div class="col-lg-3 col-md-2 col-sm-3 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422154406_81648.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p><a class="index-xw-a" target="_blank" href=""> <b>吴基传</b>中国云计算技术与产业联盟理事长、中国电子学会名誉理事长、原信息产业部部长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-2 col-sm-3 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422154500_11394.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p><a class="index-xw-a" target="_blank" href=""> <b>娄勤俭</b>中国电子学会理事长、陕西省省长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-2 col-sm-3 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422154730_61645.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p><a class="index-xw-a" target="_blank" href=""> <b>怀进鹏</b>工业和信息化部副部长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-2 col-sm-3 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422154955_77321.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p><a class="index-xw-a" target="_blank" href=""> <b>李德毅</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-2 col-sm-3 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422155144_57933.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p><a class="index-xw-a" target="_blank" href=""> <b>李未</b>中国科学院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-2 col-sm-3 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422155756_29558.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p><a class="index-xw-a" target="_blank" href=""> <b>高文</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-2 col-sm-3 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422155837_61356.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p><a class="index-xw-a" target="_blank" href=""> <b>李伯虎</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-2 col-sm-3 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422155919_64318.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p><a class="index-xw-a" target="_blank" href=""> <b>戴浩</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-2 col-sm-3 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422160006_95120.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p><a class="index-xw-a" target="_blank" href=""> <b>李兰娟</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-2 col-sm-3 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422155714_30645.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p><a class="index-xw-a" target="_blank" href=""> <b>倪光南</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                      </div>
+          <!--小屏下显示的历届特邀嘉宾标题-->
+          <div id="thatjb-title" class="row index-big-item hidden-md hidden-lg">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+              <div class="index-title curr">
+                历届特邀嘉宾
+              </div>
+            </div>
+          </div>
+          <!--历届特邀嘉宾-->
+          <div id="thatjb" class="row index-big-item">
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150422/20150422154319_61240.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.ciecloud.org/2014/speaker.html?cid=360&aid=935"><b>吴基传</b>中国云计算技术与产业联盟理事长、中国电子学会名誉理事长、原信息产业部部长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150227/20150227190252_89397.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.ciecloud.org/2012/report.html"><b>严隽琪</b>十一届全国人大常委会副委员长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150227/20150227190224_80784.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.ciecloud.org/2012/report.html"><b>娄勤俭</b>中国电子学会理事长、陕西省省长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316151824_59043.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>杨学山</b>工业和信息化部副部长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150227/20150227190133_42545.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.ciecloud.org/2012/report.html"><b>刘利华</b>工业和信息化部副部长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316151954_11973.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>苟仲文</b>时任北京市人民政府副市长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150313/20150313150652_59005.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>周宏仁</b>国家信息化专家咨询委员会常务副主任</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150312/20150312153933_98641.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>綦成元</b>国家发展和改革委员会高技术产业司司长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150312/20150312154030_32172.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>徐建平</b>国家发展和改革委员会高技术产业司副司长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316152207_19931.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>怀进鹏</b>中国科学院院士、工业和信息化部副部长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316152241_35937.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>李德毅</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316152717_88923.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>李未</b>中国科学院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316152746_84008.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>倪光南</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316154336_69994.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>李伯虎</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316154405_24832.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>李兰娟</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316154436_13358.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>郭华东</b>中国科学院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316154542_55351.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>张尧学</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150312/20150312154532_34342.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>高文</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150312/20150312154627_14088.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>梅宏</b>中国科学院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316154656_90118.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>戴浩</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316154803_88519.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>邬江兴</b>中国工程院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316160537_16577.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.csdn.net/article/2014-05-21/2819881"><b>鹗维南</b>中国科学院院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316161535_77765.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>Ariel Kelman</b>亚马逊网络服务全球市场副总裁</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316161928_99437.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>John Kenevey</b>Facebook公司开源技术CTO</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150311/20150311164043_71325.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.csdn.net/article/2013-06-06/2815594"><b>Boyd Davis</b>英特尔高级副总裁Boyd Davis</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316162120_99533.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>Sanjay Mirchandani</b>EMC公司执行副总裁</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316162146_83111.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>Abhi Talwalkar</b>LSI总裁兼CEO</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316162230_24280.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>Mike Koehler</b>Teradata全球总裁</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150227/20150227185056_77512.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.csdn.net/article/a/2012-05-24/2805914"><b>Steve Herrod</b>VMware全球首席技术官兼研发高级副总裁</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316162352_78044.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>James Prendergast</b>美国IEEE执行总监</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316163136_82414.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>Lee G.Royce</b>美国密西西比学院校长</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316163228_28206_logo.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>Bob Ogrey</b>AMD院士</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150227/20150227184911_39299.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.ciecloud.org/2011/speaker.html"><b>Sami Ben-Romdhane</b>eBay全球技术平台项目管理高级总监</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316163317_68055.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>Joe Stradinger</b>Leadify公司创始人兼CEO</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150227/20150227184829_31936.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.csdn.net/article/a/2012-05-24/2805913"><b>张继平</b>中国云计算技术与产业联盟副理事长、中国电信集团副总经理</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150227/20150227184800_40820.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.csdn.net/article/a/2012-05-24/2805915"><b>李正茂</b>中国云计算技术与产业联盟副理事长、中国移动通信集团公司副总裁</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150227/20150227184655_71751.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href="http://www.csdn.net/article/a/2012-05-24/2805920"><b>姜正新</b>中国联合网络通信集团有限公司副总经理</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316162519_33015.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>李慧镝</b>中国移动集团公司副总经理</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316162600_44620.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>王峰</b>中国电信股份有限公司云计算分公司总经理</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316162636_53773.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>焦刚</b>中国联通云数据有限公司总经理</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316163434_99181.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>王坚</b>阿里巴巴集团首席技术官</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316163605_79952.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>何京翔</b>英特尔亚太研发有限公司</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316163820_10779.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>殷康</b>思科大中华区副总裁</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316163847_96711.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>陈尚义</b>百度技术委员会理事长 </a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316163926_67788.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>张东</b>浪潮集团云计算技术总监</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316164007_32727.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>陈国豪</b>IBM大中华区云计算总经理</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316164033_13934.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>何刚</b>京东商城技术副总裁</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150316/20150316164059_51261.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>黄允松</b>青云QingCloud联合创始人兼CEO</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150330/20150330144403_97804.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>陈磊</b>原腾讯云平台部总经理</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150331/20150331141437_61328.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>王玮</b>台湾云端运算产业协会</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150331/20150331141551_23039.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>项小升</b>锐捷网络副总裁、产品总监</a></p>
+                </div>
+              </div>
+                          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="http://bss.csdn.net/uploadfile/logoimg/image/20150402/20150402100226_93620.jpg"/>
+                <div class="k_pos"> <var></var>
+                  <p> <a target="_blank" class="index-xw-a" href=""><b>张亚勤</b>原微软公司全球资深副总裁、微软亚太研发集团主席</a></p>
+                </div>
+              </div>
+                        <!--<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 index-jb">
+              <img src="images/index-jb.png"/>
+            </div>-->
+          </div>
+
+<!-- 001开始 本届嘉宾上线删除此处 -->
+          <!-- 往届精彩演讲视频 -->
+          <div class="row index-big-item">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+              <div class="index-title">
+                往届精彩演讲视频
+              </div>
+            </div>
+          </div>
+          <div class="row index-sp-item">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 index-sp">
+ <a href="http://v.csdn.hudong.com/s/article.html?arcid=15822783" href="http://v.csdn.hudong.com/s/article.html?arcid=15822783"><img src="http://bss.csdn.net/uploadfile/2015/0303/20150303051830633.jpg" src="http://bss.csdn.net/uploadfile/2015/0302/20150302013418201.jpg" style="width: 340px; height: 220px;" /></a> <span class="title"> <a href="http://v.csdn.hudong.com/s/article.html?arcid=15822783" target="_blank">怀进鹏：对云计算大数据的认识与思考</a> </span></div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+ <div class="row  index-big-item">
+  <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs index-sp-small">
+   <a href="http://v.csdn.hudong.com/s/article.html?arcid=15822694" href="http://v.csdn.hudong.com/s/article.html?arcid=15822694"> <img src="http://bss.csdn.net/uploadfile/2015/0303/20150303051817920.jpg" src="http://bss.csdn.net/uploadfile/2015/0227/20150227071720151.jpg" style="width: 155px; height: 100px;" /> </a> <span class="title"> <a href="http://v.csdn.hudong.com/s/article.html?arcid=15822694" target="_blank">李德毅：大数据挖掘带动的变迁</a> </span></div>
+  <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs index-sp-small">
+   <a href="http://v.csdn.hudong.com/s/article.html?arcid=15822697"> <img src="http://bss.csdn.net/uploadfile/2015/0227/20150227071720151.jpg" style="width: 155px; height: 100px;" /> </a> <span class="title"> <a href="http://v.csdn.hudong.com/s/article.html?arcid=15822697" target="_blank">连城：Spark一体化大数据分析流水线</a> </span></div>
+  <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs index-sp-small">
+   <a href="http://v.csdn.hudong.com/s/article.html?arcid=15822696"><img src="http://bss.csdn.net/uploadfile/2015/0227/20150227071914170.jpg" style="width: 155px; height: 100px;" /></a> <span class="title"> <a href="http://v.csdn.hudong.com/s/article.html?arcid=15822696" target="_blank">张溪梦：利用数据科学与大分析催生产业革命</a> </span></div>
+  <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs index-sp-small">
+   <a href="http://v.csdn.hudong.com/s/article.html?arcid=15818911"><img src="http://bss.csdn.net/uploadfile/2015/0227/20150227072158591.jpg" style="width: 155px; height: 100px;" /></a> <span class="title"> <a href="http://v.csdn.hudong.com/s/article.html?arcid=15818911" target="_blank">王坚：云栖小镇，云计算的生态</a> </span></div>
+  <div class="hidden-lg hidden-md hidden-sm col-xs12 index-sp-small-div">
+   <a class="index-sp-small-a" href="http://v.csdn.hudong.com/s/article.html?arcid=15822694">▪ 李德毅：大数据挖掘带动的变迁</a></div>
+  <div class="hidden-lg hidden-md hidden-sm col-xs12 index-sp-small-div">
+   <a class="index-sp-small-a" href="http://v.csdn.hudong.com/s/article.html?arcid=15822697">▪ 连城：Spark一体化大数据分析流水线</a></div>
+  <div class="hidden-lg hidden-md hidden-sm col-xs12 index-sp-small-div">
+   <a class="index-sp-small-a" href="http://v.csdn.hudong.com/s/article.html?arcid=15822696">▪ 张溪梦：利用数据科学与大分析催生产业革命</a></div>
+  <div class="hidden-lg hidden-md hidden-sm col-xs12 index-sp-small-div">
+   <a class="index-sp-small-a" href="http://v.csdn.hudong.com/s/article.html?arcid=15818911">▪ 王坚：云栖小镇，云计算的生态</a></div>
+ </div>
+</div>
+<p>
+ &nbsp;</p>
+          </div>
+        
+        </div>
+      </div>
+      <!--右侧边栏-->
+      <div class="col-lg-4 col-md-12 col-xs-12">
+        <div class="right_con">
+          <!-- 快速报道 -->
+          <div>
+            <h2 class="common_title">
+ 快速通道</h2>
+<ul class="row report_list">
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12 report03" style="padding-left: 26px !important">
+  <a href="http://events.csdn.net/五号文件.pdf
+">国务院关于促进云计算创新发展的五号文件</a></li>
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12 report04" style="padding-left: 26px !important">
+  <a href="http://www.ciecloud.org/2015/docker">培训：Docker&nbsp;实战技术</a></li>
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12 report04" style="padding-left: 26px !important">
+  <a href="http://www.ciecloud.org/2015/hadoop">培训：Hadoop 2.0 运维管理与集群安装监控</a></li>
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12 report04" style="padding-left: 26px !important">
+  <a href="http://www.ciecloud.org/2015/enterprise">培训：企业高管商业变革实战</a></li>
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12 report02" style="padding-left: 26px !important">
+  <a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=1916">报名：SaaS产业发展论坛</a></li>
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12 report02" style="padding-left: 26px !important">
+  <a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=1927">报名：第二届国际云计算标准化论坛</a></li>
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12 report01" style="padding-left: 26px !important">
+  <a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=1960">申请：云计算与云存储核心架构与应用论坛</a></li>
+</ul>
+<div class="row apply_btns">
+ <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
+  <a href="http://www.ciecloud.org/2015/guide_ticket">线上购票（倒计时8天）</a></div>
+</div>
+<p>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://huiyi.csdn.net/activity/product/my_activity">查看我的订单</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://events.csdn.net/第七届云计算大会-邀请函（官网更新版）.pdf">邀请函下载</a></p>
+<p>
+ 第七届中国云计算大会，官网在线售票通道将于<br />
+ <font color="#FF0000">5月29日18点关闭</font>，如需购票参会<br />
+ 请<font color="#FF0000">下载现场报名表</font>，至现场大会签到处购票参会。</p>
+          </div>
+          <!-- 微信 -->
+          <div>
+              <h2 class="common_title mt25">
+ 官方微信和微信购票</h2>
+<ul class="weixinbox">
+ <li>
+  <span>中国云计算大会官方微信</span> <img src="http://bss.csdn.net/uploadfile/2015/0504/20150504060607159.jpg" />
+  <p>
+   搜索公众号&quot;cie_cloud&quot;<br />
+   或扫描上面二维码</p>
+ </li>
+ <li>
+  <span>微信购票专用通道</span><img src="http://bss.csdn.net/uploadfile/2015/0504/20150504060621755.png" />
+  <p>
+   搜索公众号&quot;cloud_pay&quot;<br />
+   或扫描上面二维码</p>
+ </li>
+</ul>
+            </div>
+          <!-- 联系我们 -->
+          <div>
+            <h2 class="common_title mt25">
+ 联系我们</h2>
+<ul class="row contact_list">
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
+  服务热线：4000-897-896</li>
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
+  媒体咨询：010-51661202-321</li>
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
+  商务合作：010-68179368</li>
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;010-51661202-834</li>
+ <li class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
+  大会邮箱：<a href="mailto:ciecloud@csdn.com">ciecloud@csdn.com</a></li>
+</ul>
+<div class="apply_btns2">
+ <a href="http://huiyi.csdn.net/activity/lecturer/reg?aid=1357">讲师申请</a> <a href="http://www.ciecloud.org/2015/opportunity">赞助机会</a></div>
+          </div>
+          <!-- 微信微博js代码段 -->
+          <div class="row weibo_code">
+            <!-- 微信与微博 -->
+            
+            <!--js代码 -->
+            <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
+              <div class="weibo">
+                <iframe width="260" height="204" frameborder="0" src="http://widget.weibo.com/relationship/bulkfollow.php?language=zh_cn&amp;uids=1741045432,1798777247&amp;wide=0&amp;color=C2D9F2,FFFFFF,0082CB,666666&amp;showtitle=1&amp;showinfo=0&amp;sense=0&amp;verified=1&amp;count=5&amp;refer='+encodeURIComponent(location.href)+'&amp;dpc=1" scrolling="no"></iframe>
+              </div>
+              <div class="baidu_share"><div class="bdsharebuttonbox"><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到linkedin" href="#" class="bds_linkedin" data-cmd="linkedin"></a><a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+                <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></div>
+            </div>
+          </div>
+          <!--  指导单位 -->
+          <div>
+              <h2 class="common_title2">指导单位</h2>
+              <ul class="common_list">
+                                  <li><a target="_blank" href="">国家发展和改革委员会</a></li>
+                                  <li><a target="_blank" href="">科学技术部</a></li>
+                                  <li><a target="_blank" href="">工业和信息化部</a></li>
+                                  <li><a target="_blank" href="">北京市人民政府</a></li>
+                              </ul>
+              <h2 class="common_title2">主办单位</h2>
+              <ul class="common_list">
+                                  <li><a target="_blank" href="http://www.cie-info.org.cn">中国电子学会</a></li>
+                              </ul>
+              <h2 class="common_title2">
+                承办</h2>
+              <ul class="common_list">
+                                  <li><a target="_blank" href="">中国云计算技术与产业联盟</a></li>
+                                  <li><a target="_blank" href="">中国电子学会云计算专家委员会</a></li>
+                                  <li><a target="_blank" href="">中国大数据专家委员会</a></li>
+                              </ul>
+              <h2 class="common_title2">
+                协办</h2>
+              <ul class="common_list">
+                                  <li><a target="_blank" href="http://www.csdn.net">CSDN</a></li>
+                                  <li><a target="_blank" href="http://www.zdnet.com.cn">ZDNet至顶网</a></li>
+                                  <li><a target="_blank" href="http://www.ccwresearch.com.cn">计世资讯</a></li>
+                                  <li><a target="_blank" href="http://www.itvalue.com.cn">ITValue</a></li>
+                              </ul>
+          </div>
+          <!-- 主办等 LOGO 图 -->
+
+          <div>
+            
+          <h2 class="common_title2">大会合作伙伴<em>（按英文首字母排序）</em></h2>
+          <div class="row logo_list">
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.aliyun.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430183902_64335.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="https://www.baidu.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430183709_69983.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.h3c.com.cn/Products___Technology/Products/H3Cloud/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430183616_62329.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.hgst.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430183522_34646.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.intel.cn/content/www/cn/zh/homepage.html"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430183449_94099.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.inspur.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508114348_88893.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.pmcs.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508114528_98822.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="https://www.qingcloud.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508115038_62574.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.ibm.com/cloud-computing/cn/zh/index.html"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150505/20150505181301_99525.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href=""><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430185707_23993.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.xunlei.com/about/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150506/20150506170154_63532.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.3tcloud.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150505/20150505172503_75739.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.360.cn/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150514/20150514185011_62883.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://yun.qq.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430182646_32024.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://teradata.com.cn"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430182429_91671.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.microsoft.com/zh-cn"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430182140_96768.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.fcfx.gov.cn/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522112802_26623.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.easystack.cn/zh/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430184100_91252.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href=""><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150511/20150511183831_94909.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.189.cn"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430192000_14780.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.chinaunicom.com.cn"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150519/20150519174929_89401.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.10086.cn/bj/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150430/20150430190957_32539.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.cetc-cloud.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508175135_92915.jpg"></a></div>
+                      </div>
+		  <h2 class="common_title2">专题论坛协办单位<em>（按英文首字母排序）</em></h2>
+          <div class="row logo_list">
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.dmtf.org"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150506/20150506165229_71780.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.twcloud.org.tw/Cloud/index.do"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150505/20150505103139_49849.jpg"></a></div>
+                      </div>
+          <h2 class="common_title2">专题论坛合作伙伴<em>（按英文首字母排序）</em></h2>
+          <div class="row logo_list">
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.safedog.cn?from=csdn"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508150125_19562.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.keytonecloud.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508115742_66492.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.memblaze.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150513/20150513175354_20620.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.qingteng.me"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150514/20150514185333_51435.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.qiniu.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150513/20150513112452_78611.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.sansec.com.cn/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150513/20150513112355_20924.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.sinacloud.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508180009_63520.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.chinanetcenter.com/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150520/20150520183258_90582.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.ucloud.cn/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508120056_49722.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.upyun.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508115943_39763.jpg"></a></div>
+                      </div>
+
+          <h2 class="common_title2">展览展示合作伙伴<em>（按英文首字母排序）</em></h2>
+          <div class="row logo_list">
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.chinac.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522155348_19225.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.redhadoop.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522120533_31068.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.broadview.com.cn/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522120416_29491.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.hzbook.com "><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522120302_52274.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.unisound.com/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522120055_28139.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.nsccsz.gov.cn/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522115750_40780.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.micron.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522115636_28733.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.fcfx.gov.cn"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522115529_88132.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.clustertech.com/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522115152_63785.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.fcfx.gov.cn/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522102033_90213.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.tingyun.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150521/20150521152816_69501.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.neucloud.cn"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150518/20150518185250_56377.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.powerleader.com.cn"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508150648_62370.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.centerm.com.cn"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508150911_94684.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href=""><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150513/20150513113206_72787.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.eisoo.com/cn/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150511/20150511184330_64479.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.opzoon.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150514/20150514185733_77946.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.yuntongxun.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150506/20150506171524_57227.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.jcloud.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150508/20150508151143_51439.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.mellanox.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150506/20150506171732_57176.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href=""><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150511/20150511184204_99937.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.sixosoft.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150514/20150514185132_40491.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.speedycloud.cn/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150514/20150514185530_43508.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.idcs.cn/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150513/20150513114906_44763.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.gds-services.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150506/20150506172002_21575.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.yyuap.com/"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522114930_53011.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.QuantaQCT.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150512/20150512150156_26371.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href=""><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150519/20150519181444_66828.jpg"></a></div>
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href=""><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150515/20150515185327_27293.jpg"></a></div>
+                      </div>
+
+
+          <h2 class="common_title2">专项赞助合作伙伴<em>（按英文首字母排序）</em></h2>
+          <div class="row logo_list">
+                            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6"><a  target="_blank" href="http://www.scistor.com"><img src="http://bss.csdn.net/uploadfile/logoimg/image/20150522/20150522181527_73311.jpg"></a></div>
+                      </div>
+          </div>
+
+        </div>
+      </div>
+      <!--右侧边栏-->
+    </div>
+  </div>
+  <script src="http://static.csdn.net/cdn/201502/js/bootstrap.min.js"></script>
+  <script src="http://bss.csdn.net/themes/zone/ciecloud_2015/js/lb.js"></script>
+<script>
+  $(document).ready(function () {
+  var url = window.location;
+  $('ul.small_nav li').eq(0).addClass('active');
+  $('ul.small_nav a.nav_title').filter(function() {
+    return this.href == url;
+  }).parent().addClass('active').siblings().removeClass('active');
+  $('ul.small_nav a.nav_title').click(function(){
+    var _xp = $('.top-cont:visible').length;
+    if(_xp == 0){
+      $(this).parent().toggleClass('active').siblings().removeClass('active');
+    }else{
+      $(this).parent().addClass('active').siblings().removeClass('active');
+    }
+  })
+  $('a').focus(function(){
+    $(this).blur();
+  })
+});
+</script>
+      <div style="display:none;"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5752922'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D5752922%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div>      <script>
+  $("#thisjb-btn").click(function() {
+    $("#thisjb").show();
+    $("#thatjb").hide();
+    $(this).addClass("curr");
+    $("#thatjb-btn").removeClass("curr");
+  });
+  $("#thatjb-btn").click(function() {
+    $("#thisjb").hide();
+    $("#thatjb").show();
+    $(this).addClass("curr");
+    $("#thisjb-btn").removeClass("curr");
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,673 @@
+<!doctype html>
+<html xmlns:wb=“http://open.weibo.com/wb”>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="Java毕业设计,.Net毕业设计 ,ASP.Net毕业设计,PHP毕业设计,C++毕业设计,网页平面毕业设计,计算机毕业设计,免费毕业设计" />
+<meta name="description" content="传智播客中国好毕设-提供毕业设计、计算机毕业设计、毕业设计开题报告、计算机专业毕业设计、毕业设计论文、毕业论文等毕设教程资料，涵盖Java、.Net、PHP、C++、平面设计等编程语言，为大学生提供完整的毕业设计教程和源码下载。" />
+<title>好毕设下载_免费毕业设计教程_传智播客中国好毕设</title>
+<link type="image/x-icon" rel="shortcut icon" href="http://www.itcast.cn/favicon.ico" />
+<link type="text/css" rel="stylesheet" href="/Public/Home/css/global.css"/>
+<link type="text/css" rel="stylesheet" href="/Public/Home/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/Public/Home/css/login.css"/>
+<link type="text/css" rel="stylesheet" href="/Public/Home/css/user.css"/>
+<link type="text/css" rel="stylesheet" href="/Public/Home/css/casecsss.css"/>
+<script type="text/javascript" src="/Public/Home/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/Public/Home/js/Validform_v5.3.2.js"></script>
+<script type="text/javascript" src="/Public/Home/js/md5.js"></script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$.post("/User/islogin.html",
+			   function(data){
+				   if(data){
+					   $('#loginname').text(data);
+					   $('#loginbefore').remove();
+					   $('#loginafter').show();
+				   }
+	});
+});
+</script>
+</head>
+<body>
+<script type="text/javascript">
+function addCookie(objName,objValue,objHours){
+	var str = objName + "=" + escape(objValue);
+	if(objHours > 0){
+		var date = new Date();
+		var ms = objHours;
+		date.setTime(date.getTime() + ms);
+		str += "; expires=" + date.toGMTString();
+	}
+	document.cookie = str;
+}
+function getCookie(objName){
+	var arrStr = document.cookie.split(";");
+	for(var i = 0;i < arrStr.length;i ++){
+		var temp = arrStr[i].split("=");
+		if(temp[0] == objName) return unescape(temp[1]);
+	}
+}
+function delCookie(name){
+	var date = new Date();
+	date.setTime(date.getTime() - 10000);
+	document.cookie = name + "=a  ; expires=" + date.toGMTString();
+}
+</script>
+<script type="text/javascript">
+document.onkeydown=function(event){
+    var e = event || window.event || arguments.callee.caller.arguments[0];           
+     if(e && e.keyCode==13){ 
+		var username = $("#username").val();
+		var userpass = $("#userpass").val();
+		if(username == '' || userpass == ''){
+			$('#logintips').text('请输入用户名或密码！');
+			$('#logintips').show();
+			$('#logintip').show();
+			return ;
+		}
+		$("#findname").val(username);
+		$.post("/Login/check.html", {
+			username: username , 
+			userpass: userpass ,
+			stype: 'Down',
+			},
+			function(data){
+				if(data == 1){
+					location.reload(true);
+				}else if(data == 2){
+					location.href='';
+				}else{
+					$('#logintip').show();
+					if(data == 's'){
+						$('#logintips').hide();
+						$('#sdgf').show();
+					}else{
+						$('#logintips').show();
+						$('#logintips').text(data);
+					}
+				}
+			}
+		);
+    }
+}; 
+
+
+$(document).ready(function() {
+
+	$('.lookcount').click(function(){
+		var countid = $(this).attr("data");
+		var showcount = '.showcount'+countid;
+		$.post("/Down/lookcount.html", { openid: countid},
+				   function(data){
+						$(showcount).text(parseInt($(showcount).text())+1);
+				   });
+	});
+
+	$(".production").Validform({});
+
+	$(".findmm").Validform({
+		ajaxPost:true,
+		callback:function(data){
+			if(data.status=="y"){
+				$('#findmm').hide();
+				setTimeout(function(){
+					$.Showmsg(info);
+				},2000);
+				setTimeout(function(){
+					$('#zhezhao').hide();
+				},2000);
+			}
+			setTimeout(function(){
+				$('#Validform_msg').hide();
+			},4000);
+		}
+	});
+
+	$("#btnLogin").mouseup(function(){
+
+		var username = $("#username").val();
+		var userpass = $("#userpass").val();
+		if(username == '' || userpass == ''){
+			$('#logintips').text('请输入用户名或密码！');
+			$('#logintips').show();
+			$('#logintip').show();
+			return ;
+		}
+		$("#findname").val(username);
+		$.post("/Login/check.html", {
+			username: username , 
+			userpass: userpass ,
+			stype: 'Down',
+			},
+			function(data){
+				if(data == 1){
+					location.reload(true);
+				}else if(data == 2){
+					location.href='';
+				}else{
+					$('#logintip').show();
+					if(data == 's'){
+						$('#logintips').hide();
+						$('#sdgf').show();
+					}else{
+						$('#logintips').show();
+						$('#logintips').text(data);
+					}
+				}
+			}
+		);
+	});	
+
+	 $(".j-loginBtn").click(
+		function(){
+			var h = $(document).height();
+			$("#zhezhao").css({"opacity":"0.6","height":h+"px"});
+			$("#zhezhao").fadeIn();
+			
+			$("#j-loginDialog").show().animate(
+				{
+					"top":"50%"
+				},200
+			);
+		}
+	)
+	$("#j-closelogin").click(
+		function(){
+			$("#j-loginDialog").fadeOut();
+			$("#zhezhao").fadeOut();
+		}
+	)
+	$(".ybmclosebtn").click(
+		function(){
+			$(".baoming").fadeOut();
+			$("#zhezhao").fadeOut();
+		}
+	)
+	$("#attention").mouseenter(
+		function(){
+			$("#attention li").addClass("active");
+			$("#attention_con").css("display","block");
+				
+		}
+	)	
+	$("#attention").mouseleave(
+		function(){
+			$("#attention li").removeClass("active");
+			$("#attention_con").css("display","none");
+				
+		}
+	)
+	$("#j-close-appdown").click(
+		function(){
+			$("#j-appdown").fadeOut();			
+		}
+	)
+	
+		
+	//底部接触浏览器边缘	
+	var m = $(document).height()-$(".footer").offset().top;
+	$(".footer").css("height",m+"px");
+	
+	$(window).scroll(
+		function(){
+			var A = $(window).scrollTop();
+
+			if(A > 400){
+				$("#j-scrollBtn").fadeIn();
+			}else{
+				$("#j-scrollBtn").fadeOut();
+			}
+
+		}
+	);
+	$("#j-scrollBtn").click(
+		function(){
+			$("html,body").animate(
+				{
+					"scrollTop":0
+				},400
+			);
+		}
+	)
+	var m = $(document).height()-$(".footer").offset().top;
+	$(".footer").css("height",m+"px");
+	$(".ljst_btn").click(
+			function(){
+			$("#j-applyDialog").fadeIn();	
+			var h = $(document).height();				
+			$("#zhezhao").css({"opacity":"0.6","height":h+"px"});
+			$("#zhezhao").fadeIn();
+			
+	});
+	$(".forgetmm").click(
+		function(){
+			$("#j-loginDialog").hide();
+			var fromh = $(window).height();
+			var boxh = 	$("#findmm").outerHeight();
+			var top_h = (fromh-boxh)/2;			
+			$("#findmm").fadeIn().css("top",top_h+"px");
+			var h = $(document).height();				
+			$("#zhezhao").css({"opacity":"0.6","height":h+"px"});
+			$("#zhezhao").fadeIn();
+			
+	});
+	$(".join_team").click(
+			function(){
+				$.post("/Special/tid.html", { id: $(this).attr("tid")});
+				$('#warm_msg').html( '请扫描二维码添加“好毕设微信账号”以获得导师指导，您的申请验证信息如下：<font color="#009E96">'+$(this).attr("msg")+'</font>。' );
+				var fromh = $(window).height();
+				var boxh = 	$("#warm").outerHeight();
+				var top_h = (fromh-boxh)/2;			
+				$("#warm").fadeIn().css("top",top_h+"px");
+				var h = $(document).height();				
+				$("#zhezhao").css({"opacity":"0.6","height":h+"px"});
+				$("#zhezhao").fadeIn();
+				
+		});
+	$(".tip_btn").click(
+			function(){
+			$("#j-tipbtn").fadeIn();	
+			var h = $(document).height();				
+			$("#zhezhao3").css({"opacity":"0.6","height":h+"px"});
+			$("#zhezhao3").fadeIn();
+			
+	});
+	$(".hideask").click(
+			function(){
+			$("#j-appdown").fadeIn();			
+	});
+	$(".j_a_upload").click(
+			function(){
+			var fromh = $(window).height();
+			var boxh = 	$("#j_upload_zp").outerHeight();
+			var top_h = (fromh-boxh)/2;
+			$("#j_upload_zp").fadeIn().css("top",top_h+"px");
+			var h = $(document).height();				
+			$(".zhezhao2").css({"opacity":"0.6","height":h+"px"});
+			$(".zhezhao2").fadeIn();
+			
+	});
+	$("#j_upload_close").click(
+		function(){
+			$("#j_upload_zp").fadeOut();
+			$(".zhezhao2").fadeOut();
+	})	
+	$(".tr_bd input").focus(function(){
+	  	$(this).parents().parents(".tr_bd").addClass("tr_bd_shadow");
+	});	
+	$(".tr_bd input").blur(function(){
+		$(this).parents().parents(".tr_bd").removeClass("tr_bd_shadow");	
+	})
+
+});
+</script>
+<!-- 登陆框 start-->
+	<div id="zhezhao" ></div><div id="zhezhao2"></div><div id="zhezhao3"></div>
+	<div class="hide loginbox" id="j-loginDialog">
+		<div class="zcr">
+			<div class="zcbox" style="margin-top:25px;">
+				<p class="pp1" style="line-height:40px;">使用论坛账号可直接登录</p>
+				<a id="j-closelogin" class="closebtn" href="javascript:void(0);">&nbsp;</a>
+				<form action="/Login/check.html" method="post" id="loginform" >
+				<table>
+					<tbody>
+						<tr class="tr_bd">
+							<td class="td1">用户名：</td>
+							<td class="td2">
+							<input name="username[]" type="text" class="ss" onclick="this.select();" placeholder="用户名或邮箱，如name@qq.com" title="用户名或邮箱，如name@qq.com" id="username" />
+							</td>
+						</tr>
+						<tr height="10"><td></td></tr>
+						<tr class="tr_bd">
+							<td class="td1">密&nbsp;&nbsp;&nbsp;码：</td>
+							<td class="td2 td22">
+							<input  name="password[]" type="password" class="ss" onclick="this.select();" placeholder="输错5次将锁定账号" title="输错5次将锁定账号" id="userpass" />
+							</td>
+						</tr>
+						<tr>
+							<td class="td2 td21" colspan="2"><input name="btnLogin" type="button" class="zuc" id="btnLogin" value="确认登录" style="margin-top:10px;" /></td>
+						</tr>
+						<tr height="10"><td></td></tr>
+						<tr class="cwbg" style="display:none;" id="logintip">
+							<td colspan="2" style="text-align:center;color:red; font-size:12px;" ><span id="logintips" style="display:none"></span><span id="sdgf" style="display:none">账户已锁定，请<a href="javascript:void(0);" class="forgetmm">点击解锁</a>并重置密码！</span></td>
+						</tr>
+					</tbody>
+				</table>
+				</form>
+				<p class="pp1 pp2">没有账号？&nbsp;&nbsp;<a href="/Register/index.html" class="ljzc" >立即注册</a><a href="javascript:void(0);" class="forgetmm wjmm" >忘记密码？</a></p>
+			</div>
+		</div>		
+	</div>				
+<!-- /登陆框 end--> 
+<!-- /忘记密码 start --> 
+<div class="hide st_con loginbox baoming" id="findmm">
+	<p class="p_bg">解锁/找回密码</p>
+	<a class="closebtn ybmclosebtn stclosebtn"></a>	
+	<div class="st_table st_table2">
+		<form action="/User/findmm.html" class="findmm" >
+		<table>
+			<tbody>
+			 
+			<tr>
+				<td class="td1">输入您的用户名：</td>
+				<td class="td2"><input type="text" style="width:180px" id="findname" class="truename" name="find[username]" datatype="s2-15"  errormsg="账户名由2-15个字符组成！"  /></td>
+				<td class="td3"></td>
+			</tr>
+			
+			<tr>
+				<td class="td1">输入您的邮箱：</td>
+				<td class="td2"><input type="text" style="width:180px" class="truename" name="find[email]" datatype="e" nullmsg="请输入正确的邮箱！" /></td>
+				<td class="td3"></td>
+			</tr>
+			<tr>
+				<td class="td2" colspan="3"><input type="submit" value="发送新密码" class="zuc btn-default"  /></td>
+			</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+</div>
+<!-- /忘记密码 end --> 
+
+<!--上传作品 start -->
+<div class="zhezhao2"></div>
+<div class="upload_zp" id="j_upload_zp">
+	<a class="course_form_close" id="j_upload_close"></a>	
+	<div class="notice">
+		<h3>作品上传须知:</h3>
+		<p>1.请将最终的《项目源码》文件、《需求文档》文件、《毕设论文》文件合并打包为“.zip”格式文件上传；</p>
+		<p>2.请在2015年4月28日24:00之前完成上传。</p>
+	</div>
+	<form action="/Special/upload.html" class="production" method="post" enctype="multipart/form-data" >
+		<table cellpadding="0" cellspacing="0" width="634" border="0" align="center">
+			<tbody>
+				<tr>
+					<td class="td_l">学员姓名 <span>*</span></td>
+					<td><input type="text" name="realname" value="" style=" width:145px; padding-left:5px" datatype="s2-5" errormsg="请输入2-5个汉字信息！"  nullmsg="请输入您的姓名！" ></td>
+				</tr>
+				<tr>
+					<td class="td_l">导师姓名 <span>*</span></td>
+					<td>
+						<select name="tid" id="" style="width:150px;">
+						<option value="1-1">Java战队导师</option><option value="2-2">.Net战队导师</option><option value="3-3">PHP战队导师</option><option value="4-4">网页平面战队导师</option><option value="5-5">C++战队导师</option>						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="td_l">项目名称 <span>*</span></td>
+					<td><input type="text" name="title" placeholder="请务必准确填写您的项目名称" style="font-size:12px; width:270px; padding-left:5px;"  datatype="s3-30" errormsg="请输入您的项目名称！"  nullmsg="请输入您的项目名称！" ></td>
+				</tr>
+				<tr>
+					<td class="td_l">项目简介 <span>*</span></td>
+					<td><textarea name="content" style="resize:none; width:265px; height:90px; border-color:#dfdfdf; font-size:12px; padding:5px;" datatype="s10-300" errormsg="请输入您的项目简介！"  nullmsg="请输入您的项目简介！" tip="请简要介绍您的毕设作品。（300字以内）" >请简要介绍您的毕设作品。（300字以内）</textarea></td>
+				</tr>
+				<tr>
+					<td class="td_l">上传作品 <span>*</span></td>
+					<td><input type="file" name="production" style="border:0; width:276px; overflow:hidden;" datatype="*"  nullmsg="请上传您的项目文件（以.zip结尾的压缩文件）！"></td>
+				</tr>
+				<tr>
+					<td class="td_l"></td>
+					<td>
+						<input type="submit" class="a_submit" value="确认提交">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</div>
+<!--上传作品 end -->
+
+<!-- /提示 start --> 
+<div class="hide st_con loginbox baoming" id="warm">
+	<p class="p_bg">温馨提示</p>
+	<p style="color:#9D0005; text-indent:20px; padding-top:10px;">恭喜，申请成功！</p><br/><img src="/Public/Home/images/wx_by.jpg" style="width:180px; margin:0 auto; display:block;" />
+	<a class="closebtn ybmclosebtn stclosebtn"></a>	
+	<div class="st_table st_table2">
+		<p id="warm_msg" style="padding-right:20px;line-height:22px"></p>
+	</div>
+</div>
+<!-- /提示 end -->
+
+<!-- @通用头部 start -->
+<div class="header">
+	<div class="top">
+		<div class="top_in">
+			<h1><a href="#"><img src="/Public/Home/images/logo.jpg" width="205" height="32"/></a></h1>
+			<div class="top_r">
+				<span class="welcome">中国好毕设，找传智播客！</span>
+				<span class="login_bg"></span>
+				
+				<span id="loginbefore">
+					<a href="javascript:void(0);" class="login j-loginBtn">登录</a>
+					<span class="line">|</span>
+					<a href="/Register" class="register">注册</a>
+					<a href="/Connect/login/type/qq.html" style="float: right; margin-top: -4px;" ><img src="/Public/Home/images/Connect_logo_7.png"></a>					
+				</span>
+				<span id="loginafter" style="display:none">
+					<a href="/user/" class="login" style="color:#009E96;">进入个人中心</a>
+					<a href="/Login/out.html" class="register">安全退出</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="nav">
+		<div class="nav_in">
+			<ul>
+				<li><a  href="/" target="_self">首页</a></li>
+						<li>
+									<a  href="/special/" target="_self">2015中国好毕设</a><div class="abs hot notxt">hot</div>																	</li><li>
+									<a class="cur" href="/down/" target="_self"><font color="">好毕设下载</font></a>																	</li><li>
+																			<a  href="http://open.itcast.cn/guide/" target="_blank"><font color="">公开课指导</font></a>								</li><li>
+									<a  href="/trophy/" target="_self"><font color="">2015获奖作品展</font></a>																	</li><li>
+																			<a  href="http://ask.itcast.cn/explore/category-1" target="_blank"><font color="">问答专区</font></a>								</li>					</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- @通用头部 end -->
+
+<!--检索 start-->
+<div class="retrieval">
+	<div class="jskind">
+		<strong>按技术点：</strong>
+		<ul>
+			<li><a href="/Down/subject__.html" class="cur" >全部</a></li>
+			<li><a href="/Down/subject_1_.html"  >Java</a></li><li><a href="/Down/subject_2_.html"  >.Net</a></li><li><a href="/Down/subject_3_.html"  >PHP</a></li><li><a href="/Down/subject_4_.html"  >网页平面</a></li><li><a href="/Down/subject_5_.html"  >C++</a></li>		</ul>
+	</div>
+	<div class="jskind jskind1">
+		<strong>项目类型：</strong>
+		<ul>
+			<li><a href="/Down/subject_.html" class="cur" >全部</a></li>
+			<li><a href="/Down/subject__1.html"  >游戏娱乐</a></li><li><a href="/Down/subject__2.html"  >办公管理</a></li><li><a href="/Down/subject__3.html"  >电子商务</a></li><li><a href="/Down/subject__4.html"  >社区论坛</a></li><li><a href="/Down/subject__5.html"  >整站系统</a></li><li><a href="/Down/subject__6.html"  >留言日记</a></li><li><a href="/Down/subject__7.html"  >其他项目</a></li>	
+		</ul>
+	</div>
+</div>
+<!--检索 end-->
+
+<!--downcon start-->
+<div class="down_wrap">
+	<div class="down_l">
+			<dl>
+				<dt><a href="/Down/look_41.html" target="_blank"><img src="/upload/./image/20150430/55419b3435298.jpg" width="215" height="135" alt="【毕设项目】-手机影音制作" /></a></dt>
+				<dd>
+					<h3><a href="/Down/look_41.html" target="_blank">【毕设项目】-手机影音制作</a></h3>
+					<p>手机影音---最新版手机影音包含视频处理和音频处理2个模块，涵盖了视频播放常见处理，播放网络视频，视频万能解码，音频播放模式切换，歌词解析，歌词同步显示等功能。一起来学习吧！</p>
+					<div><span class="showcount41">462</span>次下载 &nbsp;&nbsp;
+					<a href="javascript:void(0);" class="a_upload j-loginBtn">马上下载</a>
+										</div>
+				</dd>
+			</dl><dl>
+				<dt><a href="/Down/look_40.html" target="_blank"><img src="/upload/./image/20150421/5535e03ff391d.jpg" width="215" height="135" alt="【毕设项目】B2C的电子商城数据库设计" /></a></dt>
+				<dd>
+					<h3><a href="/Down/look_40.html" target="_blank">【毕设项目】B2C的电子商城数据库设计</a></h3>
+					<p>你还在为是否要学习PHP而犹豫不决吗？你还在为如何提升PHP项目经验而发愁苦恼吗？你还在为怎么完成毕业设计而痛苦不堪吗？你还在为毕业后找不到工作而忧心忡忡吗？那么敬请关注本次课程，你的所有问题和疑惑将在这里迎刃而解。</p>
+					<div><span class="showcount40">779</span>次下载 &nbsp;&nbsp;
+					<a href="javascript:void(0);" class="a_upload j-loginBtn">马上下载</a>
+										</div>
+				</dd>
+			</dl><dl>
+				<dt><a href="/Down/look_39.html" target="_blank"><img src="/upload/./image/20150417/5530baa129be4.jpg" width="215" height="135" alt="【毕设项目】android电子市场" /></a></dt>
+				<dd>
+					<h3><a href="/Down/look_39.html" target="_blank">【毕设项目】android电子市场</a></h3>
+					<p>安卓电子市场是国内最早最大的安卓软件和游戏下载 平台，提供"手机客户端"、"平板电脑客户端"和"网页端"等多种下载渠道，用户可以自由选择"手机直接下载"、"云推送"、"扫描二维码"和"电脑下 载"等多种方式轻松获取安卓软...</p>
+					<div><span class="showcount39">417</span>次下载 &nbsp;&nbsp;
+					<a href="javascript:void(0);" class="a_upload j-loginBtn">马上下载</a>
+										</div>
+				</dd>
+			</dl><dl>
+				<dt><a href="/Down/look_38.html" target="_blank"><img src="/upload/./image/20150410/552732feb938c.jpg" width="215" height="135" alt="【毕设项目】中国象棋项目开发如何实现跨平台" /></a></dt>
+				<dd>
+					<h3><a href="/Down/look_38.html" target="_blank">【毕设项目】中国象棋项目开发如何实现跨平台</a></h3>
+					<p>中国象棋作为中国的传统游戏项目，目前在各大游戏平台中都有提供，本版本中国象棋使用了QT技术，实现跨平台的中国象棋人机对战和网络对战功能...</p>
+					<div><span class="showcount38">761</span>次下载 &nbsp;&nbsp;
+					<a href="javascript:void(0);" class="a_upload j-loginBtn">马上下载</a>
+										</div>
+				</dd>
+			</dl><dl>
+				<dt><a href="/Down/look_37.html" target="_blank"><img src="/upload/./image/20150410/5527330dbfd48.jpg" width="215" height="135" alt="【毕设项目】响应式HTML5和CSS3炫酷专题（教程下载请加QQ  1693863509）" /></a></dt>
+				<dd>
+					<h3><a href="/Down/look_37.html" target="_blank">【毕设项目】响应式HTML5和CSS3炫酷专题（教程下载请加QQ  1693863509）</a></h3>
+					<p>随着HTML5和CSS3技术的流行，网页越来越具有视觉表现力。越来越多的网站专题页面采用大气的版式设计，配上炫酷的交互效果，使网页的浏览者有非常深的影响。而通过响应式技术，更能让网页设计拥有更多的视觉表现与交互表现，适配...</p>
+					<div><span class="showcount37">2050</span>次下载 &nbsp;&nbsp;
+					<a href="javascript:void(0);" class="a_upload j-loginBtn">马上下载</a>
+										</div>
+				</dd>
+			</dl>		<div class="down_page"><div>  <span class="current">1</span><a class="num" href="/Down/index/p/2.html">2</a><a class="num" href="/Down/index/p/3.html">3</a><a class="num" href="/Down/index/p/4.html">4</a><a class="num" href="/Down/index/p/5.html">5</a><a class="num" href="/Down/index/p/6.html">6</a><a class="num" href="/Down/index/p/7.html">7</a><a class="num" href="/Down/index/p/8.html">8</a> <a class="next" href="/Down/index/p/2.html">>></a> </div></div>
+	</div>
+	<div class="down_r">
+		<div class="down_video" style="overflow:hidden"><embed src="http://static.video.qq.com/TPout.swf?vid=r1091yxl4x4&auto=0" allowFullScreen="true" quality="high" width="312" height="255" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></div>
+		<div class="down_top">
+			<h3>看看大家的下载</h3>
+			<ul>
+			<li><a href="javascript:void(0);" title="网上图书商城视频教程"  class="a_upload j-loginBtn"><span class="front"   >1</span><strong>[Java]</strong>网上图书商城视频教程</a></li>
+				<li><a href="javascript:void(0);" title="在线点餐平台开发"  class="a_upload j-loginBtn"><span class="front"   >2</span><strong>[.Net]</strong>在线点餐平台开发</a></li>
+				<li><a href="javascript:void(0);" title="SSH网上商城"  class="a_upload j-loginBtn"><span class="front"   >3</span><strong>[Java]</strong>SSH网上商城</a></li>
+				<li><a href="javascript:void(0);" title="【毕设项目】响应式HTML5和CSS3炫酷专题（教程下载请加QQ  1693863509）"  class="a_upload j-loginBtn"><span    >4</span><strong>[网页平面]</strong>【毕设项目】响应式HTML5和CSS3炫酷专题（教程下载请加QQ  1693863509）</a></li>
+				<li><a href="javascript:void(0);" title="轻松搞定JavaWeb聊天室毕设项目"  class="a_upload j-loginBtn"><span    >5</span><strong>[Java]</strong>轻松搞定JavaWeb聊天室毕设项目</a></li>
+				<li><a href="javascript:void(0);" title="轻松搞定“学生在线选课系统”"  class="a_upload j-loginBtn"><span    >6</span><strong>[.Net]</strong>轻松搞定“学生在线选课系统”</a></li>
+				<li><a href="javascript:void(0);" title="图书商城电子商务系统"  class="a_upload j-loginBtn"><span    >7</span><strong>[.Net]</strong>图书商城电子商务系统</a></li>
+				<li><a href="javascript:void(0);" title="Asp.net MVC的企业管理系统项目开发"  class="a_upload j-loginBtn"><span    >8</span><strong>[.Net]</strong>Asp.net MVC的企业管理系统项目开发</a></li>
+				<li><a href="javascript:void(0);" title="JavaWeb图书管理系统视频+资料+笔记"  class="a_upload j-loginBtn"><span    >9</span><strong>[Java]</strong>JavaWeb图书管理系统视频+资料+笔记</a></li>
+				<li><a href="javascript:void(0);" title="OA-报名与审核管理系统"  class="a_upload j-loginBtn"><span  style="padding:0 3px;"  >10</span><strong>[Java]</strong>OA-报名与审核管理系统</a></li>
+							</ul>
+		</div>
+		<div class="down_top down_new">
+			<h3>看看最近的更新</h3>
+			<ul>
+				<li><a href="javascript:void(0);" title="【毕设项目】-手机影音制作"  class="a_upload j-loginBtn"><span class="front"   >1</span><strong>[Java]</strong>【毕设项目】-手机影音制作</a></li>
+				<li><a href="javascript:void(0);" title="【毕设项目】B2C的电子商城数据库设计"  class="a_upload j-loginBtn"><span class="front"   >2</span><strong>[PHP]</strong>【毕设项目】B2C的电子商城数据库设计</a></li>
+				<li><a href="javascript:void(0);" title="【毕设项目】android电子市场"  class="a_upload j-loginBtn"><span class="front"   >3</span><strong>[Java]</strong>【毕设项目】android电子市场</a></li>
+				<li><a href="javascript:void(0);" title="【毕设项目】中国象棋项目开发如何实现跨平台"  class="a_upload j-loginBtn"><span    >4</span><strong>[C++]</strong>【毕设项目】中国象棋项目开发如何实现跨平台</a></li>
+				<li><a href="javascript:void(0);" title="【毕设项目】响应式HTML5和CSS3炫酷专题（教程下载请加QQ  1693863509）"  class="a_upload j-loginBtn"><span    >5</span><strong>[网页平面]</strong>【毕设项目】响应式HTML5和CSS3炫酷专题（教程下载请加QQ  1693863509）</a></li>
+				<li><a href="javascript:void(0);" title="在线点餐平台开发"  class="a_upload j-loginBtn"><span    >6</span><strong>[.Net]</strong>在线点餐平台开发</a></li>
+				<li><a href="javascript:void(0);" title="SSH网上商城"  class="a_upload j-loginBtn"><span    >7</span><strong>[Java]</strong>SSH网上商城</a></li>
+				<li><a href="javascript:void(0);" title="OA-报名与审核管理系统"  class="a_upload j-loginBtn"><span    >8</span><strong>[Java]</strong>OA-报名与审核管理系统</a></li>
+				<li><a href="javascript:void(0);" title="揭秘千千静听音乐播放器开发之旅"  class="a_upload j-loginBtn"><span    >9</span><strong>[.Net]</strong>揭秘千千静听音乐播放器开发之旅</a></li>
+				<li><a href="javascript:void(0);" title="win8开发教程项目实战篇"  class="a_upload j-loginBtn"><span  style="padding:0 3px;"  >10</span><strong>[.Net]</strong>win8开发教程项目实战篇</a></li>
+							</ul>
+		</div>
+	</div>
+</div>
+<!--downcon end-->
+<!-- @通用底部 start -->
+<div class="footer">
+	<div class="inner">
+		<div class="ft_l">
+			<div class="ft_l_txt">
+				<h3>中国好毕设</h3>
+				<ul>
+					<li><a href="http://by.itcast.cn/down/" target="_blank">资源下载</a></li>
+					<li><a href="http://ask.itcast.cn/explore/category-1" target="_blank">在线问答</a></li>
+					<li><a href="http://open.itcast.cn/" target="_blank">公开课平台</a></li>
+					<li><a href="http://ask.itcast.cn/explore/category-1" target="_blank">寻求帮助</a></li>
+				</ul>
+			</div>
+			<div class="ft_l_txt">
+				<h3>友情链接</h3>
+				<ul>
+					<li><a href="http://www.itcast.cn/" target="_blank">传智播客官网</a></li>
+					<li><a href="http://www.itheima.com/" target="_blank">黑马程序员官网</a></li>
+					<li><a href="http://www.itcast.cn/channel/video.shtml" target="_blank">视频cool</a></li>
+					<li><a href="http://bbs.itcast.cn/" target="_blank">传智论坛</a></li>
+					<li><a href="http://bbs.itheima.com/" target="_blank">黑马论坛</a></li>
+				</ul>
+			</div>
+			<div class="ft_l_txt">
+				<h3>联系我们</h3>
+				<ul>
+					<li>电话：010-82935150/60/70 </li>
+					<li>传真：010-82935100</li>
+					<li>邮箱：zhanghj+itcast.cn</li>
+					<li>地址：北京市昌平区建材城西路金燕龙办公楼一层</li>
+					<li>邮编：100096</li>
+				</ul>
+			</div>
+			<div class="copy_box">
+				<p class="copy">京ICP备08001421号 京公网安备110108007702</p>
+				<span class="tj"><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F616f7dbc9d62017d85a273460d618961' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254399527'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1254399527%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></span>
+			</div>
+		</div>
+		<div class="ft_r">
+			<div class="it_wx">
+				 <p>传智播客官方微信</p>
+		 		<img src="/Public/Home/images/footer_wx.jpg" width="157" height="157" /> 
+			</div>
+			<div class="boniu_wx">
+				<p>播妞个人微信</p>
+				<img src="/Public/Home/images/footer_boniu.jpg" width="157" height="157" /> 
+			</div>
+		</div>
+	</div>
+</div>
+<div class="v_nav">
+	<div class="v_nav_con">
+		<a href="http://wpa.qq.com/msgrd?v=3&uin=2283405931&site=qq&menu=yes" target="_blank" class="v_nav_ask"><span>在线</br>咨询</span></a>
+		<a href="http://by.itcast.cn/special/" target="_blank" class="v_nav_spc"><span>大赛</br>活动</span></a>
+		<a href="http://by.itcast.cn/down/" target="_blank" class="v_nav_down"><span>资源</br>下载</span></a>
+		<a href="http://open.itcast.cn" target="_blank" class="v_nav_open"><span style="padding-top:17px; height:33px;">公开课</span></a>
+		<a href="#" class="v_nav_top"><span>返回</br>顶部</span></a>
+	</div>
+</div>
+<!-- @通用底部 end -->
+<!-- 技术方向切换js -->
+<script type="text/javascript">
+	$(function(){
+		$(".tech_ul li").mouseenter(function(){
+			$(this).addClass("cur").siblings().removeClass("cur");
+			$(".tech_con").slideDown();
+			$(".tech_con ul").eq($(this).index()).show().siblings().hide();	
+		})
+		$(".layout1 .bd").mouseleave(function(){
+			$(".tech_con").stop();			
+			$(".tech_con").slideUp();
+			$(".tech_ul li").removeClass("cur");
+		})
+	})
+</script>
+<!-- 右侧导航 js --> 
+<script type="text/javascript">
+	$(function(){
+		$(window).scroll(
+			function(){
+				var A = $(window).scrollTop();
+				if(A > 500){
+					$(".v_nav_top").css("visibility","visible");
+				}else{
+					$(".v_nav_top").css("visibility","hidden");
+				}
+			});
+		$(".v_nav_top").click(
+			function(){
+				$("html,body").animate(
+					{
+						"scrollTop":0
+					},300
+			);
+		});
+	});
+</script>
+</body>
+</html>

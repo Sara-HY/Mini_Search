@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{bae1b767-9a25-48c7-96a8-ce3fdf02068e}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{458b16f8-47e4-41c5-ad05-e0cff8486df1}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mini_search.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_mini_search.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_mini_search.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_mini_search.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Chinese_word_segment.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dictionary.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="htmlparser.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="inverted_index.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="search.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stack.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trietree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_dialog.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_dialog.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="dialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mini_search.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="mini_search.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="mini_search.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dialog.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dialog.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_mini_search.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chinese_word_segment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dictionary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="htmlparser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inverted_index.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="search.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="trietree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_dialog.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="mini_search.rc" />
+  </ItemGroup>
+</Project>

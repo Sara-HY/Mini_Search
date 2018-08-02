@@ -1,0 +1,1786 @@
+<!doctype html>
+<head>
+<title>传智播客公开课–汇集Java、.Net、PHP 、网页平面UI、iOS、C/C++等主流编程技术课程，让你一直走在技术的最前沿。</title>
+<meta name="keywords" content="Java教程,Java视频,.Net教程,.Net视频, PHP教程,PHP视频,网页平面公开课教程,网页平面公开课视频, iOS教程,iOS视频, C/C++教程,C/C++视频,远程班,.Net远程班,PHP远程班">
+<meta name="description" content="传智播客公开课汇集海量IT精品技术教程，涉及Java、.Net、PHP 、网页平面UI、iOS、C/C++。传智播客公开课为爱学习技术的你提供最前沿的技术和海量IT教程。领略名师风采，感受名校魅力，尽在传智播客免费公开课。">
+<link type="image/x-icon" rel="shortcut icon" href="http://www.itcast.cn/favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/Public/Home/style/style.css">
+<link rel="stylesheet" href="/Public/Home/style/other.css">
+<link rel="stylesheet" href="/Public/Home/style/index.css">
+<link rel="stylesheet" href="/Public/Home/style/login.css">
+<link rel="stylesheet" href="/Public/Home/style/user.css">
+<meta name="baidu-site-verification" content="63e008764b6b5c7280a4035a3c4d96c9"/>
+<script type="text/javascript" src="/Public/Home/Js/jquery.min.js"></script>
+
+<!--[if IE 6]>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#j-tipbtn").fadeIn();
+	var h = $(document).height();				
+	$("#zhezhao2").css({"opacity":"0.8","height":h+"px"});
+	$("#zhezhao2").fadeIn();
+	$(".closebtn").text('');
+	$('#gftipbtn').html( "1、如果您正在使用360浏览器兼容模式，请切换为极速模式！<br /><br />2、您使用的IE浏览器版本已过期，<a href='http://windows.microsoft.com/zh-CN/windows/upgrade-your-browser/' target='_blank' style='color:blue'>点此升级IE浏览器！</a>" );
+});
+</script>
+<![endif]-->
+<!--[if IE 7]>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#j-tipbtn").fadeIn();
+	var h = $(document).height();				
+	$("#zhezhao2").css({"opacity":"0.8","height":h+"px"});
+	$("#zhezhao2").fadeIn();
+	$(".closebtn").text('');
+	$('#gftipbtn').html( "1、如果您正在使用360浏览器兼容模式，请切换为极速模式！<br /><br />2、您使用的IE浏览器版本已过期，<a href='http://windows.microsoft.com/zh-CN/windows/upgrade-your-browser/' target='_blank' style='color:blue'>点此升级IE浏览器！</a>" );
+});
+</script>
+<![endif]--> 
+<meta property="qc:admins" content="227015361666143134636" />
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$.post("/user/islogin.html",
+			   function(data){
+				   if(data){
+					   $('#loginname').text(data);
+					   $('#loginbefore').remove();
+					   $('#loginafter').show();
+				   }
+	});
+});
+function circulateExecute(d){
+	$.post("/index/next.html", { next: d},
+	   function(data){
+		   if(data){
+			   location.reload(true);
+		   }
+	   });
+}
+</script>
+</head>
+<body data-pagename="index">
+
+<script type="text/javascript" src="/Public/Home/Js/md5.js"></script>
+<script type="text/javascript" src="/Public/Home/Js/Validform_v5.3.2.js"></script>
+<script type="text/javascript">
+function addCookie(objName,objValue,objHours){
+	var str = objName + "=" + escape(objValue);
+	if(objHours > 0){
+		var date = new Date();
+		var ms = objHours;
+		date.setTime(date.getTime() + ms);
+		str += "; expires=" + date.toGMTString();
+	}
+	document.cookie = str;
+}
+function getCookie(objName){
+	var arrStr = document.cookie.split(";");
+	for(var i = 0;i < arrStr.length;i ++){
+		var temp = arrStr[i].split("=");
+		if(temp[0] == objName) return unescape(temp[1]);
+	}
+}
+function delCookie(name){
+	var date = new Date();
+	date.setTime(date.getTime() - 10000);
+	document.cookie = name + "=a  ; expires=" + date.toGMTString();
+}
+</script>
+<script type="text/javascript">
+document.onkeydown=function(event){
+    var e = event || window.event || arguments.callee.caller.arguments[0];           
+     if(e && e.keyCode==13){ 
+    	 var pass = $("#passwordd").val();
+    	 if(pass != ''){
+	 		$("#passworddd").val(hex_md5(pass));
+	 		$("#passwordd").val(hex_md5(pass+1));
+    	 }
+
+ 		var uname = $("#username");
+		var upass = $("#passworddd");
+		var username = $("#username").val();
+		var userpass = $("#passwordd").val();
+		if(username == '' || userpass == ''){
+			$('#logintips').text('请输入用户名或密码！');
+			$('#logintips').show();
+			$('#logintip').show();
+			return ;
+		}
+		$("#findname").val(username);
+		$.post("/login/check.html", {
+			username: uname.val() , 
+			password: upass.val(),
+			passwordd: pass,
+			stype: 'Index',
+			},
+			function(data){
+				if(data == 1){
+					location.reload(true);
+				}else if(data == 2){
+					location.href='/';
+				}else{
+					$('#logintip').show();
+					if(data == 's'){
+						$('#logintips').hide();
+						$('#sdgf').show();
+					}else{
+						$('#logintips').show();
+						$('#logintips').text(data);
+					}
+				}
+			});
+    }
+}; 
+
+
+$(document).ready(function() {
+
+	var $slot = getCookie('slot');
+	if($slot == '#st_cons'){
+		$("#st_cons").fadeIn();
+		var h = $(document).height();
+		$("#zhezhao").css({"opacity":"0.5","height":h+"px"});
+		$("#zhezhao").fadeIn();
+		delCookie('slot');
+	}
+
+	$(".ljzc").click(
+			function(){
+				delCookie('slot');
+			}
+		)
+	
+	$("#btnLogin").mousedown(function(){
+		pass = $("#passwordd").val();
+		if(pass != ''){
+			$("#passworddd").val(hex_md5(pass));
+			$("#passwordd").val(hex_md5(pass+1));
+		}
+	});
+	$("#btnLogin").mouseup(function(){
+
+		var uname = $("#username");
+		var upass = $("#passworddd");
+		var username = $("#username").val();
+		var userpass = $("#passwordd").val();
+		if(username == '' || userpass == ''){
+			$('#logintips').text('请输入用户名或密码！');
+			$('#logintips').show();
+			$('#logintip').show();
+			return ;
+		}
+		$("#findname").val(username);
+		$.post("/login/check.html", {
+			username: uname.val() , 
+			password: upass.val(),
+			passwordd: pass,
+			stype: 'Index',
+			},
+			function(data){
+				if(data == 1){
+					location.reload(true);
+				}else if(data == 2){
+					location.href='/';
+				}else{
+					$('#logintip').show();
+					if(data == 's'){
+						$('#logintips').hide();
+						$('#sdgf').show();
+					}else{
+						$('#logintips').show();
+						$('#logintips').text(data);
+					}
+				}
+			});
+	});	
+
+	 $(".j-loginBtn").click(
+		function(){
+			$("#j-loginDialog").fadeIn();
+			var h = $(document).height();
+			$("#zhezhao").css({"opacity":"0.5","height":h+"px"});
+			$("#zhezhao").fadeIn();
+		}
+	)
+	$("#j-closelogin").click(
+		function(){
+			$("#j-loginDialog").fadeOut();
+			$("#zhezhao").fadeOut();
+		}
+	)
+	$(".ybmclosebtn").click(
+		function(){
+			$(".baoming").fadeOut();
+			$("#zhezhao").fadeOut();
+		}
+	)
+	$(".ybmclosebtngf").click(
+		function(){
+			$(".baoming").fadeOut();
+			$("#zhezhao3").fadeOut();
+		}
+	)
+	$("#attention").mouseenter(
+		function(){
+			$("#attention li").addClass("active");
+			$("#attention_con").css("display","block");
+				
+		}
+	)	
+	$("#attention").mouseleave(
+		function(){
+			$("#attention li").removeClass("active");
+			$("#attention_con").css("display","none");
+				
+		}
+	)
+	$("#j-close-appdown").click(
+		function(){
+			$("#j-appdown").fadeOut();			
+		}
+	)
+	$(".sqst_btn").click(
+		function(){
+			$("#j-baomingDialog").fadeIn();
+			var h = $(document).height();
+			$("#zhezhao").css({"opacity":"0.5","height":h+"px"});
+			$("#zhezhao").fadeIn();
+		}
+	)
+	$(".st_btn").click(
+		function(){
+		$("#j-baomingDialog").fadeOut().siblings("#st_cons").fadeIn();	
+	})
+	$(".st_login_btn").click(
+	function(){
+			$("#j-baomingDialog").fadeOut().siblings("#j-loginDialog").fadeIn();
+			addCookie('slot', '#st_cons' , '10');	
+		})
+	
+	
+	
+	$(".sqst_btnn").click(
+		function(){
+			$("#j-applyDialog").fadeOut();
+			$("#j-baomingDialog").fadeIn();
+			var h = $(document).height();
+			$("#zhezhao").css({"opacity":"0.5","height":h+"px"});
+			$("#zhezhao").fadeIn();
+		}
+	)
+	$(".st_btnn").click(
+		function(){
+			$("#j-applyDialog").fadeOut();
+		$("#j-baomingDialog").fadeOut().siblings("#st_cons").fadeIn();	
+	})
+	
+	
+	
+	
+	
+	$(".ybm").click(
+		function(){
+			$(".ybm_con").fadeIn();
+			var h = $(document).height();
+			$("#zhezhao").css({"opacity":"0.5","height":h+"px"});
+			$("#zhezhao").fadeIn();
+		}
+	)
+	$(window).scroll(
+		function(){
+			var A = $(window).scrollTop();
+
+			if(A > 400){
+				$("#j-scrollBtn").fadeIn();
+			}else{
+				$("#j-scrollBtn").fadeOut();
+			}
+
+		}
+	);
+	$("#j-scrollBtn").click(
+		function(){
+			$("html,body").animate(
+				{
+					"scrollTop":0
+				},400
+			);
+		}
+	)
+	var m = $(document).height()-$(".footer").offset().top;
+	$(".footer").css("height",m+"px");
+	$(".ljst_btn").click(
+			function(){
+			$("#j-applyDialog").fadeIn();	
+			var h = $(document).height();				
+			$("#zhezhao").css({"opacity":"0.5","height":h+"px"});
+			$("#zhezhao").fadeIn();
+			
+	});
+	$(".forgetmm").click(
+		function(){
+			$("#j-loginDialog").hide();
+			$("#findmm").fadeIn();	
+			var h = $(document).height();				
+			$("#zhezhao").css({"opacity":"0.5","height":h+"px"});
+			$("#zhezhao").fadeIn();
+			delCookie('slot');
+	});
+	$(".tip_btn").click(
+			function(){
+			$("#j-tipbtn").fadeIn();	
+			var h = $(document).height();				
+			$("#zhezhao3").css({"opacity":"0.5","height":h+"px"});
+			$("#zhezhao3").fadeIn();
+			
+	});
+	$(".hideask").click(
+			function(){
+			$("#j-appdown").fadeIn();			
+	});
+
+});
+</script>
+
+<!-- 登陆框 -->
+	<div id="zhezhao" ></div><div id="zhezhao2"></div><div id="zhezhao3"></div>
+	<div class="hide loginbox loginboxnew" id="j-loginDialog">
+		<div class="zcr login_inner">
+			<h2 class="h2">欢迎来到传智播客公开课</h2>
+			<div class="zcbox">
+				<p class="pp1"><span style="color:#f00;">温馨提示：</span>使用论坛账号可直接登录</p>
+				<a id="j-closelogin" class="closebtn" href="javascript:void(0);">&nbsp;</a>
+				<form action="/login/check.html" method="post" id="loginform" >
+				<div class="tb_box">
+					<table cellpadding="0" cellspacing="0" border="0" align="center" >
+						<tbody>
+							<tr>
+								<td class="td2">
+									<input name="username[]" type="text" class="ss loginuser" onclick="this.select();" placeholder="用户名或邮箱，如name@qq.com" title="用户名或邮箱，如name@qq.com" id="username"/>
+								</td>
+								<td class="qrbtn" rowspan="2"><input name="btnLogin" type="button" class="zuc" id="btnLogin" value="" title="点击登录"/></td>
+							</tr>
+							<tr>
+								<td class="td2 td22">
+									<input  name="password[]" type="password" class="ss" onclick="this.select();" placeholder="输错5次将锁定账号" title="输错5次将锁定账号" id="passwordd" />
+									<input  name="password[]" type="password" class="ss" id="passworddd" style="display:none" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="cwbg" style="display:none; padding-top:10px;" id="logintip">
+					<p style="text-align:center;color:red; font-size:12px;" ><span id="logintips" style="display:none"></span><span id="sdgf" style="display:none">账户已锁定，请<a href="javascript:void(0);" class="forgetmm">点击解锁</a>并重置密码！</span></p>
+				</div>
+				</form>
+				<p class="pp1 pp2"><span style="float:left;">没有账号？<a href="/register/index.html" class="ljzc" style="display:inline-block;">立即注册</a></span><a href="javascript:void(0);" class="forgetmm wjmm" style="float:right;" >忘记密码？</a></p>
+			</div>
+			<div class="qq_login">
+				<p>使用第三方账号登录 &nbsp;<a href="/connect/login/type/qq.html" class="qq_login_btn">QQ登录</a></p>
+			</div>
+		</div>		
+	</div>				
+<!-- /登陆框 --> 
+<!-- /忘记密码 --> 
+
+<script type="text/javascript">
+$(function(){
+	$(".findmm").Validform({
+		ajaxPost:true,
+		callback:function(data){
+			if(data.status=="y"){
+				$('#findmm').hide();
+				setTimeout(function(){
+					$.Showmsg(info);
+				},2000);
+				setTimeout(function(){
+					$('#zhezhao').hide();
+				},2000);
+			}
+			setTimeout(function(){
+				$('#Validform_msg').hide();
+			},4000);
+		}
+	});
+})
+</script>
+<div class="hide st_con loginbox baoming" id="findmm">
+	<p class="p_bg">解锁/找回密码</p>
+	<a class="closebtn ybmclosebtn stclosebtn">关闭</a>	
+	<div class="st_table st_table2">
+		<form action="/user/findmm.html" class="findmm" >
+		<table>
+			<tbody>
+			 
+			<tr>
+				<td class="td1">输入您的用户名：</td>
+				<td class="td2"><input type="text" style="width:180px" id="findname" class="truename" name="find[username]" datatype="s2-15"  errormsg="账户名由2-15个字符组成！"  /></td>
+				<td class="td3"></td>
+			</tr>
+			
+			<tr>
+				<td class="td1">输入注册时填写的邮箱：</td>
+				<td class="td2"><input type="text" style="width:180px" class="truename" name="find[email]" datatype="e" nullmsg="请输入正确的邮箱！" /></td>
+				<td class="td3"></td>
+			</tr>
+			<tr>
+				<td class="td2" colspan="3"><input type="submit" value="发送新密码" class="zuc btn-default"  /></td>
+			</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+</div>
+
+
+<!-- /忘记密码 --> 
+
+<!-- /申请试听弹出框 S-->
+<script type="text/javascript">
+$(function(){
+	$(".listenform").Validform({
+		ajaxPost:true,
+		callback:function(data){
+			$('#st_cons').hide();
+			if(data.status=="y"){
+				setTimeout(function(){
+					$.Showmsg(info);
+				},2000);
+			}
+			setTimeout(function(){
+				
+				$('#Validform_msg').hide();
+				$('#zhezhao').hide();
+			},3000);
+		}
+	});
+
+
+		
+	$('#emails').click(function () {
+		var ematext = $("#emaerrors > .Validform_error").val();
+		
+		if (typeof(ematext) == "undefined"){
+			var count = 60;
+			var countdown = setInterval(CountDown, 1000);
+			var ema = $("#emas").val();
+			$.post("/register/emailverifyajax.html", { email: ema } );
+		}
+		function CountDown() {
+			$("#emails").attr("style","width:112px");
+			$("#emails").attr("disabled", true);
+			$("#emails").val( count + "秒后可重新获取");
+			if (count == 0) {
+				$("#emails").val("重新获取验证码").removeAttr("disabled");
+				clearInterval(countdown);
+			}
+			count--;
+		}
+	});
+
+	$('#emas').mouseout(function () {
+		$("#emas").focusout();
+	});
+	$('#phos').mouseout(function () {
+		$("#phos").focusout();
+	});
+	
+	$('#phones').click(function () {
+		var ematext = $("#phoneerrors > .Validform_error").val();
+		if (typeof(ematext) == "undefined"){
+			var count = 60;
+			var countdown = setInterval(CountDown, 1000);
+	
+			var pho = $("#phos").val();
+			$.post("/register/phoneverifyajax.html", { tele: pho } );
+		}
+
+		function CountDown() {
+			$("#phones").attr("style","width:112px");
+			$("#phones").attr("disabled", true);
+			$("#phones").val( count + "秒后可重新获取");
+			if (count == 0) {
+				$("#phones").val("重新获取验证码").removeAttr("disabled");
+				clearInterval(countdown);
+			}
+			count--;
+		}
+	});
+})
+</script>
+<div class="hide loginbox baoming" id="j-baomingDialog">
+	<div class="zcr st_select">
+		<p class="p_bg">&nbsp;</p>
+		<div class="zcbox">
+			<a class="closebtn ybmclosebtn">关闭</a>
+			<h3>同学：</h3>
+			<p>您好！您可以在线提交免费试听申请，审核通过获得试听券后，可在24小时内免费体验全平台所有正在直播的网络班及远程班。</p>
+			<p>温馨提示：</p>
+			<p>网络班直播时间为20:00-22:00</p>
+			<p>远程班直播时间为9:00-18:00</p>
+			<p>若您是在校大学生，可以先进行大学生认证，认证成功后您可申请免费试听3天。</p>
+		</div>
+		<div class="shiting">
+		<a href="javascript:void(0);" class="st_login_btn " data-action="clear_follow_records">申请试听1天</a>
+			<a href="http://bbs.itcast.cn/home.php?mod=spacecp&ac=profile&op=verify&vid=1" class="yz_btn btn-default" title="马上大学生认证" target="_blank">马上大学生认证</a>
+				</div>
+	</div>
+</div>	
+<div class="hide st_con loginbox baoming" id="st_cons" style="margin-top:-247px;">
+	<p class="p_bg">申请试听</p>
+	<a class="closebtn ybmclosebtn stclosebtn">关闭</a>	
+	<div class="st_table st_table2">
+		<form action="/user/listenapply.html" class="listenform" >
+		<table>
+			<tbody>
+			<tr>
+				<td class="td1">真实姓名</td>
+				<td class="td2 sq_td"><input type="text" class="truename" name="memberinfo[realname]" value="" datatype="s2-5" errormsg="请输入2-5个汉字信息！"  nullmsg="请输入您的姓名！" /></td>
+				<td class="td3"></td>
+			</tr>
+			
+				<tr class="emailshows"  >
+					<td class="td1">邮&nbsp;&nbsp;&nbsp;箱：</td>
+					<td class="td2 sq_td" id="emaerrors"><input type="text" value="" class="truename" id="emas" onclick="this.select();" placeholder="便于找回密码" name="member[email]" ajaxurl="/register/emailajax.html" datatype="e" errormsg="请输入正确的邮箱！" nullmsg="请输入您的邮箱！" /></td>
+					<td class="td3" id="emailids"><input type="button" class="yzniu" value="获取验证码" id="emails" /></td>
+				</tr>
+					<tr class="emailshows"  >
+					<td class="td1">&nbsp;</td>
+					<td class="td2 sq_td"><input type="text" class="truename" onclick="this.select();" placeholder="请输入邮箱验证码" ajaxurl="/register/everifyajax.html"  datatype="n6-6" errormsg="请输入您邮箱内的6位验证码！" nullmsg="请输入您邮箱内的6位验证码！" />
+						</td>
+					<td class="td3"></td>
+				</tr>
+				
+			
+				<tr class="phoneshows" >			
+				<td class="td1">手&nbsp;&nbsp;&nbsp;机：</td>
+				<td class="td2 sq_td" id="phoneerrors"><input type="text" class="truename"  id="phos" onclick="this.select();" placeholder="便于收到开课提醒" name="member[phone]" ajaxurl="/register/phoneajax.html" datatype="m" errormsg="请输入正确的手机号！" nullmsg="请输入您的手机！"  /></td>
+				<td class="td3" id="phoneids"><input type="button" class="yzniu" value="获取验证码" id="phones" /></td>
+				</tr>
+				<tr class="phoneshows" >
+					<td class="td1">&nbsp;</td>
+					<td class="td2 sq_td"><input type="text" class="truename"  onclick="this.select();" placeholder="请输入手机验证码" ajaxurl="/register/pverifyajax.html" datatype="n6-6" errormsg="请输入手机获取的6位验证码！" nullmsg="请输入手机获取的6位验证码！" />
+						</td>
+					<td class="td3"></td>
+				</tr>
+			
+
+				<tr>
+				<td class="td1">用户性别</td>
+				<td class="sq_td" ><input type="radio" datatype="*" errormsg="请选择性别！"  nullmsg="请选择性别！" name="memberinfo[gender]" id="gender11" value="0"  /><label for="gender11">男</label>
+				<input type="radio" name="memberinfo[gender]" id="gender22" value="1"  /><label for="gender22">女</label></td>
+				<td class="td3"></td>
+			</tr>
+				<tr>
+				<td class="td1">用户生日</td>
+				<td class="td2 sq_td">
+				<select class="select" name="memberinfo[birthday][y]" datatype="*" errormsg="请选择您的生日！"  nullmsg="请选择您的生日！" >
+						<option value="0">年</option>
+						<option value="1974"  >1974</option><option value="1975"  >1975</option><option value="1976"  >1976</option><option value="1977"  >1977</option><option value="1978"  >1978</option><option value="1979"  >1979</option><option value="1980"  >1980</option><option value="1981"  >1981</option><option value="1982"  >1982</option><option value="1983"  >1983</option><option value="1984"  >1984</option><option value="1985"  >1985</option><option value="1986"  >1986</option><option value="1987"  >1987</option><option value="1988"  >1988</option><option value="1989"  >1989</option><option value="1990"  >1990</option><option value="1991"  >1991</option><option value="1992"  >1992</option><option value="1993"  >1993</option><option value="1994"  >1994</option><option value="1995"  >1995</option><option value="1996"  >1996</option><option value="1997"  >1997</option><option value="1998"  >1998</option><option value="1999"  >1999</option><option value="2000"  >2000</option><option value="2001"  >2001</option>					</select>
+					<select class="select" name="memberinfo[birthday][m]">
+						<option value="0">月</option>
+						<option value="1"  >1</option><option value="2"  >2</option><option value="3"  >3</option><option value="4"  >4</option><option value="5"  >5</option><option value="6"  >6</option><option value="7"  >7</option><option value="8"  >8</option><option value="9"  >9</option><option value="10"  >10</option><option value="11"  >11</option><option value="12"  >12</option>					</select>
+				</td>
+				<td class="td3"></td>
+			</tr>
+				<tr>
+					<td class="td1">您的状态</td>
+					<td class="sq_td" ><input type="radio" name="memberinfo[profession]" id="state1" value="在职" checked /><label for="state1">在职</label>
+					<input type="radio" name="memberinfo[profession]" id="state2" value="在读大学生"  /><label for="state2">在读大学生</label></td>
+					<td class="td3"><input type="radio" name="memberinfo[profession]" id="state3" value="其他"  /><label for="state3">其他</label></td>
+				</tr>
+				<tr>
+					<td class="td1" colspan="3">您从何处得知该网站：</td>				
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="memberinfo[field][]" value="视频教程下载" id="nr1"><label for="nr1">视频教程下载</label></td>
+					<td class="sq_td"><input type="checkbox" name="memberinfo[field][]" value="同学、老师或朋友介绍" id="nr2"><label for="nr2">同学、老师或朋友介绍</label></td>
+					<td><input type="checkbox" name="memberinfo[field][]" value="百度搜索" id="nr3"><label for="nr3">百度搜索</label></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="memberinfo[field][]" value="邮件" id="nr4"><label for="nr4">邮件</label></td>
+					<td class="sq_td"><input type="checkbox" name="memberinfo[field][]" value="微博/微信" id="nr5"><label for="nr5">微博/微信</label></td>
+					<td><input type="checkbox" name="memberinfo[field][]" value="CSDN" id="nr6"><label for="nr6">CSDN</label></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="memberinfo[field][]" value="QQ群" id="nr7"><label for="nr7">QQ群</label></td>
+					<td class="sq_td" colspan="2"><input type="checkbox" id="nr8"><label for="nr8">其他</label>
+					<input type="text" class="truename"  name="memberinfo[field][]" style="margin:0 5px;"></td>
+				</tr>
+				<tr>
+					<td class="td2" colspan="3"><input type="submit" value="提交申请" class="zuc btn-default"  /></td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+</div>
+<!-- /申请试听弹出框 E-->
+
+<script type="text/javascript">
+$(function(){
+	$('.ybm').click(function(){
+		$('.classapplyname').text( $(this).attr("title") );
+		$('.openapplyoid').val( $(this).attr("openoid") );
+		$('#longapplyoid').val( $(this).attr("longoid") );
+		$('#networkid').val( $(this).attr("networkid") );
+	});
+	
+	$(".publicclassapply").Validform({
+		ajaxPost:true,
+		callback:function(data){
+			$('#publicclassapply').hide();
+			if(data.status=="y"){
+				setTimeout(function(){
+					$.Showmsg(info);
+				},2000);
+			}
+			setTimeout(function(){
+				$('#Validform_msg').hide();
+				$('#zhezhao').hide();
+			},2000);
+			location.reload(true);
+		}
+	});
+
+
+		
+	$('#emaild').click(function () {
+		var ematext = $("#emaerrord > .Validform_error").val();
+		
+		if (typeof(ematext) == "undefined"){
+			var count = 60;
+			var countdown = setInterval(CountDown, 1000);
+			var ema = $("#emad").val();
+			$.post("/register/emailverifyajax.html", { email: ema } );
+		}
+		function CountDown() {
+			$("#emaild").attr("style","width:112px");
+			$("#emaild").attr("disabled", true);
+			$("#emaild").val( count + "秒后可重新获取");
+			if (count == 0) {
+				$("#emaild").val("重新获取验证码").removeAttr("disabled");
+				clearInterval(countdown);
+			}
+			count--;
+		}
+	});
+
+	$('#emad').mouseout(function () {
+		$("#emad").focusout();
+	});
+	$('#phod').mouseout(function () {
+		$("#phod").focusout();
+	});
+	
+	$('#phoned').click(function () {
+		var ematext = $("#phoneerrord > .Validform_error").val();
+		if (typeof(ematext) == "undefined"){
+			var count = 60;
+			var countdown = setInterval(CountDown, 1000);
+	
+			var pho = $("#phod").val();
+			$.post("/register/phoneverifyajax.html", { tele: pho } );
+		}
+
+		function CountDown() {
+			$("#phoned").attr("style","width:112px");
+			$("#phoned").attr("disabled", true);
+			$("#phoned").val( count + "秒后可重新获取");
+			if (count == 0) {
+				$("#phoned").val("重新获取验证码").removeAttr("disabled");
+				clearInterval(countdown);
+			}
+			count--;
+		}
+	});
+})
+</script>
+<!-- /预报名弹出框 S-->
+<div id="publicclassapply" class="hide loginbox baoming ybm_con">
+	<p class="p_bg">报名申请</p>
+	<a class="closebtn ybmclosebtn stclosebtn">关闭</a>	
+	<div class="st_table">
+		<form action="/user/classapply.html" class="publicclassapply">
+		<table>
+			<tbody>
+				<tr>
+					<td class="td1">报名课程：</td>
+					<td class="td2 classapplyname" colspan="2" ></td>
+				</tr>
+				<tr>
+					<td class="td1">真实姓名：</td>
+					<td class="td2"><input type="text" class="truename" onclick="this.select();"  name="memberinfo[realname]" value="" datatype="s2-5" errormsg="请输入2-5个汉字信息！" nullmsg="请输入您的姓名！" /></td>
+					<td class="td3"></td>
+				</tr>
+				
+				
+				
+				
+				<tr class="emailshowd"  >
+					<td class="td1">邮&nbsp;&nbsp;&nbsp;箱：</td>
+					<td class="td2" id="emaerrord"><input type="text" value="" class="truename" id="emad" onclick="this.select();" placeholder="便于找回账户和密码（推荐用QQ邮箱）" name="member[email]" ajaxurl="/register/emailajax.html" datatype="e" errormsg="请输入正确的邮箱！" nullmsg="请输入您的邮箱！" /></td>
+					<td class="td3" id="emailidd"><input type="button" class="yzniu" value="获取验证码" id="emaild" /></td>
+				</tr>
+					<tr class="emailshowd"  >
+					<td class="td1">&nbsp;</td>
+					<td class="td2"><input type="text" class="truename" onclick="this.select();" placeholder="输入邮箱获取的验证码" ajaxurl="/register/everifyajax.html"  datatype="n6-6" errormsg="请输入您邮箱内的6位验证码！" nullmsg="请输入您邮箱内的6位验证码！" />
+						</td>
+					<td class="td3"></td>
+				</tr>
+				
+				
+				<tr class="phoneshowd" >			
+				<td class="td1">手&nbsp;&nbsp;&nbsp;机：</td>
+				<td class="td2" id="phoneerrord"><input type="text" class="truename"  id="phod" onclick="this.select();" placeholder="便于收到您报名课程的开课提醒" name="member[phone]" ajaxurl="/register/phoneajax.html" datatype="m" errormsg="请输入正确的手机号！" nullmsg="请输入您的手机！"  /></td>
+				<td class="td3" id="phoneidd"><input type="button" class="yzniu" value="获取验证码" id="phoned" /></td>
+				</tr>
+					<tr class="phoneshowd" >
+					<td class="td1">&nbsp;</td>
+					<td class="td2"><input type="text" class="truename"  onclick="this.select();" placeholder="输入手机获取的验证码" ajaxurl="/register/pverifyajax.html" datatype="n6-6" errormsg="请输入手机获取的6位验证码！" nullmsg="请输入手机获取的6位验证码！" />
+						</td>
+					<td class="td3"></td>
+				</tr>
+				
+				
+				<tr>
+					<td class="td1">您的状态：</td>
+					<td style="width:150px;"><input type="radio" datatype="*" errormsg="请选择目前状态！" name="memberinfo[profession]" id="state1" value="在职" checked /><label for="state1">在职</label>
+					<input type="radio" name="memberinfo[profession]" id="state2" value="在读大学生"  /><label for="state2">在读大学生</label></td>
+					<td class="td3"><input type="radio" name="memberinfo[profession]" id="state3" value="其他"  /><label for="state3">其他</label></td>
+				</tr>
+				<tr>
+					<td colspan="3" class="td_c" style="font-size:12px;color:#888;line-height:18px">
+					报名后您将在开课前收到短信提醒，公开课结束后还可以下载本课<br />程的视频！每日晚20:00，我们与您相约传智播客公开课！					</td>				
+				</tr>		
+				<tr>
+					<td class="td2" colspan="3"><input type="hidden" name="memberinfo[longoid]" id="longapplyoid" />
+					<input type="hidden" name="memberinfo[openoid]" class="openapplyoid" />
+					<input type="hidden" name="memberinfo[networkid]" id="networkid" value="0" />
+					<input type="submit" value="确认报名" class="zuc btn-default" id="query" /></td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+</div>
+
+<!-- /预报名弹出框 E-->
+
+
+
+
+
+
+<!-- /课程试听券弹出框 S-->
+<script type="text/javascript">
+$(function(){
+	$('.ljst_btn').click(function(){
+		$('#lookid').val( $(this).attr("datalid") );
+	});
+	
+	$(".applyform").Validform({
+		ajaxPost:true,
+		callback:function(data){
+		var lookid = $("#lookid").val();
+			$('#j-applyDialog').hide();
+			if(data.status=="y"){
+				setTimeout(function(){
+					$.Showmsg(info);
+				},2000);
+				setTimeout(function(){
+				window.location.href="/class/long.html?id="+lookid;
+				},2000);
+			}
+			setTimeout(function(){
+				$('#Validform_msg').hide();
+				$('#zhezhao').hide();
+			},5000);
+		}
+	});
+})
+</script>
+
+<div class="hide st_con loginbox baoming" id="j-applyDialog">
+	<p class="p_bg">免费试听</p>
+	<a class="closebtn ybmclosebtn stclosebtn">关闭</a>	
+	<div class="st_table st_table2">
+		<form action="/user/listen.html" class="applyform" >
+			<p>温馨提示：初次使用听课券即代表启用</p>
+		<table>
+			<tbody>
+			<tr>
+				<td class="td1">输入课程听课券：</td>
+				<td class="td2"><input type="text" style="width:130px" class="truename" name="coupon[verifynumber]" datatype="s18-18" errormsg="请输入18位试听券号码！" nullmsg="请输入18位试听券号码！"  /><input type="hidden" value="1" name="coupon[style]" /></td>
+			</tr>
+							<tr>
+					<td class="td2" colspan="2"><input type="hidden" id="lookid" name="coupon[lookid]" /><input type="submit" value="进入课堂" class="zuc btn-default"  />							<a href="javascript:void(0);" class="sqst_btnn">申请试听券</a></td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+</div>
+<!-- /课程试听券听弹出框 E-->
+
+
+
+<!-- /提示弹出框 S-->
+<script type="text/javascript">
+$(function(){
+	$('.tip_btn').click(function(){
+		$('#gftipbtn').text( $(this).attr("data") );
+	});
+	$('#zhezhao3').click(function(){
+		$('#j-tipbtn').fadeOut();
+		$('#zhezhao3').fadeOut();
+	});
+})
+</script>
+
+<div class="hide st_con loginbox baoming" id="j-tipbtn">
+	<p class="p_bg">温馨提示</p>
+	<a class="closebtn ybmclosebtngf stclosebtn">关闭</a>	
+	<div class="st_table st_table2">
+		<p id="gftipbtn"></p>
+	</div>
+</div>
+<!-- /提示弹出框 E-->
+
+<!-- @NAV --> 
+<!-- 通用头部 -->
+
+<div class="g-wrap">
+	<div class="m-topnav rel">
+		<div class="g-container clear">
+			<span class="u-nav left clear">
+				<a href="http://www.itcast.cn/" target="_blank" class="li f-c9">传智播客首页</a>
+				<a href="http://down.itcast.cn" target="_blank" class="li f-c9">免费视频下载</a>
+				<a href="http://bbs.itcast.cn" class="li f-c9" target="_blank">传智论坛</a>
+				<a href="http://by.itcast.cn" class="li f-c9" target="_blank">中国好毕设</a>
+				<a href="http://open.itcast.cn/help/1.html" class="li f-c9" target="_blank">学习指南</a>
+			</span>
+			<span class="u-nav u-beforelogin j-beforelogin right">
+				<span class="f-c6 li hys"><a href="/user/index.html" class="headlogin" style="margin-right:10px;"><span id="loginname"></span></a>欢迎来到传智播客公开课！</span>
+				<span id="loginbefore">
+					<a href="/connect/login/type/qq.html" style="float: right; margin-top: -4px;" ><img src="/Public/Home/Images/Connect_logo_7.png"></a>
+					<a href="javascript:void(0);" class="f-c6 li j-loginBtn">登录</a>
+					<span style="padding-left:6px; color:#333;">|</span>
+					<a href="/register/index.html" class="f-c6 li ">注册</a>
+				</span>
+				<span id="loginafter" style="display:none">
+					<a href="/user/index.html" class="headlogin">进入个人中心</a>
+					<a href="/login/out.html">安全退出</a>
+				</span>
+			</span>
+		</div>
+	</div>
+	<div class="m-midnav rel">
+		<div class="g-container clear"><a href="/">
+			<h1 class="logo left notxt">传智播客公开课</h1>
+			</a>
+			<div class="left subtxt"></div>
+		</div>
+	</div>
+	<div class="m-botnav rel">
+		<div class="main">
+			<div class="g-container clear">
+				<ul>
+					<li class="mainnav left rel current"><a class="link f-f0 nowrp f-cf" href="/" target="_self">首页</a></li>
+						<li class="mainnav left rel ">
+																			<a class="link f-f0 nowrp f-cf" href="/java/" target="_self"><font color="">Java</font></a>								</li><li class="mainnav left rel ">
+																			<a class="link f-f0 nowrp f-cf" href="/icd/" target="_self"><font color="">网页平面UI</font></a>								</li><li class="mainnav left rel ">
+																			<a class="link f-f0 nowrp f-cf" href="/net/" target="_self"><font color="">.Net</font></a>								</li><li class="mainnav left rel ">
+																			<a class="link f-f0 nowrp f-cf" href="/php/" target="_self"><font color="">PHP</font></a>								</li><li class="mainnav left rel ">
+																			<a class="link f-f0 nowrp f-cf" href="/c/" target="_self"><font color="">C/C++</font></a>								</li><li class="mainnav left rel ">
+																			<a class="link f-f0 nowrp f-cf" href="/game/" target="_self"><font color="">游戏开发</font></a>								</li><li class="mainnav left rel ">
+																			<a class="link f-f0 nowrp f-cf" href="/internet/" target="_self"><font color="">网络营销</font></a>								</li><li class="mainnav left rel ">
+																			<a class="link f-f0 nowrp f-cf" href="/network/" target="_self">网络班</a><div class="abs hot notxt">hot</div>								</li><li class="mainnav left rel ">
+																			<a class="link f-f0 nowrp f-cf" href="/remote/" target="_self"><font color="">远程班</font></a>								</li><li class="mainnav left rel ">
+																			<a class="link f-f0 nowrp f-cf" href="/special/" target="_self"><font color="">活动专区</font></a>								</li><li class="mainnav left rel ">
+									<a class="link f-f0 nowrp f-cf" href="http://ask.itcast.cn/explore/category-5" target="_blank">问答专区</a><div class="abs new notxt">new</div>																	</li>					</li> 
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	
+</div>
+
+<style type="text/css">
+.bdshare-slide-button-box{z-index:999;}
+</style>
+
+<!-- 通用头部 --> 
+<!-- /@NAV --> 
+<!-- /图片轮播 -->
+<div class="banner ban-1">
+	<div id="czhuxi">
+		<div id="czimg">
+			<ul>
+								<li class="li01 first"  style="background: url(./upload/./image/20150515/55555bff18222.jpg) no-repeat center center;"><a href="http://open.itcast.cn/java/14-225.html?open" title="" target="_blank" >&nbsp;</a></li>					<li class="li02 "  style="background: url(./upload/./image/20150518/5559bb8e0bec7.jpg) no-repeat center center;"><a href="http://open.itcast.cn/guide/?open" title="" target="_blank" >&nbsp;</a></li>					<li class="li03 "  style="background: url(./upload/./image/20150518/5559447b9c19f.jpg) no-repeat center center;"><a href="http://open.itcast.cn/php/34-224.html?open" title="" target="_blank" >&nbsp;</a></li>					<li class="li04 "  style="background: url(./upload/./image/20150422/5537015259279.jpg) no-repeat center center;"><a href="http://net.itcast.cn/news/20150416/11374432022.shtml?open" title="" target="_blank" >&nbsp;</a></li>					<li class="li05 "  style="background: url(./upload/./image/20150429/55404cfbf3302.jpg) no-repeat center center;"><a href="http://icd.itcast.cn/subject/icdyun/index.html?open" title="" target="_blank" >&nbsp;</a></li>					<li class="li06 "  style="background: url(./upload/./image/20150413/552bc7c715dc0.jpg) no-repeat center center;"><a href="http://sh.itcast.cn/subject/shphp/index.shtml?open" title="" target="_blank" >&nbsp;</a></li>			</ul>
+		</div>
+		<div class="sekuai"></div>
+		<div id="czxinxi">
+			<ul>
+			<li class="cur" >●</li><li class="" >●</li><li class="" >●</li><li class="" >●</li><li class="" >●</li><li class="" >●</li>			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(
+		function(){
+			var kuandu = 380; 	//这个数字是每张图片的宽度，记得按需更改
+			var shijian = 700; //这个数字是动画时间
+			var jiangeshijian = 4000; //这个数字是间隔时间
+			
+			var nowimg = 0; 	//信号量
+			var mytimer = null;
+
+			//将图片列表中的第一个节点复制，然后追加到队列的最后。
+			$("#czimg ul li:first").clone().appendTo("#czimg ul");
+
+			var mytimer = window.setInterval(
+				function(){
+					youanniu();
+				}
+			,jiangeshijian);
+
+			$("#czhuxi").mouseenter(
+				function(){
+					window.clearInterval(mytimer);
+				}
+			);
+
+			$("#czhuxi").mouseleave(
+				function(){
+					window.clearInterval(mytimer);
+					mytimer = window.setInterval(
+						function(){
+							youanniu();
+						}
+					,jiangeshijian);
+				}
+			);
+			function youanniu(){
+					if(!$("#czimg ul").is(":animated")){
+						//折腾信号量
+						if(nowimg < $("#czimg li").length - 2){
+							nowimg = nowimg + 1;
+							dongzuo();
+						}else{
+							nowimg = 0;
+							$("#czimg ul").animate(
+								{
+									"top":-kuandu*($("#czimg li").length-1)
+								},shijian,function(){
+									$("#czimg ul").css("top",0);
+								}
+							);
+							$("#czxinxi ul li").eq(nowimg).addClass("cur").siblings().removeClass("cur");
+						}
+					}
+				}				
+
+			$("#czxinxi ul li").click(
+				function(){
+					nowimg = $(this).index();
+					dongzuo();
+				}
+			);
+
+			function dongzuo(){
+				//【业务1】根据信号量，来改变ul的left值
+				$("#czimg ul").animate(
+					{
+						"top":-kuandu * nowimg
+					}
+					,shijian
+				);
+
+				//【业务2】根据信号量，让小圆点变蓝。
+				$("#czxinxi ul li").eq(nowimg).addClass("cur").siblings().removeClass("cur");
+			}
+		}
+	);
+</script>
+
+<div class="lcase">
+	<div class="case">
+		<h1>近期免费公开课</h1>
+		<a href="/open/all.html" class="amors">查看更多</a>
+		<ul>
+		<li  title="不做孬种程序员之PHP就业指导">
+				<a href="/php/34-224.html" target="_blank" class="casem"><div class="caset"><div style="width:280px; height:156px; overflow:hidden;"><img src="/upload/./image/20150422/553740af057b6.jpg" alt="不做孬种程序员之PHP就业指导" style="display:block;" /></div>
+				<p>&nbsp;</p><b>2015年05月26日开课</b><strong>第二季</strong></div></a>
+				<div class="casef">
+					<span class="hsp"><a href="/php/34-224.html" target="_blank" class="castx">不做孬种程序员之PHP就业指导</a></span>
+					<span class="course-num">已有163人报名</span>
+										<a href="javascript:void(0);" class="j-loginBtn ljdlbm">免费报名</a>	
+				</div>
+			</li><li  title="90后大学生学网络营销的互联网红利">
+				<a href="/internet/48-216.html" target="_blank" class="casem"><div class="caset"><div style="width:280px; height:156px; overflow:hidden;"><img src="/upload/./image/20150418/5531f2556bfd4.jpg" alt="90后大学生学网络营销的互联网红利" style="display:block;" /></div>
+				<p>&nbsp;</p><b>2015年05月27日开课</b><strong>第二季</strong></div></a>
+				<div class="casef">
+					<span class="hsp"><a href="/internet/48-216.html" target="_blank" class="castx">90后大学生学网络营销的互联网红利</a></span>
+					<span class="course-num">已有184人报名</span>
+										<a href="javascript:void(0);" class="j-loginBtn ljdlbm">免费报名</a>	
+				</div>
+			</li><li  title="邮箱账户的破解与邮箱安全防控1">
+				<a href="/c/11-234.html" target="_blank" class="casem"><div class="caset"><div style="width:280px; height:156px; overflow:hidden;"><img src="/upload/./image/20150515/5555ad9841961.jpg" alt="邮箱账户的破解与邮箱安全防控1" style="display:block;" /></div>
+				<p>&nbsp;</p><b>2015年06月01日开课</b><strong>C/C++</strong></div></a>
+				<div class="casef">
+					<span class="hsp"><a href="/c/11-234.html" target="_blank" class="castx">邮箱账户的破解与邮箱安全防控1</a></span>
+					<span class="course-num">已有129人报名</span>
+										<a href="javascript:void(0);" class="j-loginBtn ljdlbm">免费报名</a>	
+				</div>
+			</li><li  title="邮箱账户的破解与邮箱安全防控2">
+				<a href="/c/11-235.html" target="_blank" class="casem"><div class="caset"><div style="width:280px; height:156px; overflow:hidden;"><img src="/upload/./image/20150515/5555ae061ff30.jpg" alt="邮箱账户的破解与邮箱安全防控2" style="display:block;" /></div>
+				<p>&nbsp;</p><b>2015年06月02日开课</b><strong>C/C++</strong></div></a>
+				<div class="casef">
+					<span class="hsp"><a href="/c/11-235.html" target="_blank" class="castx">邮箱账户的破解与邮箱安全防控2</a></span>
+					<span class="course-num">已有115人报名</span>
+										<a href="javascript:void(0);" class="j-loginBtn ljdlbm">免费报名</a>	
+				</div>
+			</li><li  title="两小时搞定C#版超级战舰游戏">
+				<a href="/net/3-240.html" target="_blank" class="casem"><div class="caset"><div style="width:280px; height:156px; overflow:hidden;"><img src="/upload/./image/20150518/5559b6e6cdc39.jpg" alt="两小时搞定C#版超级战舰游戏" style="display:block;" /></div>
+				<p>&nbsp;</p><b>2015年06月08日开课</b><strong>.Net</strong></div></a>
+				<div class="casef">
+					<span class="hsp"><a href="/net/3-240.html" target="_blank" class="castx">两小时搞定C#版超级战舰游戏</a></span>
+					<span class="course-num">已有154人报名</span>
+										<a href="javascript:void(0);" class="j-loginBtn ljdlbm">免费报名</a>	
+				</div>
+			</li><li  title="超精美UI图标绘制">
+				<a href="/icd/7-237.html" target="_blank" class="casem"><div class="caset"><div style="width:280px; height:156px; overflow:hidden;"><img src="/upload/./image/20150518/555986bb7604e.jpg" alt="超精美UI图标绘制" style="display:block;" /></div>
+				<p>&nbsp;</p><b>2015年06月09日开课</b><strong>网页平面</strong></div></a>
+				<div class="casef">
+					<span class="hsp"><a href="/icd/7-237.html" target="_blank" class="castx">超精美UI图标绘制</a></span>
+					<span class="course-num">已有86人报名</span>
+										<a href="javascript:void(0);" class="j-loginBtn ljdlbm">免费报名</a>	
+				</div>
+			</li><li  title="Css+div 网页制作实例1">
+				<a href="/icd/7-222.html" target="_blank" class="casem"><div class="caset"><div style="width:280px; height:156px; overflow:hidden;"><img src="/upload/./image/20150421/553600c35d120.jpg" alt="Css+div 网页制作实例1" style="display:block;" /></div>
+				<p>&nbsp;</p><b>2015年06月10日开课</b><strong>网页平面</strong></div></a>
+				<div class="casef">
+					<span class="hsp"><a href="/icd/7-222.html" target="_blank" class="castx">Css+div 网页制作实例1</a></span>
+					<span class="course-num">已有611人报名</span>
+										<a href="javascript:void(0);" class="j-loginBtn ljdlbm">免费报名</a>	
+				</div>
+			</li><li  title="Css+div 网页制作实例2">
+				<a href="/icd/7-223.html" target="_blank" class="casem"><div class="caset"><div style="width:280px; height:156px; overflow:hidden;"><img src="/upload/./image/20150421/5536013889dcc.jpg" alt="Css+div 网页制作实例2" style="display:block;" /></div>
+				<p>&nbsp;</p><b>2015年06月11日开课</b><strong>网页平面</strong></div></a>
+				<div class="casef">
+					<span class="hsp"><a href="/icd/7-223.html" target="_blank" class="castx">Css+div 网页制作实例2</a></span>
+					<span class="course-num">已有507人报名</span>
+										<a href="javascript:void(0);" class="j-loginBtn ljdlbm">免费报名</a>	
+				</div>
+			</li>		</ul>
+	</div>
+</div>
+
+
+
+
+
+<!-- 设计show开始 -->
+
+<div class="m-cate m-cate1 m-cate2" id="show">
+	<div class="h_title">
+		<h1 class="h11">免费视频播放</h1>
+	</div>
+	<div class="show">
+		<ul style="width:1250px;" class="webc">		
+							<li>
+					<a href="javascript:void(0)" title="html+css直播厅" class="atp">
+						<div style="overflow:hidden; width:280px; height:156px;">
+							<img src="/upload/./image/20150116/54b8e29375967.jpg" alt="html+css直播厅" style="display:block;" />
+							<div class="wt">直播未开始</div>
+						</div>
+						<p>今天：09:00-12:00<span class="riq"></span></p>						
+											</a>
+					<div class="zhezhao"></div>
+				</li>				<li>
+					<a href="javascript:void(0)" title="ps基础直播厅" class="atp">
+						<div style="overflow:hidden; width:280px; height:156px;">
+							<img src="/upload/./image/20150116/54b8e258cc5b7.jpg" alt="ps基础直播厅" style="display:block;" />
+							<div class="wt">直播未开始</div>
+						</div>
+						<p>今天：12:00-14:00<span class="riq"></span></p>						
+						<script type="text/javascript">setInterval("circulateExecute(130);",60*1000);</script>					</a>
+					<div class="zhezhao"></div>
+				</li>				<li>
+					<a href="javascript:void(0)" title="电商广告创意设计" class="atp">
+						<div style="overflow:hidden; width:280px; height:156px;">
+							<img src="/upload/./image/20150116/54b8e282171c7.jpg" alt="电商广告创意设计" style="display:block;" />
+							<div class="wt">直播未开始</div>
+						</div>
+						<p>今天：14:00-18:00<span class="riq"></span></p>						
+											</a>
+					<div class="zhezhao"></div>
+				</li>				<li>
+					<a href="javascript:void(0)" title="PS设计" class="atp">
+						<div style="overflow:hidden; width:280px; height:156px;">
+							<img src="/upload/./image/20150116/54b8e2a66004d.jpg" alt="PS设计" style="display:block;" />
+							<div class="wt">直播未开始</div>
+						</div>
+						<p>今天：18:00-22:00<span class="riq"></span></p>						
+											</a>
+					<div class="zhezhao"></div>
+				</li>		</ul>
+	</div>
+</div>
+<!-- 设计show结束 -->
+
+<!-- 网络直播课堂开始 -->
+<div class="lcase">
+	<div class="h_title">
+		<h1 class="h11">网络班</h1>
+			<a target="_blank" href="/network/" class="f-c6 li">查看更多</a>
+	</div>
+	<div class="page_main_v2">
+		<ul style="width:1250px" class="showc">
+				<li class="tzblacks">
+					<a style="display:block; overflow:hidden;" title="UI设计精品网络班" href="http://open.itcast.cn/network/subject/-22-.html" target="_blank">
+						<img style="display:block;" alt="UI设计精品网络班" src="/Public/Home/Images//Web_images/1.jpg">
+					</a>
+					<div class="student">
+						<p class="tz_tec"><a href="http://open.itcast.cn/network/subject/-22-.html" target="_blank"><span class="tz_sub ">UI设计精品网络班</span><span class="tz_teac tz_del">最火爆的UI设计班，UI设计班包括UI交互设计与Flash动效制作，名师主讲，晚上20点...</span></a></p>
+					</div>
+				</li>
+				<li class="tzblacks">
+					<a style="display:block; overflow:hidden;" title="平面设计精品网络班" href="http://open.itcast.cn/network/subject/-20-.html" target="_blank">
+						<img style="display:block;" alt="平面设计精品网络班" src="/Public/Home/Images//Web_images/2.jpg">
+					</a>
+					<div class="student">
+						<p class="tz_tec"><a href="http://open.itcast.cn/network/subject/-20-.html" target="_blank"><span class="tz_sub">平面设计精品网络班</span><span class="tz_teac tz_del">晚上20点-22点进行线上教学，平面设计班包括字体设计班、平面广告班、以及套...</span></a></p>
+					</div>
+				</li>
+				<li class="tzblacks">
+					<a style="display:block; overflow:hidden;" title="淘宝美工精品网络班" href="http://open.itcast.cn/network/subject/-23-.html" target="_blank">
+						<img style="display:block;" alt="淘宝美工精品网络班" src="/Public/Home/Images//Web_images/3.jpg">
+					</a>
+					<div class="student">
+						<p class="tz_tec"><a href="http://open.itcast.cn/network/subject/-23-.html" target="_blank"><span class="tz_sub">淘宝美工精品网络班</span><span class="tz_teac tz_del">电商时代，设计前沿！名师主讲，淘宝美工班包括HTML+CSS与淘宝店铺设计班，晚上...</span></a></p>
+					</div>
+				</li>
+				<li class="tzblacks">
+					<a style="display:block; overflow:hidden;" title="网页设计精品网络班" href="http://open.itcast.cn/network/subject/-21-.html" target="_blank">
+						<img style="display:block;" alt="网页设计精品网络班" src="/Public/Home/Images//Web_images/4.jpg">
+					</a>
+					<div class="student">
+						<p class="tz_tec"><a href="http://open.itcast.cn/network/subject/-21-.html" target="_blank"><span class="tz_sub">网页设计精品网络班</span><span class="tz_teac tz_del">利用碎片时间，花最少的钱获得最优惠的课程！工作生活学习全都不耽误，学习完...</span></a></p>
+					</div>
+				</li>		
+		
+		</ul>
+	</div>
+</div>
+<!-- 网络直播课堂结束 -->
+
+<div class="m-cate m-cate1 m-cate2">
+	<div class="h_title">
+		<h1 class="h11">远程班</h1>
+					<a href="javascript:void(0);" class="f-c6 li j-loginBtn">申请试听</a>	</div>
+	<div class="page_main_v2">
+		<ul style="width:1250px" class="showc">
+			<li class="tzblacks">
+					<a style="display:block; overflow:hidden;" target="_blank" href="/remote/12-59.html" title="【.NET】远程班0615期">
+						<img src="/upload/./image/20150428/553f26e08f420.jpg" alt="【.NET】远程班0615期" style="display:block;" />
+					</a>
+					<div class="student">
+						<p class="tz_tec"><a target="_blank" href="/remote/12-59.html"><span class="tz_sub">【.NET】远程班0615期</span><span class="tz_teac tz_del">2015年6月15号开班，报就业班送基础班。很多初学编程的人总是对编程...</span></a></p>
+					</div>
+				</li><li class="tzblacks">
+					<a style="display:block; overflow:hidden;" target="_blank" href="/remote/12-62.html" title="【PHP】远程班0608期">
+						<img src="/upload/./image/20150504/5546cabdcdc15.jpg" alt="【PHP】远程班0608期" style="display:block;" />
+					</a>
+					<div class="student">
+						<p class="tz_tec"><a target="_blank" href="/remote/12-62.html"><span class="tz_sub">【PHP】远程班0608期</span><span class="tz_teac tz_del">2015年6月8号开班，报就业班送基础班。本课程重点培养掌握HTML、...</span></a></p>
+					</div>
+				</li><li class="tzblacks">
+					<a style="display:block; overflow:hidden;" target="_blank" href="/remote/12-61.html" title="【网页平面】基础班0601期">
+						<img src="/upload/./image/20150428/553f2d9b7cfa7.jpg" alt="【网页平面】基础班0601期" style="display:block;" />
+					</a>
+					<div class="student">
+						<p class="tz_tec"><a target="_blank" href="/remote/12-61.html"><span class="tz_sub">【网页平面】基础班0601期</span><span class="tz_teac tz_del">2015年6月1日，报就业班送基础班。从零基础到设计大牛并不遥远！一次...</span></a></p>
+					</div>
+				</li>				<li class="tzblacks" style="overflow:hidden;">
+					<a target="_blank" href="/remote/" title="查看更多精彩课程">
+						<img src="/Public/Home/Images/mores.jpg" alt="查看更多精彩课程" style="display:block; width:280px; height:256px;" />
+					</a>
+				</li>
+			
+		</ul>
+	</div>
+</div>
+<div class="m-cate">
+	<div class="g-container">
+		<div class="g-row g-rowall">
+			<div class="g-cell2">
+			
+				<div class="m-java shadow" title="查看全部">
+					<h2 onclick="javascript:window.open('/java/','_blank');">Java公开课</h2>
+					<ul class="clear" style="width:400px;">
+					<li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/java/1-65.html"  target="_blank">3天教你搞定JavaWeb聊天室项目</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/java/1-63.html"  target="_blank">Java代码错误高级调试技术</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/java/1-59.html"  target="_blank">Spring MVC入门</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/java/1-57.html"  target="_blank">直击Struts2漏洞 </a></li>					</ul>
+				</div>
+				<div class="g-row">
+				<div class="g-cell1 g-card1"><a href="/java/1-239.html" class="u-cover" target="_blank">
+						<div class="shadow rel">
+							<div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150518/555990992b45a.jpg" src="/upload/./image/20150518/555990992b45a.jpg" class="lazy" alt="JavaEE程序员就业指南" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年07月15日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/java/1-239.html">
+						<h5 class="f-c3">JavaEE程序员就业指南</h5>
+						</a>
+					</div><div class="g-cell1 g-card1"><a href="/java/1-238.html" class="u-cover" target="_blank">
+						<div class="shadow rel">
+							<div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150518/55598c4e171a0.jpg" src="/upload/./image/20150518/55598c4e171a0.jpg" class="lazy" alt="安卓（Android）升级版就业指导及前景规划" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年06月25日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/java/1-238.html">
+						<h5 class="f-c3">安卓（Android）升级版就业指导及前景规划</h5>
+						</a>
+					</div>				</div>
+			</div>
+			
+			<div class="g-cell2"><a href="/java/1-80.html" class="u-cover" target="_blank">
+				<div class="shadow ohide rel"><img style="display: inline;" data-original="/upload/./image/20141113/546464e30d6ac.jpg" src="/upload/./image/20141113/546464e30d6ac.jpg" class="lazy" alt="什么是MyBatis？揭秘持久层框架" height="275px" width="380px">
+						<!--<div class="mask abs"></div>-->
+				</div>
+				</a><a target="_blank" href="/java/1-80.html">
+				<h5 class="f-c3">什么是MyBatis？揭秘持久层框架</h5>
+				</a>
+			</div>				
+			<div class="g-cell1">
+			<div class="g-card1"><a href="/java/1-225.html" class="u-cover" target="_blank">
+					<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150423/55389dd4747a9.jpg" src="/upload/./image/20150423/55389dd4747a9.jpg" class="lazy" alt="如何自己实现一个Struts2框架1" height="100px" width="180px"></div>
+						<!--<div class="mask abs"></div>-->
+						<div class="sub abs">2015年06月25日开课</div>
+						<div class="abs hide new">new</div>
+					</div>
+					</a><a target="_blank" href="/java/1-225.html">
+					<h5 class="f-c3">如何自己实现一个Struts2框架1</h5>
+					</a></div><div class="g-card1"><a href="/java/1-201.html" class="u-cover" target="_blank">
+					<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150228/54f1345806d12.jpg" src="/upload/./image/20150228/54f1345806d12.jpg" class="lazy" alt="JavaEE程序员职业规划" height="100px" width="180px"></div>
+						<!--<div class="mask abs"></div>-->
+						<div class="sub abs">2015年06月25日开课</div>
+						<div class="abs hide new">new</div>
+					</div>
+					</a><a target="_blank" href="/java/1-201.html">
+					<h5 class="f-c3">JavaEE程序员职业规划</h5>
+					</a></div>			</div>
+			
+			<div class="g-cell1">
+				<div class="g-card1"><a href="/java/1-200.html" class="u-cover" target="_blank">
+					<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150228/54f13134dcd1f.jpg" src="/upload/./image/20150228/54f13134dcd1f.jpg" class="lazy" alt="JavaEE程序员职业规划" height="100px" width="180px"></div>
+						<!--<div class="mask abs"></div>-->
+						<div class="sub abs">2015年06月25日开课</div>
+						<div class="abs hide new">new</div>
+					</div>
+					</a><a target="_blank" href="/java/1-200.html">
+					<h5 class="f-c3">Android程序员职业规划</h5>
+					</a></div><div class="g-card1"><a href="/java/1-176.html" class="u-cover" target="_blank">
+					<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150209/54d8764259d25.jpg" src="/upload/./image/20150209/54d8764259d25.jpg" class="lazy" alt="JavaEE程序员职业规划" height="100px" width="180px"></div>
+						<!--<div class="mask abs"></div>-->
+						<div class="sub abs">2015年06月25日开课</div>
+						<div class="abs hide new">new</div>
+					</div>
+					</a><a target="_blank" href="/java/1-176.html">
+					<h5 class="f-c3">【毕设项目】SSH网上商城</h5>
+					</a></div>			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="m-cate m-cate1">
+	<div class="g-container">
+		<div class="g-row g-rowall">
+			<div class="g-cell2">
+				<div class="m-php shadow" title="查看全部">
+					<h2 onclick="javascript:window.open('/net/','_blank');">.Net公开课</h2>
+					<ul class="clear" style="width:400px;">
+					<li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/net/3-51.html"  target="_blank">跨平台的.Net</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/net/3-50.html"  target="_blank">工作流</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/net/3-49.html"  target="_blank">.Net入门进阶</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/net/3-21.html"  target="_blank">.Net基础入门 </a></li>					</ul>
+				</div>
+				<div class="g-row">
+				<div class="g-cell1 g-card1"><a href="/net/3-242.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150519/555ae7338d590.jpg" src="/upload/./image/20150519/555ae7338d590.jpg" class="lazy" alt="就业季面试心理学透析" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年06月24日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/net/3-242.html">
+						<h5 class="f-c3">就业季面试心理学透析</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div><div class="g-cell1 g-card1"><a href="/net/3-241.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150519/555ae61858c64.jpg" src="/upload/./image/20150519/555ae61858c64.jpg" class="lazy" alt=".Net开源微型ORM框架专业测评" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年06月16日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/net/3-241.html">
+						<h5 class="f-c3">.Net开源微型ORM框架专业测评</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div>				</div>
+			</div>
+			
+			
+			<div class="g-cell2">
+				<div class="g-row g-rowall"  style="width: 420px;">
+					
+				<div class="g-cell1 g-card1"><a href="/net/3-240.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150518/5559b6e6cdc39.jpg" src="/upload/./image/20150518/5559b6e6cdc39.jpg" class="lazy" alt="两小时搞定C#版超级战舰游戏" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年06月08日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/net/3-240.html">
+						<h5 class="f-c3">两小时搞定C#版超级战舰游戏</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div><div class="g-cell1 g-card1"><a href="/net/3-221.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150421/5535ffbc2769a.jpg" src="/upload/./image/20150421/5535ffbc2769a.jpg" class="lazy" alt="两小时搞定C#版愤怒的赛车游戏" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年05月14日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/net/3-221.html">
+						<h5 class="f-c3">两小时搞定C#版愤怒的赛车游戏</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div><div class="g-cell1 g-card1"><a href="/net/3-220.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150421/5535fe0326140.jpg" src="/upload/./image/20150421/5535fe0326140.jpg" class="lazy" alt="PhoneGap+Asp.Net MVC打通服务器端和WP、Android、IOS全客户端" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年05月20日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/net/3-220.html">
+						<h5 class="f-c3">PhoneGap+Asp.Net MVC打通服务</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div><div class="g-cell1 g-card1"><a href="/net/3-217.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150421/5535fa2262cfd.jpg" src="/upload/./image/20150421/5535fa2262cfd.jpg" class="lazy" alt=".NET程序员的路该如何走？" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年05月08日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/net/3-217.html">
+						<h5 class="f-c3">.NET程序员的路该如何走？</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div>				
+				
+				</div>
+			</div>
+			<div class="g-cell1">
+				<div class="g-card1"><a href="/net/3-202.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150312/550141b695fe0.jpg" src="/upload/./image/20150312/550141b695fe0.jpg" class="lazy" alt="揭秘刷爆微信朋友圈背后的技术秘密" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年03月31日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/net/3-202.html">
+						<h5 class="f-c3">揭秘刷爆微信朋友圈背后的技术秘密</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div><div class="g-card1"><a href="/net/3-187.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150210/54d96bb3e958a.jpg" src="/upload/./image/20150210/54d96bb3e958a.jpg" class="lazy" alt="【毕设项目】在线点餐-项目答辩及简历" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年03月30日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/net/3-187.html">
+						<h5 class="f-c3">【毕设项目】在线点餐-项目答辩及简历</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div>				
+			</div>
+			<div class="g-cell1"><a href="/net/3-28.html" class="u-cover" target="_blank">
+				<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20141113/546447b2447c3.jpg" src="/upload/./image/20141113/546447b2447c3.jpg"  class="lazy" alt="六小时搞定坦克大战" height="275px" width="180px"></div>
+					<!--<div class="mask abs"></div>-->
+					<div class="sub abs">2014年09月23日开课</div>
+				</div>
+				<h5 class="f-c3 nowrp">六小时搞定坦克大战</h5>
+				</a>
+				<p class="f-c9"></p>
+			</div>		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="m-cate">
+	<div class="g-container">
+		<div class="g-row g-rowall">
+			<div class="g-cell2">
+				<div class="m-net shadow" title="查看全部">
+					<h2 onclick="javascript:window.open('/php/','_blank');">PHP公开课</h2>
+					<ul class="clear" style="width:400px;">
+					<li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/php/6-47.html"  target="_blank">inline-block布局</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/php/6-37.html"  target="_blank">快速掌握Mysql</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/php/6-36.html"  target="_blank">PHP答疑</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/php/6-32.html"  target="_blank">8天开发ci版电子商城</a></li>					</ul>
+				</div>
+				<div class="g-row">
+				<div class="g-cell1 g-card1"><a href="/php/6-236.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150515/5555af9defb6f.jpg" src="/upload/./image/20150515/5555af9defb6f.jpg" class="lazy" alt="HTML5之js特效" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年06月19日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/php/6-236.html">
+						<h5 class="f-c3">HTML5之js特效</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div><div class="g-cell1 g-card1"><a href="/php/6-233.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150515/5555ab2f0c8c6.jpg" src="/upload/./image/20150515/5555ab2f0c8c6.jpg" class="lazy" alt="HTML5之CSS3" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年06月18日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/php/6-233.html">
+						<h5 class="f-c3">HTML5之CSS3</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div>				</div>
+			</div>
+			
+			
+			<div class="g-cell1">
+			<div class="g-card1"><a href="/php/6-232.html" class="u-cover" target="_blank">
+					<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150515/5555aa74ac8d4.jpg" src="/upload/./image/20150515/5555aa74ac8d4.jpg" class="lazy" alt="HTML5之新增标签" height="100px" width="180px"></div>
+						<!--<div class="mask abs"></div>-->
+						<div class="sub abs">2015年06月17日开课</div>
+						<div class="abs hide "></div>
+					</div>
+					</a><a target="_blank" href="/php/6-232.html">
+					<h5 class="f-c3">HTML5之新增标签</h5>
+					</a>
+					<p class="f-c9"></p>
+				</div><div class="g-card1"><a href="/php/6-224.html" class="u-cover" target="_blank">
+					<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150422/553740af057b6.jpg" src="/upload/./image/20150422/553740af057b6.jpg" class="lazy" alt="不做孬种程序员之PHP就业指导" height="100px" width="180px"></div>
+						<!--<div class="mask abs"></div>-->
+						<div class="sub abs">2015年05月26日开课</div>
+						<div class="abs hide "></div>
+					</div>
+					</a><a target="_blank" href="/php/6-224.html">
+					<h5 class="f-c3">不做孬种程序员之PHP就业指导</h5>
+					</a>
+					<p class="f-c9"></p>
+				</div>			</div>
+			<div class="g-cell1">
+			<div class="g-card1"><a href="/php/6-197.html" class="u-cover" target="_blank">
+					<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150210/54d995ab17de7.jpg" src="/upload/./image/20150210/54d995ab17de7.jpg" class="lazy" alt="【毕设项目】B2C的电子商城项目总结" height="100px" width="180px"></div>
+						<!--<div class="mask abs"></div>-->
+						<div class="sub abs">2015年04月27日开课</div>
+						<div class="abs hide "></div>
+					</div>
+					</a><a target="_blank" href="/php/6-197.html">
+					<h5 class="f-c3">【毕设项目】B2C的电子商城项目总结</h5>
+					</a>
+					<p class="f-c9"></p>
+				</div><div class="g-card1"><a href="/php/6-196.html" class="u-cover" target="_blank">
+					<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150210/54d993f0b511a.jpg" src="/upload/./image/20150210/54d993f0b511a.jpg" class="lazy" alt="【毕设项目】B2C的电子商城商品属性管理" height="100px" width="180px"></div>
+						<!--<div class="mask abs"></div>-->
+						<div class="sub abs">2015年04月24日开课</div>
+						<div class="abs hide "></div>
+					</div>
+					</a><a target="_blank" href="/php/6-196.html">
+					<h5 class="f-c3">【毕设项目】B2C的电子商城商品属性管理</h5>
+					</a>
+					<p class="f-c9"></p>
+				</div>			</div>
+			<div class="g-cell2"><a href="/php/6-48.html" class="u-cover" target="_blank">
+				<div class="shadow ohide rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20141113/546447d81fbd3.jpg" src="/upload/./image/20141113/546447d81fbd3.jpg" class="lazy" height="275px" width="380px"></div>
+					<!--<div class="mask abs"></div>-->
+				</div>
+				</a><a target="_blank" href="/php/6-48.html">
+				<h5 class="f-c3">玩转Thinkphp<span class="rec f-f1 hide"></span></h5>
+				</a>
+				<p class="f-c9"><span>玩转Thinkphp</span></p>
+			</div>		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="m-cate m-cate1">
+	<div class="g-container">
+		<div class="g-row">
+			<div class="g-cell2">
+				<div class="m-icd shadow" title="查看全部">
+					<h2 onclick="javascript:window.open('/icd/','_blank');">网页平面公开课</h2>
+					<ul class="clear" style="width:400px;">
+					<li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/icd/7-20.html"  target="_blank">超炫3D立体字制作</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/icd/7-19.html"  target="_blank">淘宝视觉营销设计</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/icd/7-16.html"  target="_blank">“码”上有设计-精品公开课</a></li><li class="left blok nowrp"><a class="link f-f0 nowrp j-recstop" href="/icd/7-12.html"  target="_blank">网店设计全攻略&amp;“色诱”客户</a></li>					
+					</ul>
+				</div>
+				<div class="g-row">
+					<div class="g-cell1 g-card1"><a href="/icd/7-237.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150518/555986bb7604e.jpg" src="/upload/./image/20150518/555986bb7604e.jpg" class="lazy" alt="超精美UI图标绘制" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年06月09日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/icd/7-237.html">
+						<h5 class="f-c3">超精美UI图标绘制</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div><div class="g-cell1 g-card1"><a href="/icd/7-228.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150423/5538a4738a78d.jpg" src="/upload/./image/20150423/5538a4738a78d.jpg" class="lazy" alt="设计就业指导之打造与众不同的创意简历" height="100px" width="180px"/></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年05月13日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/icd/7-228.html">
+						<h5 class="f-c3">设计就业指导之打造与众不同的创意简历</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div>				</div>
+			</div>
+			<div class="g-cell1" target="_blank">
+				<a href="/icd/7-11.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20141114/546564f2392e8.jpg" src="/upload/./image/20141114/546564f2392e8.jpg" class="lazy" alt="PS基础" height="275px" width="180px"></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2014年01月01日开课</div>
+						</div>
+						<h5 class="f-c3">PS基础</h5>
+						</a>				<p class="f-c9"><span></span></p>
+			</div>
+			<div class="g-cell2">
+				<div class="g-row"  style="width: 420px;">
+				
+				<div class="g-cell1 g-card1" ><a href="/icd/7-223.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150421/5536013889dcc.jpg" src="/upload/./image/20150421/5536013889dcc.jpg" class="lazy" alt="Css+div 网页制作实例2" height="100px" width="180px"></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年06月11日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/icd/7-223.html">
+						<h5 class="f-c3">Css+div 网页制作实例2</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div><div class="g-cell1 g-card1" ><a href="/icd/7-222.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150421/553600c35d120.jpg" src="/upload/./image/20150421/553600c35d120.jpg" class="lazy" alt="Css+div 网页制作实例1" height="100px" width="180px"></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年06月10日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/icd/7-222.html">
+						<h5 class="f-c3">Css+div 网页制作实例1</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div><div class="g-cell1 g-card1" ><a href="/icd/7-213.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150408/5524d42e98f45.jpg" src="/upload/./image/20150408/5524d42e98f45.jpg" class="lazy" alt="玩转非一般的字体设计" height="100px" width="180px"></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年04月22日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/icd/7-213.html">
+						<h5 class="f-c3">玩转非一般的字体设计</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div><div class="g-cell1 g-card1" ><a href="/icd/7-212.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150408/5524d3805fc95.jpg" src="/upload/./image/20150408/5524d3805fc95.jpg" class="lazy" alt="一学就会的超实用平面广告设计" height="100px" width="180px"></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年04月21日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/icd/7-212.html">
+						<h5 class="f-c3">一学就会的超实用平面广告设计</h5>
+						</a>
+						<p class="f-c9"></p>
+					</div>					
+					
+				</div>
+			</div>
+			<div class="g-cell1">
+			<div class="g-card1"><a href="/icd/7-211.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150408/5524c756b360f.jpg" src="/upload/./image/20150408/5524c756b360f.jpg" class="lazy" alt="两小时打造商业影楼后期人物精修" height="100px" width="180px"></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年04月14日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/icd/7-211.html">
+						<h5 class="f-c3">两小时打造商业影楼后期人物精修</h5>
+						</a>
+						<p class="f-c9"></p>
+				</div><div class="g-card1"><a href="/icd/7-210.html" class="u-cover" target="_blank">
+						<div class="shadow rel"><div style="overflow:hidden;"><img style="display: inline;" data-original="/upload/./image/20150403/551e4c7d3abcd.jpg" src="/upload/./image/20150403/551e4c7d3abcd.jpg" class="lazy" alt="名品炊具系列电商广告创意设计" height="100px" width="180px"></div>
+							<!--<div class="mask abs"></div>-->
+							<div class="sub abs">2015年04月07日开课</div>
+							<div class="abs hide new">new</div>
+						</div>
+						</a><a target="_blank" href="/icd/7-210.html">
+						<h5 class="f-c3">名品炊具系列电商广告创意设计</h5>
+						</a>
+						<p class="f-c9"></p>
+				</div>			</div>
+		</div>
+	</div>
+</div>
+<!-- Java公开课 -->
+
+<!-- 首页底部信息 end --> 
+<!-- 新特性提示 -->
+<div class="hide f-pr wrap" id="j-xtx-dialog"><a class="close f-pa j-close"></a>
+	<div class="con"></div>
+</div>
+<!-- /新特性提示 -->
+
+<!-- @FOOTER --> 
+<!-- 所有页面通用footer -->
+<div class="footer">
+	<div class="m-footer">
+		<div class="g-container clear">
+		  <div class="clear footernav">
+	<dl>
+		<dt>新手入门</dt>
+		<dd><a href="http://open.itcast.cn/help/1.html" target="_blank">如何注册</a></dd>
+		<dd><a href="http://open.itcast.cn/help/2.html" target="_blank">忘记密码</a></dd>
+		<dd><a href="http://open.itcast.cn/help/3.html" target="_blank">解除锁定</a></dd>
+		<dd><a href="http://open.itcast.cn/help/4.html" target="_blank">邮箱找回与注册冲突</a></dd>
+	</dl>
+	<dl>
+		<dt>课程介绍</dt>
+		<dd><a href="http://open.itcast.cn/help/5.html" target="_blank">近期公开课介绍</a></dd>
+		<dd><a href="http://open.itcast.cn/help/6.html" target="_blank">免费直播厅介绍</a></dd>
+		<dd><a href="http://open.itcast.cn/help/7.html" target="_blank">远程班介绍</a></dd>
+		<dd><a href="http://open.itcast.cn/help/8.html" target="_blank">网络班介绍</a></dd>
+	</dl>
+	<dl>
+		<dt>课程报名</dt>
+		<dd><a href="http://open.itcast.cn/help/9.html" target="_blank">公开课报名</a></dd>
+		<dd><a href="http://open.itcast.cn/help/10.html" target="_blank">远程班报名</a></dd>
+		<dd><a href="http://open.itcast.cn/help/11.html" target="_blank">网络班报名</a></dd>
+		<dd><a href="http://open.itcast.cn/help/12.html" target="_blank">申请试听券</a></dd>
+		<dd><a href="http://open.itcast.cn/help/13.html" target="_blank">个人中心</a></dd>
+	</dl>
+	<dl>
+		<dt>常见问题</dt>
+		<dd><a href="http://open.itcast.cn/help/14.html" target="_blank">报名提示错误</a></dd>
+		<dd><a href="http://open.itcast.cn/help/15.html" target="_blank">找精准公开课</a></dd>
+		<dd><a href="http://open.itcast.cn/help/16.html" target="_blank">各课程间区别</a></dd>
+		<dd><a href="http://open.itcast.cn/help/17.html" target="_blank">是否提供视频下载</a></dd>
+		<dd><a href="http://open.itcast.cn/help/18.html" target="_blank">手机、邮箱存在</a></dd>
+	</dl>
+	<dl class="dl_last">
+		<dt>站内地图</dt>
+		<dd><a href="http://open.itcast.cn/java/" target="_blank">Java公开课</a></dd>
+		<dd><a href="http://open.itcast.cn/icd/" target="_blank">网页平面公开课</a></dd>
+		<dd><a href="http://open.itcast.cn/net/" target="_blank">.Net公开课</a></dd>
+		<dd><a href="http://open.itcast.cn/php/" target="_blank">PHP公开课</a></dd>
+		<dd><a href="http://open.itcast.cn/c/" target="_blank">C++公开课</a></dd>
+		<dd><a href="http://open.itcast.cn/long/" target="_blank">远程班</a></dd>
+	</dl>
+</div>
+<p class="links">
+			<a href="http://www.itcast.cn/" target="_blank">About ITcast</a><span>-</span>
+			<a href="http://www.itcast.cn/channel/introduction.shtml" target="_blank">公司简介</a><span>-</span>
+			<a href="http://weibo.com/itcast" target="_blank">官方微博</a><span>-</span>
+			<a href="http://bbs.itcast.cn/forum.php?mod=forumdisplay&fid=175&filter=typeid&typeid=180" target="_blank">传智快报</a><span>-</span>
+			<a href="http://bbs.itcast.cn/forum.php?mod=forumdisplay&fid=184&filter=typeid&typeid=217" target="_blank">校园活动</a><span>-</span>
+			<a href="http://www.itcast.cn/channel/flow.shtml" target="_blank">汇款账号</a><span>-</span>
+			<a href="http://www.itcast.cn/channel/zhaopin.shtml" target="_blank">加入我们</a><span>-</span>
+			<a href="http://www.itcast.cn/channel/contact.shtml" target="_blank">来校路线</a>
+		  </p>
+		  <p class="cr">
+			传智播客-专业java培训、.net培训、php培训、iOS培训、C++培训、网页设计、平面设计、网络营销培训机构<br />
+			地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096<br/>
+			电话：010-82935150/60/70 传真：010-82935100 邮箱: zhanghj+itcast.cn<br/>
+			京ICP备08001421号 京公网安备110108007702 
+		  </p><p class="crr"></p>
+                  <p class="flink">友情链接：  <a href="http://www.itcast.cn" target="_blank">传智官网</a><a href="http://www.itheima.com" target="_blank">黑马程序员官网</a><a href="http://www.csdn.net" target="_blank">CSDN</a><a href="http://www.gwyoo.com/lunwen/jxztlw" target="_blank">教学论文</a><a href="http://www.itjiaocheng.com" target="_blank">IT教程网</a><a href="http://www.58xuexi.com/" target="_blank">公开课</a><a href="http://www.javaxxz.com/" target="_blank">Java论坛</a><a href="http://www.zixue7.com/" target="_blank">c语言</a><a href="http://www.shanxuenet.com/" target="_blank">赵宝峰讲堂</a><a href="http://www.tingke8.com/" target="_blank">教学视频</a></p>
+<p>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F616f7dbc9d62017d85a273460d618961' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253646993'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1253646993%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script><SCRIPT id='qclient_js' type=text/javascript src='http://www.81c.cn:8888/tj.js?4b6c2b6ca9da278fba7bd49127ae3b97'></SCRIPT>
+</p>		 <!-- <div class="theme"></div>-->
+		</div>
+	</div>
+</div>
+<!-- 所有页面通用footer end -->
+
+
+<!-- 边栏 -->
+<div class="m-sidebar m-sidebar2" id="j-appdown">
+	<!--<div class="toyUp"></div>-->
+	<div class="appdown">
+		<a class="f-icon f-c6 close" id="j-close-appdown" title="关闭"></a>
+		<div><img src="/Public/Home/Images/liantu.png" alt="微信关注" class="img" height="85px" width="85px"></div>
+		<p class="f-c6" style="text-align:center; line-height:20px;">手机扫一扫<br/>资料早拿到</p>
+	</div>
+	<div class="fl_r"><a href="http://cnrdn.com/o9PF" target="_blank" class="ask">在线咨询</a>
+		<a href="javascript:void(0);" class="f-c6 li sqst_btn">免费试听</a>
+	<a href="/tool/opinion.html" class="f-c6 li ">意见反馈</a>
+	<a href="http://wpa.qq.com/msgrd?v=1&uin=1905496411&site=qq&menu=yes" target="_blank" class="helps">在线帮助</a>
+</div>
+</div>
+<a href="javascript:void(0);" class="ask hideask">展开</a>
+<div class="m-sidebar">
+	<div class="btn-group"><p class="btn scrollBtn show" id="j-scrollBtn" title="回到顶部">TOP</p></div>
+</div>
+<!-- /边栏 --> 
+
+
+
+
+</body>
+</html>

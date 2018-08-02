@@ -1,0 +1,843 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="http://c.csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+<title>游戏设计的迭代误用：从半成品到概念修正-CSDN.NET </title>
+<meta name="description" content="开发者不够坚信自己对产品定位的初衷，而寄希望于后续的产品迭代，导致游戏趋于失败的行列，游戏市场“半成品”横行。" />
+<meta name="keywords" content="游戏邦,游戏设计,迭代,手机游戏,性能优化,渠道,竞争,发展趋势,郑金条" />
+<meta name="author" content="CSDN.NET" />
+<meta name="Copyright" content="CSDN.NET" />
+<!-- toolbar start --> 
+<link href="http://static.csdn.net/public/common/toolbar/css/index.css" type="text/css" rel="stylesheet">
+<script src="http://c.csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- toolbar end -->
+<link href="http://news.csdn.net/css/content.css" rel="stylesheet" type="text/css" />
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6275c7f2c7d9617f47b5ea3c72633374";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=allyestest|allyestest|allyestest0410&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|homepage|floating_1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<script type="text/javascript">
+  var protocol = window.location.protocol;
+  document.write('<script type="text/javascript" src="' +protocol+ '//c.csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></'+'script>');
+</script>
+<script src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript" id="toolbar-tpl-scriptId" prod="news" skin="black" domain="http://mobile.csdn.net"></script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<div class="wrap">
+	<!-- 间歇滚动 -->
+	<script language=javascript>function T(n){document.getElementById("ArticleCnt").style.fontSize=n+"px";}</script>
+	<script src="http://news.csdn.net/js/jquery.autoscroll.js" type=text/javascript></script><!--滚动js-->
+	<!-- //间歇滚动 -->
+	<script type="text/javascript">BAIDU_CLB_preloadSlots("421718","421717","421715","421714","421712","445821","421709","119835");</script>
+	<!--<div class="ad_960">
+		<div class="ad_230"><script type="text/javascript">BAIDU_CLB_fillSlot("421712");</script></div>
+		<div class="ad_728"><script type="text/javascript">BAIDU_CLB_fillSlot("421709");</script></div>
+	</div>-->
+
+</div>
+	<!-- nav -->
+	<div id="xcx_tabmenu" class="nav">
+		<div id="cx_tabmenu" class="cx_tabmenu">
+			<!-- lev one -->
+			<div id="ddimagetabs" class="lev_1">
+				<ul>
+				<li><a href="http://news.csdn.net" id="sclink1" target="_blank" onclick="LogClickCount(this, 392);">业界</a></li>
+				<li><a href="http://mobile.csdn.net" id="sclink2" target="_blank" onclick="LogClickCount(this, 393);">移动开发</a></li>
+				<li><a href="http://cloud.csdn.net" id="sclink3" target="_blank" onclick="LogClickCount(this, 394);">云计算</a></li>
+				<li><a href="http://sd.csdn.net" id="sclink4" target="_blank" onclick="LogClickCount(this, 395);">软件研发</a></li>
+				<li><a href="http://programmer.csdn.net/" id="sclink6" target="_blank">程序员</a></li>
+				<li><a href="http://geek.csdn.net/" id="sclink7" target="_blank">极客头条</a></li>
+				<li><a href="http://special.csdn.net/newssubject/index.html" id="sclink5" target="_blank" >专题</a></li>
+				<!--<li><a href="http://share.csdn.net" id="sclink8" target="_blank">CSDN Share</a></li>
+				<li><a href="http://read.csdn.net/" id="sclink9" target="_blank">我的Tag</a></li>-->
+				</ul>
+			</div>
+			<!-- lev two -->
+			<div id="tabcontentcontainer" class="lev_2">
+				<div class="tabcontent" id="sc1">
+					<ul>
+					 
+					<li><a href="http://www.csdn.net/tag/cto/news" target="_blank">CTO</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E4%BA%A7%E5%93%81/news" target="_blank">产品</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E8%81%8C%E5%9C%BA/news" target="_blank">职场</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E4%BA%BA%E7%89%A9/news" target="_blank">人物</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%88%9B%E4%B8%9A/news" target="_blank">创业</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%AF%B9%E8%AF%9Dcto/news" target="_blank">对话CTO</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E7%A4%BE%E5%8C%BA%E4%B9%8B%E6%98%9F/news" target="_blank">社区之星</a></li>
+										</ul>
+				</div>
+				<div class="tabcontent" id="sc2">
+					<ul>
+					 
+					<li><a href="http://www.csdn.net/tag/android/news"  target="_blank">Android</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/ios/news"  target="_blank">iOS</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E7%A7%BB%E5%8A%A8%E6%B8%B8%E6%88%8F/news"  target="_blank">移动游戏</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/swift/news"  target="_blank">Swift</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6/news"  target="_blank">智能硬件</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/html5/news"  target="_blank">HTML5</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E8%BF%91%E5%8C%A0/news"  target="_blank">近匠</a></li>
+										</ul>
+				</div>
+				<div class="tabcontent" id="sc3">
+					<ul>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE/news"  target="_blank">大数据</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83/news"  target="_blank">数据中心</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E8%99%9A%E6%8B%9F%E5%8C%96/news"  target="_blank">虚拟化</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%9C%8D%E5%8A%A1%E5%99%A8/news"  target="_blank">服务器</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%AD%98%E5%82%A8/news"  target="_blank">存储</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/nosql/news"  target="_blank">NoSQL</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%AE%89%E5%85%A8/news"  target="_blank">安全</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E4%BA%91%E5%85%88%E9%94%8B/news"  target="_blank">云先锋</a></li>
+										</ul>
+				</div>
+				<div class="tabcontent" id="sc4">
+					<ul>
+					 
+					<li><a href="http://www.csdn.net/tag/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/news"  target="_blank">编程语言</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0/news"  target="_blank">开放平台</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%9E%B6%E6%9E%84/news"  target="_blank">架构</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/html5/news"  target="_blank">HTML5</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/news"  target="_blank">智能算法</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/news"  target="_blank">前端开发</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%BC%80%E6%BA%90/news"  target="_blank">开源</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93/news"  target="_blank">数据库</a></li>
+										</ul>
+				</div>
+				<div class="tabcontent" id="sc5">
+					<ul>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%B0%81%E9%9D%A2%E7%A7%80/news"  target="_blank">封面秀</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E7%89%B9%E5%88%AB%E7%AD%96%E5%88%92/news"  target="_blank">特别策划</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/news"  target="_blank">技术架构</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E7%AE%A1%E7%90%86%E5%AE%9E%E8%B7%B5/news"  target="_blank">管理实践</a></li>
+										</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type=text/javascript>
+	// The idea borrowed from dynamicDrive.com
+	
+	var initialtab = [1, "sc1"]
+	
+	var previoustab = "";
+	var intv;
+	function expandcontent(cid, aobject) {
+	    stopTimer();
+	    highlighttab(aobject);
+	    if (previoustab != ""){
+	         document.getElementById(previoustab).style.display = "none";
+	    }
+	    document.getElementById(cid).style.display = "block";
+	    previoustab = cid;
+	}
+	
+	function highlighttab(aobject) {
+	    stopTimer();
+	
+	   if (typeof tabobjlinks == "undefined"){
+	         collectddimagetabs();
+	    }
+	   for (i = 0; i < tabobjlinks.length; i++){
+	    	tabobjlinks[i].className = "";   
+	    }
+	    aobject.className = "current";
+	}
+	
+	function collectddimagetabs() {
+	    var tabobj = document.getElementById("ddimagetabs");
+	    tabobjlinks = tabobj.getElementsByTagName("A");
+	}
+	
+	function startTimer() {
+	    intv = setTimeout("expandcontent(initialtab[1], tabobjlinks[initialtab[0]-1])", 2000);
+	}
+	
+	function stopTimer() {
+	    clearTimeout(intv);
+	}
+	
+	$(document).ready(function(){ 
+		collectddimagetabs();
+		var domain = new Array('news.','mobile.','cloud.','sd.','programmer.');
+		for(var i=0;i<domain.length;i++){
+			if(window.location.href.indexOf(domain[i]) > 0){
+				expandcontent('sc'+(i+1), tabobjlinks[i]);
+			}
+		}
+		$('#button_both').click(function(){
+			var key=$('#queries_searchfield_query-new').val();
+			key = $.trim(key);
+			if(key==""){
+				alert("关键字不能为空！");
+			}
+			else{
+				key =  encodeURIComponent(key)
+				var url="http://so.csdn.net/search?sort=created_at&t=news&q="+key;
+				window.location.href=url;
+			}
+			return false;
+		});
+	});
+	
+	</script>
+ 
+<div class="wrap">
+	
+	
+	
+		<div class="ad_960">
+		<div class="ad_190"><script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|article|button1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script></div>
+		<div class="ad_760"><script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|article|banner1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script></div>
+	</div>
+		
+	<div class="brea_nav">
+				<span class="fr">
+		<a href="http://news.csdn.net/rss_mobile.html" class="rss" target="_blank">订阅移动开发RSS</a>					
+		</span><a href="http://www.csdn.net/">CSDN首页</a><em>&gt;</em>
+		<a href="http://mobile.csdn.net" target="_blank">移动开发</a>	</div>
+	
+	<div class="content">
+		<div class="left">
+			<div class="detail">
+				<h1 class="title">游戏设计的迭代误用：从半成品到概念修正</h1>
+				<h4>
+					<div class="tit_bar">
+						发表于<span class="ago">2015-05-19 17:20</span>|
+						<span class="view_time">次阅读</span>| 
+						来源<span class="ago">CSDN</span>|
+						<span class="num_recom"><font id="remark_count1" class="cmtcount" style="font-size:12px;color:#c00;">0</font> 条评论</span>| 
+						作者<span class="ago">郑金条</span>
+					</div>
+				</h4>
+				<div class="tag"><a href="http://www.csdn.net/tag/%E6%B8%B8%E6%88%8F%E9%82%A6/news">游戏邦</a><a href="http://www.csdn.net/tag/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/news">游戏设计</a><a href="http://www.csdn.net/tag/%E8%BF%AD%E4%BB%A3/news">迭代</a><a href="http://www.csdn.net/tag/%E6%89%8B%E6%9C%BA%E6%B8%B8%E6%88%8F/news">手机游戏</a><a href="http://www.csdn.net/tag/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/news">性能优化</a><a href="http://www.csdn.net/tag/%E6%B8%A0%E9%81%93/news">渠道</a><a href="http://www.csdn.net/tag/%E7%AB%9E%E4%BA%89/news">竞争</a><a href="http://www.csdn.net/tag/%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF/news">发展趋势</a><a href="http://www.csdn.net/tag/%E9%83%91%E9%87%91%E6%9D%A1/news">郑金条</a></div>
+				<div class="summary">
+					<input type="hidden" id="article_description" name="article_description" value="开发者不够坚信自己对产品定位的初衷，而寄希望于后续的产品迭代，导致游戏趋于失败的行列，游戏市场“半成品”横行。">
+				<script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 22 , _h = 16;
+  var article_description=$("#article_description").val();
+  var param = {
+    url:location.href,
+    type:'3',
+    count:'', /**是否显示分享数，1显示(可选)*/
+    appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
+    title:article_description, /**分享的文字内容(可选，默认为所在页面的title)*/
+    pic:'', /**分享图片的路径(可选)*/
+    ralateUid:'', /**关联用户的UID，分享微博会@该用户(可选)*/
+	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+    rnd:new Date().valueOf()
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script><strong>摘要：</strong>开发者不够坚信自己对产品定位的初衷，而寄希望于后续的产品迭代，导致游戏趋于失败的行列，游戏市场“半成品”横行。				</div>
+				<div class="con news_content">
+				<p>在游戏研发圈我们经常能看到两种很有趣的现象：一种是在游戏研发进程中，稍微遇到质疑（声音一般来自开发内部）就会被答复说现在暂时是这样（将就使用中，可能不会是最终使用的样子），等下一版或正式上线时就会改成那样（指大家都能相对满意的状态）；一种是游戏发行后，遇到市场反弹（包括渠道和玩家的意见）就会通告说现在暂时是这样（指市场已经不满意的环节），等下一版再更新就会慢慢修正到玩家和渠道期待中的那种设定，甚至可能超出市场的某种期待。</p><p>这两者共同指向了两个层面：一个是开发者并不足够坚信自己的产品初衷，也不一定能把持好自己设定的核心体验，最容易在稍微遭受挫折或质疑就立马反转彻底否决自己的根基；另一个是开发者通常并不具备好的产品视野，或者说在产品的设定上没有更好的方式从预先立场上去匹配玩家的体验需求，一旦遭遇市场报复性反弹就无所适从，导致了更多的自愿性妥协。</p><p>所以市场上基于用户追踪的数据反馈在不断修正迭代，基本被开发者奉为万金油的最佳调整方式，特别是Zynga曾经在社交游戏中成功过的理念（任意功能点或模块设定都要接受玩家的测试考验，被认为能最终被市场接受的模块才会正式推向用户，其中最经典的陈述可能就是Zynga CEO Mark Pincus在斯坦福大学的演讲所认为的，他们不愿意花数月的研发时间做好一款产品然后只能祈祷用户喜欢）更是将这种概念推崇到极致。以致事情的发展节奏就完全不再像以前那样，不再单纯只是围绕着设计师打转（那时完全是设计师凭游戏感主宰市场的天下，觉得自己设定的游戏体验就是最牛气的只要上架就能够俘获所有目标对象的心，玩家只要跟着设计师的意愿和节奏就能在游戏中进行一次出乎意料的虚拟之旅，设计师才是整体核心，用户的满意度不过是水到渠成的衍生品），而开始将市场的可能性反馈竭尽所能地渗透到研发环节，用户本能地被卷入其中成为研发编外的设定参与者。或者说市场的声音开始能轻易左右设计师的状态，游戏感可能不再完全来自职业素养，更多参杂着用户简单的诉求（在这个层面上，游戏设定可能要被矮化去接受玩家现有的游戏意识，这种妥协的最高上限就是玩家现有综合的游戏体验水准，于是设计师不再能自由想象，在设定环节上就始终存在一个用户短期能接受的隐性标杆。这就是为什么开发者更愿意选择相对保险的研发方式，而有意回避了可能存在的创新风险）。</p><p style="text-align: center;"><img style="" src="http://img.ptcms.csdn.net/article/201505/19/555afdcd22b48.jpg"><br></p><p>基本上，如果回归我们上述的逻辑，当开发者把自己的研发相对框束到迭代这一范畴时，游戏乐趣就演变成为配合玩家才存在的这一偏执概念（早先一般认为游戏的乐趣是先于体验的设定性存在，这种乐趣是在设计进程中由开发者模拟出来的，而现在纯粹开发者的单向模拟已经失效，市场已经自我进化到用户自然成为研发的一个不可或缺环节，由用户的实际体验来左右模式的设定和乐趣的实现方式）。换句话说，开发者对自身的设定属性失去了完全的掌控力，不再主宰市场的发展趋势，而是妥协于玩家的终极喜好，于是我们经常能看到各种半成品毫无畏惧地推向市场，同样毫不犹豫地把用户当成不领取工资的超级贡献者（所谓超级，就是他们可能取代开发者早先的设定，用选择性来改变研发的最终方向）。</p><p>这个阶段，但凡市场上出现过因为迭代成功的任意案例都会被当成法宝，或当成一种觊觎成功的自我安慰，这个就是市场上最响彻云霄的声音：好产品都是改出来的。</p><p>先来看看我们综合了市面上号称靠迭代以致成功的游戏案例，所能呈现的三个特征。</p><p>第一种是游戏基因特别好（特别是核心体验做得好），只是在研发进程中出现了一些表面人为不给力的瑕疵，本质上它们就是有雕琢出瑰宝潜质的璞玉，这种号称的微调整优化确实迷惑了大半的市场，以为一块几乎没什么光辉点的石头也都完全有机会历经改头换面把自己打造成为璀璨无比的美玉。</p><p>第二种是产品的改造遇到了能力挽狂澜的高手，能从实质上促成一款游戏在体验层面的飞越，而不仅仅只是停留在依靠原班人马（当然原班人马中也有可能因为角色的替换而出来有绝地重生的反击性人物）沿着老思维在自以为特别完美的设定上不断摇摆：这么好的设定，为什么你们会不喜欢，果然你们太没眼光，真是
+委屈了我之前这么天才的思维。须知道，一般核心体验出问题的游戏，再回炉重造的效果都会远远低于预期，就更不要指望能脱胎换骨直接从不合格跳跃成经典级别。</p><p>第三种是产品的时间机遇特别理想，完全抢占了特定市场的先机，产品能因为用户的将就而打开大局面。但这种机遇型窗口基本属于幸运女神的眷顾，看到别人因此成功而效仿，大部分都要轮回到成语故事中所说的守株待兔，你一直在那里，但兔子不在那里。</p><p>通常，只要市场上出现一次神话，哪怕很长一段时间就只出现过那么一次，这种别人家的高光时刻就注定会被重复烹饪，所有人都自我满意地再打一次鸡血：虽然我有一个丑陋的开端，但只要精诚所至，我能有一个完美的收尾。</p><p>从来很少有人能痛快地承认，既然产品感一开始就没走对，单靠不间断的整容想要再造一个美人可能性微乎其微。</p><p>这个时候就能再直面另外一种情况：数据在被认为是改造利刃的同时，也是开发者的自我的反向困扰，因为这些存在可能动摇了开发者的设定根基，撕开了他们从最早的以产品打天下的憧憬，使得前景完全变得捉摸不定。而根源可能还在于他们跳过了某些成功公司最常用的残酷内部筛选，通常我们都能从那些功成名就的开发商那里得到一个惊人的数据逻辑，说的是市场只看到他们的成功却没有看到他们背后的挣扎。可能他们要忍痛抛弃90%的不满意原型（基本都是独立产品，N个内部游戏原型设定，只有少量脱颖而出获得研发机会，更少量才能获得面向市场和推广的机会）才能最终把所有的资源都押注在最有潜力的一部分上面，并由此获得市场层面的认可。而往往那些寄望依靠迭代再获成功的产品基本都忽略了这个环节，它们通常不是历经严苛的内部淘汰存活下来的优质品，缺失了从一开始就需要具备的好基因。所以毫不奇怪用户的参与并不能从本质上让一款产品获得新生，差不多就像成语中所说的缘木求鱼。好产品不是基于用户的各种诉求的拼凑，而更可能是来自于好的游戏感觉。</p><p>在这里就要引用到一句话，来自Develop
+Online在一篇名为Why Apps
+Fail &amp; What You Can Do to Prevent It的表述：Stop having your users as part of the QA team。</p><p>如果加以分析，其实有三重可能是相当负面的隐患。第一个是用户的意见可能只局限于他们目前所累积的游戏体验水准，并不能恰当地切中游戏的症结所在，反而可能误导开发者做不切实际的修改，甚至延误原本迫切需要改造的环节；第二个是半成品的游戏实质上最大程度降低了用户对游戏的真实期待，特别是当开发者把更多的问题毫无掩饰地呈现在玩家面前时，所得到只能是最严厉的批评及最负面的印象，哪怕最后真的能如大家所预期的那样修订出来，开发者也可能重塑不回丢失的声誉；第三个是在市场的多重混乱声音中最容易迷失开发者自身的定位和自己对游戏该有的判断，最大的可能就是在不断的修改和拼凑中再培育出一个四不像来。</p><p>这个就是我在之前的一篇文章《手机游戏：那些狂飙突进背后的现实阴影》中提到的一个概念：迭代被模糊放大正在成为半成品市场的超级借口。当时的描述
+相对粗糙一些，但提到了几个不可忽视的环节：第一是因为免费体验的存在，用户对劣质产品的容忍度显得比之前更高（有些夸张到充满Bug和一些不可玩的元素 就以公测和内侧的名义上线，这个在以前是绝无仅有的）；第二是用半成品不断试错不断引导用户参与糟糕体验而最终优化到各方满意以致成功的案例已凤毛麟角，在用户有无数同质选项时，用糟糕体验来向用户试错的后果就是一次用户拒绝；第三是引用VentureBeat CEO Matt Marshall的话，他认为在App领域因为竞争格局的冲击大部分App都会在3~6个月达到下载巅峰，这可能意味着那些依赖后期优化的各种App，或死于不专业，或死于来不及专业就被抛弃。</p><p>终究还是要回到最本质的概念：产品最原始的立场应该是为用户提供独特且有时间消耗价值和消费价值的游戏，而不是寄望后期的修补能再造出不朽的经典。
+
+</p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: #7f7f7f;"><b>本文作者：郑金条，游戏邦负责人，游戏邦主要关注和解析国内外社交游戏和手机游<br>戏领域，并定期做深度行业阐述。</b></span><br></p>				
+				<p class="copyright"></p>
+				</div>
+							
+		 
+		
+		 
+		 <div class="share" > 	 
+			  <div class="bdsharebuttonbox" style="float:right;">
+			  <!-- a href="#" class="bds_more" data-cmd="more"></a -->
+			  <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+			  <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+			  <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+			  <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+			  </div>
+			<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>  
+			
+ 		</div> 
+
+				<div class="detail">
+				<div class="digg">
+						<input type="hidden" id="digg_id" value="2824717"/>
+						<dl class="support">
+							<dt>顶</dt>
+							<dd>0</dd>
+						</dl>
+						<dl class="oppose">
+							<dt>踩</dt>
+							<dd>0</dd>
+						</dl>
+				</div>
+			</div>	
+ 	
+				<div class="ad_600_90"><script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|article|banner3&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script> </div>
+				<div class="related">推荐阅读相关主题：
+											<a href="http://www.csdn.net/tag/%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6/news" title="斯坦福大学" target="_blank">斯坦福大学</a>
+											<a href="http://www.csdn.net/tag/%E7%A4%BE%E4%BA%A4%E6%B8%B8%E6%88%8F/news" title="社交游戏" target="_blank">社交游戏</a>
+											<a href="http://www.csdn.net/tag/%E8%AE%BE%E8%AE%A1%E5%B8%88/news" title="设计师" target="_blank">设计师</a>
+											<a href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE/news" title="数据" target="_blank">数据</a>
+											<a href="http://www.csdn.net/tag/%E4%BC%98%E5%8C%96/news" title="优化" target="_blank">优化</a>
+											<a href="http://www.csdn.net/tag/%E6%89%8B%E6%9C%BA/news" title="手机" target="_blank">手机</a>
+									</div>
+				<!-- relational article and news -->
+				<div id="Tab3" class="relational">
+					<h2 class="tab_1 Menubox">
+						<ul>
+						<li id="three1" onclick="setTab('three',1,2)"  class="hover">相关文章</li>
+						<li id="three2" onclick="setTab('three',2,2)">最新报道</li>
+						</ul>
+					</h2>
+					<div class="con Contentbox">
+						<div id="con_three_1" class="hover">
+							<ul class="list_1">								
+														<li><a href="http://www.csdn.net/article/1970-01-01/283039" title="马云：零散商和渠道将被消灭是竞争规律" target="_blank">马云：零散商和渠道将被消灭是竞争规律</a></li>
+														<li><a href="http://www.csdn.net/article/1970-01-01/2824705" title="从GPU到3D渲染：游戏图形渲染技巧与性能优化" target="_blank">从GPU到3D渲染：游戏图形渲染技巧与性能优化</a></li>
+														<li><a href="http://www.csdn.net/article/1970-01-01/292016" title="CSDN移动博文集锦之Android游戏开发" target="_blank">CSDN移动博文集锦之Android游戏开发</a></li>
+														<li><a href="http://www.csdn.net/article/1970-01-01/2820931" title="专访叶劲峰：漫谈游戏开发和游戏优化" target="_blank">专访叶劲峰：漫谈游戏开发和游戏优化</a></li>
+														<li><a href="http://www.csdn.net/article/1970-01-01/2820773" title="【畅言】软件工程的根本问题" target="_blank">【畅言】软件工程的根本问题</a></li>
+														<li><a href="http://www.csdn.net/article/1970-01-01/2804956" title="以玩家视角分享游戏设计的10点建议" target="_blank">以玩家视角分享游戏设计的10点建议</a></li>
+														</ul>
+						</div>
+						<div id="con_three_2" style="display:none">
+							<ul class="list_1 ">
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-21/2824745" title="《近匠》趣播，手机视频聊天的四维社交" target="_blank">《近匠》趣播，手机视频聊天的四维社交</a></li>
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-21/2824747" title="【连载】嵌入式Linux开发教程：Linux发行版" target="_blank">【连载】嵌入式Linux开发教程：Linux发行版</a></li>
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-21/2824738-CTO" title="【CTO讲堂】以API为核心的移动应用云大发展时代" target="_blank">【CTO讲堂】以API为核心的移动应用云大发展时代</a></li>
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-19/2824717-Iteration-of-Mobile-Game" title="游戏设计的迭代误用：从半成品到概念修正" target="_blank">游戏设计的迭代误用：从半成品到概念修正</a></li>
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-19/2824713-zhihu-community" title="成功的社区在于拥抱变化——知乎创始人周源专访" target="_blank">成功的社区在于拥抱变化——知乎创始人周源专访</a></li>
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-19/2824709-cell-height-calculation" title="优化UITableViewCell高度计算的那些事" target="_blank">优化UITableViewCell高度计算的那些事</a></li>
+													
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- //relational article and news 广告 -->	
+
+				<!-- comments -->
+                
+									<div id="comments" class="csdn_comments"></div>
+                    <script type="text/javascript" src="http://c.csdnimg.cn/pig/pubjs/cnick.js"></script>
+					<script src="http://ptcms.csdn.net/comment/js/comments.js" type="text/javascript"></script>
+					<script src="http://c.csdnimg.cn/atsuggest/comment_atsuggest.js" type="text/javascript"></script>
+					<!--script src="js/https://passport.csdn.net/scripts/login.js?v=1.2" type="text/javascript"></script-->
+					<script type="text/javascript">
+					    //var path = location.protocol +"//"+ location.host+"/comments/";                 //本地测试需要配置一个csdn.net的子域名，以便登录，例:http://comments.csdn.net
+					    var path = "http://ptcms.csdn.net/comment";
+					    csdn.comments = new csdn.comments({
+					        id:"comments",                                                                  //容器ID
+					        path:path,
+					        datapath:"http://ptcms.csdn.net",                                          //数据接口host
+					        cssUrl:path+"/css/comments.css",                                                 //css地址
+					        //loginUrl:path+"/js/login.js",                  //login.js地址
+					        loginUrl:"https://passport.csdn.net/content/loginbox/login.js",
+					        articleURL:"http://www.csdn.net/article/2015-05-19/2824717-Iteration-of-Mobile-Game",
+					        title:"%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%BF%AD%E4%BB%A3%E8%AF%AF%E7%94%A8%EF%BC%9A%E4%BB%8E%E5%8D%8A%E6%88%90%E5%93%81%E5%88%B0%E6%A6%82%E5%BF%B5%E4%BF%AE%E6%AD%A3",
+					        md5:"http://static.blog.csdn.net/scripts/md5.js",                               //用于计算用户头像的md5.js地址
+					        componentsUrl:path+"/js/componet.js",              //CSDN通用组件地址
+					        toolkitUrl:path+"/js/toolkit.js",                  //CSDN工具包地址
+					        tab:{                                                                           //【通用组件】tab
+					            id:"csdnTab",                                                               //容器ID
+					            highlight:"hover"                                                           //表示当前选择的CSS样式名
+					        },
+					        pagination:{                                                                    //【通用组件】AJAX分页组件
+					            pagesize:50,                                                                //每页多少条数据
+					            showpages:10                                                                //显示多少页
+					        },
+                            oncountchange:function(count){                                                  //评论数chagnge回调
+                                var el = document.getElementById('remark_count1');
+                                if(el){el.innerHTML=count}
+                            }
+					    });
+					</script>
+								<!-- //comments -->
+			</div>
+			
+			
+		</div>
+		
+		<div class="right">	
+						
+			<div class="ad_300_250"><script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|article|pip&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script></div>
+			
+			
+			<div  style="border: 1px #ccc solid; font-size:14px; padding:10px; margin-bottom:20px;">
+            	 <ul style=" float:right; width: 160px; padding:5px;">
+                    <li style="font-size:16px; font-weight:bold;">CSDN官方微信</li>
+                    <li style="float:left;">扫描二维码,向CSDN吐槽</li>
+                    <li>微信号：CSDNnews</li>
+                </ul>
+                <img src="http://articles.csdn.net/uploads/allimg/121116/28_121116100507_1.jpg" width="100" height="100" />
+            </div >
+			
+			
+			<div style="border: 1px #ccc solid; font-size:14px; padding:3px; margin-bottom:20px; font-weight:bold;"><img style="vertical-align:middle; margin-right:10px;" src="http://news.csdn.net/images/icon_ipad.png" /><a href="http://dingyue.programmer.com.cn" target="_blank">程序员移动端订阅下载</a></div>
+			
+			<div  class="sitemap"><a href="http://www.csdn.net/article/lastnews" target="_blank">每日资讯快速浏览 </a></div>	
+						<!-- 订阅和关注 -->
+			<div class="report">
+				<h2 class="tit_2"><p>微博关注</p></h2>
+								<iframe width="100%" height="300" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=300&fansRow=2&ptype=0&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1764241425&verifier=9062046f&colors=d6f3f7,ffffff,666666,000000,ffffff&dpc=1"></iframe>
+								
+			</div>
+ 	
+			
+			<div class="rtbrill" id="digestComment"></div>		
+			<div class="ad_300_250">
+			<!--AdForward Begin:-->
+				<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|article|pip2&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+			<!--AdForward End-->
+			</div>
+			<!-- recommend and hot weekly -->			
+			<div id="Tab2" class="hot_weekly">
+				<h2 class="tit_2"><p>相关热门文章</p></h2>
+				<div class="con Contentbox">
+					<div id="con_two_2" >
+						<ul class="list_1 ">
+													<li><a href="http://www.csdn.net/article/2015-05-19/2824717-Iteration-of-Mobile-Game" title="游戏设计的迭代误用：从半成品到概念修正" target="_blank">游戏设计的迭代误用：从半成品到概念修正</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-21/2824738-CTO" title="【CTO讲堂】以API为核心的移动应用云大发展时代" target="_blank">【CTO讲堂】以API为核心的移动应用云大发展时代</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-19/2824713-zhihu-community" title="成功的社区在于拥抱变化——知乎创始人周源专访" target="_blank">成功的社区在于拥抱变化——知乎创始人周源专访</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-21/2824745" title="《近匠》趣播，手机视频聊天的四维社交" target="_blank">《近匠》趣播，手机视频聊天的四维社交</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-21/2824747" title="【连载】嵌入式Linux开发教程：Linux发行版" target="_blank">【连载】嵌入式Linux开发教程：Linux发行版</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-18/2824705" title="从GPU到3D渲染：游戏图形渲染技巧与性能优化" target="_blank">从GPU到3D渲染：游戏图形渲染技巧与性能优化</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-19/2824709-cell-height-calculation" title="优化UITableViewCell高度计算的那些事" target="_blank">优化UITableViewCell高度计算的那些事</a></li>
+												</ul>
+					</div>
+				</div>
+			</div>
+			  
+			  <!-- hot tag -->
+			<div class="hot_tag">
+				<h2 class="tit_2"><p><a href="http://www.csdn.net/tag">热门标签</a></p></h2>
+				<ul class="list_1">
+				 
+									 
+										<li><a href="http://www.csdn.net/tag/hadoop" title="Hadoop" target="_blank">Hadoop</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/aws" title="AWS" target="_blank">AWS</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/%E7%A7%BB%E5%8A%A8%E6%B8%B8%E6%88%8F" title="移动游戏" target="_blank">移动游戏</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/java" title="Java" target="_blank">Java</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/android" title="Android" target="_blank">Android</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/ios" title="iOS" target="_blank">iOS</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/swift" title="Swift" target="_blank">Swift</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6" title="智能硬件" target="_blank">智能硬件</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/docker" title="Docker" target="_blank">Docker</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/openstack" title="OpenStack" target="_blank">OpenStack</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/vpn" title="VPN" target="_blank">VPN</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/spark" title="Spark" target="_blank">Spark</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/erp" title="ERP" target="_blank">ERP</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/ie10" title="IE10" target="_blank">IE10</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/eclipse" title="Eclipse" target="_blank">Eclipse</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/crm" title="CRM" target="_blank">CRM</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/javascript" title="JavaScript" target="_blank">JavaScript</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" title="数据库" target="_blank">数据库</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/ubuntu" title="Ubuntu" target="_blank">Ubuntu</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/nfc" title="NFC" target="_blank">NFC</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/wap" title="WAP" target="_blank">WAP</a></li>
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+											
+				</ul>
+			</div>
+			<!-- //hot tag -->
+			
+			<!-- share -->
+			<div class="box share">
+    			<h2 class="tit_2"><p><a target="_blank" href="http://share.csdn.net">CSDN Share PPT下载</a></p></h2>
+    							
+      			<dl>
+      				
+      	      	    <dt class="clearfix"><a target="_blank" href="http://share.csdn.net/slides/14877" title="sphinx分享"><img src="http://share.csdn.net/uploads/a969e6149022a273e531c898b3c3b34e/a969e6149022a273e531c898b3c3b34e_thumb.jpg"></a>
+      	      	    <a target="_blank" href="http://share.csdn.net/slides/14877" title="sphinx分享">sphinx分享</a>
+      	      	    </dt>
+                   
+                </dl>              	
+      			
+                				
+      			<dl>
+      				
+      	      	    <dt class="clearfix"><a target="_blank" href="http://share.csdn.net/slides/14837" title="JAVA总结基础部分"><img src="http://share.csdn.net/uploads/8231452b2d99db45ba0c700c22258965/8231452b2d99db45ba0c700c22258965_thumb.jpg"></a>
+      	      	    <a target="_blank" href="http://share.csdn.net/slides/14837" title="JAVA总结基础部分">JAVA总结基础部分</a>
+      	      	    </dt>
+                   
+                </dl>              	
+      			
+                				
+      			<dl>
+      				
+      	      	    <dt class="clearfix"><a target="_blank" href="http://share.csdn.net/slides/14797" title="指数级增长业务下的服务架构改造"><img src="http://share.csdn.net/uploads/a8e565de16034864aced3bce9052bf1a/a8e565de16034864aced3bce9052bf1a_thumb.jpg"></a>
+      	      	    <a target="_blank" href="http://share.csdn.net/slides/14797" title="指数级增长业务下的服务架构改造">指数级增长业务下的服务架构改造</a>
+      	      	    </dt>
+                   
+                </dl>              	
+      			
+                				
+      			<dl>
+      				
+      	      	    <dt class="clearfix"><a target="_blank" href="http://share.csdn.net/slides/14766" title="3.张宁--移动大数据技术在互联网金融获客及经营中的应用"><img src="http://share.csdn.net/uploads/e2045072920f3970c1fae9a4841a4026/e2045072920f3970c1fae9a4841a4026_thumb.jpg"></a>
+      	      	    <a target="_blank" href="http://share.csdn.net/slides/14766" title="3.张宁--移动大数据技术在互联网金融获客及经营中的应用">3.张宁--移动大数据技术在互联网金融获客及经营中的应用</a>
+      	      	    </dt>
+                   
+                </dl>              	
+      			
+                	
+</div>
+			<!-- //share -->
+			
+					</div>
+	</div>
+			<div class="hot_topic">
+		<h1><span class="title">热门专区</span></h1>
+		<ul>
+						<li><a href="http://tcl.csdn.net/" target="_blank"><img src="http://images.csdn.net/20141120/TCL(1).jpg" alt="" /></a><span class="title"><a href="http://tcl.csdn.net/" target="_blank">TCL专区</a></span></li>
+					<li><a href="http://g.csdn.net/5271688" target="_blank"><img src="http://images.csdn.net/20140704/x.jpg" alt="" /></a><span class="title"><a href="http://g.csdn.net/5271688" target="_blank">一次开发，多平台发布</a></span></li>
+					<li><a href="http://g.csdn.net/5266532" target="_blank"><img src="http://images.csdn.net/20140312/linux.jpg" alt="" /></a><span class="title"><a href="http://g.csdn.net/5266532" target="_blank">PowerLinux技术社区</a></span></li>
+					<li><a href="http://hc.csdn.net/" target="_blank"><img src="http://images.csdn.net/20120816/amd-20120816.jpg" alt="" /></a><span class="title"><a href="http://hc.csdn.net/" target="_blank">异构编程专区</a></span></li>
+					<li><a href="http://g.csdn.net/5271685" target="_blank"><img src="http://images.csdn.net/20140704/msdn.jpg" alt="" /></a><span class="title"><a href="http://g.csdn.net/5271685" target="_blank">微软逆天产品MSDN Platform</a></span></li>
+					</ul>
+	</div>
+		<script  type="text/javascript" src="http://ptcms.csdn.net/like/js/like.js"></script>
+	<script>
+  window.WebSocket = window.WebSocket || window.MozWebSocket;
+  if( window.WebSocket ) {
+    var  wsServer = 'ws://geektest.csdn.net/'; 
+    var websocket = new window.WebSocket(wsServer, 'cmslike');
+
+    websocket.onopen = function (evt) { onOpen(evt) }; 
+    websocket.onclose = function (evt) { onClose(evt) }; 
+    websocket.onmessage = function (evt) { onMessage(evt) }; 
+    websocket.onerror = function (evt) { onError(evt) }; 
+    function onOpen(evt) {
+    } 
+    function onClose(evt) { 
+    } 
+    function onMessage(evt) {
+      var data = JSON.parse(evt.data);
+      var ding = $('.support dd').text();
+      if(ding != '' && data.support > ding){
+        $('.support dd').text(data.support);
+      };
+      var cai = $('.oppose dd').text();
+      if (cai != '' && data.oppose > cai) {
+        $('.oppose dd').text(data.oppose);
+      };
+    } 
+    function onError(evt) { 
+    }
+  }
+		$(document).ready(function(){
+			var digg_id=$("#digg_id").val();
+			$('.digg').like({
+				article_id: digg_id, // 文章id
+				ding_class: 'support', // 顶的class
+				cai_class: 'oppose', // 踩的class
+        domain: 'news.csdn.net',
+				callback: function(data) //处理数据方法
+				{
+          if(data.succ == 1)
+          {
+            $('.support dd').text(data.info.ding);
+            $('.oppose dd').text(data.info.ding);
+          }
+					if(data.succ == -2)
+					{
+						if(confirm(data.msg)){
+							window.location.href = "https://passport.csdn.net/UserLogin.aspx?from=http://news.csdn.net%2Farticle%2F2015-05-19%2F2824717-Iteration-of-Mobile-Game";
+							return false;
+						}
+					}
+					if(data.succ == -1)
+					{
+						alert(data.msg);
+					}
+				}
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){ 
+			var href=document.location.href;	
+
+			if(href.split("/")[6] == undefined){
+				$("#click_"+1).addClass("on");
+			}else{
+				var hrefpageno=href.split("/")[6];		
+				$("#click_"+hrefpageno).addClass("on");
+			}	
+
+			new $.AutoScroll({
+				wrap:$('#job_ul'),scrollCount:1,interval:1500
+			});
+		expandcontent('sc2', tabobjlinks[1]);
+		$.getJSON('http://ptcms.csdn.net/article/service/article_count?preview=1&aid=2824717&jsonpcallback=?',function(data){
+				$('.view_time').html(data+'次阅读');
+			});
+
+		});
+		function linkfirst(arcid){
+			$("#linkfirst").attr("href","article.html?arcid="+arcid+"&pageno=1");			
+		}
+		function preclick(arcid){
+			var href=window.location.href;		
+			var hrefpageno=href.split("&")[1];		
+			var pageno=hrefpageno.split("=")[1];
+			var hrefno=pageno-1;
+			if(hrefno <1){
+				hrefno = 1;
+			}
+			$("#preclick").attr("href","article.html?arcid="+arcid+"&pageno="+hrefno);
+		}
+	
+		function nextclick(total,arcid){
+			var href=window.location.href;		
+			var hrefpageno=href.split("&")[1];		
+			var pageno=hrefpageno.split("=")[1];
+			var hrefno=parseInt(pageno)+1;
+			if(hrefno >total){
+				hrefno = total;
+			}
+			$("#nextclick").attr("href","article.html?arcid="+arcid+"&pageno="+hrefno);
+		}
+	
+		function firstclick(arcid){
+			$("#firstclick").attr("href","article.html?arcid="+arcid+"&pageno=1");	
+		}
+		
+		function lastclick(total,arcid){
+			$("#lastclick").attr("href","article.html?arcid="+arcid+"&pageno="+total);
+		}
+		function linktitle(num,arcid){
+			var numid=parseInt(num)+1;
+			$("#linktitle_"+num).attr("href","article.html?arcid="+arcid+"&pageno="+numid);
+		}
+		function pongoad2(val){
+			$("#job_ul").html(val);
+		}
+		var callbackfun="pongoad2";
+		document.write(unescape('%3Cscript src="http://a.pongo.cn/Job/GetAdForCallBack%3Fid%3D2%26UrlAdParam%3D'+encodeURIComponent(location.href)+'%26&CallBack%3D'+callbackfun+'" type="text/javascript"%3E%3C/script%3E'));
+	</script>
+
+
+	<script>
+	   $(function () {
+	    var wrap = function () {
+	        var elems = document.getElementsByClassName('syntaxhighlighter');
+	        for (var j = 0; j < elems.length; ++j) {
+	            var sh = elems[j];
+	            var gLines = sh.getElementsByClassName('gutter')[0].getElementsByClassName('line');
+	            var cLines = sh.getElementsByClassName('code')[0].getElementsByClassName('line');
+	            var stand = 15;
+	            for (var i = 0; i < gLines.length; ++i) {
+	                var h = $(cLines[i]).height();
+	                if (h != stand) {
+	                    //console.log(i);
+	                    gLines[i].setAttribute('style', 'height: ' + h + 'px !important;');
+	                }
+	            }
+	        }
+	     };
+	    var whenReady = function () {
+	        if ($('.syntaxhighlighter').length === 0) {
+	            setTimeout(whenReady, 0);
+	        } else {
+	            wrap();
+	        }
+	    };
+	    whenReady();
+	});
+	</script>
+
+	<script type="text/javascript">
+ 	 document.write('<script src="http' + (/^https/.test(location.href) ? 's' : '') + '://c.csdnimg.cn/public/highlighter/js/highlighter.js?' + (new Date()/300000|0) + '"></'+'script>');
+	</script>
+	
+	<!-- 广告位：富媒体广告 -->
+	<script type="text/javascript">BAIDU_CLB_fillSlot("119835");</script>
+  
+	<!-- public footer -->
+      <script type="text/javascript">
+      document.write('<script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date()/120000).toString(36) + '="></'+'script>');
+      </script>
+	<!-- //public footer -->
+</div>
+<!-- tab js -->
+<script type="text/javascript">
+<!--
+/*第一种形式 第二种形式 更换显示样式*/
+function setTab(name,cursel,n){
+	for(i=1;i<=n;i++){
+		var menu=document.getElementById(name+i);
+		var con=document.getElementById("con_"+name+"_"+i);
+		menu.className=i==cursel?"hover":"";
+		con.style.display=i==cursel?"block":"none";
+	}
+}
+//-->
+</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|homepage|WebIM_1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script> 
+<!--<script id="noticeScript" type="text/javascript" charset="utf-8" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" src="http://static.csdn.net/public/common/toolbar/js/notify.js"></script>-->
+<script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+</body>
+<!-- ask 全局悬浮按钮  -->
+<link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/wmd.js"></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/showdown.js"></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/prettify.js"></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js"></script>
+</html>
+ 
+
+
+

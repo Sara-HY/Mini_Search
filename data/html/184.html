@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<link rel="stylesheet" type="text/css" href="http://static.csdn.net/public/common/toolbar/css/index.css">
+	<script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://mall.csdn.net/css/mall/font-awesome.min.css">
+	<link href="http://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+	<title>Confluence-知识管理平台-Confluence-CSDN软件商城</title>
+	<meta name="description" content="CSDN软件商城为您提供了最好的Confluence-知识管理平台，选择Confluence-知识管理平台就来CSDN商城">
+	<meta name="keywords" content="Confluence-知识管理平台">
+	<meta name="author" content="CSDN.NET">
+	<meta name="Copyright" content="CSDN.NET">
+	<link rel="stylesheet" href="http://mall.csdn.net/static/css/common.min.css?t=1432399334">
+	<script type="text/javascript" src="http://mall.csdn.net/static/js/apps/package.js"></script>
+	<script type="text/javascript" src="http://mall.csdn.net/static/js/apps/dropDown.js"></script>
+	<script src="http://mall.csdn.net/js/mini_cart.js"></script>
+	</head>
+<body>
+<script id="toolbar-tpl-scriptId" skin="black" fixed="true" prod="my" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+
+<div class="nav_box">
+	<div class="nav">
+		<div class="nav_l">
+			<ul class="nav_l_list">
+				<li><a href="http://mall.csdn.net/" >首页</a></li>
+				<li><a href="http://mall.csdn.net/tool" class="navCur">软件商城</a></li>
+				<li><a href="http://mall.csdn.net/coin" >C币商城</a></li>
+				<li><a href="http://mall.csdn.net/cbuy" >C币充值</a></li>
+				<li><a href="http://mall.csdn.net/cbuy/about" >帮助</a></li>
+			</ul>
+		</div>
+		<div class="nav_r">
+			<ul class="nav_r_list">
+				<li id="nav_r_list_01" class="nav_r_list_01">
+					<a href="http://mall.csdn.net/cart" onmouseover="get_mini_cart()" class="buyCar_a">
+						<a href="http://mall.csdn.net/cart">购物车</a>
+						<span class="top_circle" id="mini_cart_num">0</span>
+						<em class="line_r">|</em>
+					</a>
+					<div class="sub hide" id="mini_cart"></div>
+				</li>
+				<li class="nav_r_list_02"><a href="http://mall.csdn.net/order/my_order">我的订单</a></li>
+			</ul>
+		</div>
+	</div>
+</div>	<link rel="stylesheet" href="http://mall.csdn.net/static/css/software_detail.min.css">
+	<div class="address">
+		<a href="http://mall.csdn.net/tool">软件商城</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="http://mall.csdn.net/tool/lists/149">项目管理</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="http://mall.csdn.net/tool/lists/170">Confluence</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;Confluence-知识管理平台	</div>
+	<div class="software_intro">
+		<div class="bor_bac">
+			<div class="mod_software_intro">
+				<div class="software_intro_l fl">
+					<div id="preview" class="spec-preview">
+						<div class="tips last" style="text-align: center; margin: 100px 0; color:#666;">
+							<img src="http://mall.csdn.net/images/loading1.gif"/>
+						</div>
+					</div>
+					<div class="product_id">
+						<p class="price">商品编号：<em>s20150430094790253</em></p>
+					</div>
+				</div>
+				<div class="software_intro_r fr">
+					<div class="software_intro_l_l fl" id="product_info_con">
+						<h2 class="software_h2"><a>Confluence-知识管理平台</a></h2>
+						<div class="software_l_p" style="color:#727272;"><p>Confluence作为一个知识管理的平台，让团队成员协作、分享信息，查找工作所需的资料，保障团队成员高效工作。同时Confluence把您从无休止的邮件和会议中解脱出来。如需了解中文技术支持价格软<a href="http://mall.csdn.net/product/441.html">请点此查看</a>。</p>
+</div>
+						<div class="ajGet" l="goods/get_buy_info/440"></div>
+						<div class="software_intro_r_b">
+							<a href="javascript:void(0);" id="add_shoppingCar" class="add_shoppingCar addCart">加入购物车</a>
+															<span id="download_try"></span>
+																												</div>
+					</div>
+											<div id="supplier_info"></div>
+									</div>
+			</div>
+			<div id="popup" class="popup hide">
+				<div class="tips last" style="text-align: center; margin: 10px 0; color:#666;">
+					<img src="http://mall.csdn.net/images/loading1.gif"/>
+				</div>
+			</div>
+			<div id="mask" class="hide"></div>
+			<div id="popup_01" class="popup_01 hide">
+				<h2 class="popup_01_h2 showMessage"></h2>
+				<div class="popup_01_b success">
+					<a href="javascript:void(0);" class="continue hideTip">继续购物</a>
+					<a href="http://mall.csdn.net/cart" class="payAccount">去购物车结算</a>
+				</div>
+
+				<div class="popup_01_b fail">
+					<a href="javascript:void(0);" class="determine hideTip">关闭</a>
+				</div>
+			</div>
+		</div>
+		<div id="package_recommend_con" style="display: none;"></div>
+	</div>
+
+	<div class="main clearfix clear">
+		<div class="right-side">
+			<div class="mod_pro_detail">
+				<div id="pro_detail_t" class="pro_detail_t">
+					<span class="detailCur">商品详情</span>
+											<span id="help_span">帮助文档</span>
+						<span id="question_span">购买支持</span>
+						<span id="group_span">技术社区</span>
+									</div>
+				<div id="pro_detail_c" class="pro_detail_c">
+					<div class="pro_detail_c_c">
+						<table width="1130" height="233" border="0">
+  <tr>
+    <td colspan="2"><span style="font-size:18px; font-family:'微软雅黑'; color:#000080">Confluence</span></td>
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" width="500"><span style="font-size:18px; font-family:'微软雅黑'; color:#000080">团队协作，知识共享</span></td>
+    <td colspan="3" rowspan="2"><img src="http://img.bss.csdn.net/201505051317115170.png" width="600" height="200" /></td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><span style="font-size:14px; font-family:'微软雅黑';">Confluence作为一个知识管理的平台，让团队成员协作、分享信息，查找工作所需的资料，从此打破不同团队、不同部门以及个人之间信息孤岛的僵局 - Confluence真正实现了组织资源共享！
+
+</span></p>
+    <p><span style="font-size:14px; font-family:'微软雅黑';">同时Confluence把您从无休止的邮件和会议中解脱出来，让你每天的工作更有效能。</span></p>
+</td>
+  </tr>
+  <tr>
+    <td colspan="5" height="30"><span style="font-size:14px; font-family:'微软雅黑'; color:#000080"><b>价格说明：</b></span></td>
+  </tr>
+  <tr>
+    <td colspan="5" height="30"><span style="font-size:14px; font-family:'微软雅黑';">商品价格为未税价格，如需开具发票，请额外支付税金，服务费6%，软件费17%。，【10用户特惠价￥99元/套（含税）】</span></td>
+  </tr>
+  <tr>
+    <td colspan="5" height="30"><span style="font-size:14px; font-family:'微软雅黑'; color:#000080"><b>授权方式：</b></span></td>
+  </tr>
+    <tr>
+    <td colspan="5" height="30"><span style="font-size:14px; font-family:'微软雅黑'; ">
+     <table width="637" border="0" >
+        <tr>
+          <td width="627">一个Confluence商业授权包括：</td>
+        </tr>
+        <tr>
+          <td>1.在生产环境中的一台服务器上部署单一Confluence实例；</td>
+        </tr>
+        <tr>
+          <td>2.创建不限数量的页面、空间和评论；</td>
+        </tr>
+        <tr>
+          <td>3.永久使用Confluence；</td>
+        </tr>
+        <tr>
+          <td>4.提供12个月的软件技术支持服务 - 包括新版本更新和电话、电子邮件支持（英文）；</td>
+        </tr>
+        <tr>
+          <td>5.提供全部源代码。</td>
+        </tr>
+        <tr>
+          <td>更多信息，请参考<a href="http://www.atlassian.com/end-user-agreement/" style="color:#FF0000; text-decoration:none;" target="_blank">终端用户授权协议(ATLASSIAN END USER AGREEMENT)。</a></td>
+        </tr>
+      </table></span>      </td>
+  </tr>
+    <tr>
+    <td colspan="5" height="30"><span style="font-size:14px; font-family:'微软雅黑'; color:#000080"><b>什么是用户数：</b></span></td>
+  </tr>
+  <tr>
+    <td colspan="5" height="30"><span style="font-size:14px; font-family:'微软雅黑';">用户数是指在应用程序中存在并有权限访问应用程序的用户数量。这里的用户数对应的是具有访问权限应用程序的注册用户的数量，而非并发用户(Concurrent User)的数量。如果应用程序开放给匿名用户访问，匿名用户不计入用户数量。</span></td>
+  </tr>
+  <tr>
+    <td width="231">&nbsp;</td>
+    <td width="254">&nbsp;</td>
+    <td width="71">&nbsp;</td>
+    <td width="196">&nbsp;</td>
+    <td width="356">&nbsp;</td>
+  </tr>
+    <tr>
+    <td colspan="5">
+  <table width="98%" align="center" style="border-style:dashed">
+      <tr>
+<td align="center" id="one1">
+         <a href="#con_one_1" style="border:0" alt="test"></a>
+         <img height="50" src="http://bss.csdn.net/themes/btc/atlassian/images/icon5.gif" width="50" />
+         <p>
+          <a href="#con_one_1" style="text-decoration:none; color:#000080">为什么选择Confluence</a></p> </td>
+    <td align="center" id="one2">
+         <a href="#con_one_2" style="border:0" alt="test"><img height="50" src="http://bss.csdn.net/themes/btc/atlassian/images/icon6.gif" width="50" /></a>
+         <p>
+          <a href="#con_one_2" style="text-decoration:none; color:#000080">亮点</a></p> </td>
+        <td align="center" id="one3">
+         <a href="#con_one_3" style="border:0" alt="test"><img height="50" src="http://bss.csdn.net/themes/btc/atlassian/images/icon7.gif" width="50" /></a>
+         <p>
+          <a href="#con_one_3" style="text-decoration:none; color:#000080">对开发团队</a></p> </td>
+        <td align="center" id="one4">
+
+         <a href="#con_one_4" style="border:0" alt="test"><img height="50" src="http://bss.csdn.net/themes/btc/atlassian/images/icon8.gif" width="50" /></a>
+         <p>
+          <a href="#con_one_4" style="text-decoration:none; color:#000080">对开发团队</a></p> </td>
+        <td align="center" id="one5">
+         <a href="#con_one_5" style="border:0" alt="test"><img height="50" src="http://bss.csdn.net/themes/btc/atlassian/images/icon9.gif" width="50" /></a>
+         <p>
+          <a href="#con_one_5" style="text-decoration:none; color:#000080">对企业级客户</a></p> </td>
+      </tr>
+    </table></td>
+  </tr>
+     <tr>
+    <td colspan="5" height="30" align="center" id="con_one_1" ><span style=" padding:30px 0px; font-size:24px; font-family:'微软雅黑'; color:#000080"><p>为什么选择Confluence</p></span></td>
+  </tr>
+  <tr><td colspan="5"><span style="font-size:14px; font-family:'微软雅黑'; ">
+     <table width="98%" border="0" style="margin-left:10px; border-bottom:dashed " >
+        <tr>
+          <td><span style="color:#000080">◆ 简化文档编写和团队协作</span></td>
+        </tr>
+        <tr>
+          <td>Confluence让你从此告别无休无止的邮件和杂乱无章的网络文件共享。因为你可以在Confluence中记录和共享会议记录、需求管理、项目计划以及相关文档！</td>
+        </tr>
+        <tr>
+          <td><span style="color:#000080">◆ 形成组织的知识财富</span></td>
+        </tr>
+        <tr>
+          <td>过去，同事们宝贵的经验总结和辛勤的劳动成果，通常散落在一封封邮件中，随着时间的推移，旧邮件不断被新邮件淹没，这些知识也不断销声匿迹，无人问津；<br/>
+
+现在，利用Confluence，将同事们的知识聚集起来，集腋成裘、积沙成塔，形成组织的知识库。不仅如此，Confluence鼓励人人参与，其他用户只需要通过快速评论或者点击赞同，即可发表自己的意见。</td>
+        </tr>
+        <tr>
+          <td><span style="color:#000080">◆ 帮助你从邮件中解脱出来</span></td>
+        </tr>
+        <tr>
+          <td>工作中，你是否正在为不得不处理堆积如山的邮件，却不能做真正重要的事情而烦恼？那么Confluence可以帮助你从邮件中解脱出来，因为Confluence能自动地帮助你跟踪那些需要你关注的事务，并且把这些事务场景展示在一个地方，以供你随时随地跟进！</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 帮助你果断地做出决策</span></td>
+        </tr>
+        <tr>
+          <td>在Confluence中，决策不再需要举手表决。因为Confluence能轻而易举的实现远程头脑风暴、持续的异步交流，从而大大减少了费时费力的会议。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 与JIRA集成</span></td>
+        </tr>
+        <tr>
+          <td>让用户直观地在JIRA系统中跟踪问题，在Confluence系统中查看问题关联的信息 - 产品需求，项目报告，规划图等等。</td>
+        </tr>
+          <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table></span>      </td>
+  </tr>
+     <tr >
+    <td colspan="5" height="30" align="center" id="con_one_2"><span style="font-size:24px; font-family:'微软雅黑'; color:#000080"><p>亮点</p></span></td>
+     </tr>
+   <tr><td colspan="5"><span style="font-size:14px; font-family:'微软雅黑'; ">
+     <table width="98%" border="0" style="margin-left:10px; border-bottom:dashed " >
+        <tr>
+          <td><span style="color:#000080">◆ 更快、更智能的编辑器</span></td>
+        </tr>
+        <tr>
+          <td>利用Confluence的编辑器，人们可以自由灵活的创建带有超链、图片、多媒体等内容页面和博文。创建方法非常简单，只需将相关文档拖入到页面或者博文中即可，从此，你便可以同邮件文档说“再见”！</td>
+        </tr>
+        <tr>
+          <td><span style="color:#000080">◆ 实现团队和个人的任务管理</span></td>
+        </tr>
+        <tr>
+          <td>Confluence可以实现记录详细的会议日程条款、发布任务审核清单以及项目计划。任务管理使团队及团队相关事务的跟踪变得更简单。</td>
+        </tr>
+        <tr>
+          <td><span style="color:#000080">◆ 快速分享和@提及他人功能</span></td>
+        </tr>
+        <tr>
+          <td>在Confluence的任何页面、博文或者评论中，使用分享功能和@提及他人功能，你可以轻松地实现将一项工作相关人员拉入到正在进行的讨论中。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 实时通知</span></td>
+        </tr>
+        <tr>
+          <td>Confluence为你的团队提供了公共平台，利用这个平台，你无需不断的来回切换页面，即可跟踪任何与实现工作目标相关的事务。用户可以在Confluence中浏览查看重要通知，从而可以自主决定哪些工作需要立即采取行动，哪些工作需要加入到人力列表中，稍后处理。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 手机应用</span></td>
+        </tr>
+        <tr>
+          <td>Confluence支持手机查阅，这样你可以随时随地浏览最近的活动、管理你的任务、处理你的通知事项。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 支持快速、模糊搜索</span></td>
+        </tr>
+        <tr>
+          <td>利用Confluence的快速导航和搜索，可以快速的查找到相关内容。当你在Confluence搜索栏里输入内容时，Confluence会自动匹配一些页面、博文、附件和人名供你参考和选择。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 支持企业级权限管理</span></td>
+        </tr>
+        <tr>
+          <td>管理员可以为不同的用户设置不同的权限，只要权限许可，你可以自由地创建内容和查看内容。将页面设置成“公开”权限，便可与所有用户分享内容，却并不占用Confluence许可授权用户数。</td>
+        </tr>
+            <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table></span>  </td>
+  </tr>
+<tr>
+    <td colspan="5" height="30" align="center" id="con_one_3" ><span style="font-size:24px; font-family:'微软雅黑'; color:#000080"><p>对开发团队</p></span></td>
+     </tr>
+   <tr><td colspan="5"><span style="font-size:14px; font-family:'微软雅黑'; ">
+     <table width="98%" border="0" style="margin-left:10px; border-bottom:dashed " >
+        <tr>
+          <td><span style="color:#000080">◆ 定制统一的规格</span></td>
+        </tr>
+        <tr>
+          <td>用户可以自由地、快速的定制统一的用户故事和规则模板。团队其他成员可以参与讨论和发表意见，从而文档的创建者可以快速的收集反馈信息。</td>
+        </tr>
+        <tr>
+          <td><span style="color:#000080">◆ “可视化”用户需求</span></td>
+        </tr>
+        <tr>
+          <td>用户可以通过模型、线框图、屏幕截图和多媒体完成故事。还可以在Confluence中使用Balsamiq和Gliffy插件直接创建和编辑它们。</td>
+        </tr>
+        <tr>
+          <td><span style="color:#000080">◆ 安排团队请假、旅行计划以及相关名册</span></td>
+        </tr>
+        <tr>
+          <td>Team Calendars可以让你直观的解每天有哪些人可以正常上班，哪些人需要休假。使用Team Calendar，可以很轻松的安排团队休假、旅游计划，让你更轻松地从整体上管理团队成员。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 发布产品文档</span></td>
+        </tr>
+        <tr>
+          <td>通过博文来记录产品发布通知、产品手册和用户指南。客户浏览这些产品文档并不影响Confluence授权许可用户数。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 与JIRA问题协同</span></td>
+        </tr>
+        <tr>
+          <td>对使用JIRA追踪问题的团队来说，Confluence是一种不可或缺的工具。不必离开Confluence，通过JIRA的小工具就能构建内容丰富的面板和创建JIRA问题。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 共享代码片段</span></td>
+        </tr>
+        <tr>
+          <td>将Java、Ruby、Python、C++及其它语言编写的代码嵌入到Confluence内容，页面和博文中，其他开发人员即可在此浏览、复制和讨论。</td>
+        </tr>
+ 
+            <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table></span>      </td>
+  </tr>
+     <tr>
+    <td colspan="5" height="30" align="center" id="con_one_4" ><span style="font-size:24px; font-family:'微软雅黑'; color:#000080"><p>对技术文档作者</p></span></td>
+     </tr>
+   <tr><td colspan="5"><span style="font-size:14px; font-family:'微软雅黑'; ">
+     <table width="98%" border="0" style="margin-left:10px; border-bottom:dashed " >
+        <tr>
+          <td><span style="color:#000080">◆ 用于编写技术文档</span></td>
+        </tr>
+        <tr>
+          <td>如果需要团队编写和发布技术文档，使用Confluence绝对是明智之举。Confluence可以协作编写文档、追溯变更内容、组织内容结构、限制编辑权限、甚至支持导入或导出不同格式的文档。</td>
+        </tr>
+        <tr>
+          <td><span style="color:#000080">◆ 评审和编辑文档</span></td>
+        </tr>
+        <tr>
+          <td>页面和空间限制使你可以选择谁可以浏览、编辑和评论你的文档。每次编辑都会作为一个新版本保存，因此你很容易对比两个版本修改差异并恢复到以前的版本。</td>
+        </tr>
+        <tr>
+          <td><span style="color:#000080">◆ 文档结构组织与重用文档</span></td>
+        </tr>
+        <tr>
+          <td>无论何时，你都可以移动页面位置，并重新排序，使页面的层级结构符合空间的架构。在Confluence中，你可以创建内容库（标准图片、版权声明、术语表），以便在页面和空间中重用。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 单一来源发布</span></td>
+        </tr>
+        <tr>
+          <td>通过可扩展的导入和导出选项，你可以决定在哪里编写和发布文档。Confluence支持的导出格式包括：PDF、Word、DocBook XML（可扩展标记语言）或HTML（超文本标记语言）；支持的导入格式包括：Word、DITA XML、Adobe FrameMaker。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆  
+公开发布你的文档</span></td>
+        </tr>
+        <tr>
+          <td>让任何人不必登录就可以浏览你的文档 —— 非常适合发布面向客户的文档！使用Confluence权限来准确控制谁可以创建和编辑内容 —— 一切尽在你的掌控之中！</td>
+        </tr>
+
+            <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table></span>      </td>
+  </tr>
+     <tr>
+    <td colspan="5" height="30" align="center" id="con_one_5" ><span style="font-size:24px; font-family:'微软雅黑'; color:#000080"><p>对企业级客户</p></span></td>
+     </tr>
+   <tr><td colspan="5"><span style="font-size:14px; font-family:'微软雅黑'; ">
+     <table width="98%" border="0" style="margin-left:10px;" >
+        <tr>
+          <td><span style="color:#000080">◆ 满足企业级应用</span></td>
+        </tr>
+        <tr>
+  <td>Confluence不论在安全性、可用性，还是可扩展性，都可以满足大规模企业的需求。为了适应超大型企业客户的需求，Confluence企业级(Confluence Enterprise)还可以为其提供专业服务。</td>
+        </tr>
+        <tr>
+          <td><span style="color:#000080">◆ 同步活动目录</span></td>
+        </tr>
+        <tr>
+          <td>Confluence可以快捷轻松地与LDAP或活动目录服务器连接，进行用户管理和授权。</td>
+        </tr>
+        <tr>
+          <td><span style="color:#000080">◆ 与Office和SharePoint连接</span></td>
+        </tr>
+        <tr>
+          <td>将你的文档嵌入到Confluence页面中，并使用Microsoft Office在线编辑它们。连接SharePoint，实现单点登录、Confluence和Sharepoint文档联合搜索和双向内容嵌入。</td>
+        </tr>
+  <tr>
+          <td><span style="color:#000080">◆ 实现私人页面私有化</span></td>
+        </tr>
+        <tr>
+          <td>Confluence可以满足企业环境的需求，为私有内容提供安全保障。全局、空间和页面等级的权限使你可以灵活地、准确地控制其他人的浏览和编辑权限。</td>
+        </tr>
+  
+      </table></span>      </td>
+  </tr>
+  <tr>
+    <td colspan="5"> </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>					</div>
+
+											<div class="pro_detail_c_c hide_01" id="help_desc"></div>
+						<div class="pro_detail_c_c hide_01">
+							<p class="buy_consult_p">如果您有问题需要紧急沟通，请拨打电话 <span style="color: #ee5e53;">010-57410251</span>，或在线咨询客服QQ
+								<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2714137330&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2714137330:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+							</p>
+
+							<div id="question_list"></div>
+
+							<div class="consult">
+								<h3 class="consult_h3">发表咨询：</h3>
+
+								<p class="consult_p">咨询回复时间为工作日早9:00-18:00，请耐心等待工作人员回复，如果您有问题需要紧急沟通，请拨打电话 <span>010-57410251</span>.</p>
+
+								<div class="textArea"><span>咨询内容：</span> <textarea name="question_content" id="question_content"></textarea></div>
+								<a href="javascript:void(0);" id="submitQuestion" class="submit">提交</a>
+							</div>
+						</div>
+
+						<div class="pro_detail_c_c hide_01">
+							<div class="technical_t">
+								<div class="topic">共<strong id="group_count">0</strong>个话题讨论<a href="http://mall.csdn.net/group/index/440" class="publish" target="_blank">发表话题</a></div>
+								<div class="topic_r">
+									<input type="text" name="search_title" id="search_title" value=""/><a href="javascript:void(0);" id="searchGroup" class="search"></a>
+								</div>
+							</div>
+
+							<div id="group_list"></div>
+						</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://mall.csdn.net/static/js/apps/tab.js"></script>
+	<script type="text/javascript">
+		var product_id = '440';
+		var group_id = '1258523';
+		var product_detail_to = '';
+	</script>
+	<script type="text/javascript" src="http://mall.csdn.net/js/ajGet.js"></script>
+	<script type="text/javascript" src="http://mall.csdn.net/js/goods_info.js"></script>
+<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js"></script>
+<script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="http://csdnimg.cn/rabbit/notev2/js/notify.js?9d86d94"></script>
+<script type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+<div style="display: none">
+	<script src="http://s4.cnzz.com/stat.php?id=1254952414&web_id=1254952414" language="JavaScript"></script>
+</div>
+</body>
+</html>

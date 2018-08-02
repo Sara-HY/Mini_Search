@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<link rel="stylesheet" type="text/css" href="http://static.csdn.net/public/common/toolbar/css/index.css">
+	<script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://mall.csdn.net/css/mall/font-awesome.min.css">
+	<link href="http://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+	<title>CSDN商城</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="CSDN.NET">
+	<meta name="Copyright" content="CSDN.NET">
+	<link rel="stylesheet" href="http://mall.csdn.net/static/css/common.min.css?t=1432398866">
+	<script type="text/javascript" src="http://mall.csdn.net/static/js/apps/package.js"></script>
+	<script type="text/javascript" src="http://mall.csdn.net/static/js/apps/dropDown.js"></script>
+	<script src="http://mall.csdn.net/js/mini_cart.js"></script>
+	</head>
+<body>
+<script id="toolbar-tpl-scriptId" skin="black" fixed="true" prod="my" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+
+<div class="nav_box">
+	<div class="nav">
+		<div class="nav_l">
+			<ul class="nav_l_list">
+				<li><a href="http://mall.csdn.net/" class="navCur">首页</a></li>
+				<li><a href="http://mall.csdn.net/tool" >软件商城</a></li>
+				<li><a href="http://mall.csdn.net/coin" >C币商城</a></li>
+				<li><a href="http://mall.csdn.net/cbuy" >C币充值</a></li>
+				<li><a href="http://mall.csdn.net/cbuy/about" >帮助</a></li>
+			</ul>
+		</div>
+		<div class="nav_r">
+			<ul class="nav_r_list">
+				<li id="nav_r_list_01" class="nav_r_list_01">
+					<a href="http://mall.csdn.net/cart" onmouseover="get_mini_cart()" class="buyCar_a">
+						<a href="http://mall.csdn.net/cart">购物车</a>
+						<span class="top_circle" id="mini_cart_num">0</span>
+						<em class="line_r">|</em>
+					</a>
+					<div class="sub hide" id="mini_cart"></div>
+				</li>
+				<li class="nav_r_list_02"><a href="http://mall.csdn.net/order/my_order">我的订单</a></li>
+			</ul>
+		</div>
+	</div>
+</div>	<link rel="stylesheet" href="http://mall.csdn.net/static/css/index.min.css">
+	<div class="bor_top"></div>
+	<div class="software_intro classify_height">
+		<div class="classify_l">
+			<div class="classify_bg"></div>
+			<h1 class="classify_t">商品分类</h1>
+			<div class="ajGet" l="index/get_index_category"></div>
+
+		</div>
+		<div class="classify_banner_box">
+			<div class="carousel ajGet" l="index/get_index_banner"></div>
+		</div>
+	</div>
+	<div class="software_intro index">
+		<div class="ajGet" l="index/get_index_recommend"></div>
+		<div class="index_commonTitle_02"><span><a href="http://mall.csdn.net/tool" target="_blank">软件商城</a></span>
+		</div>
+		<div class="soft_mall">
+			<div class="soft_mall_l ajGet" l="index/get_index_product_list/2" showLoading="1"></div>
+			<div class="soft_mall_r">
+				<div class="common_title06"><span>软件企业</span></div>
+				<ul class="software_companies ajGet" l="index/get_index_supplier" showLoading="1"></ul>
+				<a href="http://mall.csdn.net/supplier/apply" target="_blank" class="applyTo_supplier">申请成为供应商</a>
+			</div>
+		</div>
+		<div class="index_commonTitle_02"><span><a href="http://mall.csdn.net/coin" target="_blank">C币商城</a></span>
+		</div>
+		<div class="soft_mall">
+			<div class="soft_mall_l ajGet" l="index/get_index_product_list/1" showLoading="1"></div>
+			<div class="soft_mall_r">
+				<div class="common_title06"><span>兑换排行</span>
+				</div>
+				<ul class="soft_mall_list ajGet" l="index/get_index_rank" showLoading="1"></ul>
+				<div class="ajGet" l="index/get_index_right_ad"></div>
+			</div>
+		</div>
+	</div>
+	<div class="ajGet" l="coin/get_sponsor/a"></div>
+	<script type="text/javascript" src="http://mall.csdn.net/js/ajGet.js"></script>
+<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js"></script>
+<script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="http://csdnimg.cn/rabbit/notev2/js/notify.js?9d86d94"></script>
+<script type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+<div style="display: none">
+	<script src="http://s4.cnzz.com/stat.php?id=1254952414&web_id=1254952414" language="JavaScript"></script>
+</div>
+</body>
+</html>

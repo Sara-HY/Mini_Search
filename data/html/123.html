@@ -1,0 +1,943 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="http://c.csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+<title>搜狗商业平台Java技术实践-CSDN.NET </title>
+<meta name="description" content="搜狗商业平台负责搜狗广告业务，涵盖搜索、网盟、无线、品牌等业务线，其中，基于Java的业务系统在70%以上。从数据库访问、离线大规模数据处理到实时计算，都依托于Java技术。" />
+<meta name="keywords" content="特别策划,Java20周年,Java,《程序员》电子刊" />
+<meta name="author" content="CSDN.NET" />
+<meta name="Copyright" content="CSDN.NET" />
+<!-- toolbar start --> 
+<link href="http://static.csdn.net/public/common/toolbar/css/index.css" type="text/css" rel="stylesheet">
+<script src="http://c.csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- toolbar end -->
+<link href="http://news.csdn.net/css/content.css" rel="stylesheet" type="text/css" />
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6275c7f2c7d9617f47b5ea3c72633374";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=allyestest|allyestest|allyestest0410&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|homepage|floating_1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<script type="text/javascript">
+  var protocol = window.location.protocol;
+  document.write('<script type="text/javascript" src="' +protocol+ '//c.csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></'+'script>');
+</script>
+<script src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript" id="toolbar-tpl-scriptId" prod="news" skin="black" domain="http://sd.csdn.net"></script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<div class="wrap">
+	<!-- 间歇滚动 -->
+	<script language=javascript>function T(n){document.getElementById("ArticleCnt").style.fontSize=n+"px";}</script>
+	<script src="http://news.csdn.net/js/jquery.autoscroll.js" type=text/javascript></script><!--滚动js-->
+	<!-- //间歇滚动 -->
+	<script type="text/javascript">BAIDU_CLB_preloadSlots("421718","421717","421715","421714","421712","445821","421709","119835");</script>
+	<!--<div class="ad_960">
+		<div class="ad_230"><script type="text/javascript">BAIDU_CLB_fillSlot("421712");</script></div>
+		<div class="ad_728"><script type="text/javascript">BAIDU_CLB_fillSlot("421709");</script></div>
+	</div>-->
+
+</div>
+	<!-- nav -->
+	<div id="xcx_tabmenu" class="nav">
+		<div id="cx_tabmenu" class="cx_tabmenu">
+			<!-- lev one -->
+			<div id="ddimagetabs" class="lev_1">
+				<ul>
+				<li><a href="http://news.csdn.net" id="sclink1" target="_blank" onclick="LogClickCount(this, 392);">业界</a></li>
+				<li><a href="http://mobile.csdn.net" id="sclink2" target="_blank" onclick="LogClickCount(this, 393);">移动开发</a></li>
+				<li><a href="http://cloud.csdn.net" id="sclink3" target="_blank" onclick="LogClickCount(this, 394);">云计算</a></li>
+				<li><a href="http://sd.csdn.net" id="sclink4" target="_blank" onclick="LogClickCount(this, 395);">软件研发</a></li>
+				<li><a href="http://programmer.csdn.net/" id="sclink6" target="_blank">程序员</a></li>
+				<li><a href="http://geek.csdn.net/" id="sclink7" target="_blank">极客头条</a></li>
+				<li><a href="http://special.csdn.net/newssubject/index.html" id="sclink5" target="_blank" >专题</a></li>
+				<!--<li><a href="http://share.csdn.net" id="sclink8" target="_blank">CSDN Share</a></li>
+				<li><a href="http://read.csdn.net/" id="sclink9" target="_blank">我的Tag</a></li>-->
+				</ul>
+			</div>
+			<!-- lev two -->
+			<div id="tabcontentcontainer" class="lev_2">
+				<div class="tabcontent" id="sc1">
+					<ul>
+					 
+					<li><a href="http://www.csdn.net/tag/cto/news" target="_blank">CTO</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E4%BA%A7%E5%93%81/news" target="_blank">产品</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E8%81%8C%E5%9C%BA/news" target="_blank">职场</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E4%BA%BA%E7%89%A9/news" target="_blank">人物</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%88%9B%E4%B8%9A/news" target="_blank">创业</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%AF%B9%E8%AF%9Dcto/news" target="_blank">对话CTO</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E7%A4%BE%E5%8C%BA%E4%B9%8B%E6%98%9F/news" target="_blank">社区之星</a></li>
+										</ul>
+				</div>
+				<div class="tabcontent" id="sc2">
+					<ul>
+					 
+					<li><a href="http://www.csdn.net/tag/android/news"  target="_blank">Android</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/ios/news"  target="_blank">iOS</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E7%A7%BB%E5%8A%A8%E6%B8%B8%E6%88%8F/news"  target="_blank">移动游戏</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/swift/news"  target="_blank">Swift</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6/news"  target="_blank">智能硬件</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/html5/news"  target="_blank">HTML5</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E8%BF%91%E5%8C%A0/news"  target="_blank">近匠</a></li>
+										</ul>
+				</div>
+				<div class="tabcontent" id="sc3">
+					<ul>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE/news"  target="_blank">大数据</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83/news"  target="_blank">数据中心</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E8%99%9A%E6%8B%9F%E5%8C%96/news"  target="_blank">虚拟化</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%9C%8D%E5%8A%A1%E5%99%A8/news"  target="_blank">服务器</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%AD%98%E5%82%A8/news"  target="_blank">存储</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/nosql/news"  target="_blank">NoSQL</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%AE%89%E5%85%A8/news"  target="_blank">安全</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E4%BA%91%E5%85%88%E9%94%8B/news"  target="_blank">云先锋</a></li>
+										</ul>
+				</div>
+				<div class="tabcontent" id="sc4">
+					<ul>
+					 
+					<li><a href="http://www.csdn.net/tag/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/news"  target="_blank">编程语言</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0/news"  target="_blank">开放平台</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%9E%B6%E6%9E%84/news"  target="_blank">架构</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/html5/news"  target="_blank">HTML5</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/news"  target="_blank">智能算法</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/news"  target="_blank">前端开发</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%BC%80%E6%BA%90/news"  target="_blank">开源</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93/news"  target="_blank">数据库</a></li>
+										</ul>
+				</div>
+				<div class="tabcontent" id="sc5">
+					<ul>
+					 
+					<li><a href="http://www.csdn.net/tag/%E5%B0%81%E9%9D%A2%E7%A7%80/news"  target="_blank">封面秀</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E7%89%B9%E5%88%AB%E7%AD%96%E5%88%92/news"  target="_blank">特别策划</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/news"  target="_blank">技术架构</a></li>
+					 
+					<li><a href="http://www.csdn.net/tag/%E7%AE%A1%E7%90%86%E5%AE%9E%E8%B7%B5/news"  target="_blank">管理实践</a></li>
+										</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type=text/javascript>
+	// The idea borrowed from dynamicDrive.com
+	
+	var initialtab = [1, "sc1"]
+	
+	var previoustab = "";
+	var intv;
+	function expandcontent(cid, aobject) {
+	    stopTimer();
+	    highlighttab(aobject);
+	    if (previoustab != ""){
+	         document.getElementById(previoustab).style.display = "none";
+	    }
+	    document.getElementById(cid).style.display = "block";
+	    previoustab = cid;
+	}
+	
+	function highlighttab(aobject) {
+	    stopTimer();
+	
+	   if (typeof tabobjlinks == "undefined"){
+	         collectddimagetabs();
+	    }
+	   for (i = 0; i < tabobjlinks.length; i++){
+	    	tabobjlinks[i].className = "";   
+	    }
+	    aobject.className = "current";
+	}
+	
+	function collectddimagetabs() {
+	    var tabobj = document.getElementById("ddimagetabs");
+	    tabobjlinks = tabobj.getElementsByTagName("A");
+	}
+	
+	function startTimer() {
+	    intv = setTimeout("expandcontent(initialtab[1], tabobjlinks[initialtab[0]-1])", 2000);
+	}
+	
+	function stopTimer() {
+	    clearTimeout(intv);
+	}
+	
+	$(document).ready(function(){ 
+		collectddimagetabs();
+		var domain = new Array('news.','mobile.','cloud.','sd.','programmer.');
+		for(var i=0;i<domain.length;i++){
+			if(window.location.href.indexOf(domain[i]) > 0){
+				expandcontent('sc'+(i+1), tabobjlinks[i]);
+			}
+		}
+		$('#button_both').click(function(){
+			var key=$('#queries_searchfield_query-new').val();
+			key = $.trim(key);
+			if(key==""){
+				alert("关键字不能为空！");
+			}
+			else{
+				key =  encodeURIComponent(key)
+				var url="http://so.csdn.net/search?sort=created_at&t=news&q="+key;
+				window.location.href=url;
+			}
+			return false;
+		});
+	});
+	
+	</script>
+ 
+<div class="wrap">
+	
+	
+	
+		<div class="ad_960">
+		<div class="ad_190"><script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|article|button1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script></div>
+		<div class="ad_760"><script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|article|banner1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script></div>
+	</div>
+		
+	<div class="brea_nav">
+				<span class="fr">
+		<a href="http://news.csdn.net/rss_sd.html" class="rss" target="_blank">订阅软件研发RSS</a>					
+		</span><a href="http://www.csdn.net/">CSDN首页</a><em>&gt;</em>
+		<a href="http://sd.csdn.net" target="_blank">软件研发</a>	</div>
+	
+	<div class="content">
+		<div class="left">
+			<div class="detail">
+				<h1 class="title">搜狗商业平台Java技术实践</h1>
+				<h4>
+					<div class="tit_bar">
+						发表于<span class="ago">2015-05-20 14:56</span>|
+						<span class="view_time">次阅读</span>| 
+						来源<span class="ago">CSDN</span>|
+						<span class="num_recom"><font id="remark_count1" class="cmtcount" style="font-size:12px;color:#c00;">0</font> 条评论</span>| 
+						作者<span class="ago">刘建、郭理勇、毛宏</span>
+					</div>
+				</h4>
+				<div class="tag"><a href="http://www.csdn.net/tag/%E7%89%B9%E5%88%AB%E7%AD%96%E5%88%92/news">特别策划</a><a href="http://www.csdn.net/tag/java20%E5%91%A8%E5%B9%B4/news">Java20周年</a><a href="http://www.csdn.net/tag/java/news">Java</a><a href="http://www.csdn.net/tag/%E3%80%8A%E7%A8%8B%E5%BA%8F%E5%91%98%E3%80%8B%E7%94%B5%E5%AD%90%E5%88%8A/news">《程序员》电子刊</a></div>
+				<div class="summary">
+					<input type="hidden" id="article_description" name="article_description" value="搜狗商业平台负责搜狗广告业务，涵盖搜索、网盟、无线、品牌等业务线，其中，基于Java的业务系统在70%以上。从数据库访问、离线大规模数据处理到实时计算，都依托于Java技术。">
+				<script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 22 , _h = 16;
+  var article_description=$("#article_description").val();
+  var param = {
+    url:location.href,
+    type:'3',
+    count:'', /**是否显示分享数，1显示(可选)*/
+    appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
+    title:article_description, /**分享的文字内容(可选，默认为所在页面的title)*/
+    pic:'', /**分享图片的路径(可选)*/
+    ralateUid:'', /**关联用户的UID，分享微博会@该用户(可选)*/
+	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+    rnd:new Date().valueOf()
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script><strong>摘要：</strong>搜狗商业平台负责搜狗广告业务，涵盖搜索、网盟、无线、品牌等业务线，其中，基于Java的业务系统在70%以上。从数据库访问、离线大规模数据处理到实时计算，都依托于Java技术。				</div>
+				<div class="con news_content">
+				<p>Java自1995年问世以来，已历经20多年岁月。20年来，IT技术风起云涌，Java始终以其可移植性、跨平台性、生态系统完备性等特点成为最主流的开发语言之一。事实上，Java无处不在，已经渗入到大家的日常生活中，从你的每一次购物到每一笔支付，都有Java技术的身影，国内外的主流网站大部分都是由Java技术支撑。</p>
+<p>搜狗商业平台负责搜狗广告业务，涵盖搜索、网盟、无线、品牌等业务线，面向几十万广告主和广告代理商，提供十亿级以上在线广告管理及相关支持，提供近百亿的在线报告。其中，基于Java的业务系统在70%以上。从底层缓存、会话、调度、通信交互，到提供给客户的API接口，从数据库访问、离线大规模数据处理到实时计算，都依托于Java技术。在我们内部长期的实践过程中，Java技术已经逐步自发地形成了一个生态系统。</p>
+<p>Java生态圈非常庞大而丰富，我们在长期的实践过程中，自主或基于Java开源组件进行二次开发和优化，构建了搜狗商业平台完整的Java技术框架，如图1所示。</p>
+<p style="text-align: center;">
+    <img src="http://img.ptcms.csdn.net/article/201505/20/555c32c773656.jpg" style="width: 586.105263157895px; height: 288px;">
+    </p>
+    <p style="text-align: center;"><span style="background-color: initial;">图1搜狗商业平台Java技术栈</span>
+    </p>
+    <p>在基础组件层，我们直接使用了一些业界著名的框架和类库，比如IoC框架Spring、日志Log4J等；同时也基于一些框架进行了二次开发，比如基于Redis提供了分布式会话和分布式缓存，有效地解决单机内存及I/O瓶颈问题。在数据存储层，我们数据存储主要使用关系数据库MySQL、文档数据库MongoDB、分布式存储HDFS以及自行研发的DFS文件系统。在数据访问层，基于MySQL数据库和MongoDB数据库，分别提供了一套分库分表框架，使得其支持海量数据存储，同时也分别提供了ORM框架，使得能够很容易地完成数据库中的数据到对象的映射。在数据计算层，离线计算方案主要使用了HadoopMapReduce框架，流式计算方案主要使用了Kafka和Storm。在接口交互层，提供了三种框架，分别支持Thrift、WebServices和HTTP/JSON三种交互方式。在基础服务层，提供了认证、授权、配置、分布式任务调度、消息、图片、短信和邮件等多种基础服务。</p>
+    <p>下面分别介绍我们在数据库分库分表框架、分布式任务调度平台和分布式RPC框架上的实践。</p>
+    <p><b>数据库分库分表框架：</b><b>Compass</b>
+
+    </p>
+    <p>互联网领域针对大数据存储，基于NoSQL的数据库越来越多，然而，在一致性、事务性、可靠性等方面，特别是在较复杂的业务场景中，关系数据库仍起着不可替代的作用。在关系数据库领域，MySQL数据库基本上主导了市场。然而，互联网面临着用户多、数据量大等的挑战，一组MySQL数据库集群无法支撑如此大的PV及I/O，因此对单表的数据量以及每台机器的数据分布需要做一定的预估。在我们的实践中，对于单表的数据量有一些约束。一般说来，对于定长的记录，单表数据量最好不超过800W，极限不超过1000W；对于不定长记录，单表数据量最好不超过500W，极限不超过800W，否则在较复杂的业务场景中，可能会引起性能下降。</p>
+    <p>对于大规模数据的存储和访问，一般都采用分库分表的方案解决。主流互联网公司都提供了各自的解决方案，比如淘宝分布式数据层TDDL、百度Dbproxy等。我们也研发了数据库分库分表框架Compass，支持和满足内部的一些需求。</p>
+    <p>一般来说，数据库分布分表框架的设计有两种方案：独立中间件层方式和嵌入式应用框架方式。独立中间件层方式采用独立的部署，后端数据库对应用程序是透明的，其扩容对应用的可用性不会有明显的影响。嵌入式应用框架方式是独立的类库，应用需要显式地配置后端的单个或者多个数据库。独立中间件层方式的开发和维护成本都较高，且多了一层网络开销；嵌入式应用框架方式数据库配置较为复杂一些，但其开发维护成本低，并且对单元化架构的支持也不错，因此Compass选用了嵌入式应用框架方式。</p>
+    <p style="text-align: center;">
+        <img src="http://img.ptcms.csdn.net/article/201505/20/555c336985d95.jpg" style="">
+        </p>
+        <p style="text-align: center;"><span style="background-color: initial;">图2分布分表框架Compass架构图</span>
+        </p>
+        <p>Compass系统架构如图2所示。基础数据源层可以选用开源的数据库连接池方案，比如包括C3P0、Proxool、TomcatJDBC、DBCP等。在我们的实践中主要使用C3P0。代理数据源层主要负责数据库分库分表的处理，包括分库数据源、主从数据源、心跳监控和管理接口四大模块。</p>
+        <p>分库数据源和主从数据源都实现了Java中标准的javax.sql.DataSource接口，提供基于Spring注解的配置方式，对应用屏蔽底层数据源的差异，从而简化应用配置及应用在不同数据源之间迁移（包括普通数据源迁移至主从数据源、主从数据源迁移至分库数据源），降低数据库扩容成本。由于采用标准的javax.sql.DataSource接口，在JDBC封装层支持方面，我们目前可以兼容业界大部分的ORM框架，比如Hibernate、Mybatis、iBatis和JDBC等。同时由于采用对DataSource层进行分区路由，因此对于依赖javax.sql.DataSource接口的框架或应用均无影响。</p>
+        <p>分库数据源中包含路由选择器。路由选择器可以通过自定义路由选择策略选择合适的底层数据源，并将获取数据库连接的请求代理到此底层数据源。路由选择策略可通过多种方式实现：1.取模；2.分段；3.Hash；4.特殊路由策略等。在我们的实践中主要是对客户的物料进行管理，路由选择策略是通过客户ID取模实现，同时针对个别大客户使用特殊路由策略的方式，从而保证表中数据的均衡性。</p>
+        <p>对于每次获取数据库连接的请求，主从数据源根据当前的事务属性等上下文相关信息以及自身可用的底层数据库连接池信息，返回底层数据源的连接。它主要包括主从选择和代理连接。主从选择可以支持读写分离、支持多从单主模式，并支持自定义反主从延时策略，更好地保证主从库数据的一致性；在负载均衡方面，我们除了支持内置的随机、权重、轮询、响应时间等负载均衡策略外，还支持自定义扩展负载均衡策略。代理连接主要是提供了一系列的策略对SQL进行拦截，完成分表等功能。在SQL解析与替换方面，目前我们内置了供如MyBatis之类的ORM框架的SQL占位符替换基于SQL语法树解析的SQL结构替换等方式，还支持自定义扩展解析和替换策略。在主从选择择中，反主从延时策略是解决主从延迟可选插件，它是通过将一段访问时间内的读请求路由到主库上来完成的，目前可以基于常见的分布式缓存和内存方式提供反主从延迟标记的管理，并支持自定义扩展。</p>
+        <p>心跳监控主要对底层数据源的健康性进行监控。一般说来，底层数据源连接池都已经提供了心跳监控，例如C3P0能够监控数据库连接是否有效，检查数据库空闲连接以及数据库是否有效，并提供了一系列的策略来处理上述问题；然而，主从数据源以及分库数据源（特别的）需要对底层的数据源的数据库连接以及数据库是否可用进行监控，并在底层数据源不可用时提供策略进行处理（例如：对主从选择策略中的参数进行调整）。因此，数据源代理层仍需对底层数据源进行监控，并根据底层数据源是否可用进行选库或者负载均衡策略上的调整。同时心跳监控中也支持故障移除、故障恢复等功能，并能针对不同的数据库类型进行自定义监控扩展，并支持一定的JMX监控接口监控数据库连接池（C3P0/DBCP/Proxool等，支持自定义扩展），可以更好地监控其运行状况。</p>
+        <p>管理接口主要提供访问次数（读写）以及执行时间、数据库连接数（活跃、空闲等状态）的监控管理，并通过JMX、Thrift等手段暴露服务。</p>
+        <p>数据聚合层提供了数据聚合可选插件，目前支持继承已实现聚合的JdbcTemplate进行全库聚合和操作，并可采用多线程方式提高数据访问效率。</p>
+        <p>元信息收集层主要提供了一系列的工具收集主从选择的标识、反延时标识、路由选择标识，提供给代理数据源层的路由选择器和主从选择器进行路由选择和主从选择。</p>
+        <p>当然，Compass中间件在分布式数据库事务（在事务管理方面，我们继续沿用Spring事务管理机制，保证同库事务性）、跨节点join问题上依然没有很好的处理方法，在跨节点count/orderby/groupby等聚合问题上的实现也有待更优雅的支持。特别是针对全库聚合或者查询，其线程资源和内存资源占用都相对较高。这也是任何数据库中间层解决方案都未能完全解决的事情，只能依赖于在业务上进行精巧的设计，尽量避免这些问题。</p>
+        <p>此外，Compass分库分表框架也大大提升了易用性：</p>
+        <p></p>
+        <ul>
+            <li><span style="background-color: initial;">最小代码侵入：内置路由标识（Envidence）默认策略，不改变上层ORM框架实现；</span>
+            </li>
+            <li><span style="background-color: initial;">简化配置：在配置中采用了大量的默认策略和机制，使得配置达到最简单；</span>
+            </li>
+            <li><span style="background-color: initial;">最小接入成本：支持与目前现有的数据库访问框架并存，支持逐个数据库集群灰度切换。目前，Compass中间件已经接入了所有业务线应用，无论是从功能还是性能，与业界数据库中间件均保持统一水准，在易用性方面更是极大地简化了数据源配置和降低代码侵入，很好地支撑了目前10+亿级的物料存储和管理。</span>
+            </li>
+        </ul>
+        <p></p>
+        <p>分布式任务调度平台：凌云随着业务的发展，各开发团队经常需要编写大量定时任务来进行相关的业务处理，如导入导出数据、报表计算、汇总统计等。最常见的定时任务可通过Linux系统中的Crontab来在指定时间点触发任务执行。然而，随着任务量逐渐增多，基于Crontab的任务管理方式存在诸多弊端：</p>
+        <p></p>
+        <ol>
+            <li><span style="background-color: initial;">任务配置管理成本较高。每增加或修改一个任务，都需要修改Crontab，增加人力管理成本；</span>
+            </li>
+            <li><span style="background-color: initial;">无法支持任务依赖。Crontab不支持任务间依赖；</span>
+            </li>
+            <li><span style="background-color: initial;">手工配置出错风险高。手动修改Crontab缺少正确性校验机制，有一定出错风险；</span>
+            </li>
+            <li><span style="background-color: initial;">不支持任务可视化。Crontab任务只能通过Linux终端查看，没有统一的管理界面查看任务详情及历史运行记录；</span>
+            </li>
+            <li><span style="background-color: initial;">存在单点风险。任务每次触发后只能在一台机器上执行，若机器故障，任务将无法执行；</span>
+            </li>
+            <li><span style="background-color: initial;">监控不完善。Crontab任务失败后，需要为任务单独增加相应的监控。</span>
+            </li>
+        </ol>
+        <p></p>
+        <p>为此，我们研发了搜狗分布式任务调度平台：凌云，将各种类型的任务统一到该平台进行配置和管理，并支持以下特性：</p>
+        <p></p>
+        <ul>
+            <li><span style="background-color: initial;">将任务的管理、调度与执行解耦合；</span>
+            </li>
+            <li><span style="background-color: initial;">任务调度节点和任务执行节点可水平扩展，避免单点；</span>
+            </li>
+            <li><span style="background-color: initial;">各任务隔离执行，独立平滑上线，互不影响；</span>
+            </li>
+            <li><span style="background-color: initial;">支持复杂任务依赖，一个任务可有多个前驱和多个后继；</span>
+            </li>
+            <li><span style="background-color: initial;">任务失败自动报警、任务超时自动报警。</span>
+            </li>
+        </ul>
+        <p></p>
+        <p style="text-align: center;">
+            <img src="http://img.ptcms.csdn.net/article/201505/20/555c34550a143.jpg" style="">
+        </p>
+        <p style="text-align: center;"><span style="background-color: initial;">图3凌云分布式任务调度平台</span>
+        </p>
+        <p style=""><span style="background-color: initial;">其架构如图3所示。</span><span style="background-color: initial;">任务执行节点（TaskNode）是执行任务的服务器集合，这些服务器可划分为多个域，域主要保证不同业务间的隔离性。每个任务都需要指定所属的域，任务触发后，将会分配给其所属域中的一台服务器执行。任务执行节点负责具体任务的执行，每个任务执行节点上部署着一个任务代理（基于Thrift的HTTP服务），用于与调度集群交互并启动子进程执行具体任务。任务分为Java任务和Shell脚本任务（其中Hadoop任务属于一种Shell脚本任务），两者都是以子进程的形式由任务代理启动。</span>
+        </p>
+        <p>任务代理与任务调度集群的交互主要包括接收任务分发请求、处理任务状态轮询请求、任务结束后回调任务调度集群等。任务代理通过获取任务子进程的退出码判断任务是否正常结束，退出码0表示正常完成任务，非0表示出现异常，任务代理会将退出码返回给任务调度集群。</p>
+        <p>任务调度集群底层基于Quartz集群模式。Quartz是由Java编写的强大的企业级任务调度框架，提供了非常好的伸缩性、高可用性及负载均衡机制。我们在Quartz的基础上进行了扩展，支持任务的定时触发、依赖执行、失败重试及异常报警等。任务调度集群提供基于Thrift的HTTP服务，包括两方面功能：1.对任务管理中心开放任务管理和调度的相关接口，管理员对任务的调度配置会更新到任务调度集群中；2.对任务代理开放任务状态回调接口，任务在执行节点上运行完毕后，任务代理会通过此接口回调调度器告知其任务的运行结果。</p>
+        <p>任务的依赖执行可以非常方便地实现任务之间的前后顺序衔接，尤其是对于存在跨组数据依赖的情形，通过配置任务之间的依赖关系，即可实现数据获取的及时性和有效性。</p>
+        <p>用户可在任务管理中心维护任务之间的依赖关系，当任务的所有前驱任务执行完毕后，会自动触发该任务的执行。假设有如图4的任务依赖关系，任务C有两个前驱，分别是任务A和B，任务D的前驱任务是任务B，任务E、F的前驱任务是任务C。则沿时间轴方向，任务B先执行完毕，会自动触发其后继任务D开始执行；当任务A执行完毕后，会自动触发任务C开始执行；任务C执行完毕后，会自动触发E和F执行。</p>
+        <p style="text-align: center;">
+            <img src="http://img.ptcms.csdn.net/article/201505/20/555c34bd86095.jpg">
+            </p>
+            <p style="text-align: center;">图4任务依赖关系</p>
+            <p>由于分离了任务调度与执行，调度器需要知道任务状态，并在必要的时候触发重试或者报警。我们采用了任务结果回调和任务状态轮询两种方式。正常情况下，任务执行完毕后，任务代理根据任务子进程的退出状态码确定任务是否执行成功，然后将任务执行情况通过回调的方式返回给调度集群。但考虑到可能存在任务成功完成但任务代理回调失败的情况，我们增加了调度器对任务状态的轮询策略，即对于运行中的任务，调度器轮询处理节点该任务的状态，以确保任务成功与否能及时反馈给调度器。通过轮询，对于耗时超出预期执行时间的任务，调度器会发出任务超时报警。</p>
+            <p>任务管理中心是一个对任务可视化管理平台，用户可登录此系统查看并管理自己的任务。具体包括任务管理、触发器管理、参数管理、依赖管理，任务配置项包括任务的基本属性、执行时间的触发器、任务的参数等。也可以直接在管理中心立即启动执行指定任务。系统按角色划分权限，不同角色的用户拥有不同的权限。此外，任务管理中心采用分布式会话，可以进行集群部署，提高了容灾能力。</p>
+            <p>目前，搜狗分布式任务调度平台承载着绝大多数任务调度工作。通过将任务的管理、调度与执行解耦合，减少了三者之间的互相侵入；通过提供丰富的任务配置属性和任务可视化展现，极大提高了任务管理效率；通过提供任务远程调度、任务隔离执行、任务平滑上线、任务多依赖等特性，很好地支撑了各产品线业务的发展。</p>
+            <p><b><span>分布式</span></b><b>RPC</b><b>框架：</b><b>Polaris</b>
+
+            </p>
+            <p>在长期的业务发展过程中，对于系统间的交互，我们使用了Socket、RMI、Hessian、JSON等技术，针对每种技术，都需要维护一套相应的故障转移、故障恢复、追踪框架，对于商业平台多条业务线的大量系统交互来说，经常面临着硬件故障问题，此种交互方式引起的维护成本及故障迁移成本都是巨大的。另外，多种不同的接口技术也面临着接口兼容性的问题，例如对于RMI来说，我们就遇到了Spring从2.5.6升级到3.1.0所带来的RMI接口不兼容导致的接口调用错误问题。最后，我们内部也有一些跨语言的调用需求，比如用C++查询广告物料信息、Python脚本做统计，这些都会涉及到接口调用，而使用不能跨语言的技术（例如RMI和Hessian）成本会非常高。因此，我们需要统一内部系统接口交互方式，并降低接口的管理和维护成本。</p>
+            <p><span>在实践过程中，我们比较了WebService、ProtocolBuffer、HTTP/JSON、Dubbo以及Thrift等技术。其中，WebService基于XML，兼容性良好，但其序列化/反序列化性能较差；ProtocolBuffer和HTTP/JSON无服务接口/地址描述；Dubbo的框架过于庞大；Thrift在接口定义文档、数据类型支持、跨语言等方面存在优势，然而对服务地址和服务管理方面支持力度不够，并且存在类型侵入问题。在分析比较之后，我们选定了Thrift，并在此基础上开发了服务注册中心，解决服务地址和服务管理方面的问题。对于类型侵入问题，从描述语言来看，长远来看它生成的POJO代码应该可以像WebService一样，消除类型侵入（例如，Facebook提供了开源的Swift框架，已经朝这个方向迈进了一步）。我们目前是提供了一系列的方法和转换类，自主进行类型转换适配工作。</span>
+
+            </p>
+            <p>我们基于Thrift构建的分布式RPC框架Polaris如图5所示。</p>
+            <p style="text-align: center;">
+                <img src="http://img.ptcms.csdn.net/article/201505/20/555c351123fce.jpg">
+                <br>
+            </p>
+            <p style="text-align: center;">图 5 分布式RPC框架Polaris
+                <br>
+            </p>
+            <p>我们对Polaris的服务端和客户端都进行了增强。在服务器端，我们提供了标准的HTTP服务器，能够很轻易地将一个Thrift服务发布到一个URL上。同时，也集成了标准的认证和授权框架，有效地保证了业务的安全性；另外，我们在运维监控方面做了很多增强，能够监控每个方法的执行时间以及执行参数，这样的话可以面向整个商业平台，建立标准的监控统计架构。因为我们提供的服务是基于HTTP的，因此部分统计是可以直接沿用线上已有的监控统计软件，也有效减少了重新构建监控框架的成本。</p>
+            <p>在客户端，主要添加了失败重试、提供了类RPC的调用方式，并且提供了一种抽象的机制简化了测试成本。通过Spring的依赖注入，可以支持在仅调整配置，不改变客户端代码的情况下进行本地调用和远程HTTP调用的切换。使用本地调用时可以更快地进行单元测试，在完成单元测试之后，可以直接通过调整配置切换成远程HTTP调用，在此过程中无需任何代码的调整。此方案还对接口迁移，比如从RMI接口迁移至Thrift接口提供了很大的帮助。一般情况下，大型复杂依赖系统内部接口间的依赖关系都会特别复杂，在进行接口梳理和迁移时成本和风险都非常高，特别是在系统的服务化改造过程中需要将内部接口提升为API接口的时候。在这种情况下，可以通过引入一个Thrift模块，将此模块依赖于需要提升为API接口的模块，而其他模块则仅依赖于此Thrift模块。在此调整过程中，可以随着业务版本的开发同步进行，而且可以重用大部分单元测试稍作调整即可使用，这样的话能够将成本和风险都降至最低。</p>
+            <p>事实上，Thrift有标准的定义语言，能够对服务接口、异常、接口参数和返回值进行描述，同时支持Set、Map之类的数据结构。然而，它没有描述服务地址以及服务依赖关系等。因此，我们也构建了服务中心Aura，它的概念架构图6所示。</p>
+            <p style="text-align: center;">
+                <img src="http://img.ptcms.csdn.net/article/201505/20/555c353a0089a.jpg" style="">
+                <br>
+                </p>
+                <p style="text-align: center;">图6 服务中心Aura概念架构图
+                    <br>
+                </p>
+                <p>图6中的通信框架服务端和通信框架客户端已经在前面介绍了。服务中心的主要功能是对Thrift接口描述语言文件进行管理，管理其发布/订阅关系。实际上，它定义了一种团队间互相协作的方法，此协作遵循面向服务体系结构。在开发实践中，我们不鼓励依赖通过接口描述语言直接生成的代码，鼓励依赖于接口描述语言生成代码，这样能够保证耦合性，减少代码升级所带来的成本。另外，通过管理服务的所有者和服务的订阅者，能够迅速地了解到服务间的依赖关系以及服务演化时所带来的相关影响。</p>
+                <p>在商业平台内部有多个业务系统使用分布式RPC框架Polaris，包括资金、计费、客户、财务、合同、物料、报告等，也覆盖了Java、C++、Python等语言，目前已经完成大部分接口的迁移，利用服务中心Aura，构建了完善的服务发布、发现和使用的流程，也针对其安全性、易用性和可维护性做了很多工作，因为有了一致的技术集，连怎么去使用都有了最佳实践，迁移后的服务接口显著减少了重复开发成本，有效地提升了沟通效率，降低了风险。</p>
+                <p><b>总结</b>
+
+                </p>
+                <p>在长期的实践中，我们一直基于Java技术，致力于解决分布式、高并发、大数据量、强一致性等带来的各种技术难题及挑战。同时，我们也致力于基础组件和框架的统一化，构建和持续优化基础架构、基础服务，保证高可靠、高性能、高可扩展性、低成本的快速支撑各项新业务，保证业务的高速发展。在此过程中，Java及其生态系统有效地进行了支撑，成为了搜狗商业平台Java生态系统的基石，显著降低了开发和维护成本，提高了可维护性和系统健壮性。</p>
+                <p><b>作者简介：</b>
+
+                </p>
+                <p style="text-align: center;"><b><img src="http://img.ptcms.csdn.net/article/201505/20/555c52fa25a3f.jpg" style="width: 162.857142857143px; height: 114px;" align="left"></b></p><p style="text-align: left;"><span style="background-color: initial;">刘建，搜狗架构师，商业平台基础平台负责人，十年Java相关研发经验，在互联网软件体系结构、分布式计算、面向服务体系结构、用户身份安全等方面有浓厚的兴趣及实践经验。目前主要关注分布式高可用软件架构和大数据基础架构。</span></p>
+                <p style="text-align: center;">
+                    <img src="http://img.ptcms.csdn.net/article/201505/20/555c53136a222.jpg" style="width: 161px; height: 110px;" align="left">
+                    </p><p style="text-align: left;"><span style="background-color: initial;">郭理勇，搜狗高级研发工程师，商业平台网盟广告技术负责人，主要关注Java\J2EE及其相关技术、分布式高可用软件架构。</span></p><p style="text-align: left;"><span style="background-color: initial;"><br></span></p>
+                    <p style="text-align: center;">
+                        <img src="http://img.ptcms.csdn.net/article/201505/20/555c5335a7645.jpg" style="width: 156.616822429907px; height: 114px;" align="left">
+                        </p><p style="text-align: left;"><span style="background-color: initial;">毛宏，搜狗高级研发工程师，商业平台基础服务技术负责人，主要关注Java开发、Hadoop及其相关技术。</span></p><p style="text-align: left;"><span style="background-color: initial;"><br></span></p><p style="text-align: left;"><span style="background-color: initial;"><br></span></p><p style="text-align: left;"></p><div><hr></div>本文选自程序员电子版2015年5月B刊，该期更多文章请查看
+                    <a href="http://www.csdn.net/article/2015-05-18/2824694">这里</a>。2000年创刊至今所有文章目录请查看
+                    <a href="http://special.csdn.net/programmercovers/">程序员封面秀</a>。欢迎
+                    <a href="http://dingyue.programmer.com.cn/">订阅程序员电子版</a>（含iPad版、Android版、PDF版）。
+                    <p></p>				
+				<p class="copyright">本文为CSDN原创文章，未经允许不得转载，如需转载请联系market#csdn.net(#换成@)</p>
+				</div>
+							
+		 
+		
+		 
+		 <div class="share" > 	 
+			  <div class="bdsharebuttonbox" style="float:right;">
+			  <!-- a href="#" class="bds_more" data-cmd="more"></a -->
+			  <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+			  <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+			  <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+			  <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+			  </div>
+			<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>  
+			
+ 		</div> 
+
+				<div class="detail">
+				<div class="digg">
+						<input type="hidden" id="digg_id" value="2824727"/>
+						<dl class="support">
+							<dt>顶</dt>
+							<dd>0</dd>
+						</dl>
+						<dl class="oppose">
+							<dt>踩</dt>
+							<dd>0</dd>
+						</dl>
+				</div>
+			</div>	
+ 	
+				<div class="ad_600_90"><script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|article|banner3&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script> </div>
+				<div class="related">推荐阅读相关主题：
+											<a href="http://www.csdn.net/tag/%E6%90%9C%E7%8B%97/news" title="搜狗" target="_blank">搜狗</a>
+											<a href="http://www.csdn.net/tag/%E6%8A%80%E6%9C%AF/news" title="技术" target="_blank">技术</a>
+											<a href="http://www.csdn.net/tag/http%E6%9C%8D%E5%8A%A1%E5%99%A8/news" title="http服务器" target="_blank">http服务器</a>
+											<a href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/news" title="数据库连接池" target="_blank">数据库连接池</a>
+											<a href="http://www.csdn.net/tag/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/news" title="分布式计算" target="_blank">分布式计算</a>
+											<a href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/news" title="大数据存储" target="_blank">大数据存储</a>
+									</div>
+				<!-- relational article and news -->
+				<div id="Tab3" class="relational">
+					<h2 class="tab_1 Menubox">
+						<ul>
+						<li id="three1" onclick="setTab('three',1,2)"  class="hover">相关文章</li>
+						<li id="three2" onclick="setTab('three',2,2)">最新报道</li>
+						</ul>
+					</h2>
+					<div class="con Contentbox">
+						<div id="con_three_1" class="hover">
+							<ul class="list_1">								
+														<li><a href="http://www.csdn.net/article/1970-01-01/2824733" title="关于Java框架Vert.x的几点思考" target="_blank">关于Java框架Vert.x的几点思考</a></li>
+														<li><a href="http://www.csdn.net/article/1970-01-01/2824720" title="Java 8与Apache Ignite" target="_blank">Java 8与Apache Ignite</a></li>
+														<li><a href="http://www.csdn.net/article/1970-01-01/2824714" title="专访葛一鸣：热情和毅力让我将技术进行到底" target="_blank">专访葛一鸣：热情和毅力让我将技术进行到底</a></li>
+														<li><a href="http://www.csdn.net/article/1970-01-01/2824710" title="越来越“简单”的Java" target="_blank">越来越“简单”的Java</a></li>
+														<li><a href="http://www.csdn.net/article/1970-01-01/2824712" title="专访唯品会架构师肖桦：做编码的架构师" target="_blank">专访唯品会架构师肖桦：做编码的架构师</a></li>
+														<li><a href="http://www.csdn.net/article/1970-01-01/2824729" title="Java在游戏服务器开发中的应用" target="_blank">Java在游戏服务器开发中的应用</a></li>
+														</ul>
+						</div>
+						<div id="con_three_2" style="display:none">
+							<ul class="list_1 ">
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-20/2824733-Java" title="关于Java框架Vert.x的几点思考" target="_blank">关于Java框架Vert.x的几点思考</a></li>
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-20/2824730-Java" title="Java在电信软件领域的技术实战" target="_blank">Java在电信软件领域的技术实战</a></li>
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-20/2824729-Java" title="Java在游戏服务器开发中的应用" target="_blank">Java在游戏服务器开发中的应用</a></li>
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-20/2824727-Java" title="搜狗商业平台Java技术实践" target="_blank">搜狗商业平台Java技术实践</a></li>
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-20/2824726-Java" title="云上Java System Profiling与Debugging——蚂蚁金服观察与实践" target="_blank">云上Java System Profiling与Debugging——蚂蚁金服观察与实践</a></li>
+							 
+							<li><a href="http://www.csdn.net/article/2015-05-20/2824725-Java" title="Java框架研发思考" target="_blank">Java框架研发思考</a></li>
+													
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- //relational article and news 广告 -->	
+
+				<!-- comments -->
+                
+									<div id="comments" class="csdn_comments"></div>
+                    <script type="text/javascript" src="http://c.csdnimg.cn/pig/pubjs/cnick.js"></script>
+					<script src="http://ptcms.csdn.net/comment/js/comments.js" type="text/javascript"></script>
+					<script src="http://c.csdnimg.cn/atsuggest/comment_atsuggest.js" type="text/javascript"></script>
+					<!--script src="js/https://passport.csdn.net/scripts/login.js?v=1.2" type="text/javascript"></script-->
+					<script type="text/javascript">
+					    //var path = location.protocol +"//"+ location.host+"/comments/";                 //本地测试需要配置一个csdn.net的子域名，以便登录，例:http://comments.csdn.net
+					    var path = "http://ptcms.csdn.net/comment";
+					    csdn.comments = new csdn.comments({
+					        id:"comments",                                                                  //容器ID
+					        path:path,
+					        datapath:"http://ptcms.csdn.net",                                          //数据接口host
+					        cssUrl:path+"/css/comments.css",                                                 //css地址
+					        //loginUrl:path+"/js/login.js",                  //login.js地址
+					        loginUrl:"https://passport.csdn.net/content/loginbox/login.js",
+					        articleURL:"http://www.csdn.net/article/2015-05-20/2824727-Java",
+					        title:"%E6%90%9C%E7%8B%97%E5%95%86%E4%B8%9A%E5%B9%B3%E5%8F%B0Java%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5",
+					        md5:"http://static.blog.csdn.net/scripts/md5.js",                               //用于计算用户头像的md5.js地址
+					        componentsUrl:path+"/js/componet.js",              //CSDN通用组件地址
+					        toolkitUrl:path+"/js/toolkit.js",                  //CSDN工具包地址
+					        tab:{                                                                           //【通用组件】tab
+					            id:"csdnTab",                                                               //容器ID
+					            highlight:"hover"                                                           //表示当前选择的CSS样式名
+					        },
+					        pagination:{                                                                    //【通用组件】AJAX分页组件
+					            pagesize:50,                                                                //每页多少条数据
+					            showpages:10                                                                //显示多少页
+					        },
+                            oncountchange:function(count){                                                  //评论数chagnge回调
+                                var el = document.getElementById('remark_count1');
+                                if(el){el.innerHTML=count}
+                            }
+					    });
+					</script>
+								<!-- //comments -->
+			</div>
+			
+			
+		</div>
+		
+		<div class="right">	
+						
+			<div class="ad_300_250"><script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|article|pip&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script></div>
+			
+			
+			<div  style="border: 1px #ccc solid; font-size:14px; padding:10px; margin-bottom:20px;">
+            	 <ul style=" float:right; width: 160px; padding:5px;">
+                    <li style="font-size:16px; font-weight:bold;">CSDN官方微信</li>
+                    <li style="float:left;">扫描二维码,向CSDN吐槽</li>
+                    <li>微信号：CSDNnews</li>
+                </ul>
+                <img src="http://articles.csdn.net/uploads/allimg/121116/28_121116100507_1.jpg" width="100" height="100" />
+            </div >
+			
+			
+			<div style="border: 1px #ccc solid; font-size:14px; padding:3px; margin-bottom:20px; font-weight:bold;"><img style="vertical-align:middle; margin-right:10px;" src="http://news.csdn.net/images/icon_ipad.png" /><a href="http://dingyue.programmer.com.cn" target="_blank">程序员移动端订阅下载</a></div>
+			
+			<div  class="sitemap"><a href="http://www.csdn.net/article/lastnews" target="_blank">每日资讯快速浏览 </a></div>	
+						<!-- 订阅和关注 -->
+			<div class="report">
+				<h2 class="tit_2"><p>微博关注</p></h2>
+								<iframe width="100%" height="300" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=300&fansRow=2&ptype=0&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1833043614&verifier=00f2e7ba&colors=d6f3f7,ffffff,666666,000000,ffffff&dpc=1"></iframe>
+								
+			</div>
+ 	
+			
+			<div class="rtbrill" id="digestComment"></div>		
+			<div class="ad_300_250">
+			<!--AdForward Begin:-->
+				<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|article|pip2&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+			<!--AdForward End-->
+			</div>
+			<!-- recommend and hot weekly -->			
+			<div id="Tab2" class="hot_weekly">
+				<h2 class="tit_2"><p>相关热门文章</p></h2>
+				<div class="con Contentbox">
+					<div id="con_two_2" >
+						<ul class="list_1 ">
+													<li><a href="http://www.csdn.net/article/2015-05-19/2824716-Java" title="Java开发与技术挑战——关于技术的技术思考" target="_blank">Java开发与技术挑战——关于技术的技术思考</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-19/2824712-Java" title="专访唯品会架构师肖桦：做编码的架构师" target="_blank">专访唯品会架构师肖桦：做编码的架构师</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-19/2824711-Java" title="细品这杯香浓的咖啡——阿里中间件高级专家沈询的Java之旅" target="_blank">细品这杯香浓的咖啡——阿里中间件高级专家沈询的Java之旅</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-19/2824710-Java" title="越来越“简单”的Java" target="_blank">越来越“简单”的Java</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-19/2824715-java" title="我的Java！越过山丘" target="_blank">我的Java！越过山丘</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-20/2824723-Java" title="那些年，Java程序员用过的开发工具" target="_blank">那些年，Java程序员用过的开发工具</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-20/2824730-Java" title="Java在电信软件领域的技术实战" target="_blank">Java在电信软件领域的技术实战</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-20/2824733-Java" title="关于Java框架Vert.x的几点思考" target="_blank">关于Java框架Vert.x的几点思考</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-18/2824691-developer" title="专访沙梓社：做个“Think Different”的技术牛人" target="_blank">专访沙梓社：做个“Think Different”的技术牛人</a></li>
+													<li><a href="http://www.csdn.net/article/2015-05-20/2824725-Java" title="Java框架研发思考" target="_blank">Java框架研发思考</a></li>
+												</ul>
+					</div>
+				</div>
+			</div>
+			  
+			  <!-- hot tag -->
+			<div class="hot_tag">
+				<h2 class="tit_2"><p><a href="http://www.csdn.net/tag">热门标签</a></p></h2>
+				<ul class="list_1">
+				 
+									 
+										<li><a href="http://www.csdn.net/tag/hadoop" title="Hadoop" target="_blank">Hadoop</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/aws" title="AWS" target="_blank">AWS</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/%E7%A7%BB%E5%8A%A8%E6%B8%B8%E6%88%8F" title="移动游戏" target="_blank">移动游戏</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/java" title="Java" target="_blank">Java</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/android" title="Android" target="_blank">Android</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/ios" title="iOS" target="_blank">iOS</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/swift" title="Swift" target="_blank">Swift</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6" title="智能硬件" target="_blank">智能硬件</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/docker" title="Docker" target="_blank">Docker</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/openstack" title="OpenStack" target="_blank">OpenStack</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/vpn" title="VPN" target="_blank">VPN</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/spark" title="Spark" target="_blank">Spark</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/erp" title="ERP" target="_blank">ERP</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/ie10" title="IE10" target="_blank">IE10</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/eclipse" title="Eclipse" target="_blank">Eclipse</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/crm" title="CRM" target="_blank">CRM</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/javascript" title="JavaScript" target="_blank">JavaScript</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" title="数据库" target="_blank">数据库</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/ubuntu" title="Ubuntu" target="_blank">Ubuntu</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/nfc" title="NFC" target="_blank">NFC</a></li>
+									 
+										<li><a href="http://www.csdn.net/tag/wap" title="WAP" target="_blank">WAP</a></li>
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+											
+				</ul>
+			</div>
+			<!-- //hot tag -->
+			
+			<!-- share -->
+			<div class="box share">
+    			<h2 class="tit_2"><p><a target="_blank" href="http://share.csdn.net">CSDN Share PPT下载</a></p></h2>
+    							
+      			<dl>
+      				
+      	      	    <dt class="clearfix"><a target="_blank" href="http://share.csdn.net/slides/14877" title="sphinx分享"><img src="http://share.csdn.net/uploads/a969e6149022a273e531c898b3c3b34e/a969e6149022a273e531c898b3c3b34e_thumb.jpg"></a>
+      	      	    <a target="_blank" href="http://share.csdn.net/slides/14877" title="sphinx分享">sphinx分享</a>
+      	      	    </dt>
+                   
+                </dl>              	
+      			
+                				
+      			<dl>
+      				
+      	      	    <dt class="clearfix"><a target="_blank" href="http://share.csdn.net/slides/14837" title="JAVA总结基础部分"><img src="http://share.csdn.net/uploads/8231452b2d99db45ba0c700c22258965/8231452b2d99db45ba0c700c22258965_thumb.jpg"></a>
+      	      	    <a target="_blank" href="http://share.csdn.net/slides/14837" title="JAVA总结基础部分">JAVA总结基础部分</a>
+      	      	    </dt>
+                   
+                </dl>              	
+      			
+                				
+      			<dl>
+      				
+      	      	    <dt class="clearfix"><a target="_blank" href="http://share.csdn.net/slides/14797" title="指数级增长业务下的服务架构改造"><img src="http://share.csdn.net/uploads/a8e565de16034864aced3bce9052bf1a/a8e565de16034864aced3bce9052bf1a_thumb.jpg"></a>
+      	      	    <a target="_blank" href="http://share.csdn.net/slides/14797" title="指数级增长业务下的服务架构改造">指数级增长业务下的服务架构改造</a>
+      	      	    </dt>
+                   
+                </dl>              	
+      			
+                				
+      			<dl>
+      				
+      	      	    <dt class="clearfix"><a target="_blank" href="http://share.csdn.net/slides/14766" title="3.张宁--移动大数据技术在互联网金融获客及经营中的应用"><img src="http://share.csdn.net/uploads/e2045072920f3970c1fae9a4841a4026/e2045072920f3970c1fae9a4841a4026_thumb.jpg"></a>
+      	      	    <a target="_blank" href="http://share.csdn.net/slides/14766" title="3.张宁--移动大数据技术在互联网金融获客及经营中的应用">3.张宁--移动大数据技术在互联网金融获客及经营中的应用</a>
+      	      	    </dt>
+                   
+                </dl>              	
+      			
+                	
+</div>
+			<!-- //share -->
+			
+					</div>
+	</div>
+			<div class="hot_topic">
+		<h1><span class="title">热门专区</span></h1>
+		<ul>
+						<li><a href="http://g.csdn.net/5266534" target="_blank"><img src="http://images.csdn.net/20140312/linux01.jpg" alt="" /></a><span class="title"><a href="http://g.csdn.net/5266534" target="_blank">PowerLinux技术社区</a></span></li>
+					<li><a href="http://g.csdn.net/5261230" target="_blank"><img src="http://images.csdn.net/20131219/160x120(1)01.jpg" alt="" /></a><span class="title"><a href="http://g.csdn.net/5261230" target="_blank">高通开发者专区 </a></span></li>
+					<li><a href="http://g.csdn.net/5267281" target="_blank"><img src="http://images.csdn.net/20140327/160×120.jpg" alt="" /></a><span class="title"><a href="http://g.csdn.net/5267281" target="_blank">TCL专区</a></span></li>
+					<li><a href="http://hc.csdn.net/" target="_blank"><img src="http://images.csdn.net/20120816/amd-2012081603.jpg" alt="" /></a><span class="title"><a href="http://hc.csdn.net/" target="_blank">异构编程专区</a></span></li>
+					<li><a href="http://subject.csdn.net/win8hackathon/" target="_blank"><img src="http://images.csdn.net/20121023/win8160x12002.jpg" alt="" /></a><span class="title"><a href="http://subject.csdn.net/win8hackathon/" target="_blank">win8开发马拉松</a></span></li>
+					</ul>
+	</div>
+		<script  type="text/javascript" src="http://ptcms.csdn.net/like/js/like.js"></script>
+	<script>
+  window.WebSocket = window.WebSocket || window.MozWebSocket;
+  if( window.WebSocket ) {
+    var  wsServer = 'ws://geektest.csdn.net/'; 
+    var websocket = new window.WebSocket(wsServer, 'cmslike');
+
+    websocket.onopen = function (evt) { onOpen(evt) }; 
+    websocket.onclose = function (evt) { onClose(evt) }; 
+    websocket.onmessage = function (evt) { onMessage(evt) }; 
+    websocket.onerror = function (evt) { onError(evt) }; 
+    function onOpen(evt) {
+    } 
+    function onClose(evt) { 
+    } 
+    function onMessage(evt) {
+      var data = JSON.parse(evt.data);
+      var ding = $('.support dd').text();
+      if(ding != '' && data.support > ding){
+        $('.support dd').text(data.support);
+      };
+      var cai = $('.oppose dd').text();
+      if (cai != '' && data.oppose > cai) {
+        $('.oppose dd').text(data.oppose);
+      };
+    } 
+    function onError(evt) { 
+    }
+  }
+		$(document).ready(function(){
+			var digg_id=$("#digg_id").val();
+			$('.digg').like({
+				article_id: digg_id, // 文章id
+				ding_class: 'support', // 顶的class
+				cai_class: 'oppose', // 踩的class
+        domain: 'news.csdn.net',
+				callback: function(data) //处理数据方法
+				{
+          if(data.succ == 1)
+          {
+            $('.support dd').text(data.info.ding);
+            $('.oppose dd').text(data.info.ding);
+          }
+					if(data.succ == -2)
+					{
+						if(confirm(data.msg)){
+							window.location.href = "https://passport.csdn.net/UserLogin.aspx?from=http://news.csdn.net%2Farticle%2F2015-05-20%2F2824727-Java";
+							return false;
+						}
+					}
+					if(data.succ == -1)
+					{
+						alert(data.msg);
+					}
+				}
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){ 
+			var href=document.location.href;	
+
+			if(href.split("/")[6] == undefined){
+				$("#click_"+1).addClass("on");
+			}else{
+				var hrefpageno=href.split("/")[6];		
+				$("#click_"+hrefpageno).addClass("on");
+			}	
+
+			new $.AutoScroll({
+				wrap:$('#job_ul'),scrollCount:1,interval:1500
+			});
+		expandcontent('sc4', tabobjlinks[3]);
+		$.getJSON('http://ptcms.csdn.net/article/service/article_count?preview=1&aid=2824727&jsonpcallback=?',function(data){
+				$('.view_time').html(data+'次阅读');
+			});
+
+		});
+		function linkfirst(arcid){
+			$("#linkfirst").attr("href","article.html?arcid="+arcid+"&pageno=1");			
+		}
+		function preclick(arcid){
+			var href=window.location.href;		
+			var hrefpageno=href.split("&")[1];		
+			var pageno=hrefpageno.split("=")[1];
+			var hrefno=pageno-1;
+			if(hrefno <1){
+				hrefno = 1;
+			}
+			$("#preclick").attr("href","article.html?arcid="+arcid+"&pageno="+hrefno);
+		}
+	
+		function nextclick(total,arcid){
+			var href=window.location.href;		
+			var hrefpageno=href.split("&")[1];		
+			var pageno=hrefpageno.split("=")[1];
+			var hrefno=parseInt(pageno)+1;
+			if(hrefno >total){
+				hrefno = total;
+			}
+			$("#nextclick").attr("href","article.html?arcid="+arcid+"&pageno="+hrefno);
+		}
+	
+		function firstclick(arcid){
+			$("#firstclick").attr("href","article.html?arcid="+arcid+"&pageno=1");	
+		}
+		
+		function lastclick(total,arcid){
+			$("#lastclick").attr("href","article.html?arcid="+arcid+"&pageno="+total);
+		}
+		function linktitle(num,arcid){
+			var numid=parseInt(num)+1;
+			$("#linktitle_"+num).attr("href","article.html?arcid="+arcid+"&pageno="+numid);
+		}
+		function pongoad2(val){
+			$("#job_ul").html(val);
+		}
+		var callbackfun="pongoad2";
+		document.write(unescape('%3Cscript src="http://a.pongo.cn/Job/GetAdForCallBack%3Fid%3D2%26UrlAdParam%3D'+encodeURIComponent(location.href)+'%26&CallBack%3D'+callbackfun+'" type="text/javascript"%3E%3C/script%3E'));
+	</script>
+
+
+	<script>
+	   $(function () {
+	    var wrap = function () {
+	        var elems = document.getElementsByClassName('syntaxhighlighter');
+	        for (var j = 0; j < elems.length; ++j) {
+	            var sh = elems[j];
+	            var gLines = sh.getElementsByClassName('gutter')[0].getElementsByClassName('line');
+	            var cLines = sh.getElementsByClassName('code')[0].getElementsByClassName('line');
+	            var stand = 15;
+	            for (var i = 0; i < gLines.length; ++i) {
+	                var h = $(cLines[i]).height();
+	                if (h != stand) {
+	                    //console.log(i);
+	                    gLines[i].setAttribute('style', 'height: ' + h + 'px !important;');
+	                }
+	            }
+	        }
+	     };
+	    var whenReady = function () {
+	        if ($('.syntaxhighlighter').length === 0) {
+	            setTimeout(whenReady, 0);
+	        } else {
+	            wrap();
+	        }
+	    };
+	    whenReady();
+	});
+	</script>
+
+	<script type="text/javascript">
+ 	 document.write('<script src="http' + (/^https/.test(location.href) ? 's' : '') + '://c.csdnimg.cn/public/highlighter/js/highlighter.js?' + (new Date()/300000|0) + '"></'+'script>');
+	</script>
+	
+	<!-- 广告位：富媒体广告 -->
+	<script type="text/javascript">BAIDU_CLB_fillSlot("119835");</script>
+  
+	<!-- public footer -->
+      <script type="text/javascript">
+      document.write('<script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date()/120000).toString(36) + '="></'+'script>');
+      </script>
+	<!-- //public footer -->
+</div>
+<!-- tab js -->
+<script type="text/javascript">
+<!--
+/*第一种形式 第二种形式 更换显示样式*/
+function setTab(name,cursel,n){
+	for(i=1;i<=n;i++){
+		var menu=document.getElementById(name+i);
+		var con=document.getElementById("con_"+name+"_"+i);
+		menu.className=i==cursel?"hover":"";
+		con.style.display=i==cursel?"block":"none";
+	}
+}
+//-->
+</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|homepage|WebIM_1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script> 
+<!--<script id="noticeScript" type="text/javascript" charset="utf-8" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" src="http://static.csdn.net/public/common/toolbar/js/notify.js"></script>-->
+<script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+</body>
+<!-- ask 全局悬浮按钮  -->
+<link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/wmd.js"></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/showdown.js"></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/prettify.js"></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js"></script>
+</html>
+ 
+
+
+

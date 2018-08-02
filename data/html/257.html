@@ -1,0 +1,460 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>【IIS】IIS开发,IIS资源下载-CSDN.NET</title>
+<meta name="description" content="CSDN IIS专题页面，为IIS开发者提供学习IIS的一站式资源服务，包括，IIS动态、IIS开发技巧以及源代码下载、常见IIS问题解答等。" />
+<meta name="keywords" content="IIS,IIS资讯,IIS资源,IIS开发" />
+<link href="http://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+<link href="http://static.csdn.net/public/common/toolbar/css/index.css" type="text/css" rel="stylesheet">
+<!-- toolbar start -->
+<script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- toolbar end -->
+<link href="http://csdnimg.cn/www/css/csdn_common.css" rel="stylesheet" type="text/css">
+<!--
+	css/content.css
+-->
+<link rel="stylesheet" type="text/css" href="http://read.csdn.net/cache/fb801ce97123d4dac6affaf54eedf5ee1398330419.css" />
+<script type="text/javascript">
+document.write('<script src="http://csdnimg.cn/pubfooter/js/tracking.js?'+(new Date()/120000|0)+'="></'+'script>');
+</script>
+<script type="text/javascript" src="http://counter.csdn.net/a/js/AreaCounter.js"></script>
+<script type="text/javascript" src="http://csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript">
+var domain = 'http://read.csdn.net/';
+var token = '';
+</script>
+<script type="text/javascript" src="https://passport.csdn.net/content/loginbox/login.js"></script>
+<!--
+	js/read.js
+-->
+<script src="http://read.csdn.net/cache/49546f4ce3380e884bd648d0c399e94e1397098375.js"></script>
+<script type="text/javascript" src="http://read.csdn.net/js/jquery.autocomplete.min.js"></script>
+</head>
+
+<body data-pid="mytag">
+<script type="text/javascript">
+  var protocol = window.location.protocol;
+  document.write('<script type="text/javascript" src="' +protocol+ '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></'+'script>');
+</script>
+<script src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript" id="toolbar-tpl-scriptId" prod="tag" skin="black" fixed="top"  domain="http://www.csdn.net/tag"></script>
+
+
+<div class="tag_warp">
+<div class="main main_tag clearfix">
+	<div class="brea_nav">
+		<a href="http://www.csdn.net" target="_blank">CSDN首页</a><em>&gt;</em>
+		<a href="http://www.csdn.net/tag">主题首页</a><em>&gt;</em>
+		<a href="http://www.csdn.net/tag/iis">IIS</a><em>&gt;</em>
+	</div>
+	<div class="tag_name clearfix">
+		<h1 class="tag_single"><a target="_blank" href="">IIS</a></h1>
+		<div class="main_right">
+			<div class="user">
+                <input class="at_submit" title="关注" type="button" value="关注主题" onclick="like(this, 'iis', '')" />
+                <span>3</span>人关注
+        <input class="tag_answer" name="input2" type="button" />
+        <div class="answer_box" style="display: none;">
+        	<input class="answer_close" name="input2" type="button" />
+					<p>关注功能小贴士：<br/><br/>
+					关注该主题后，您就可以通过页面上方的“个性阅读”功能，每天自动收到来自CSDN 社区的最相关博客文章、资讯报道。<br/><br/>
+					关注越多的您感兴趣的主题，推荐给您的内容就越符合你的口味。
+					</p>        	
+        </div>
+			</div>
+			<!--<a class="col_tit" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,385);">&gt;&nbsp;浏览全部主题</a>-->
+     </div>
+    <div class="tag_jump">
+            <a target="_blank" href="http://www.csdn.net/tag/iis/slideshare">讲义教程</a>
+            <a target="_blank" href="http://www.csdn.net/tag/iis/news">资讯</a>
+            <a target="_blank" href="http://www.csdn.net/tag/iis/topic">常见问题</a>
+            <a target="_blank" href="http://www.csdn.net/tag/iis/blog">开发技巧</a>
+            <a target="_blank" href="http://www.csdn.net/tag/iis/download">工具源码下载</a>
+          </div>
+
+	</div>
+     
+	<div class="tag_left">
+				<div class="tag_group">
+			<div class="tag_empty">
+				<h3>相关主题</h3>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/internet%20explorer" target="_blank" title="Internet Explorer" onclick="LogClickCount(this,381);">Internet Explorer</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/visual%20basic" target="_blank" title="Visual Basic" onclick="LogClickCount(this,381);">Visual Basic</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/msword" target="_blank" title="Word" onclick="LogClickCount(this,381);">Word</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/iis6" target="_blank" title="IIS6" onclick="LogClickCount(this,381);">IIS6</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/iis7" target="_blank" title="IIS7" onclick="LogClickCount(this,381);">IIS7</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/windows%20server%202003" target="_blank" title="Windows Server 2003" onclick="LogClickCount(this,381);">Windows Server 2003</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/javabeans" target="_blank" title="Javabeans" onclick="LogClickCount(this,381);">Javabeans</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/microsoft%20office" target="_blank" title="Microsoft Office" onclick="LogClickCount(this,381);">Microsoft Office</a>
+				</div>
+							</div>
+		</div>
+		        
+						<div class="tag_news">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_news" href="http://www.csdn.net/tag/iis/news">IIS 资讯</a></p>					
+																								        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://geek.csdn.net/news/detail/22916" target="_blank" onclick="LogClickCount(this,389);">IIS 内部运行机制</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://geek.csdn.net" target="_blank">极客头条</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/iis" title="iis">iis</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/geekplayer" rel="nofollow"><img src="http://avatar.csdn.net/0/C/4/4_geekplayer.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/geekplayer" rel="nofollow">geekplayer</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://geek.csdn.net/news/detail/16859" target="_blank" onclick="LogClickCount(this,389);">抛弃IIS，利用FastCGI让Asp.net与Nginx在一起</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://geek.csdn.net" target="_blank">极客头条</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/asp.net" title="Asp.net">Asp.net</a><a target="_blank" href="http://www.csdn.net/tag/nginx" title="Nginx">Nginx</a><a target="_blank" href="http://www.csdn.net/tag/iis" title="IIS">IIS</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/lbp0408" rel="nofollow"><img src="http://avatar.csdn.net/8/F/F/4_lbp0408.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/lbp0408" rel="nofollow">lbp0408</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://geek.csdn.net/news/detail/7917" target="_blank" onclick="LogClickCount(this,389);">IIS各个版本的运行账户</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://geek.csdn.net" target="_blank">极客头条</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/iis" title="iis">iis</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/ninetynine_lp" rel="nofollow"><img src="http://avatar.csdn.net/2/7/2/4_ninetynine_lp.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/ninetynine_lp" rel="nofollow">ninetynine_lp</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_topic">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_topic" href="http://www.csdn.net/tag/iis/topic">IIS 常见问题</a></p>					
+																								        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/391040536" target="_blank" onclick="LogClickCount(this,389);">80端口打不开网站问题</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/apache" title="apache">apache</a><a target="_blank" href="http://www.csdn.net/tag/%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8" title="服务器">服务器</a><a target="_blank" href="http://www.csdn.net/tag/iis" title="iis">iis</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/lbc2247117" rel="nofollow"><img src="http://avatar.csdn.net/2/6/6/4_lbc2247117.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/lbc2247117" rel="nofollow">lbc2247117</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/391037999" target="_blank" onclick="LogClickCount(this,389);">IIS界面运行不了</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/iis" title="IIS">IIS</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/socamp" rel="nofollow"><img src="http://avatar.csdn.net/0/9/F/4_socamp.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/socamp" rel="nofollow">socamp</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/391035744" target="_blank" onclick="LogClickCount(this,389);">IIS 总是提示与服务器连接丢失，望高手指点！急急急！</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/iis" title="iis">iis</a><a target="_blank" href="http://www.csdn.net/tag/%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8" title="服务器">服务器</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/lilu04" rel="nofollow"><img src="http://avatar.csdn.net/7/4/7/4_lilu04.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/lilu04" rel="nofollow">lilu04</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/391031011" target="_blank" onclick="LogClickCount(this,389);">关于IIS发布的一个问题</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/iis" title="iis">iis</a><a target="_blank" href="http://www.csdn.net/tag/%25E5%258F%2591%25E5%25B8%2583" title="发布">发布</a><a target="_blank" href="http://www.csdn.net/tag/%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8" title="服务器">服务器</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/qq_21942727" rel="nofollow"><img src="http://avatar.csdn.net/2/8/5/4_qq_21942727.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/qq_21942727" rel="nofollow">qq_21942727</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/391030053" target="_blank" onclick="LogClickCount(this,389);">sendto failed:ECONNRESET(Connection reset by peer)</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/android%25C2%25A0%25C2%25A0" title="android  ">android  </a><a target="_blank" href="http://www.csdn.net/tag/android" title="android">android</a><a target="_blank" href="http://www.csdn.net/tag/web%25C2%25A0service" title="web service">web service</a><a target="_blank" href="http://www.csdn.net/tag/iis" title="iis">iis</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/hzvcan" rel="nofollow"><img src="http://avatar.csdn.net/9/7/C/4_hzvcan.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/hzvcan" rel="nofollow">hzvcan</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_blog">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_blog" href="http://www.csdn.net/tag/iis/blog">IIS 开发技巧</a></p>					
+																        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://happyqing.iteye.com/blog/2213498" target="_blank" onclick="LogClickCount(this,389);">Windows Server 2008 IIS7安装SSI服务器端包含</a>
+		        	<span class="tag_summary">摘要：
+ 
+要是没安装SSI，访问.shtml会报错
+HTTP 错误 404.3 - Not Found由于扩展配置问题而无法提供您请求的页面。如果该页面是脚本，请添加处理程序。如果应下载文件，请添加 MIME 映射。
+ 
+计算机--右键--管理 打开 服务...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://www.iteye.com" target="_blank">ITeye</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/2008" title="2008">2008</a><a target="_blank" href="http://www.csdn.net/tag/iis" title="IIS">IIS</a><a target="_blank" href="http://www.csdn.net/tag/ssi" title="SSI">SSI</a><a target="_blank" href="http://www.csdn.net/tag/shtml" title="shtml">shtml</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/happyqing" rel="nofollow"><img src="http://avatar.csdn.net/B/2/B/4_happyqing.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/happyqing" rel="nofollow">happyqing</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/sage425/article/details/45871779" target="_blank" onclick="LogClickCount(this,389);">HTTP 错误 500.21 - Internal Server Error处理程序“PageHandlerFactory-Integrated”在其模块列表中有一个错误模块“ManagedPipel</a>
+		        	<span class="tag_summary">摘要：HTTP 错误 500.21 - Internal Server Error处理程序“PageHandlerFactory-Integrated”在其模块列表中有一个错误模块“ManagedPipelineHandler”原因：在安装Framework v4.0之后，再启用IIS，导致Framework没有完全安装解决：开始-&gt;所有程序-...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/iis" title="IIS">IIS</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/sage425" rel="nofollow"><img src="http://avatar.csdn.net/A/7/B/4_sage425.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/sage425" rel="nofollow">sage425</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/wen542659483/article/details/45336041" target="_blank" onclick="LogClickCount(this,389);">IIS解决IFRAME中COOKIE、SESSION丢失</a>
+		        	<span class="tag_summary">摘要：一个位于iframe中的aspx页面，通过iframe的src参数调用，并传递参数，但是ASPX页面无论如何也不能保存SESSION，COOKIES也不行，后来在网络上搜索了相关文章后才知道，IE默认不接受没有标识为安全的第三方COOKIE，造成不能...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/iis" title="iis">iis</a><a target="_blank" href="http://www.csdn.net/tag/cookies" title="cookies">cookies</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/wen542659483" rel="nofollow"><img src="http://avatar.csdn.net/5/6/9/4_wen542659483.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/wen542659483" rel="nofollow">wen542659483</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/jzt_designer/article/details/45244225" target="_blank" onclick="LogClickCount(this,389);">Scenario: Build a Classic ASP Website on IIS （在Win8,Win server 2012中架设传统ASP网站）</a>
+		        	<span class="tag_summary">摘要：在Win8,Win server 2012中架设传统ASP网站</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/website" title="website">website</a><a target="_blank" href="http://www.csdn.net/tag/iis" title="iis">iis</a><a target="_blank" href="http://www.csdn.net/tag/asp" title="ASP">ASP</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/jzt_designer" rel="nofollow"><img src="http://avatar.csdn.net/6/6/8/4_jzt_designer.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/jzt_designer" rel="nofollow">jzt_designer</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/luozhuang/article/details/45166995" target="_blank" onclick="LogClickCount(this,389);">一例ASP.net 网站‘此网页包含重定向循环’解决方法</a>
+		        	<span class="tag_summary">摘要：今天遇到一个奇怪问题；  某网站，使用VS自带的ASP.NET Development server启动没有问题。但是用IIS Express启动以后无法访问。  使用IE查看网站查不出什么问题，使用chrome报告错误‘此网页包含重定向循环’。  看来是代...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/%25E9%2587%258D%25E5%25AE%259A%25E5%2590%2591%25E5%25BE%25AA%25E7%258E%25AF" title="重定向循环">重定向循环</a><a target="_blank" href="http://www.csdn.net/tag/iis" title="IIS">IIS</a><a target="_blank" href="http://www.csdn.net/tag/asp.net" title="asp.net">asp.net</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/luozhuang" rel="nofollow"><img src="http://avatar.csdn.net/B/F/A/4_luozhuang.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/luozhuang" rel="nofollow">luozhuang</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_download">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_download" href="http://www.csdn.net/tag/iis/download">IIS 工具源码下载</a></p>					
+																								        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/junck364/8702453" target="_blank" onclick="LogClickCount(this,389);">win2003安装IIS完整包</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/win2003" title="win2003">win2003</a><a target="_blank" href="http://www.csdn.net/tag/iis" title="IIS">IIS</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/junck364" rel="nofollow"><img src="http://avatar.csdn.net/C/1/1/4_junck364.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/junck364" rel="nofollow">junck364</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/qq_19294877/8693749" target="_blank" onclick="LogClickCount(this,389);">服务器FTP文件创建组件</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/iis" title="IIS">IIS</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/qq_19294877" rel="nofollow"><img src="http://avatar.csdn.net/D/D/6/4_qq_19294877.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/qq_19294877" rel="nofollow">qq_19294877</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/qq_14937305/8646563" target="_blank" onclick="LogClickCount(this,389);">WIN8安装IIS</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/win8" title="WIN8">WIN8</a><a target="_blank" href="http://www.csdn.net/tag/iis" title="IIS">IIS</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/qq_14937305" rel="nofollow"><img src="http://avatar.csdn.net/D/B/E/4_qq_14937305.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/qq_14937305" rel="nofollow">qq_14937305</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/sgftkxdyf/8620753" target="_blank" onclick="LogClickCount(this,389);">Vista/Win7/Win2008的IIS自动安装脚本</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/iis" title="IIS">IIS</a><a target="_blank" href="http://www.csdn.net/tag/%25E8%2587%25AA%25E5%258A%25A8%25E5%25AE%2589%25E8%25A3%2585%25E8%2584%259A%25E6%259C%25AC" title="自动安装脚本">自动安装脚本</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/sgftkxdyf" rel="nofollow"><img src="http://avatar.csdn.net/B/2/C/4_sgftkxdyf.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/sgftkxdyf" rel="nofollow">sgftkxdyf</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/qq_27600145/8617483" target="_blank" onclick="LogClickCount(this,389);">net 使用IIS发布Web项目</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/iis" title="IIS">IIS</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/qq_27600145" rel="nofollow"><img src="http://avatar.csdn.net/2/8/4/4_qq_27600145.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/qq_27600145" rel="nofollow">qq_27600145</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+												
+	</div>
+	 
+</div>
+
+<script type="text/javascript">
+
+function like(object, tag, token){
+	$(object).blur();
+	var obj = $(object);
+	var username = checkLogin();
+	if(!username){
+		return false;
+	}
+	if(obj.attr("class")=="at_visited"){
+		return false;
+	}
+
+	$.ajax(
+	{
+		url: "http://read.csdn.net/do_tag_like?tag="+tag+"&token="+token,
+		dataType:"jsonp", 
+		jsonp:"jsonpcallback", 
+		success: function(data){	
+		if(data!=null && data!=""){
+            if(data.status){
+                //showPrompt(data.error);
+                
+                obj.attr("class", "at_visited").val("已关注").attr("title", "取消");
+                obj.attr('onclick', '').unbind('click').click( function () { cancel(this, tag, token); });
+                obj.next().html(parseInt(obj.next().html())+1);
+            }else{
+                showPrompt(data.error);      
+            }
+        }else{
+            showPrompt("通信错误");
+        }
+		}
+	}
+	);
+}
+
+function cancel(object, tag, token){
+	$(object).blur();
+	var obj = $(object);
+	var username = checkLogin();
+	if(!username){
+		return false;
+	}
+	if(obj.attr("class")=="at_submit"){
+		return false;
+	}
+
+	$.ajax(
+	{
+		url: "http://read.csdn.net/do_tag_cancel?tag="+tag+"&token="+token,
+		dataType:"jsonp", 
+		jsonp:"jsonpcallback", 
+		success: function(data){			
+			if(data!=null && data!=""){
+            if(data.status){
+                //showPrompt(data.error);
+                
+                obj.attr("class", "at_submit").val("关注主题").attr("title", "关注");;
+                obj.unbind('click').click( function () { like(this, tag, token); });
+                obj.next().html(parseInt(obj.next().html())-1);
+            }else{
+                showPrompt(data.error);            
+            }
+        }else{
+            showPrompt("通信错误");
+        }
+		}
+	}
+	);
+}
+
+</script>
+</div>
+
+
+<div class="foot" >
+    <p>
+    Copyright © 2013, CSDN.NET, All Rights Reserved
+    </p>
+</div>
+<script id="noticeScript" type="text/javascript" charset="utf-8" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" src="http://static.csdn.net/public/common/toolbar/js/notify.js"></script>
+<script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+</body>
+</html>

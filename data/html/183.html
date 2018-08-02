@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<link rel="stylesheet" type="text/css" href="http://static.csdn.net/public/common/toolbar/css/index.css">
+	<script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://mall.csdn.net/css/mall/font-awesome.min.css">
+	<link href="http://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+	<title>Xamarin-跨平台开发工具-Xamarin-CSDN软件商城</title>
+	<meta name="description" content="CSDN软件商城为您提供了最好的Xamarin-跨平台开发工具，选择Xamarin-跨平台开发工具就来CSDN商城">
+	<meta name="keywords" content="Xamarin-跨平台开发工具">
+	<meta name="author" content="CSDN.NET">
+	<meta name="Copyright" content="CSDN.NET">
+	<link rel="stylesheet" href="http://mall.csdn.net/static/css/common.min.css?t=1432399333">
+	<script type="text/javascript" src="http://mall.csdn.net/static/js/apps/package.js"></script>
+	<script type="text/javascript" src="http://mall.csdn.net/static/js/apps/dropDown.js"></script>
+	<script src="http://mall.csdn.net/js/mini_cart.js"></script>
+	</head>
+<body>
+<script id="toolbar-tpl-scriptId" skin="black" fixed="true" prod="my" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+
+<div class="nav_box">
+	<div class="nav">
+		<div class="nav_l">
+			<ul class="nav_l_list">
+				<li><a href="http://mall.csdn.net/" >首页</a></li>
+				<li><a href="http://mall.csdn.net/tool" class="navCur">软件商城</a></li>
+				<li><a href="http://mall.csdn.net/coin" >C币商城</a></li>
+				<li><a href="http://mall.csdn.net/cbuy" >C币充值</a></li>
+				<li><a href="http://mall.csdn.net/cbuy/about" >帮助</a></li>
+			</ul>
+		</div>
+		<div class="nav_r">
+			<ul class="nav_r_list">
+				<li id="nav_r_list_01" class="nav_r_list_01">
+					<a href="http://mall.csdn.net/cart" onmouseover="get_mini_cart()" class="buyCar_a">
+						<a href="http://mall.csdn.net/cart">购物车</a>
+						<span class="top_circle" id="mini_cart_num">0</span>
+						<em class="line_r">|</em>
+					</a>
+					<div class="sub hide" id="mini_cart"></div>
+				</li>
+				<li class="nav_r_list_02"><a href="http://mall.csdn.net/order/my_order">我的订单</a></li>
+			</ul>
+		</div>
+	</div>
+</div>	<link rel="stylesheet" href="http://mall.csdn.net/static/css/software_detail.min.css">
+	<div class="address">
+		<a href="http://mall.csdn.net/tool">软件商城</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="http://mall.csdn.net/tool/lists/152">开发工具</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="http://mall.csdn.net/tool/lists/182">Xamarin</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;Xamarin-跨平台开发工具	</div>
+	<div class="software_intro">
+		<div class="bor_bac">
+			<div class="mod_software_intro">
+				<div class="software_intro_l fl">
+					<div id="preview" class="spec-preview">
+						<div class="tips last" style="text-align: center; margin: 100px 0; color:#666;">
+							<img src="http://mall.csdn.net/images/loading1.gif"/>
+						</div>
+					</div>
+					<div class="product_id">
+						<p class="price">商品编号：<em>s20150514111352539</em></p>
+					</div>
+				</div>
+				<div class="software_intro_r fr">
+					<div class="software_intro_l_l fl" id="product_info_con">
+						<h2 class="software_h2"><a>Xamarin-跨平台开发工具</a></h2>
+						<div class="software_l_p" style="color:#727272;"><p><strong><span style="color:#FF0000">6月25日前购买2套旗舰版，送&yen;4500的培训课</span>（<a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=1946">点击了解课程</a>）。</strong></p>
+</div>
+						<div class="ajGet" l="goods/get_buy_info/500"></div>
+						<div class="software_intro_r_b">
+							<a href="javascript:void(0);" id="add_shoppingCar" class="add_shoppingCar addCart">加入购物车</a>
+															<span id="download_try"></span>
+																	<a href="http://bss.csdn.net/module/btc/xamarin/price" target="_blank" class="edition_compare">版本比较</a>
+																												</div>
+					</div>
+											<div id="supplier_info"></div>
+									</div>
+			</div>
+			<div id="popup" class="popup hide">
+				<div class="tips last" style="text-align: center; margin: 10px 0; color:#666;">
+					<img src="http://mall.csdn.net/images/loading1.gif"/>
+				</div>
+			</div>
+			<div id="mask" class="hide"></div>
+			<div id="popup_01" class="popup_01 hide">
+				<h2 class="popup_01_h2 showMessage"></h2>
+				<div class="popup_01_b success">
+					<a href="javascript:void(0);" class="continue hideTip">继续购物</a>
+					<a href="http://mall.csdn.net/cart" class="payAccount">去购物车结算</a>
+				</div>
+
+				<div class="popup_01_b fail">
+					<a href="javascript:void(0);" class="determine hideTip">关闭</a>
+				</div>
+			</div>
+		</div>
+		<div id="package_recommend_con" style="display: none;"></div>
+	</div>
+
+	<div class="main clearfix clear">
+		<div class="right-side">
+			<div class="mod_pro_detail">
+				<div id="pro_detail_t" class="pro_detail_t">
+					<span class="detailCur">商品详情</span>
+											<span id="help_span">帮助文档</span>
+						<span id="question_span">购买支持</span>
+						<span id="group_span">技术社区</span>
+									</div>
+				<div id="pro_detail_c" class="pro_detail_c">
+					<div class="pro_detail_c_c">
+						<p><span style="font-size:16px"><strong>Xamarin 跨平台移动开发解决方案，让您使用C#便可开发iOS、Android、Windows 8的Apps！</strong></span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:14px"><strong>选择Xamarin的理由：</strong></span><br />
+1、以C# 开发，编译成iOS与Android原生执行码，非HTML5解决方案。<br />
+2、任何Objective-C(iOS)与Java(Android)可以做的，Xamarin都可以做到。<br />
+3、执行效能100%与原平台程序(Objective-C,Java)所开发的一样。<br />
+4、结合Microsoft Visual Studio开发工具，让开发更方便、快速。</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:14px"><strong>一分钟马上观看Xamarin如何跨平台开发原生App！</strong></span></p>
+
+<p>&nbsp;</p>
+
+<p><a href="http://fast.wistia.net/embed/iframe/zim0b413cg?autoPlay=true&c target="><img alt="" src="http://img.bss.csdn.net/201505051104305018.jpg" style="height:214px; width:264px" /></a></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:14px"><strong>各版本授权说明：</strong></span></p>
+
+<p>&nbsp;</p>
+
+<p><img alt="" src="http://img.bss.csdn.net/201505051114344861.jpg" /></p>
+
+<p><span style="font-size:14px"><strong>商业版（最多企业采用）</strong></span><br />
+<span style="font-size:14px">与原厂方案相比,提供了中文的技术支持,及原厂旗舰版才有的Hotfixes,提供企业可依赖的方案。</span></p>
+
+<p><br />
+<span style="font-size:14px"><strong>旗舰版 （适合较大团队）</strong></span><br />
+<span style="font-size:14px">高规格技术支持：包含实时的电话支持及一个工作天内的email回复，还有专人线上的启动课程，协助您安心使用。<br />
+内建企业组件：包含超过价值RMB&yen;:6,000 的各式(UI Controls, Themes)内建组件，让开发更快速。</span></p>
+
+<p>&nbsp;</p>
+
+<p><strong>MSDN用户特惠方案申请：</strong><br />
+本方案为Xamarin针对全球MSDN用户所提供优惠方案,仅适用于MSDN有效用户,如果您是MSDN有效用户欢迎联系我们索取方案内容（010-84783783），如需优惠购买MSDN订阅请访问：<a href="http://msdn.csdn.net/" target="_blank"><span style="color:#0000FF">http://msdn.csdn.net/</span></a></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:14px"><strong>企业组件</strong></span><br />
+<span style="font-size:14px">包含超过价值RMB&yen;:6,000 的各式(UI Controls, Themes)内建组件，让开发更快速<br />
+SAP Mobile Platform SDK : <a href="http://components.xamarin.com/view/sap-mobile-platform" target="_blank"><span style="color:#0000FF">http://components.xamarin.com/view/sap-mobile-platform</span></a><br />
+SQLCipher iOS :<a href="http://http://components.xamarin.com/view/sqlcipher-for-xamarin-ios" target="_blank"><span style="color:#0000FF"> http://components.xamarin.com/view/sqlcipher-for-xamarin-ios</span></a><br />
+SQLCipher Android :<a href="http://http://components.xamarin.com/view/sqlcipher-for-xamarin-android" target="_blank"><span style="color:#0000FF"> http://components.xamarin.com/view/sqlcipher-for-xamarin-android</span></a></span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:14px"><strong>本地(中国)技术支持服务说明</strong></span></p>
+
+<p><br />
+<span style="font-size:14px">专业IT人员在Xamrin遭遇到技术问题时，ThinkPower技术支持工程师团队会亲自帮您解决技术问题。依据客户采购的版本, 客户可以透过电话及电子邮件向技术支持工程师询问问题并获得解答。我们称呼软件问题之协助为一个「技术支持请求」(亦称为事件（incident）)，透过我们工程师对您细心及专业的技术支持，并提供适当的解决方法或替代方案，充分的协助您能更有效的使用Xamarin进行开发。</span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:14px"><strong>费用</strong></span><br />
+<span style="font-size:14px">Xamarin 商业版内含 Email 技术支持, 毋需额外付费。<br />
+Xamarin 旗舰版内含电话及 Email 技术支持, 毋需额外付费。</span></p>
+
+<p><br />
+<span style="font-size:14px"><strong>支持内容</strong></span><br />
+<span style="font-size:14px">协助Xamarin的安装、设置、操作、使用问题，以及故障排除。<br />
+技术支持仅限在中国地区购买并注册的Xamarin, 技术支持语言目前限于简/繁体中文。<br />
+使用Xamarin开发工具(Xamarin Studio, Visual Studio)中遇到的软件开发问题，但不包括编译程序代码、程序代码检查、软件设计或其他咨询服务。</span></p>
+
+<p><br />
+<span style="font-size:14px"><strong>不支持范围</strong></span><br />
+<span style="font-size:14px">到场技术支持。<br />
+第三方组件导致的问题。<br />
+解决方案咨询服务。解决方案咨询服务属于顾问服务，解决客户超出故障排除范围以外的技术支持需求, 包含以下项目：<br />
+- 应用程序的程序代码编写和检查<br />
+- 产品效能调校<br />
+- 本服务以问题解决服务为主，不提供找寻及确认根本原因(root cause)</span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:14px"><strong>购买流程</strong></span><br />
+<span style="font-size:14px">请<a href="https://passport.csdn.net/account/login" target="_blank"><span style="color:#0000FF">登录</span></a>CSDN账号（没有CSDN账号请先注册）&mdash;&mdash;选择需要购买的产品版本&mdash;&mdash;点击立即购买&mdash;&mdash;填写订单页面信息&mdash;&mdash;选择付款方式&mdash;&mdash;提交订单&mdash;&mdash;付款（购买流程完成</span>）</p>
+					</div>
+
+											<div class="pro_detail_c_c hide_01" id="help_desc"></div>
+						<div class="pro_detail_c_c hide_01">
+							<p class="buy_consult_p">如果您有问题需要紧急沟通，请拨打电话 <span style="color: #ee5e53;">010-57410251</span>，或在线咨询客服QQ
+								<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2714137330&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2714137330:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+							</p>
+
+							<div id="question_list"></div>
+
+							<div class="consult">
+								<h3 class="consult_h3">发表咨询：</h3>
+
+								<p class="consult_p">咨询回复时间为工作日早9:00-18:00，请耐心等待工作人员回复，如果您有问题需要紧急沟通，请拨打电话 <span>010-57410251</span>.</p>
+
+								<div class="textArea"><span>咨询内容：</span> <textarea name="question_content" id="question_content"></textarea></div>
+								<a href="javascript:void(0);" id="submitQuestion" class="submit">提交</a>
+							</div>
+						</div>
+
+						<div class="pro_detail_c_c hide_01">
+							<div class="technical_t">
+								<div class="topic">共<strong id="group_count">0</strong>个话题讨论<a href="http://mall.csdn.net/group/index/500" class="publish" target="_blank">发表话题</a></div>
+								<div class="topic_r">
+									<input type="text" name="search_title" id="search_title" value=""/><a href="javascript:void(0);" id="searchGroup" class="search"></a>
+								</div>
+							</div>
+
+							<div id="group_list"></div>
+						</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://mall.csdn.net/static/js/apps/tab.js"></script>
+	<script type="text/javascript">
+		var product_id = '500';
+		var group_id = '1258500';
+		var product_detail_to = '';
+	</script>
+	<script type="text/javascript" src="http://mall.csdn.net/js/ajGet.js"></script>
+	<script type="text/javascript" src="http://mall.csdn.net/js/goods_info.js"></script>
+<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js"></script>
+<script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="http://csdnimg.cn/rabbit/notev2/js/notify.js?9d86d94"></script>
+<script type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+<div style="display: none">
+	<script src="http://s4.cnzz.com/stat.php?id=1254952414&web_id=1254952414" language="JavaScript"></script>
+</div>
+</body>
+</html>

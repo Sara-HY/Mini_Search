@@ -1,0 +1,470 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>【Rails】Rails开发,Rails资源下载-CSDN.NET</title>
+<meta name="description" content="CSDN Rails专题页面，为Rails开发者提供学习Rails的一站式资源服务，包括，Rails动态、Rails开发技巧以及源代码下载、常见Rails问题解答等。" />
+<meta name="keywords" content="Rails,Rails资讯,Rails资源,Rails开发" />
+<link href="http://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+<link href="http://static.csdn.net/public/common/toolbar/css/index.css" type="text/css" rel="stylesheet">
+<!-- toolbar start -->
+<script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- toolbar end -->
+<link href="http://csdnimg.cn/www/css/csdn_common.css" rel="stylesheet" type="text/css">
+<!--
+	css/content.css
+-->
+<link rel="stylesheet" type="text/css" href="http://read.csdn.net/cache/fb801ce97123d4dac6affaf54eedf5ee1398330419.css" />
+<script type="text/javascript">
+document.write('<script src="http://csdnimg.cn/pubfooter/js/tracking.js?'+(new Date()/120000|0)+'="></'+'script>');
+</script>
+<script type="text/javascript" src="http://counter.csdn.net/a/js/AreaCounter.js"></script>
+<script type="text/javascript" src="http://csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript">
+var domain = 'http://read.csdn.net/';
+var token = '';
+</script>
+<script type="text/javascript" src="https://passport.csdn.net/content/loginbox/login.js"></script>
+<!--
+	js/read.js
+-->
+<script src="http://read.csdn.net/cache/49546f4ce3380e884bd648d0c399e94e1397098375.js"></script>
+<script type="text/javascript" src="http://read.csdn.net/js/jquery.autocomplete.min.js"></script>
+</head>
+
+<body data-pid="mytag">
+<script type="text/javascript">
+  var protocol = window.location.protocol;
+  document.write('<script type="text/javascript" src="' +protocol+ '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></'+'script>');
+</script>
+<script src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript" id="toolbar-tpl-scriptId" prod="tag" skin="black" fixed="top"  domain="http://www.csdn.net/tag"></script>
+
+
+<div class="tag_warp">
+<div class="main main_tag clearfix">
+	<div class="brea_nav">
+		<a href="http://www.csdn.net" target="_blank">CSDN首页</a><em>&gt;</em>
+		<a href="http://www.csdn.net/tag">主题首页</a><em>&gt;</em>
+		<a href="http://www.csdn.net/tag/rails">Rails</a><em>&gt;</em>
+	</div>
+	<div class="tag_name clearfix">
+		<h1 class="tag_single"><a target="_blank" href="">Rails</a></h1>
+		<div class="main_right">
+			<div class="user">
+                <input class="at_submit" title="关注" type="button" value="关注主题" onclick="like(this, 'rails', '')" />
+                <span>0</span>人关注
+        <input class="tag_answer" name="input2" type="button" />
+        <div class="answer_box" style="display: none;">
+        	<input class="answer_close" name="input2" type="button" />
+					<p>关注功能小贴士：<br/><br/>
+					关注该主题后，您就可以通过页面上方的“个性阅读”功能，每天自动收到来自CSDN 社区的最相关博客文章、资讯报道。<br/><br/>
+					关注越多的您感兴趣的主题，推荐给您的内容就越符合你的口味。
+					</p>        	
+        </div>
+			</div>
+			<!--<a class="col_tit" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,385);">&gt;&nbsp;浏览全部主题</a>-->
+     </div>
+    <div class="tag_jump">
+            <a target="_blank" href="http://www.csdn.net/tag/rails/slideshare">讲义教程</a>
+            <a target="_blank" href="http://www.csdn.net/tag/rails/news">资讯</a>
+            <a target="_blank" href="http://www.csdn.net/tag/rails/topic">常见问题</a>
+            <a target="_blank" href="http://www.csdn.net/tag/rails/blog">开发技巧</a>
+            <a target="_blank" href="http://www.csdn.net/tag/rails/download">工具源码下载</a>
+          </div>
+
+	</div>
+     
+	<div class="tag_left">
+				<div class="tag_group">
+			<div class="tag_empty">
+				<h3>相关主题</h3>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/activerecord" target="_blank" title="ActiveRecord" onclick="LogClickCount(this,381);">ActiveRecord</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/ruby%20on%20rails" target="_blank" title="Ruby on Rails" onclick="LogClickCount(this,381);">Ruby on Rails</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/jruby" target="_blank" title="JRuby" onclick="LogClickCount(this,381);">JRuby</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/ror" target="_blank" title="RoR" onclick="LogClickCount(this,381);">RoR</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/javafx" target="_blank" title="JavaFX" onclick="LogClickCount(this,381);">JavaFX</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/coldfusion" target="_blank" title="ColdFusion" onclick="LogClickCount(this,381);">ColdFusion</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/ruby" target="_blank" title="Ruby" onclick="LogClickCount(this,381);">Ruby</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/yahoo%21" target="_blank" title="Yahoo!" onclick="LogClickCount(this,381);">Yahoo!</a>
+				</div>
+							</div>
+		</div>
+		        
+						<div class="tag_slideshare">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_slideshare" href="http://www.csdn.net/tag/rails/slideshare">Rails 讲义教程</a></p>					
+																        <li>
+        	        	<div class="line_list">
+        		<a class="line_list_pic_slideshare" href="http://share.csdn.net/slides/1197" title="Maintainable Rails View"><img src="http://share.csdn.net/uploads/bb4ac1367e47da590dccee68542c9fe9/bb4ac1367e47da590dccee68542c9fe9_thumb.jpg"></a>        		<a class="tit_list" href="http://share.csdn.net/slides/1197" target="_blank" onclick="LogClickCount(this,389);">Maintainable Rails View</a>
+		        	<span class="tag_summary">摘要：Rails View Best Practices</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://share.csdn.net" target="_blank">Share</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="Rails">Rails</a><a target="_blank" href="http://www.csdn.net/tag/rubyconf%2520china%25202013" title="RubyConf China 2013">RubyConf China 2013</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/xieyu33333" rel="nofollow"><img src="http://avatar.csdn.net/7/4/5/4_xieyu33333.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/xieyu33333" rel="nofollow">xieyu33333</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_news">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_news" href="http://www.csdn.net/tag/rails/news">Rails 资讯</a></p>					
+																								        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://geek.csdn.net/news/detail/32485" target="_blank" onclick="LogClickCount(this,389);">为什么国外的创业公司更喜欢 Rails?</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://geek.csdn.net" target="_blank">极客头条</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="Rails">Rails</a><a target="_blank" href="http://www.csdn.net/tag/%25E5%2588%259B%25E4%25B8%259A%25E5%2585%25AC%25E5%258F%25B8" title="创业公司">创业公司</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/qiansg123" rel="nofollow"><img src="http://avatar.csdn.net/B/0/E/4_qiansg123.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/qiansg123" rel="nofollow">qiansg123</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://www.csdn.net/article/2015-03-03/2824072-Rails-go" target="_blank" onclick="LogClickCount(this,389);">Timehop为什么要放弃Rails，转向Go？</a>
+		        	<span class="tag_summary">摘要：流行的社交应用Timehop(时光机)能帮助人们回忆起过去某天自己在不同社交媒体上的足迹，自上线以来用户规模不断扩大。Timehop的开发平台经历了从Rails迁移到Go的转变，这其中有什么原因呢？</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://www.csdn.net" target="_blank">资讯</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/go" title="Go">Go</a><a target="_blank" href="http://www.csdn.net/tag/rails" title="Rails">Rails</a><a target="_blank" href="http://www.csdn.net/tag/%25E9%259D%25A2%25E5%2590%2591%25E5%25AF%25B9%25E8%25B1%25A1" title="面向对象">面向对象</a><a target="_blank" href="http://www.csdn.net/tag/google" title="Google">Google</a></span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://geek.csdn.net/news/detail/25818" target="_blank" onclick="LogClickCount(this,389);">为何用Go取代Rails？</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://geek.csdn.net" target="_blank">极客头条</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a><a target="_blank" href="http://www.csdn.net/tag/go" title="go">go</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/tangxiaoyin" rel="nofollow"><img src="http://avatar.csdn.net/5/0/E/4_tangxiaoyin.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/tangxiaoyin" rel="nofollow">tangxiaoyin</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_topic">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_topic" href="http://www.csdn.net/tag/rails/topic">Rails 常见问题</a></p>					
+																								        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/390984514" target="_blank" onclick="LogClickCount(this,389);">rails  返回json的问题</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a><a target="_blank" href="http://www.csdn.net/tag/json" title="json">json</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/u011570311" rel="nofollow"><img src="http://avatar.csdn.net/6/2/1/4_u011570311.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/u011570311" rel="nofollow">u011570311</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/390762998" target="_blank" onclick="LogClickCount(this,389);">OpenShift+Rails 建站,mysql 數據無法上傳</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a><a target="_blank" href="http://www.csdn.net/tag/openshift" title="openshift">openshift</a><a target="_blank" href="http://www.csdn.net/tag/mysql" title="mysql">mysql</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/u011320201" rel="nofollow"><img src="http://avatar.csdn.net/A/9/A/4_u011320201.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/u011320201" rel="nofollow">u011320201</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/390758815" target="_blank" onclick="LogClickCount(this,389);">新人求解：rails中使用jquery ajax的问题</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/jquery%25C2%25A0ajax" title="jquery ajax">jquery ajax</a><a target="_blank" href="http://www.csdn.net/tag/url" title="url">url</a><a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/j1002749760" rel="nofollow"><img src="http://avatar.csdn.net/D/1/4/4_j1002749760.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/j1002749760" rel="nofollow">j1002749760</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/390755479" target="_blank" onclick="LogClickCount(this,389);">Rails服务器问题</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a><a target="_blank" href="http://www.csdn.net/tag/%25E4%25BA%2591%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8" title="云服务器">云服务器</a><a target="_blank" href="http://www.csdn.net/tag/heroku" title="heroku">heroku</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/superzxn0705" rel="nofollow"><img src="http://avatar.csdn.net/5/5/0/4_superzxn0705.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/superzxn0705" rel="nofollow">superzxn0705</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/390612198" target="_blank" onclick="LogClickCount(this,389);">广州番禺-半小时移动平台招聘小伙伴（RAILS后端工程师，移动前端工程师等）</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/mobile%25C2%25A0ui" title="Mobile UI">Mobile UI</a><a target="_blank" href="http://www.csdn.net/tag/mobile%25C2%25A0uijavascript" title="Mobile UIJavascript">Mobile UIJavascript</a><a target="_blank" href="http://www.csdn.net/tag/javascript" title="Javascript">Javascript</a><a target="_blank" href="http://www.csdn.net/tag/rails" title="Rails">Rails</a><a target="_blank" href="http://www.csdn.net/tag/%25E5%2589%258D%25E7%25AB%25AF%25E5%25BC%2580%25E5%258F%2591" title="前端开发">前端开发</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/hunter1ok" rel="nofollow"><img src="http://avatar.csdn.net/0/A/4/4_hunter1ok.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/hunter1ok" rel="nofollow">hunter1ok</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_blog">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_blog" href="http://www.csdn.net/tag/rails/blog">Rails 开发技巧</a></p>					
+																        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/feigeswjtu/article/details/45323355" target="_blank" onclick="LogClickCount(this,389);">invalid byte sequence in US-ASCII (ArgumentError)</a>
+		        	<span class="tag_summary">摘要：最近想在在工作之余,单独搭建一个rails+bootstrap的项目,并发布,后续会陆续更新遇到的问题.  今天遇到一个错误,是在执行rake db:migrate的时候遇到的,错误内容是:invalid byte sequence in US-ASCII (ArgumentError),截图如下:感觉应该...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/ruby%2520on%2520rails" title="ruby on rails">ruby on rails</a><a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a><a target="_blank" href="http://www.csdn.net/tag/dbmigrate" title="dbmigrate">dbmigrate</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/feigeswjtu" rel="nofollow"><img src="http://avatar.csdn.net/C/9/F/4_feigeswjtu.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/feigeswjtu" rel="nofollow">feigeswjtu</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/feigeswjtu/article/details/45324025" target="_blank" onclick="LogClickCount(this,389);">RuntimeError: `attr_accessible` is extracted out of Rails into a gem</a>
+		        	<span class="tag_summary">摘要：按照平常的习惯,写了一个model之后,习惯把model对应的表字段显式写到model文件中,发现报了以下的错误:才想起来,工作时用的rails的版本是3.2的,自己搭建个人项目用的是4.0.2版本,估计不支持这种写法就,看报错的提示就有...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a><a target="_blank" href="http://www.csdn.net/tag/4.0.2" title="4.0.2">4.0.2</a><a target="_blank" href="http://www.csdn.net/tag/attr_accessible" title="attr_accessible">attr_accessible</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/feigeswjtu" rel="nofollow"><img src="http://avatar.csdn.net/C/9/F/4_feigeswjtu.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/feigeswjtu" rel="nofollow">feigeswjtu</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/cgz_1986/article/details/44539319" target="_blank" onclick="LogClickCount(this,389);">Ruby on Rails创建项目和服务启动中的一些问题</a>
+		        	<span class="tag_summary">摘要：记录本人Ruby on rails 初学时创建项目过程中遇到的小问题。</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/ruby" title="ruby">ruby</a><a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a><a target="_blank" href="http://www.csdn.net/tag/ror" title="ROR">ROR</a><a target="_blank" href="http://www.csdn.net/tag/%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8" title="服务器">服务器</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/cgz_1986" rel="nofollow"><img src="http://avatar.csdn.net/B/D/6/4_cgz_1986.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/cgz_1986" rel="nofollow">cgz_1986</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/julykobe/article/details/44069827" target="_blank" onclick="LogClickCount(this,389);">Rails与数据库查询到关于datetime的记录不一致引发的讨论</a>
+		        	<span class="tag_summary">摘要：起因老大发现，一个sql在rails console里执行的结果是1，在数据库（PostgreSQL）的console里执行结果是23 ：  SELECT COUNT(*) FROM “users” WHERE “users”.”active” = ‘t’ AND (expire &lt; NOW())然后老大很快就发现这是时区的问题。...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a><a target="_blank" href="http://www.csdn.net/tag/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593" title="数据库">数据库</a><a target="_blank" href="http://www.csdn.net/tag/timezone" title="timezone">timezone</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/julykobe" rel="nofollow"><img src="http://avatar.csdn.net/6/8/1/4_julykobe.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/julykobe" rel="nofollow">julykobe</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/mydo/article/details/43604907" target="_blank" onclick="LogClickCount(this,389);">rails中migration数据库后测试不通过的问题</a>
+		        	<span class="tag_summary">摘要：rails项目中由于后期需求变化,需要在products数据库中增加一个字段来满足多国家商品的分类:rails g migration add_locale_to_products locale:string</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a><a target="_blank" href="http://www.csdn.net/tag/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593" title="数据库">数据库</a><a target="_blank" href="http://www.csdn.net/tag/migration" title="migration">migration</a><a target="_blank" href="http://www.csdn.net/tag/model" title="model">model</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/mydo" rel="nofollow"><img src="http://avatar.csdn.net/F/E/D/4_mydo.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/mydo" rel="nofollow">mydo</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_download">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_download" href="http://www.csdn.net/tag/rails/download">Rails 工具源码下载</a></p>					
+																								        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/richar1/8659529" target="_blank" onclick="LogClickCount(this,389);">ruby on rails教程原书第二版pdf</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/ruby" title="ruby">ruby</a><a target="_blank" href="http://www.csdn.net/tag/on" title="on">on</a><a target="_blank" href="http://www.csdn.net/tag/rails" title="rails">rails</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/richar1" rel="nofollow"><img src="http://avatar.csdn.net/5/C/5/4_richar1.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/richar1" rel="nofollow">richar1</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/xazaj/8616805" target="_blank" onclick="LogClickCount(this,389);">Ruby on Rails Tutorial 教程 第三版 中文版</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="RAILS">RAILS</a><a target="_blank" href="http://www.csdn.net/tag/ror" title="ROR">ROR</a><a target="_blank" href="http://www.csdn.net/tag/rails%25E6%2595%2599%25E7%25A8%258B" title="RAILS教程">RAILS教程</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/xazaj" rel="nofollow"><img src="http://avatar.csdn.net/4/9/4/4_xazaj.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/xazaj" rel="nofollow">xazaj</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/breath_zfx/8596925" target="_blank" onclick="LogClickCount(this,389);">Ruby on Rails 4 Tutorial中文版</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/ruby%25EF%25BC%258C" title="Ruby，">Ruby，</a><a target="_blank" href="http://www.csdn.net/tag/ruby" title="Ruby">Ruby</a><a target="_blank" href="http://www.csdn.net/tag/on" title="on">on</a><a target="_blank" href="http://www.csdn.net/tag/rails4%25E6%2595%2599%25E7%25A8%258B%25EF%25BC%258C" title="Rails4教程，">Rails4教程，</a><a target="_blank" href="http://www.csdn.net/tag/rails" title="Rails">Rails</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/breath_zfx" rel="nofollow"><img src="http://avatar.csdn.net/B/0/F/4_breath_zfx.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/breath_zfx" rel="nofollow">breath_zfx</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/u011020369/8559555" target="_blank" onclick="LogClickCount(this,389);">[Web开发敏捷之道：应用Rails进行敏捷Web开发（原书第4版）]</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="Rails">Rails</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/u011020369" rel="nofollow"><img src="http://avatar.csdn.net/A/4/F/4_u011020369.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/u011020369" rel="nofollow">u011020369</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/afgnruby/8532061" target="_blank" onclick="LogClickCount(this,389);">Rails 101S</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/rails" title="Rails">Rails</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/afgnruby" rel="nofollow"><img src="http://avatar.csdn.net/9/1/A/4_afgnruby.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/afgnruby" rel="nofollow">afgnruby</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+												
+	</div>
+	 
+</div>
+
+<script type="text/javascript">
+
+function like(object, tag, token){
+	$(object).blur();
+	var obj = $(object);
+	var username = checkLogin();
+	if(!username){
+		return false;
+	}
+	if(obj.attr("class")=="at_visited"){
+		return false;
+	}
+
+	$.ajax(
+	{
+		url: "http://read.csdn.net/do_tag_like?tag="+tag+"&token="+token,
+		dataType:"jsonp", 
+		jsonp:"jsonpcallback", 
+		success: function(data){	
+		if(data!=null && data!=""){
+            if(data.status){
+                //showPrompt(data.error);
+                
+                obj.attr("class", "at_visited").val("已关注").attr("title", "取消");
+                obj.attr('onclick', '').unbind('click').click( function () { cancel(this, tag, token); });
+                obj.next().html(parseInt(obj.next().html())+1);
+            }else{
+                showPrompt(data.error);      
+            }
+        }else{
+            showPrompt("通信错误");
+        }
+		}
+	}
+	);
+}
+
+function cancel(object, tag, token){
+	$(object).blur();
+	var obj = $(object);
+	var username = checkLogin();
+	if(!username){
+		return false;
+	}
+	if(obj.attr("class")=="at_submit"){
+		return false;
+	}
+
+	$.ajax(
+	{
+		url: "http://read.csdn.net/do_tag_cancel?tag="+tag+"&token="+token,
+		dataType:"jsonp", 
+		jsonp:"jsonpcallback", 
+		success: function(data){			
+			if(data!=null && data!=""){
+            if(data.status){
+                //showPrompt(data.error);
+                
+                obj.attr("class", "at_submit").val("关注主题").attr("title", "关注");;
+                obj.unbind('click').click( function () { like(this, tag, token); });
+                obj.next().html(parseInt(obj.next().html())-1);
+            }else{
+                showPrompt(data.error);            
+            }
+        }else{
+            showPrompt("通信错误");
+        }
+		}
+	}
+	);
+}
+
+</script>
+</div>
+
+
+<div class="foot" >
+    <p>
+    Copyright © 2013, CSDN.NET, All Rights Reserved
+    </p>
+</div>
+<script id="noticeScript" type="text/javascript" charset="utf-8" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" src="http://static.csdn.net/public/common/toolbar/js/notify.js"></script>
+<script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+</body>
+</html>

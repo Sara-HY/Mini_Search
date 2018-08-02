@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        JAVA总结基础部分 - 
+      Share频道 - CSDN.NET
+    </title>
+    <script>
+      var hash = location.hash
+      var judge_frame = hash.match(/\#\/frame\/\d+/)
+      var judge_detail = hash.match(/\#\/detail\/\d+/)
+      if (judge_frame && judge_frame[0]==hash){
+        var local = hash.replace(/\#/, "")
+        window.location = local
+      }
+      else if (judge_detail && judge_detail[0]==hash){
+        local = "/slides/"+hash.replace(/\#\/detail\//, "")
+        window.location = local
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="baidu-tc-cerfication" content="112a321f0981309b889bf0c32017e30d" />
+    <link href="http://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <link href="/assets/application-5783f4dc04b4831d3b28a06980c73944.css" media="all" rel="stylesheet" />
+    <script src="/assets/application-2109560d05f0c9c85888c23bba77e89f.js"></script>
+    <!--[if lt IE 9]>
+      <script src="/assets/ie-9d46a059c64f1baa1861eab0e72264af.js"></script>
+    <![endif]-->
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="CmOSEgz/9iC61RItOjIfX2EeTpCjOiBfLHXq4Ue3v8s=" name="csrf-token" />
+    <link rel="stylesheet" href="http://csdnimg.cn/public/themes/csdn-themes-defalut.css">
+    <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">
+      <meta name="description" content="java基础部分一些总结，由于只是产权保护，只提供部分内容">
+      <meta name="keywords" content="java基础">
+  </head>
+  <body id=>
+    <script id="toolbar-tpl-scriptId" prod="share" skin="black" fixed="true" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+<div class="header">
+  <div class="logo-search">
+    <div class="container">
+      <div class="row row-logo-search">
+        <div class="col-xs-2 col-sm-6 col-md-6 col-lg-6 logo">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 search">
+          <form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+            <input name="value" type="text" placeholder="搜索" class="share-search">
+            <input class="hidden" name="commit" type="submit" />
+</form>        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="bd clearfix">
+      <div class="container">
+        <div class="row">
+     	    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+  <div class="detail">
+    <div class="ppt-show clearfix">
+  <div class="ppt">
+    <img id="currimage" class="currimage img-responsive" src="" onload="$('#loadiamge').hide();$(this).show();" style="display:none;" >
+    <img alt="Loding" id="loadiamge" src="/assets/loding-b93a0be8002cc184945602b59c2364eb.gif" style="text-align:center;" />
+    <div class="row">
+      <a href="javascript:;" dirc="prev" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 prev ppt-ico"></a>
+      <a href="javascript:;" dirc="next" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 next ppt-ico"></a>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="ppt-controls">
+    <div class="row">
+      <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">
+        <a href="javascript:;" title="上一页" class="prev">上一页</a>
+        <a href="javascript:;" title="下一页" class="next">下一页</a>
+        <span class="currnum"></span><span>/</span><span class="maxnum"></span>
+      </div>
+      <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6 download-fill">
+        <a href="#" title="全屏" class="fill"><span>全屏</span></a>
+        <span class="download_span">
+          <a href="javascript:;" target="_blank" class="download can_download" title="下载">下载</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="share-iframe">
+  <div class="row">
+    <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 iframe-title">
+      <a href="#" title="返回CSDN Share" target="_blank" class="iframe-ico"></a>
+      <span class="visible-md visible-lg">嵌到我的页面</span>
+    </div>
+    <div class="col-xs-10 col-sm-10 col-md-9 col-lg-9">
+      <input text="text" value='&lt;iframe height=570 width=100% scrolling="no" src="http://share.csdn.net/frame/14837" frameborder=0 allowfullscreen&gt;&lt;/iframe&gt;'>
+    </div>
+  </div>
+</div>
+
+
+    <div class="summary">
+      <h1 class="title">JAVA总结基础部分</h1>
+      <span class="tit-bar">发表于
+        <em class="ago">2015年05月12日10:54:38</em>|
+        <em class="num_recom"><i class="cmtcount"><span id='remark_count1'>0</span></i>条评论</em> | 作者
+        <em class="ago"></em> | 上传者
+        <em class="ago"><a  href=http://share.csdn.net/users/ZhuZhenBlog target="_blank" class="user-name">ZhuZhenBlog</a></em>
+        <em class="weiboshare"></em>
+        <em class="share-email"><a href="javascript:void(0);"></a></em>
+        <span class="share_mark" id="fav_div"></span>
+        <div style="display: none" class="transmission clearfix">
+          <span class="visible-sm visible-md visible-lg">发送到我的邮箱</span>
+          <input name="email" type="text" placeholder="请输入邮箱地址" class="send_email send-mail">
+          <input type="hidden" class="send_mail_id" value="14837">
+          <a href="javascript:void(0);" class="send_mail_btn btn">发送</a>
+          <a href="javascript:void(0);" class="closed">X</a>
+        </div>
+        <input type="hidden" id="detail_id" value="14837"></span>
+    </div>
+    <p class="content">java基础部分一些总结，由于只是产权保护，只提供部分内容</p> 
+    <div class="authors"></div>
+    <div class="share"></div>
+    <div class="tag">
+        <a href="/tags/java基础">java基础</a>
+    </div>
+  </div>
+
+  <div id="comments" url=http://share.csdn.net/detail/14837 class="csdn_comments" title="JAVA总结基础部分"></div>
+</div>
+<div id="fullscreenSlideshowContainer" style="display: none; position: absolute; top: 0px; left: 0px; width: 100%; text-align: center; background-color: rgb(0, 0, 0); height: 279px;">
+  <div class="ppt">
+    <div class="demo">
+      <img src="" class="currimage">
+      <a href="javascript:;" class="prev" ><span></span></a>
+      <a href="javascript:;" class="next" ng-click="next( $event )"><span></span></a>
+    </div>
+    <div class="controls">
+      <a href="#" class="reduction" title="退出全屏">退出全屏</a>
+      <span class="download_span">
+        <a href="javascript:;" class="download can_download" title="下载" >下载</a>
+      </span>
+      <a href="javascript:;" class="prev">上一页</a>
+      <a href="javascript:;" class="next">下一页</a>
+      <span class="currnum">1</span> / <span class="maxnum">32</span>
+    </div>
+  </div>
+  <img class="slide" src="http://share.csdn.net/#" style="position: absolute; left: 50%; top: 50%; display: none;">
+</div>
+<script src="http://ptcms.csdn.net/comment/js/comments.js"></script>
+<script type="text/javascript">
+  var path = "http://ptcms.csdn.net/comment";
+  csdn.comments = new csdn.comments({
+    id: "comments",
+    path: path,
+    datapath: "http://ptcms.csdn.net",
+    cssUrl: path+"/css/comments.css",
+    loginUrl: "http://passport.csdn.net/content/loginbox/login.js",
+    articleURL: $('.csdn_comments').attr('url'),
+    title: "JAVA总结基础部分",
+    md5: "http://static.blog.csdn.net/scripts/md5.js",
+    componentsUrl: path+"/js/componet.js",
+    toolkitUrl: path+"/js/toolkit.js",
+    tab: {
+      id: "csdnTab",
+      highlight: "hover"
+    },
+    pagination: {
+      pagesize: 50,
+      showpages: 10
+    },
+    oncountchange: function(count){
+      var el = document.getElementById('remark_count1');
+      var plugin_el = $('.comments_tit p span')[0];
+      if(plugin_el){plugin_el.innerHTML=count};
+      if(el){el.innerHTML=count};
+    }
+  });
+</script>
+
+     	    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="row recommend">
+  <div class="user-card">
+    <dl class="clearfix">
+      <dt class="col-xs-3 col-sm-3 col-md-5 col-lg-4">
+        <a href=/users/ZhuZhenBlog><img src=http://avatar.csdn.net/6/9/7/1_zhuzhenblog.jpg class="img-responsive"></a>
+      </dt>
+      <dd>
+        <a href=/users/ZhuZhenBlog class="user-name">
+          ZhuZhenBlog
+        </a>
+        <span>共上传了<a href=/users/ZhuZhenBlog><span class="strong">1</span></a>个文档</span>
+      </dd>
+    </dl>
+    <p class="user_web">个人网站：<a href=""></a></p>
+    <p>个人简介： 
+        这个懒家伙什么都没有留下...
+    </p>
+  </div>
+</div>
+<h2 class="more"><a href="#" id="recommend" class="current">更多推荐</a><span class="dot"></span><a href="#" id="usershare">该上传者的讲义</a></h2>
+<ul id="tab-recommend" class="row more-recommend clearfix">
+    <li class="clearfix">
+      <a class="col-xs-4 col-sm-4 col-md-7 col-lg-7 recommend-pic" href="/slides/14877">
+        <img alt="A969e6149022a273e531c898b3c3b34e thumb" class="img-responsive" data-pinit="registered" src="http://share.csdn.net/uploads/a969e6149022a273e531c898b3c3b34e/a969e6149022a273e531c898b3c3b34e_thumb.jpg" />
+</a>      <span class="col-xs-8 col-sm-8 col-md-5 col-lg-5 recommend-info">
+        <a href="/slides/14877">sphinx分享</a>
+        <span>上传者 <a class="user-name" href="/users/lppklm">lppklm</a></span>
+      </span>
+    </li>
+    <li class="clearfix">
+      <a class="col-xs-4 col-sm-4 col-md-7 col-lg-7 recommend-pic" href="/slides/14837">
+        <img alt="8231452b2d99db45ba0c700c22258965 thumb" class="img-responsive" data-pinit="registered" src="http://share.csdn.net/uploads/8231452b2d99db45ba0c700c22258965/8231452b2d99db45ba0c700c22258965_thumb.jpg" />
+</a>      <span class="col-xs-8 col-sm-8 col-md-5 col-lg-5 recommend-info">
+        <a href="/slides/14837">JAVA总结基础部分</a>
+        <span>上传者 <a class="user-name" href="/users/ZhuZhenBlog">ZhuZhenBlog</a></span>
+      </span>
+    </li>
+    <li class="clearfix">
+      <a class="col-xs-4 col-sm-4 col-md-7 col-lg-7 recommend-pic" href="/slides/14797">
+        <img alt="A8e565de16034864aced3bce9052bf1a thumb" class="img-responsive" data-pinit="registered" src="http://share.csdn.net/uploads/a8e565de16034864aced3bce9052bf1a/a8e565de16034864aced3bce9052bf1a_thumb.jpg" />
+</a>      <span class="col-xs-8 col-sm-8 col-md-5 col-lg-5 recommend-info">
+        <a href="/slides/14797">指数级增长业务下的服务架构改造</a>
+        <span>上传者 <a class="user-name" href="/users/easemob_IM">easemob_IM</a></span>
+      </span>
+    </li>
+    <li class="clearfix">
+      <a class="col-xs-4 col-sm-4 col-md-7 col-lg-7 recommend-pic" href="/slides/14766">
+        <img alt="E2045072920f3970c1fae9a4841a4026 thumb" class="img-responsive" data-pinit="registered" src="http://share.csdn.net/uploads/e2045072920f3970c1fae9a4841a4026/e2045072920f3970c1fae9a4841a4026_thumb.jpg" />
+</a>      <span class="col-xs-8 col-sm-8 col-md-5 col-lg-5 recommend-info">
+        <a href="/slides/14766">3.张宁--移动大数据技术在互联网金融获客及经营中的应用</a>
+        <span>上传者 <a class="user-name" href="/users/awangyh">awangyh</a></span>
+      </span>
+    </li>
+    <li class="clearfix">
+      <a class="col-xs-4 col-sm-4 col-md-7 col-lg-7 recommend-pic" href="/slides/14765">
+        <img alt="76b762e2558f8fb9c34827d121997edd thumb" class="img-responsive" data-pinit="registered" src="http://share.csdn.net/uploads/76b762e2558f8fb9c34827d121997edd/76b762e2558f8fb9c34827d121997edd_thumb.jpg" />
+</a>      <span class="col-xs-8 col-sm-8 col-md-5 col-lg-5 recommend-info">
+        <a href="/slides/14765">2.刘晓莹--蚂蚁去O实战剖析</a>
+        <span>上传者 <a class="user-name" href="/users/awangyh">awangyh</a></span>
+      </span>
+    </li>
+</ul>
+<ul id="tab-usershare" style="display: none" class="row more-recommend clearfix">
+     <li class="clearfix">
+      <a class="col-xs-5 col-sm-6 col-md-5 col-lg-7 recommend-pic" href="/slides/14837">
+        <img alt="8231452b2d99db45ba0c700c22258965 thumb" class="img-responsive" data-pinit="registered" src="http://share.csdn.net/uploads/8231452b2d99db45ba0c700c22258965/8231452b2d99db45ba0c700c22258965_thumb.jpg" />
+</a>      <span class="col-xs-7 col-sm-6 col-md-7 col-lg-5 recommend-info">
+        <a href="/slides/14837">JAVA总结基础部分</a>
+        <span>上传者 <a class="user-name" href="/users/ZhuZhenBlog">ZhuZhenBlog</a></span>
+      </span>
+    </li>
+</ul>
+
+  <div class="row set-tags">
+    <h2>热门Tag</h2>
+      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/云计算/slideshare">
+          云计算
+        <span class="num">257</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/移动开发/slideshare">
+          移动开发
+        <span class="num">188</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/大数据/slideshare">
+          大数据
+        <span class="num">138</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/云计算大会/slideshare">
+          云计算大会
+        <span class="num">123</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/hadoop/slideshare">
+          Hadoop
+        <span class="num">91</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/移动开发者大会/slideshare">
+          MDCC
+        <span class="num">80</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/安全/slideshare">
+          安全
+        <span class="num">75</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/sdcc/slideshare">
+          SDCC
+        <span class="num">69</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/软件研发/slideshare">
+          软件开发
+        <span class="num">65</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/cccc2013/slideshare">
+          CCCC2013
+        <span class="num">59</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/tup/slideshare">
+          TUP
+        <span class="num">58</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/开源/slideshare">
+          开源
+        <span class="num">58</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/isc2013/slideshare">
+          ISC2013
+        <span class="num">55</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/android/slideshare">
+          Android
+        <span class="num">54</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/mdcc/slideshare">
+          MDCC
+        <span class="num">52</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/mdcc2013/slideshare">
+          MDCC2013
+        <span class="num">49</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/mdcc2012/slideshare">
+          MDCC2012
+        <span class="num">49</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/hbtc/slideshare">
+          HBTC
+        <span class="num">47</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/hbtc2012/slideshare">
+          HBTC2012
+        <span class="num">47</span>
+</a>      <a class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tags" href="http://www.csdn.net/tag/cto俱乐部/slideshare">
+          CTO俱乐部
+        <span class="num">46</span>
+</a>  </div>
+
+  <div class="rss-apps">
+    <h2><a class="rss" href="/slides.atom" target="_blank">RSS订阅</a></h2>
+    <h2>移动客户端下载</h2>
+    <dl>
+      <dt class="col-xs-2 col-sm-2 col-md-4 col-lg-4">
+        <img alt="App" class="img-responsive" src="/assets/app-0e77210bb81ecdf55deb554ad313cca2.png" />
+      </dt>
+      <dd class="col-xs-10 col-sm-10 col-md-8 col-lg-8">
+        <a href="http://g.csdn.net/5257127" class="android">Android版</a>
+        <a href="http://g.csdn.net/5257128" class="ios">iOS版</a>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+        </div>
+   	  </div>
+    </div>
+    <script src="http://csdnimg.cn/pig/pubjs/cnick.js"type="text/javascript"></script>
+<script src="http://csdnimg.cn/pubfooter/js/publib_footer.js"type="text/javascript"></script>
+<script src="http://passport.csdn.net/content/loginbox/login.js" type="text/javascript"></script>
+<script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>【Redis】Redis开发,Redis资源下载-CSDN.NET</title>
+<meta name="description" content="CSDN Redis专题页面，为Redis开发者提供学习Redis的一站式资源服务，包括，Redis动态、Redis开发技巧以及源代码下载、常见Redis问题解答等。" />
+<meta name="keywords" content="Redis,Redis资讯,Redis资源,Redis开发" />
+<link href="http://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+<link href="http://static.csdn.net/public/common/toolbar/css/index.css" type="text/css" rel="stylesheet">
+<!-- toolbar start -->
+<script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- toolbar end -->
+<link href="http://csdnimg.cn/www/css/csdn_common.css" rel="stylesheet" type="text/css">
+<!--
+	css/content.css
+-->
+<link rel="stylesheet" type="text/css" href="http://read.csdn.net/cache/fb801ce97123d4dac6affaf54eedf5ee1398330419.css" />
+<script type="text/javascript">
+document.write('<script src="http://csdnimg.cn/pubfooter/js/tracking.js?'+(new Date()/120000|0)+'="></'+'script>');
+</script>
+<script type="text/javascript" src="http://counter.csdn.net/a/js/AreaCounter.js"></script>
+<script type="text/javascript" src="http://csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript">
+var domain = 'http://read.csdn.net/';
+var token = '';
+</script>
+<script type="text/javascript" src="https://passport.csdn.net/content/loginbox/login.js"></script>
+<!--
+	js/read.js
+-->
+<script src="http://read.csdn.net/cache/49546f4ce3380e884bd648d0c399e94e1397098375.js"></script>
+<script type="text/javascript" src="http://read.csdn.net/js/jquery.autocomplete.min.js"></script>
+</head>
+
+<body data-pid="mytag">
+<script type="text/javascript">
+  var protocol = window.location.protocol;
+  document.write('<script type="text/javascript" src="' +protocol+ '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></'+'script>');
+</script>
+<script src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript" id="toolbar-tpl-scriptId" prod="tag" skin="black" fixed="top"  domain="http://www.csdn.net/tag"></script>
+
+
+<div class="tag_warp">
+<div class="main main_tag clearfix">
+	<div class="brea_nav">
+		<a href="http://www.csdn.net" target="_blank">CSDN首页</a><em>&gt;</em>
+		<a href="http://www.csdn.net/tag">主题首页</a><em>&gt;</em>
+		<a href="http://www.csdn.net/tag/redis">Redis</a><em>&gt;</em>
+	</div>
+	<div class="tag_name clearfix">
+		<h1 class="tag_single"><a target="_blank" href="">Redis</a></h1>
+		<div class="main_right">
+			<div class="user">
+                <input class="at_submit" title="关注" type="button" value="关注主题" onclick="like(this, 'redis', '')" />
+                <span>34</span>人关注
+        <input class="tag_answer" name="input2" type="button" />
+        <div class="answer_box" style="display: none;">
+        	<input class="answer_close" name="input2" type="button" />
+					<p>关注功能小贴士：<br/><br/>
+					关注该主题后，您就可以通过页面上方的“个性阅读”功能，每天自动收到来自CSDN 社区的最相关博客文章、资讯报道。<br/><br/>
+					关注越多的您感兴趣的主题，推荐给您的内容就越符合你的口味。
+					</p>        	
+        </div>
+			</div>
+			<!--<a class="col_tit" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,385);">&gt;&nbsp;浏览全部主题</a>-->
+     </div>
+    <div class="tag_jump">
+            <a target="_blank" href="http://www.csdn.net/tag/redis/slideshare">讲义教程</a>
+            <a target="_blank" href="http://www.csdn.net/tag/redis/news">资讯</a>
+            <a target="_blank" href="http://www.csdn.net/tag/redis/topic">常见问题</a>
+            <a target="_blank" href="http://www.csdn.net/tag/redis/blog">开发技巧</a>
+            <a target="_blank" href="http://www.csdn.net/tag/redis/download">工具源码下载</a>
+          </div>
+
+	</div>
+     
+	<div class="tag_left">
+				<div class="tag_group">
+			<div class="tag_empty">
+				<h3>相关主题</h3>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/couchdb" target="_blank" title="CouchDB" onclick="LogClickCount(this,381);">CouchDB</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/nosql" target="_blank" title="NoSQL" onclick="LogClickCount(this,381);">NoSQL</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/cassandra" target="_blank" title="Cassandra" onclick="LogClickCount(this,381);">Cassandra</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/javase" target="_blank" title="Java SE" onclick="LogClickCount(this,381);">Java SE</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/cdn" target="_blank" title="CDN" onclick="LogClickCount(this,381);">CDN</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/bigtable" target="_blank" title="BigTable" onclick="LogClickCount(this,381);">BigTable</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/mongodb" target="_blank" title="MongoDB" onclick="LogClickCount(this,381);">MongoDB</a>
+				</div>
+								<div class="tag">
+					<a href="http://www.csdn.net/tag/thrift" target="_blank" title="thrift" onclick="LogClickCount(this,381);">thrift</a>
+				</div>
+							</div>
+		</div>
+		        
+						<div class="tag_slideshare">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_slideshare" href="http://www.csdn.net/tag/redis/slideshare">Redis 讲义教程</a></p>					
+																        <li>
+        	        	<div class="line_list">
+        		<a class="line_list_pic_slideshare" href="http://share.csdn.net/slides/13754" title="Redis in action"><img src="http://share.csdn.net/uploads/bd15ce4ec993095ccf236de4d40939f5/bd15ce4ec993095ccf236de4d40939f5_thumb.jpg"></a>        		<a class="tit_list" href="http://share.csdn.net/slides/13754" target="_blank" onclick="LogClickCount(this,389);">Redis in action</a>
+		        	<span class="tag_summary">摘要：Redis 开发的新作，教你如何进行redis的学习和开发，其中有国内教程很少提到的内容</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://share.csdn.net" target="_blank">Share</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="Redis">Redis</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/guo777com" rel="nofollow"><img src="http://avatar.csdn.net/4/D/D/4_guo777com.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/guo777com" rel="nofollow">guo777com</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		<a class="line_list_pic_slideshare" href="http://share.csdn.net/slides/59" title="刘佳：全面分析HBase用例"><img src="http://share.csdn.net/uploads/50f4ef716e73f/50f4ef716e73f_thumb.jpg"></a>        		<a class="tit_list" href="http://share.csdn.net/slides/59" target="_blank" onclick="LogClickCount(this,389);">刘佳：全面分析HBase用例</a>
+		        	<span class="tag_summary">摘要：在12月1日“Hadoop生态系统”主题分论坛，普泽天玑技术总监刘佳发表了题为“HBase用例分析”的演讲。刘佳主要分享了3个案例：第一个是数据魔方，他从新旧系统的原理对比入手，详细介绍了他们如何对流程进行重新...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://share.csdn.net" target="_blank">Share</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/hbtc2012" title="HBTC2012">HBTC2012</a><a target="_blank" href="http://www.csdn.net/tag/hadoop" title="Hadoop">Hadoop</a><a target="_blank" href="http://www.csdn.net/tag/hbase" title="HBase">HBase</a><a target="_blank" href="http://www.csdn.net/tag/redis" title="Redis">Redis</a><a target="_blank" href="http://www.csdn.net/tag/%25E6%2599%25AE%25E6%25B3%25BD%25E5%25A4%25A9%25E7%258E%2591" title="普泽天玑">普泽天玑</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/fowse" rel="nofollow"><img src="http://avatar.csdn.net/F/1/A/4_fowse.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/fowse" rel="nofollow">fowse</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		<a class="line_list_pic_slideshare" href="http://share.csdn.net/slides/53" title="王玉法：Tair存储引擎之路"><img src="http://share.csdn.net/uploads/50ea70152674f/50ea70152674f_thumb.jpg"></a>        		<a class="tit_list" href="http://share.csdn.net/slides/53" target="_blank" onclick="LogClickCount(this,389);">王玉法：Tair存储引擎之路</a>
+		        	<span class="tag_summary">摘要：在12月1日的“NoSQL &amp; NewSQL”主题论坛上，来自阿里巴巴集团核心系统研发高级开发工程师王玉法分享了题为《Tair存储引擎之路》的主题演讲，他首先给大家介绍了Tair存储引擎的大概情况，随后，王玉法给大家分享...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://share.csdn.net" target="_blank">Share</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/hbtc2012" title="HBTC2012">HBTC2012</a><a target="_blank" href="http://www.csdn.net/tag/nosql" title="NoSQL">NoSQL</a><a target="_blank" href="http://www.csdn.net/tag/newsql" title="NewSQL">NewSQL</a><a target="_blank" href="http://www.csdn.net/tag/tair" title="Tair">Tair</a><a target="_blank" href="http://www.csdn.net/tag/redis" title="Redis">Redis</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/fowse" rel="nofollow"><img src="http://avatar.csdn.net/F/1/A/4_fowse.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/fowse" rel="nofollow">fowse</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_news">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_news" href="http://www.csdn.net/tag/redis/news">Redis 资讯</a></p>					
+																								        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://geek.csdn.net/news/detail/31120" target="_blank" onclick="LogClickCount(this,389);">Node.js 下如何利用redis快速实现函数cache化</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://geek.csdn.net" target="_blank">极客头条</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/%25E5%2587%25BD%25E6%2595%25B0" title="函数">函数</a><a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/node.js" title="node.js">node.js</a><a target="_blank" href="http://www.csdn.net/tag/%25E7%25BC%2593%25E5%25AD%2598" title="缓存">缓存</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/jjfat" rel="nofollow"><img src="http://avatar.csdn.net/3/F/A/4_jjfat.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/jjfat" rel="nofollow">jjfat</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://geek.csdn.net/news/detail/30940" target="_blank" onclick="LogClickCount(this,389);">Redis Cluster 8 个月使用经验</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://geek.csdn.net" target="_blank">极客头条</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593" title="数据库">数据库</a><a target="_blank" href="http://www.csdn.net/tag/redis%2520cluster" title="Redis Cluster">Redis Cluster</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/qiansg123" rel="nofollow"><img src="http://avatar.csdn.net/B/0/E/4_qiansg123.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/qiansg123" rel="nofollow">qiansg123</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://geek.csdn.net/news/detail/29466" target="_blank" onclick="LogClickCount(this,389);">Redis 3.0.0正式版发布，全新的分布式高可用数据库</a>
+		        	<span class="tag_summary">摘要：![http://blog.newrelic.com/wp-content/uploads/redis.png](http://blog.newrelic.com/wp-content/uploads/redis.png)
+
+Redis 3.0.0 正式版终于到来了！最重要的新特性是集群（Redis Cluster），提供Redis功能子集（比如不支持多数据库）的分布式、容错的...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://geek.csdn.net" target="_blank">极客头条</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593" title="数据库">数据库</a><a target="_blank" href="http://www.csdn.net/tag/redis" title="Redis">Redis</a><a target="_blank" href="http://www.csdn.net/tag/nosql" title="NoSQL">NoSQL</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/qiansg123" rel="nofollow"><img src="http://avatar.csdn.net/B/0/E/4_qiansg123.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/qiansg123" rel="nofollow">qiansg123</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_topic">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_topic" href="http://www.csdn.net/tag/redis/topic">Redis 常见问题</a></p>					
+																								        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/391026146" target="_blank" onclick="LogClickCount(this,389);">关于nginx+tomcat的session共享问题</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/nginx" title="nginx">nginx</a><a target="_blank" href="http://www.csdn.net/tag/session" title="session">session</a><a target="_blank" href="http://www.csdn.net/tag/tomcat" title="tomcat">tomcat</a><a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/cjdxjava" rel="nofollow"><img src="http://avatar.csdn.net/F/7/D/4_cjdxjava.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/cjdxjava" rel="nofollow">cjdxjava</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/391024742" target="_blank" onclick="LogClickCount(this,389);">redis的hash操作</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/hash" title="hash">hash</a><a target="_blank" href="http://www.csdn.net/tag/hset" title="hset">hset</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/f1520107395" rel="nofollow"><img src="http://avatar.csdn.net/9/C/0/4_f1520107395.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/f1520107395" rel="nofollow">f1520107395</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/391016286" target="_blank" onclick="LogClickCount(this,389);">求PHP5.6 win64位的redis.dll扩展文件!!!</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/u010036886" rel="nofollow"><img src="http://avatar.csdn.net/6/9/6/4_u010036886.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/u010036886" rel="nofollow">u010036886</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/391014356" target="_blank" onclick="LogClickCount(this,389);">delphi7+redis+pub/sub？？？</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/delphi" title="delphi">delphi</a><a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/pub" title="pub">pub</a><a target="_blank" href="http://www.csdn.net/tag/sub" title="sub">sub</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/apkkk" rel="nofollow"><img src="http://avatar.csdn.net/9/3/2/4_apkkk.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/apkkk" rel="nofollow">apkkk</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://bbs.csdn.net/topics/391012860" target="_blank" onclick="LogClickCount(this,389);">关于redis数据对象序列化的问题？？？</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://bbs.csdn.net" target="_blank">论坛</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/%25E6%2595%25B0%25E6%258D%25AE" title="数据">数据</a><a target="_blank" href="http://www.csdn.net/tag/%25E5%25AF%25B9%25E8%25B1%25A1" title="对象">对象</a><a target="_blank" href="http://www.csdn.net/tag/json" title="json">json</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/u010373906" rel="nofollow"><img src="http://avatar.csdn.net/9/B/3/4_u010373906.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/u010373906" rel="nofollow">u010373906</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_blog">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_blog" href="http://www.csdn.net/tag/redis/blog">Redis 开发技巧</a></p>					
+																        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://wh0426.iteye.com/blog/2212025" target="_blank" onclick="LogClickCount(this,389);">redis分布式内存锁：余量扣除示例</a>
+		        	<span class="tag_summary">摘要：
+余量扣除，即在高并发，大用户下，每个用户的余量数据频繁发生变化。例如：12306的某车次票的余量，商品库存，短信余量账本等。
+针对，此类频繁发生修改的原子类余量对象，采用mysql,oracle等数据，一定会存在...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://www.iteye.com" target="_blank">ITeye</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/%25E5%2588%2586%25E5%25B8%2583%25E5%25BC%258F%25E9%2594%2581" title="分布式锁">分布式锁</a><a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/redisson" title="Redisson">Redisson</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/wh0426" rel="nofollow"><img src="http://avatar.csdn.net/F/F/9/4_wh0426.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/wh0426" rel="nofollow">wh0426</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://xyqck163.iteye.com/blog/2211108" target="_blank" onclick="LogClickCount(this,389);">spring集成 JedisCluster  连接  redis3.0 集群</a>
+		        	<span class="tag_summary">摘要：
+最近在公司做了 jedisCluster整合spring 的配置， 分享如下
+ 
+客户端采用最新的jedis 2.7
+1.
+maven依赖：
+&amp;lt;dependency&amp;gt;
+&amp;lt;groupId&amp;gt;redis.clients&amp;lt;/groupId&amp;gt;
+&amp;lt;artifactId&amp;gt;jedis&amp;lt;/artifactId&amp;g...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://www.iteye.com" target="_blank">ITeye</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/spring" title="spring">spring</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/xyqck163" rel="nofollow"><img src="http://avatar.csdn.net/0/2/7/4_xyqck163.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/xyqck163" rel="nofollow">xyqck163</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/wilbertzhou/article/details/45417641" target="_blank" onclick="LogClickCount(this,389);">在Redis-Sentinel的client-reconfig-script脚本中设置VIP</a>
+		        	<span class="tag_summary">摘要：在Redis-Sentinel的client-reconfig-script脚本中设置VIP当使用Redis-Sentinel做冗余时，如何以不同方式使用VIP，我认为使用client-reconfig-script脚本是一种可行方法，让我们试试。环境CentOS 6.5 x86_64redis-2.8.9-1.el6.remi.x86_64三台机器构...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="Redis">Redis</a><a target="_blank" href="http://www.csdn.net/tag/sentinel" title="Sentinel">Sentinel</a><a target="_blank" href="http://www.csdn.net/tag/vip" title="VIP">VIP</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/wilbertzhou" rel="nofollow"><img src="http://avatar.csdn.net/E/2/2/4_wilbertzhou.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/wilbertzhou" rel="nofollow">wilbertzhou</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://blog.csdn.net/lifeiaidajia/article/details/45370377" target="_blank" onclick="LogClickCount(this,389);">centos 安装 redis3.0.0 集群</a>
+		        	<span class="tag_summary">摘要：这里创建6个redis节点，其中三个为主节点，三个为从节点。redis和端口对应关系：127.0.0.1:7000127.0.0.1:7001127.0.0.1:7002从：127.0.0.1:7003127.0.0.1:7004127.0.0.1:7005步骤：1,下载redis。官网下载3.0.0版本，之前几的版本不支持集群模...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://blog.csdn.net" target="_blank">博客</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/gem" title="gem">gem</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/lifeiaidajia" rel="nofollow"><img src="http://avatar.csdn.net/F/7/F/4_lifeiaidajia.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/lifeiaidajia" rel="nofollow">lifeiaidajia</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                												        <li>
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://peter8015.iteye.com/blog/2205980" target="_blank" onclick="LogClickCount(this,389);">Redis ＂MISCONF Redis is configured to save RDB snapshots, but is currently not a</a>
+		        	<span class="tag_summary">摘要：
+转 ：http://www.redicecn.com/html/Linux/20131125/468.html
+ 
+        今天第二次遇到Redis “MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on ...</span>		        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://www.iteye.com" target="_blank">ITeye</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/problem" title="problem">problem</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/zhb8015" rel="nofollow"><img src="http://avatar.csdn.net/0/F/C/4_zhb8015.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/zhb8015" rel="nofollow">zhb8015</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+					<div class="tag_download">
+			<ul class="list">        
+				        	       
+        	<p class="tag_p3"><a target="_blank" class="tag_download" href="http://www.csdn.net/tag/redis/download">Redis 工具源码下载</a></p>					
+																								        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/lihcc/8722699" target="_blank" onclick="LogClickCount(this,389);">redis-3.2.1.gem</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/gem" title="gem">gem</a><a target="_blank" href="http://www.csdn.net/tag/redis3.0" title="redis3.0">redis3.0</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/lihcc" rel="nofollow"><img src="http://avatar.csdn.net/A/0/5/4_lihcc.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/lihcc" rel="nofollow">lihcc</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/yj935094837/8716855" target="_blank" onclick="LogClickCount(this,389);">java操作redis工具类</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/java" title="java">java</a><a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/%25E7%25BC%2593%25E5%25AD%2598" title="缓存">缓存</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/yj935094837" rel="nofollow"><img src="http://avatar.csdn.net/F/C/F/4_yj935094837.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/yj935094837" rel="nofollow">yj935094837</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/kuailebeihun/8714073" target="_blank" onclick="LogClickCount(this,389);">redis Java客户端jar包 jedis</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/jedis" title="jedis">jedis</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/kuailebeihun" rel="nofollow"><img src="http://avatar.csdn.net/2/7/A/4_kuailebeihun.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/kuailebeihun" rel="nofollow">kuailebeihun</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/xxg94v5/8712781" target="_blank" onclick="LogClickCount(this,389);">redis3.0.1</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/xxg94v5" rel="nofollow"><img src="http://avatar.csdn.net/4/2/C/4_xxg94v5.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/xxg94v5" rel="nofollow">xxg94v5</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                																				        <li class="no_content">
+        	        	<div class="line_list">
+        		        		<a class="tit_list" href="http://download.csdn.net/detail/sd080651/8707643" target="_blank" onclick="LogClickCount(this,389);">redis文档 redis api redis集群配置官方文档中文版本</a>
+		        			        <div class="dwon_words" >
+							<span class="tag_source">来源：<a href="http://download.csdn.net" target="_blank">下载</a></span>
+							<span class="tag_source">标签：<a target="_blank" href="http://www.csdn.net/tag/redis" title="redis">redis</a><a target="_blank" href="http://www.csdn.net/tag/api" title="api">api</a></span>
+														<a target="_blank" class="user_p" href="http://my.csdn.net/sd080651" rel="nofollow"><img src="http://avatar.csdn.net/9/8/6/4_sd080651.jpg" /></a>
+							<span class="tag_source">
+							该信息由 <a target="_blank" class="user_name" href="http://my.csdn.net/sd080651" rel="nofollow">sd080651</a>贡献
+							</span>
+													</div>
+					</div>
+        </li>
+                </ul>        			
+			</div>
+												
+	</div>
+	 
+</div>
+
+<script type="text/javascript">
+
+function like(object, tag, token){
+	$(object).blur();
+	var obj = $(object);
+	var username = checkLogin();
+	if(!username){
+		return false;
+	}
+	if(obj.attr("class")=="at_visited"){
+		return false;
+	}
+
+	$.ajax(
+	{
+		url: "http://read.csdn.net/do_tag_like?tag="+tag+"&token="+token,
+		dataType:"jsonp", 
+		jsonp:"jsonpcallback", 
+		success: function(data){	
+		if(data!=null && data!=""){
+            if(data.status){
+                //showPrompt(data.error);
+                
+                obj.attr("class", "at_visited").val("已关注").attr("title", "取消");
+                obj.attr('onclick', '').unbind('click').click( function () { cancel(this, tag, token); });
+                obj.next().html(parseInt(obj.next().html())+1);
+            }else{
+                showPrompt(data.error);      
+            }
+        }else{
+            showPrompt("通信错误");
+        }
+		}
+	}
+	);
+}
+
+function cancel(object, tag, token){
+	$(object).blur();
+	var obj = $(object);
+	var username = checkLogin();
+	if(!username){
+		return false;
+	}
+	if(obj.attr("class")=="at_submit"){
+		return false;
+	}
+
+	$.ajax(
+	{
+		url: "http://read.csdn.net/do_tag_cancel?tag="+tag+"&token="+token,
+		dataType:"jsonp", 
+		jsonp:"jsonpcallback", 
+		success: function(data){			
+			if(data!=null && data!=""){
+            if(data.status){
+                //showPrompt(data.error);
+                
+                obj.attr("class", "at_submit").val("关注主题").attr("title", "关注");;
+                obj.unbind('click').click( function () { like(this, tag, token); });
+                obj.next().html(parseInt(obj.next().html())-1);
+            }else{
+                showPrompt(data.error);            
+            }
+        }else{
+            showPrompt("通信错误");
+        }
+		}
+	}
+	);
+}
+
+</script>
+</div>
+
+
+<div class="foot" >
+    <p>
+    Copyright © 2013, CSDN.NET, All Rights Reserved
+    </p>
+</div>
+<script id="noticeScript" type="text/javascript" charset="utf-8" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" src="http://static.csdn.net/public/common/toolbar/js/notify.js"></script>
+<script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,790 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- 云适配代码 begin -->
+<script id="allmobilize" charset="utf-8" src="http://a.yunshipei.com/77126665c1f3ae0b85e0fdaa7159a351/allmobilize.min.js"></script>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="alternate" media="handheld" href="#" />
+<!-- 云适配代码 end -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript图书最强阵容</title>
+<meta name="description" content="下载频道 - CSDN.NET" />
+<meta name="keywords" content="" />
+<meta name="author" content="CSDN" />
+<meta name="Copyright" content="CSDN" />
+<meta name="baidu-site-verification" content="5qKL5WPafahaSFtZ" />
+<meta http-equiv="X-UA-Compatible" content="IE=8,9" />
+<meta name="renderer" content="webkit|ie-stand" />
+<link href="http://c.csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON" />
+<link href="/css/download.css" rel="stylesheet" type="text/css" />
+<script language='JavaScript' type='text/javascript' src='http://www.csdn.net/ggmm/csdn_ggmm.js'></script>
+
+<!-- test toolbar nav-->
+<link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">
+<script src="http://c.csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/css/News-nav.css">
+<!-- toolbar nav -->
+
+<script language='JavaScript' type='text/javascript' src='http://www.csdn.net/js/jquery-1.4.2.min.js'></script>
+<script language='JavaScript' type='text/javascript' src='http://www.csdn.net/js/jquery.form.js'></script>
+<script language='JavaScript' type='text/javascript' src='/js/jquery.cookie.js'></script>
+
+<!-- 请置于所有广告位代码之前 -->
+<script defer src="http://counter.csdn.net/a/js/AreaCounter.js" type="text/javascript"></script>
+
+<!--登录弹窗 -->
+<script defer type="text/javascript" src="https://passport.csdn.net/content/loginbox/login.js"></script>
+<script defer type='text/javascript'>
+$(function(){
+	$("[href$='my'], [href$='my/downloads']").click(function(){
+		var username = csdn.getCookie('UserName');
+		if(username == null)
+		{
+			username = csdn.getCookie('UserNick');
+		}
+		var href = this.href;
+		if(username == null){
+			csdn.showLogin(function(){
+				window.location.href = href;
+			});
+			return false;
+		}
+		return username;
+	});
+		
+	$("[href$='upload']").click(function(event){ 
+		event.preventDefault();
+		var username = csdn.getCookie('UserName');
+		if(username == null)
+		{
+			username = csdn.getCookie('UserNick');
+		};
+		var href = this.href;
+		if(username == null){
+			csdn.showLogin(function(){
+				$("[href$=href]").click;
+			});
+			return false;
+		};
+
+		$.getJSON("/index.php/rest/users/getUserInfo/"+ username, function(data){			
+    		if(data.up_type != 1 && data.up_type !=2)
+    		{
+        		var html = '<div id="popup_reward" class="popup_reward">'+
+        	        '<h2><span>选择上传方式</span><b class="shutoff" onclick="$(\'#popup_mask,#popup_reward\').remove();"></b></h2>'+
+        	        '<form>'+
+        	        '  <div class="modal-body clearfix">'+
+        	        '    <div class="popup_content">'+
+        	        '    <dl class="fileImgLeft">'+
+        	        '      <dt>'+
+        	        '      <a href="/uploadv2"  style="cursor: pointer;">'+
+        	        '        <input type="hidden" name="" value="2" class="fileInput" onclick="set_up_type(2)" />'+
+        	        '        <em>极速上传(推荐)</em>'+
+        	        '        </a>'+
+        	        '      </dt>'+
+        	        '      <dd>'+
+        	        '        <div>'+
+        	        '          单文件上传支持<a href="javascript:void(0)">断点续传</a><br />'+
+        	        '        <span>控件安装完成后需要重新启动浏览器</span>'+
+        	        '        </div>'+
+        	        '        <b></b>'+
+        	        '      </dd>'+
+        	        '    </dl>'+
+        	        '      <dl class="fileImgRight">'+
+        	        '        <dt>'+
+        	        '         <a href="/upload" style="cursor: pointer;">'+
+        	        '          <input type="hidden" name="" value="1" class="fileInput" onclick="set_up_type(1)" />'+
+        	        '          <em>普通上传</em>'+
+        	        '        </a>'+
+        	        '        </dt>'+
+        	        '        <dd>'+
+        	        '          浏览器单线程上传'+
+        	        '          <b></b>'+
+        	        '        </dd>'+
+        	        '      </dl>'+
+        			'	  <div class="upd"><input id="up_type" type="checkbox" checked="0">&nbsp;&nbsp;设置本次上传方式为默认上传方式。</div>'+
+        	        '    </div>'+
+        	        '  </div>'+
+        	        '</form>'+
+        	      '</div>';
+        	      $( 'body' ).append(html);
+        	      $( 'body' ).append('<div id="popup_mask" />');
+        	      var pageH = $(document).height();
+        	      $( '#popup_mask' ).css( "height", pageH );
+        	      $( '#popup_mask' ).css( "display", "block" );
+        	      $( '#popup_reward' ).fadeIn( "slow" );				
+				return false;
+    		}else if(data.up_type==1){
+    			window.location.href = "/index.php/upload";
+    		}else if(data.up_type==2){
+    			window.location.href = "/index.php/uploadv2";
+    		}
+    	});
+	})	;
+});
+function set_up_type(up_type)
+{
+	if($("#up_type").attr("checked")==true){
+		$.getJSON("/index.php/user/set_up_type/"+up_type);
+	}
+};
+</script>
+</head>
+<body>
+<!-- 全屏代码： AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=allyestest|allyestest|allyestest0410&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End-->
+<!-- toolbar nav -->
+<script id="toolbar-tpl-scriptId" prod="download" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript" domain="http://download.csdn.net"></script>
+    <script type="text/javascript">
+ 		 var protocol = window.location.protocol;
+		  document.write('<script type="text/javascript" src="' +protocol+ '//c.csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></'+'script>');
+	</script>
+<div class="news-nav">
+    <div class="container clearfix">
+        <div class="nav-bar">
+        	<a href="http://download.csdn.net/" >首页</a>
+        	<a href="http://download.csdn.net/category" >资源分类</a>
+        	<a class=" current" href="http://download.csdn.net/doc" >精品专辑</a>
+			<a href="http://download.csdn.net/rankings" >排行榜</a>
+			<a href="http://download.csdn.net/help" >帮助</a>
+			<a href="http://download.csdn.net/advanced_search" >高级搜索</a>
+			<!-- a href="http://share.csdn.net" target="_blank">讲义下载</a -->
+			<a href="http://download.csdn.net/my" >我的资源</a>
+        </div>
+	    <div class="search-download">
+        	<form action="http://download.csdn.net/search" method="get" onsubmit="return check_up(this);" name="download_search">
+	        	<input type="text" placeholder="搜索资源" value="" id="tagff" name="q"/>
+	        	<a href="javascript:check_up(download_search);void(0);" class="download-search-bth"></a>
+        	</form>
+	    </div>
+   	</div>
+</div>
+<!-- //toolbar nav -->
+<div id="wrap">
+	<!-- public topnav -->
+	<!-- //public topnav -->
+	<div class="ad_area_1">
+		<div class="ad_w728">
+		<!-- 广告位：下载频道首页头文件上 -->
+				<!--AdForward Begin:-->
+														<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_Category|banner1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+																		<!--AdForward End-->
+		</div>
+		<div class="ad_w220">
+			<!-- 广告位：下载频道首页头文件上  -->
+			<!--AdForward Begin:-->
+												<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_Category|button1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+														<!--AdForward End-->
+		</div>
+	</div>
+    <link rel="stylesheet" type="text/css" href="http://c.csdnimg.cn/public/themes/default/css/common.css">
+    <link rel="stylesheet" type="text/css" href="http://c.csdnimg.cn/public/static/css/panels.css">
+    <link rel="stylesheet" type="text/css" href="http://c.csdnimg.cn/public/static/css/avatar.css">
+    <link type="text/css" href="/css/common.css">
+    <link href="/css/detail-list.css" rel="stylesheet">
+    <script src="/js/linkage.js"></script>
+   <script src="/js/jquery.min.js"></script>
+   <script src="/js/jquery.cookie.js"></script>
+   <script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js" charset="utf-8"></script>
+    
+    <div class="bdy clearfix">
+      <div class="article">
+      	<div class="AD mb-bg">
+        		<!-- 广告位：下载频道资源分类页头文件下728*90 -->
+						<!--AdForward Begin:-->
+						<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_Category|banner2&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+						<!--AdForward End-->
+				</div>
+        <div class="bread-crumbs"><a href="/">下载频道</a><em class="to-icon">&gt;</em><a href="/doc">精品文档</a><em class="to-icon">&gt;</em><a href="/album/list">全部专辑</a><em class="to-icon">&gt;</em><span>JavaScript图书最强阵容</span>
+        </div>
+        <div class="management clearfix">
+          <div class="userimg"><a href="javascript:void(0);"><img src="http://img.download.csdn.net/uploads_album/2015/05/20/d8e6ca92fe8d75cbbacf26d1f731be71.png " class="csdn-avatar75"></a></div>
+          <div class="man-warp">
+            <h3 class="man-tit"><a class="tit" title="JavaScript图书最强阵容" href="javascript:void(0);">JavaScript图书最强阵容</a><span class="rmb-icon"></span><span class="number">0</span>
+              <div class="man-btn"></div>
+            </h3>
+            <div class="man-small-tit"><span>浏览量：919</span><span>下载次数：28</span><span>创建者：<a href="/user/epubitbook/album">epubitbook</a></span><span>创建时间：2015-05-20 </span></div>
+            <p class="man-box csdn-content14">涵盖基础、库、框架、代码可维护和可测试性和函数式编程等众多话题。前端攻城狮钟爱的系列产品</p>
+            <div class="tags"><a href="/tag/JavaScript" title="" class="tag">JavaScript</a>             </div>
+            
+            <!-- 分享 -->                       
+            <div class="fx">分享到: 
+	            <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="float: right;">
+								<a class="bds_tsina"></a>
+								<a class="bds_tqq"></a>
+							</div>
+							<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6874737" ></script>
+							<script type="text/javascript" id="bdshell_js"></script>
+							<script type="text/javascript">
+							var bds_config={"snsKey":{'tsina':'533284365','tqq':'801285068'}}
+							document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+							</script>     
+            </div>
+              <!--  -->    
+          </div>
+        </div>
+        <div class="download clearfix">
+          <div class="down-top">共9个
+            <div class="down-btn btn_album_download"><a href="javascript:void(0);">直接下载</a> </div>
+          </div>
+          
+                    <div class="down-warp">
+            <h3 class="down-tit">
+              <div class="icon-img"><img src="/images/minetype/pdf.gif" title="pdf文件"></div><a href="/detail/epubitbook/8720061">HTML、CSS、JavaScript网页制作从入门到精通</a><span class="rmb-icon"></span><span class="number">0</span>
+            </h3>
+            <div class="down-small-tit"> 上传者：<a href="/user/epubitbook">epubitbook</a> &nbsp;&nbsp;&nbsp;&nbsp;   上传时间：2015-05-20</div>
+            <p class="down-box csdn-content14">HTML、CSS、JavaScript网页制作从入门到精通》系统、全面地介绍了各种HTML网页制作标记，不仅包括基本的语法、说明和范例演示，还穿插了在Dreamweaver中应用HTML的范例效果，便于读者更好地利用HTML完成网页中各部分的细节制作。</p>
+            <div class="tags"><a href="/tag/JavaScript" title="">JavaScript</a>            </div>
+          </div>
+                   <div class="down-warp">
+            <h3 class="down-tit">
+              <div class="icon-img"><img src="/images/minetype/pdf.gif" title="pdf文件"></div><a href="/detail/epubitbook/8720113">编写可维护的JavaScript</a><span class="rmb-icon"></span><span class="number">0</span>
+            </h3>
+            <div class="down-small-tit"> 上传者：<a href="/user/epubitbook">epubitbook</a> &nbsp;&nbsp;&nbsp;&nbsp;   上传时间：2015-05-20</div>
+            <p class="down-box csdn-content14">《编写可维护的JavaScript》向开发人员阐述了如何在团队开发中编写具备高可维护性的JavaScript代码，书中详细说明了作为团队一分子，应该怎么写JavaScript。书中内容涵盖了编码风格、编程技巧、自动化、测试等几方面，既包括具体风格和原则的介绍，也包括示例和技巧说明，最后还介绍了如何通过自动化的工具和方法来实现一致的编程风格。</p>
+            <div class="tags"><a href="/tag/JavaScript" title="">JavaScript</a>            </div>
+          </div>
+                   <div class="down-warp">
+            <h3 class="down-tit">
+              <div class="icon-img"><img src="/images/minetype/pdf.gif" title="pdf文件"></div><a href="/detail/epubitbook/8720131">Node.js入门经典</a><span class="rmb-icon"></span><span class="number">0</span>
+            </h3>
+            <div class="down-small-tit"> 上传者：<a href="/user/epubitbook">epubitbook</a> &nbsp;&nbsp;&nbsp;&nbsp;   上传时间：2015-05-20</div>
+            <p class="down-box csdn-content14">Node.js是一套用来编写高性能网络服务器的JavaScript工具包，从2009年诞生之日起，就获得了业内专家和技术社区的强烈关注。而《Node.js入门经典》采用直观、循序渐进的方法对如何使用Node.js来开发及具速度和可扩展性优势的服务器端应用程序进行了讲解</p>
+            <div class="tags"><a href="/tag/JavaScript" title="">JavaScript</a>            </div>
+          </div>
+                   <div class="down-warp">
+            <h3 class="down-tit">
+              <div class="icon-img"><img src="/images/minetype/pdf.gif" title="pdf文件"></div><a href="/detail/epubitbook/8720157">JavaScript设计模式</a><span class="rmb-icon"></span><span class="number">0</span>
+            </h3>
+            <div class="down-small-tit"> 上传者：<a href="/user/epubitbook">epubitbook</a> &nbsp;&nbsp;&nbsp;&nbsp;   上传时间：2015-05-20</div>
+            <p class="down-box csdn-content14">《JavaScript设计模式》是JavaScript设计模式的学习指南。全书分为14章。首先介绍了什么是模式、模式的结构、类别、模式的分类、如何编写模式等等；然后，集中介绍了很多流行的设计模式在JavaScript中的应用，包括Module(模块)模式、Observer(观察者)模式、Facade(外观)模式和Mediator(中介者)模式；最后，还探讨了模块化的JavaScript模式、jQuery及其插件中的设计模式。</p>
+            <div class="tags"><a href="/tag/JavaScript" title="">JavaScript</a>            </div>
+          </div>
+                   <div class="down-warp">
+            <h3 class="down-tit">
+              <div class="icon-img"><img src="/images/minetype/pdf.gif" title="pdf文件"></div><a href="/detail/epubitbook/8720181">HTML5+JavaScript动画基础</a><span class="rmb-icon"></span><span class="number">0</span>
+            </h3>
+            <div class="down-small-tit"> 上传者：<a href="/user/epubitbook">epubitbook</a> &nbsp;&nbsp;&nbsp;&nbsp;   上传时间：2015-05-20</div>
+            <p class="down-box csdn-content14">《HTML5+JavaScript动画基础》包括了基础知识、基础动画、高级动画、3D动画和其他技术5大部分，分别介绍了动画的基本概念、动画的JavaScript基础、动画中的三角学、渲染技术、速度向量和加速度、边界与摩擦力、用户交互：移动物体、缓动与弹动、碰撞检测、坐标旋转与斜面反弹、撞球物理、粒子与万有引力、正向运动学：让事物行走、反向运动学：拖曳与伸出、三维基础、三维线条与填充、背面剔除与三维灯光、矩阵数学、秘诀与技巧等内容。</p>
+            <div class="tags"><a href="/tag/JavaScript" title="">JavaScript</a>            </div>
+          </div>
+                   <div class="down-warp">
+            <h3 class="down-tit">
+              <div class="icon-img"><img src="/images/minetype/pdf.gif" title="pdf文件"></div><a href="/detail/epubitbook/8720191">JavaScript入门经典(第5版)</a><span class="rmb-icon"></span><span class="number">0</span>
+            </h3>
+            <div class="down-small-tit"> 上传者：<a href="/user/epubitbook">epubitbook</a> &nbsp;&nbsp;&nbsp;&nbsp;   上传时间：2015-05-20</div>
+            <p class="down-box csdn-content14">《JavaScript入门经典(第5版)》是学习JavaScript编程的经典教程。全新的第5版涵盖了JavaScript 1.8及其以上版本、Ajax和jQuery等内容。《JavaScript入门经典(第5版)》着力介绍JavaScript当今主要特性的基本技巧，从基本概念开始，逐步地介绍按照当今Web标准编写JavaScript代码的最佳方式。 　　全书分为七个部分，共24章。第一部分“JavaScript基础”，包括第1章到第5章，介绍了如何使用常用函数编写简单的脚本，第二部分“JavaScript进阶”，包括第6章到第10章，介绍了更复杂的编程范例，比如循环控制、事件处理、面向对象编</p>
+            <div class="tags"><a href="/tag/JavaScript" title="">JavaScript</a>            </div>
+          </div>
+                   <div class="down-warp">
+            <h3 class="down-tit">
+              <div class="icon-img"><img src="/images/minetype/pdf.gif" title="pdf文件"></div><a href="/detail/epubitbook/8720323">网页设计从入门到精通Dreamweaver+Flash+Photoshop+HTML+CSS+JavaScript</a><span class="rmb-icon"></span><span class="number">0</span>
+            </h3>
+            <div class="down-small-tit"> 上传者：<a href="/user/epubitbook">epubitbook</a> &nbsp;&nbsp;&nbsp;&nbsp;   上传时间：2015-05-20</div>
+            <p class="down-box csdn-content14">《网页设计从入门到精通Dreamweaver+Flash+Photoshop+HTML+CSS+JavaScript》主要内容分为7个部分。第1部分是网页设计基础与HTML篇，包括网页设计基础知识、HTML基础。第2部分是Dreamweaver CS6网页制作篇，包括Dreamweaver CS6创建基本文本网页、创建超级链接、使用图像和多媒体创建丰富多彩的网页、使用表格布局排版网页、使用模板和库批量制作风格统一的网页、使用行为创建特效网页、创建动态数据库网页。第3部分是CSS美化布局网页篇，包括使用CSS样式表美化网页、CSS属性网页美化布局的基础、CSS+Div布局方法。第4部分是Java</p>
+            <div class="tags"><a href="/tag/JavaScript" title="">JavaScript</a>            </div>
+          </div>
+                   <div class="down-warp">
+            <h3 class="down-tit">
+              <div class="icon-img"><img src="/images/minetype/pdf.gif" title="pdf文件"></div><a href="/detail/epubitbook/8720331">JavaScript启示录</a><span class="rmb-icon"></span><span class="number">0</span>
+            </h3>
+            <div class="down-small-tit"> 上传者：<a href="/user/epubitbook">epubitbook</a> &nbsp;&nbsp;&nbsp;&nbsp;   上传时间：2015-05-20</div>
+            <p class="down-box csdn-content14">《JavaScript启示录》力图在有限的篇幅内，通过考察原生JavaScript对象和所支持的细微差别，来给读者展现准确的JavaScript世界观，涉及对象、属性、复杂值、原始值、作用域、继承、this关键字、head对象等重要概念。本书帮助读者厘清这些概念，进而掌握应用它们的技术和技巧。</p>
+            <div class="tags"><a href="/tag/JavaScript" title="">JavaScript</a>            </div>
+          </div>
+                   <div class="down-warp">
+            <h3 class="down-tit">
+              <div class="icon-img"><img src="/images/minetype/pdf.gif" title="pdf文件"></div><a href="/detail/epubitbook/8720339">JavaScript框架设计</a><span class="rmb-icon"></span><span class="number">0</span>
+            </h3>
+            <div class="down-small-tit"> 上传者：<a href="/user/epubitbook">epubitbook</a> &nbsp;&nbsp;&nbsp;&nbsp;   上传时间：2015-05-20</div>
+            <p class="down-box csdn-content14">《JavaScript框架设计》是一本全面讲解JavaScript框架设计的图书，详细地讲解了设计框架需要具备的知识，主要包括的内容为：框架与库、JavaScript框架分类、JavaScript框架的主要功能、种子模块、模块加载系统、语言模块、浏览器嗅探与特征侦测、样式的支持侦测、类工厂、JavaScript对类的支撑、选择器引擎、浏览器内置的寻找元素的方法、节点模块、一些有趣的元素节点、数据缓存系统、样式模块、个别样式的特殊处理、属性模块、jQuery的属性系统、事件系统、异步处理、JavaScript异步处理的前景、数据交互模块、一个完整的Ajax实现、动画引擎、API的设计、插件化、当</p>
+            <div class="tags"><a href="/tag/JavaScript" title="">JavaScript</a>            </div>
+          </div>
+                  <div class="page_nav">  </div>
+        </div>
+      </div>
+      <div class="aside">
+      	<div class="AD mb-bg">
+      		<!-- 广告位：下载频道资源分类页头文件下220*90 -->
+					<!--AdForward Begin:-->
+					<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_Category|button2&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+					<!--AdForward End-->
+			  </div>
+        <div class="creatBtn"><a href="/album/rule">创建专辑</a></div>
+       <!-- <div class="list mt20">
+          <div class="section-list panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">相关专辑</h3>
+            </div>
+            <div class="panel-body">
+                        <ul>
+                          <li><span class="dot"></span><a href="#" target="_blank">1</a></li>
+                          <li><span class="dot"></span><a href="#" target="_blank">2</a></li>
+                        </ul>
+            </div>
+          </div>
+        </div>-->
+        <div class="list mt20">
+          <div class="section-list panel panel-default">
+            <div class="panel-heading clearfix">
+              <h3 class="panel-title">相关资源</h3>
+            </div>
+            <div class="panel-body">
+                        <ul id="res-relatived">
+                         </ul>
+            </div>
+            <!-- 相关资源 -->
+           <script type="text/javascript">      
+           var title = $( '.man-tit' ).find( 'a' ).attr( 'title' );
+           var $tags = $( '.tags' ).find( 'a.tag' );
+           var bd, tags = [];
+
+           $tags.each( function ( i, tag ) {
+               tags.push( $( tag ).html() );
+             } );
+             bd = title + ',' + tags.join( ',' );        
+                          
+		                searchService({ 
+		                    index: 'download',
+		                    query: bd, 
+		                    from: 10,
+		                    size: 15,
+		                    his: 3,
+		                    appendTo: '#res-relatived',
+		                    url:'recommend' 
+		                }); 
+		            </script>
+             
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+			 <iframe name="iframe_data" style="display:none;"></iframe>
+								<form name="download_album_form" id="download_album_form" method="post" action="/index.php/album/do_download_album/1689/667dd83a7e4f52ab4663760365196a47" target="iframe_data">
+					<input name="da" id="da" type="hidden">
+					<input type="hidden" name="validate_code" value="" id="vadcode" />
+				</form>  
+<!-- 积分不够弹窗 -->
+<div id="pop_not_enough" class="pop" style="display:none;">
+	<div class="con">
+		<a href="javascript:void(0);" class="close"></a>
+		<p>您目前的积分不够下载该资源</p>
+		<dl>
+		</dl>
+	</div>
+</div>
+<!-- //积分不够弹窗 -->
+<!-- 验证码弹窗 -->
+<div id="pop_validate_code" class="pop" style="display:none;">
+	<div class="con">
+		<a href="javascript:void(0);" class="close"></a>
+		<p>您下载资源过于频繁，请输入验证码</p><img src="/index.php/rest/tools/validcode/album_ip_validate" id="imgValidcode" border="0" title="看不清楚请点击我"/>
+		
+		<input type="text" name="vadcode" value="" />
+		<input type="button" name="send_validate_code"  value=" 提交 "/>
+		<p id="pop_validate_code_error" style="color:red;display:none;">输入错误, 请重新输入</p>
+		<dl>
+		</dl>
+	</div>
+</div>
+<!-- 下载提示 -->
+ <div id="pop_download" class="pop" style="display:none;">
+ 	<div class="pop_title">
+ 		<a href="javascript:void(0);" class="close">X</a>
+ 		下载
+ 	</div>
+	<div class="con">
+		<dl>
+		</dl>
+	</div>
+</div>
+  <script type="text/javascript">
+
+$(document).ready(function() {
+	
+		$(".btn_album_download").click(function(){
+						csdn.showLogin(function(){
+	        		window.location.reload();
+			});
+			return false;
+				});
+
+
+	$("#pop_download").click(function( et ){ 
+		 var evt = et || window.event;
+		 var $target = $( evt.target || evt.srcElement );
+			 
+		 if ( $target.hasClass( 'btnalbumdownload' ) )
+		 {
+		 var line = $target.attr('alt'); 
+
+		 //$( '.mark' ).remove();
+
+ 	    if(line == '电信下载')
+ 	        {
+ 	            $("#da").val('dx');
+ 	        }
+ 	        if(line == '网通下载')
+ 	        {
+ 	            $("#da").val('wt');
+ 	    		 }
+
+		
+		 var template_one = '<dt>怎么快速获得积分？</dt>';
+     var template_two = '<dd><a target="_blank" href="http://u.download.csdn.net/upload">传资源赚积分</a>　　　<a target="_blank" href="http://download.csdn.net/my/downloads">评价资源返积分</a></dd>';
+     var template_three = '<dd><a target="_blank" href="http://vip.csdn.net/">VIP免积分下载</a>　　 <a target="_blank" href="http://task.csdn.net">完成任务送积分</a></dd>';
+     var template_four = '<dd><a target="_blank" href="https://passport.csdn.net/security/bindmobile">绑定手机送积分</a>　　<a target="_blank" href="http://forum.csdn.net/PointForum/Forum/PointExchange.aspx">论坛可用分兑换</a></dd>';
+     var pop_template = template_one + template_two + template_three + template_four;
+		
+				
+						       			csdn.showLogin(function(){
+		        		window.location.reload();
+				});
+				return false;
+					 	}
+			return false;
+
+		});
+		
+
+		 // close pop 
+	    $('.close').click(function(){
+	        $(this).parents('.pop').hide();
+			$('#pop_validate_code_error').hide();
+				$( '.mark' ).remove();
+	    });
+
+	    $("#imgValidcode").click(function(){
+			$("#imgValidcode").attr("src","/index.php/rest/tools/validcode/album_ip_validate/1"+Math.random());
+		});
+
+	    $('input[name="send_validate_code"]').click(function(){
+			var validate_code = $('input[name="vadcode"]').val();
+			$('#vadcode').val(validate_code);
+			document.download_album_form.submit();
+			$('#vadcode').val('');
+			$('input[name="vadcode"]').val('');
+			$( '.mark' ).remove();
+		});
+
+		Linkage.init( '#province', '#city' );
+		
+})
+
+    function show_validate_pop(){
+	        $('#pop_validate_code').css('position','fixed').show();
+		}
+		function show_validate_pop_error(){
+			$('#pop_validate_code_error').show();
+		}
+		function hide_validate_pop(){
+			$('#pop_validate_code').hide();
+			$('#pop_validate_code_error').hide();
+		}
+
+		function reset_validate_code(){
+			$("#imgValidcode").attr("src","/index.php/rest/tools/validcode/album_ip_validate/1"+Math.random());
+		}
+		
+		
+</script>
+  <script>
+	function check_need_info(){
+			     	document.download_album_form.submit();
+	    	}
+	function showSingUp () {
+        var $show = $( '.show-sing-up' );
+        var $close = $( '.close' );
+    	
+  		setMarkPos();
+        singUpLayer();
+
+        $close.bind( 'click', function () {
+          closeSingUp();
+          return false;
+        } );
+
+        $.getJSON("/index.php/source/get_userinfo",function(data){
+        	$('#real_name').val(data.realname);
+        	$('#mobile').val(data.submobile);
+        	$('#email').val(data.pubemail);
+        	$('#job').val(data.job);
+        	$('#company').val(data.company);
+        	if(data.province)
+        	{
+            	$('#province').val(data.province);
+        	
+			Linkage.reset( data.province, $('#city'), function () {
+				$('#city').val( data.city );
+			} );
+        	}
+        	$('#industry').val(data.industrytype);
+		});
+        
+    };
+    function singUpLayer () {
+        var $singUp = $( '.sing-up' );
+
+        $singUp.css( {
+          position: 'absolute',
+          left: $( window ).width() / 2 - $singUp.width() / 2,
+          top: $( window ).height() / 2 + $( document ).scrollTop() - $singUp.height() / 2,
+          width: '600px',
+          height: '500px',
+          display: 'block',
+          zIndex: 1000000
+        } );
+    };
+    function setMarkPos () {
+        var $mark = $( '<div class="mark"></div>' );
+
+        $mark.css( {
+          position: 'absolute',
+          background: '#000',
+          opacity: '0.4',
+          top: 0,
+          left: 0,
+          width: $( document ).width() + 'px',
+          height: $( document ).height() + 'px',
+          zIndex: 999999
+        } );
+        $( 'body' ).append( $mark );
+    }
+    function closeSingUp () {
+          var $mark = $( '.mark' );
+          var $singUp = $( '.sing-up' );
+
+          $singUp.hide();
+          $mark.remove();
+     };
+
+    function valicont(){
+         if (!$('#real_name').val() || $('#real_name').val() == '选择或填写') {
+             alert('请输入姓名');
+             return;
+         }
+
+         var texts = $('#real_name').val();
+         var tlen = texts.length;
+         if (tlen > 10) {
+             alert('姓名最多为10个字符');
+             return;
+         }
+         if (!$('#mobile').val() || $('#mobile').val() == '选择或填写') {
+             alert('请输入手机');
+             return;
+         }
+         var texts = $('#mobile').val();
+         var tlen = texts.length;
+         if (tlen > 15) {
+             alert('手机最多为15个字符');
+             return;
+         }
+         var pattern = /^0{0,1}1[0-9]{10}$/;
+         var mobile_value = $('#mobile').val().replace(/(^\s*)|(\s*$)/g, '');
+         if (!mobile_value.match(pattern)) {
+             alert('手机格式错误');
+             return;
+         }
+         if (!$('#email').val() || $('#email').val() == '选择或填写') {
+             alert('请输入邮箱');
+             return;
+         }
+         var texts = $('#email').val();
+         var tlen = texts.length;
+         if (tlen > 50) {
+             alert('邮箱最多为50个字符');
+             return;
+         }
+         var pattern = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9\-]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,6}$/;
+         var email_value = $('#email').val().replace(/(^\s*)|(\s*$)/g, '');
+         if (!email_value.match(pattern)) {
+             alert('请输入正确的邮箱');
+             return;
+         }
+         if ($('#job').val() == '') {
+             alert('请填写职位');
+             return;
+         };
+         var tlen = $('#job').val().length;
+         if(tlen > 50){
+        	 alert('职位最多为50个字符');
+             return;
+         }
+         if (!$('#company').val() || $('#company').val() == '选择或填写') {
+             alert('请输入公司');
+             return;
+         }
+         var texts = $('#company').val();
+         var tlen = texts.length;
+         if (tlen > 50) {
+             alert('公司最多为50个字符');
+             return;
+         }
+         if ($('#province').val() == '请选择' || $('#province').val() == 0) {
+             alert('请选择省');
+             return;
+         };
+         if($('#city').val() == '请选择' || $('#city').val() == 0){
+			 alert('请选择城市');
+			 return;
+         }
+         if ($('#industry').val() == '请选择' || $('#industry').val() == 0) {
+             alert('请选择所属行业');
+             return;
+         };
+
+         var inputs = $('#userinfo_form').serializeArray();
+         $.each(inputs, function(i, input){
+        	 $('#hidden_'+input.name).val(input.value);
+         });
+         closeSingUp();
+         document.download_form.submit();
+       }
+  </script>
+  <form name="download_form" id="download_form" method="post" action="/index.php/album/do_download_album/1689/667dd83a7e4f52ab4663760365196a47" target="iframe_data">
+					<input name="da" id="da" type="hidden">
+					<input type="hidden" name="validate_code" value="" id="vdcode" />
+					<input type="hidden" name="basic[real_name]" value="" id="hidden_real_name">
+					<input type="hidden" name="basic[mobile]" value="" id="hidden_mobile">
+					<input type="hidden" name="basic[email]" value="" id="hidden_email">
+					<input type="hidden" name="basic[job]" value="" id="hidden_job">
+					<input type="hidden" name="basic[company]" value="" id="hidden_company">
+					<input type="hidden" name="basic[province]" value="" id="hidden_province">
+					<input type="hidden" name="basic[city]" value="" id="hidden_city">
+					<input type="hidden" name="basic[industry]" value="" id="hidden_industry">
+				</form>
+  <!-- 需要用户填写信息 -->
+<div class="sing-up" style="display: none; background: #fff;">
+    <a href="#" class="close" style="float: right; margin-top: 10px; margin-right: 20px;">关闭</a>
+    <form name="userinfo_form" style="overflow: hidden; margin-top: 20px" id="userinfo_form" action="" method="post">
+      <ul class="biaodan">
+        <li style="z-index: 52;">
+            <label>
+                <span>*</span>
+                姓名：
+            </label>
+            <input type="text" id="real_name" size="20" placeholder="" maxlength="10"
+            name="real_name" class="w_h" value="">
+        </li>
+        <li style="z-index: 51;">
+            <label>
+                <span>*</span>
+                手机：
+            </label>
+            <input type="text" id="mobile" size="20" placeholder="" maxlength="15"
+            name="mobile" class="w_h" value="">
+        </li>
+        <li style="z-index: 50;">
+            <label>
+                <span>*</span>
+                邮箱：
+            </label>
+            <input type="text" id="email" size="20" placeholder="" maxlength="50"
+            name="email" class="w_h" value="">
+        </li>
+        <li style="z-index: 49;">
+            <label>
+                <span>*</span>
+                职位：
+            </label>
+            <input type="text" id="job" size="20" placeholder="" maxlength="50"
+            name="job" class="w_h" value="">
+        </li>
+        <li style="z-index: 48;">
+            <label>
+                <span>*</span>
+                公司：
+            </label>
+            <input type="text" id="company" value="" size="20" placeholder="" maxlength="50"
+            class="w_h for_company" name="company">
+        </li>
+        <li style="z-index: 47;">
+            <label>
+                <span>*</span>
+                城市：
+            </label>
+            <select name="province" id="province"></select>
+						<select name="city" id="city"></select>
+        </li>
+        <li style="z-index: 46;">
+            <label>
+                <span>
+                    *
+                </span>
+                所属行业：
+            </label>
+            <select name="industry" id="industry"></select>
+        </li>
+        <li>
+            <label>
+            </label>
+            注：您输入的个人信息将会与个人空间同步！
+        </li>
+        <li style="color: rgb(255, 0, 0); font-size: 14px; z-index: 42;">
+            <label>
+            </label>
+            <span id="error_tip">
+            </span>
+        </li>
+        <li style="z-index: 41;">
+            <label>
+            </label>
+            <a href="javascript:valicont()">
+                <img alt="" src="http://huiyi.csdn.net/images/btn_sign.gif">
+            </a>
+        </li>
+      </ul>
+      </form>
+  </div>
+<!-- //需要用户填写信息 -->
+	<!-- public footer -->
+	<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+	
+	<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-download.js"></script>
+
+	<!-- //public footer -->
+</div>
+<script type="text/javascript">
+		document.write('<script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date()/120000).toString(36) + '="></'+'script>');
+	</script>
+<script type="text/javascript">
+
+	function setTab(m,n){
+		var tli=document.getElementById("menu"+m).getElementsByTagName("a");
+		var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+		for(i=0;i<tli.length;i++){
+			tli[i].className=i==n?"current1 current2":"";
+			mli[i].style.display=i==n?"block":"none";
+		}
+	}
+
+	function check_up(thisform){
+		var key=$.trim(thisform.q.value);
+		if(key==""){
+			alert("关键字不能为空！");
+		}
+		else{
+			//key=key.replace(/\+/g,"%2B").replace(/\//g,"%2F");
+			key =  encodeURIComponent(key)
+			var url="http://download.csdn.net/search?q="+key;
+			window.location.href=url;
+		}
+		return false;
+	}
+
+</script>
+
+<script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>
+  <!-- ask 全局悬浮按钮  -->
+   					<link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" rel="stylesheet" type="text/css" />
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/wmd.js"></script>
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/showdown.js"></script>
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/prettify.js"></script>
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js"></script>
+    </body>
+</html>

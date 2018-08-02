@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>CSDN搜索</title>
+		<link href="http://static.csdn.net/public/common/toolbar/css/index.css" rel="stylesheet" >
+		<link type="text/css" href="/so/css/main.css" rel="stylesheet">
+		<script type="text/javascript" src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="/so/js/popup.js"></script>
+		
+		<link href="http://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+		
+		<script src="js/jsonp.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		domReady(function(){
+		
+		    var oT = getByClass(document,'search-text')[0];
+		    var oFormcon = getByClass(document,'search-from')[0];
+		    var oForm = oFormcon.getElementsByTagName('form')[0];
+		
+		    var oUl = document.getElementById('search-suggest');
+		    
+		    var url=document.domain;
+		    if (window.location.port != 80) {
+		    	url += ":" +window.location.port;
+		    }
+		    var URL = window.location.protocol +'//'+url+'/so/search/so/autocomplete.do';
+		    
+		    var aLi=oUl.children;
+		    window.iNow=-1;
+		    oT.focus();    
+		    var oldValue='';
+		    
+		    oT.onkeyup=function(ev)
+		    {
+		        var oEvent=ev || event;
+		        if(oEvent.keyCode==40 || oEvent.keyCode==38){
+		            return; 
+		        }
+		
+		        if(oEvent.keyCode==13){
+		             oForm.submit();   
+		        }            
+		       
+		        jsonp(URL, {q: oT.value}, function (json){            
+		            
+		            if(json.suggestions.length==0)
+		            {
+		                oUl.style.display='none';
+		            }
+		            else
+		            {
+		                oUl.style.display='block';
+		                var data = eval('('+json.suggestions+')');  
+		            }
+		            oUl.innerHTML='';
+		            for(var i=0; i<data.length; i++)
+		            {
+		                var oLi=document.createElement('li');
+		                oLi.innerHTML=data[i].key;
+		                oUl.appendChild(oLi);
+		            }
+		
+		            for(var i=0; i<aLi.length; i++){
+		            aLi[i].index=i;
+		
+		            aLi[i].onmouseover=function(){
+		            for(var i=0; i<aLi.length; i++){
+		                aLi[i].style.background='';
+		            }
+		                this.style.background='#ccc'; 
+		                iNow=this.index;
+		                
+		            }
+		            
+		            aLi[i].onclick=function()
+		            {
+		            	oT.value=aLi[this.index].innerHTML;
+		            }
+		            
+		            }
+		
+		        }, 'callback'); 
+		
+		               
+		        oldValue=oT.value;
+		    }
+		
+		    oT.onkeydown=function(ev){
+		        
+		        var oEvent=ev || event;
+		        if(oEvent.keyCode==40){
+		            iNow++;
+		            
+		            if(iNow==aLi.length){
+		                iNow=-1;    
+		            }
+		            
+		            for(var i=0; i<aLi.length; i++){
+		                aLi[i].style.background='';
+		            }
+		            if(iNow!=-1){
+		                aLi[iNow].style.background='#ccc';
+		                oT.value=aLi[iNow].innerHTML;
+		            }else{
+		                oT.value=oldValue;  
+		            }           
+		        }
+		        
+		        if(oEvent.keyCode==38){
+		            iNow--;            
+		            if(iNow==-2){
+		                iNow=aLi.length-1;  
+		            }
+		            
+		            for(var i=0; i<aLi.length; i++){
+		                aLi[i].style.background='';
+		            }
+		            if(iNow!=-1){
+		                aLi[iNow].style.background='#ccc';
+		                oT.value=aLi[iNow].innerHTML;   
+		            }else{
+		                oT.value=oldValue;  
+		            }
+		            return false;   
+		        }   
+		    }
+		    
+		    oT.onclick=function(ev){
+				var oEvent=ev || event;		
+				oEvent.cancelBubble=true;
+			}
+		
+		    document.onclick = function()
+		    {
+		        oUl.style.display='none';
+		    }
+		});
+		</script>
+	</head>
+	<body>
+		<script id="toolbar-tpl-scriptId"  prod="" skin="black" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"  domain="http://so.csdn.net/so/"></script>
+		<div class="main-container">
+			<div class="search-logo"><img src="/so/images/search.png" width="321" height="60" alt="csdn搜索logo"></div>
+		    <div class="search-from">
+		    	<form id="queryform" name="queryform" htmlEscape="true" method="get" action="/so/search/s.do">
+		        	<div class="search-text-con">
+		        		<input type="text" name="q" class="search-text" autocomplete="off" >
+		        	</div>
+		        	<div class="search-btn-con">
+		        		<input type="submit" value="搜一搜" class="search-btn">
+		        	</div>        
+		        </form>
+		    </div>
+		</div>
+		
+		<ul class="search-suggest" id="search-suggest"></ul>
+		
+		<div id="csdn_pub_footer" class="margin_foot_top" style="padding-top:20px; padding-bottom:20px;">
+			<script src="http://csdnimg.cn/pubfooter/js/publib_footer.js"></script>
+		</div>
+		<script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>
+				
+	</body>
+</html>

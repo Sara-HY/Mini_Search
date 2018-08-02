@@ -1,0 +1,27 @@
+﻿C:\Users\SaraMac\Documents\Visual Studio 2013\Projects\mini_search\mini_search.ui : warning : Z-order assignment: 'verticalSpacer' is not a valid widget.
+C:\Users\SaraMac\Documents\Visual Studio 2013\Projects\mini_search\mini_search.ui : warning : Z-order assignment: 'verticalSpacer_2' is not a valid widget.
+C:\Users\SaraMac\Documents\Visual Studio 2013\Projects\mini_search\mini_search.ui : warning : Z-order assignment: 'horizontalSpacer' is not a valid widget.
+C:\Users\SaraMac\Documents\Visual Studio 2013\Projects\mini_search\mini_search.ui : warning : Z-order assignment: 'horizontalSpacer_2' is not a valid widget.
+  Moc'ing mini_search.h...
+  Uic'ing mini_search.ui...
+  Moc'ing dialog.h...
+  Rcc'ing mini_search.qrc...
+  Uic'ing dialog.ui...
+  Chinese_word_segment.c
+  dictionary.c
+  htmlparser.c
+  inverted_index.c
+  search.c
+  stack.c
+stack.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  test.c
+  trietree.c
+  正在生成代码...
+  dialog.cpp
+  moc_dialog.cpp
+  moc_mini_search.cpp
+  main.cpp
+  mini_search.cpp
+  正在生成代码...
+  qrc_mini_search.cpp
+  mini_search.vcxproj -> C:\Users\SaraMac\Documents\Visual Studio 2013\Projects\mini_search\x64\Release\mini_search.exe

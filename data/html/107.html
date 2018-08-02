@@ -1,0 +1,1151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- 云适配代码 begin -->
+<script id="allmobilize" charset="utf-8" src="http://a.yunshipei.com/77126665c1f3ae0b85e0fdaa7159a351/allmobilize.min.js"></script>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="alternate" media="handheld" href="#" />
+<!-- 云适配代码 end -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>赫夫曼编码 - 下载频道  - CSDN.NET</title>
+<meta name="description" content="赫夫曼编码对数据的压缩很有作用，大约可以压缩20%~90%,主要由文件的数据特性决定的！这里是赫夫曼编码的具体实现，主要借助二叉树和优先队列来实现最优前缀编码，也就是赫夫曼编码，赫夫曼" />
+<meta name="keywords" content="赫夫曼 优先队列 二叉树" />
+<meta name="author" content="CSDN" />
+<meta name="Copyright" content="CSDN" />
+<meta name="baidu-site-verification" content="5qKL5WPafahaSFtZ" />
+<meta http-equiv="X-UA-Compatible" content="IE=8,9" />
+<meta name="renderer" content="webkit|ie-stand" />
+<link href="http://c.csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON" />
+<link href="/css/download.css" rel="stylesheet" type="text/css" />
+<script language='JavaScript' type='text/javascript' src='http://www.csdn.net/ggmm/csdn_ggmm.js'></script>
+
+<!-- test toolbar nav-->
+<link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">
+<script src="http://c.csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/css/News-nav.css">
+<!-- toolbar nav -->
+
+<script language='JavaScript' type='text/javascript' src='http://www.csdn.net/js/jquery-1.4.2.min.js'></script>
+<script language='JavaScript' type='text/javascript' src='http://www.csdn.net/js/jquery.form.js'></script>
+<script language='JavaScript' type='text/javascript' src='/js/jquery.cookie.js'></script>
+
+<!-- 请置于所有广告位代码之前 -->
+<script defer src="http://counter.csdn.net/a/js/AreaCounter.js" type="text/javascript"></script>
+
+<!--登录弹窗 -->
+<script defer type="text/javascript" src="https://passport.csdn.net/content/loginbox/login.js"></script>
+<script defer type='text/javascript'>
+$(function(){
+	$("[href$='my'], [href$='my/downloads']").click(function(){
+		var username = csdn.getCookie('UserName');
+		if(username == null)
+		{
+			username = csdn.getCookie('UserNick');
+		}
+		var href = this.href;
+		if(username == null){
+			csdn.showLogin(function(){
+				window.location.href = href;
+			});
+			return false;
+		}
+		return username;
+	});
+		
+	$("[href$='upload']").click(function(event){ 
+		event.preventDefault();
+		var username = csdn.getCookie('UserName');
+		if(username == null)
+		{
+			username = csdn.getCookie('UserNick');
+		};
+		var href = this.href;
+		if(username == null){
+			csdn.showLogin(function(){
+				$("[href$=href]").click;
+			});
+			return false;
+		};
+
+		$.getJSON("/index.php/rest/users/getUserInfo/"+ username, function(data){			
+    		if(data.up_type != 1 && data.up_type !=2)
+    		{
+        		var html = '<div id="popup_reward" class="popup_reward">'+
+        	        '<h2><span>选择上传方式</span><b class="shutoff" onclick="$(\'#popup_mask,#popup_reward\').remove();"></b></h2>'+
+        	        '<form>'+
+        	        '  <div class="modal-body clearfix">'+
+        	        '    <div class="popup_content">'+
+        	        '    <dl class="fileImgLeft">'+
+        	        '      <dt>'+
+        	        '      <a href="/uploadv2"  style="cursor: pointer;">'+
+        	        '        <input type="hidden" name="" value="2" class="fileInput" onclick="set_up_type(2)" />'+
+        	        '        <em>极速上传(推荐)</em>'+
+        	        '        </a>'+
+        	        '      </dt>'+
+        	        '      <dd>'+
+        	        '        <div>'+
+        	        '          单文件上传支持<a href="javascript:void(0)">断点续传</a><br />'+
+        	        '        <span>控件安装完成后需要重新启动浏览器</span>'+
+        	        '        </div>'+
+        	        '        <b></b>'+
+        	        '      </dd>'+
+        	        '    </dl>'+
+        	        '      <dl class="fileImgRight">'+
+        	        '        <dt>'+
+        	        '         <a href="/upload" style="cursor: pointer;">'+
+        	        '          <input type="hidden" name="" value="1" class="fileInput" onclick="set_up_type(1)" />'+
+        	        '          <em>普通上传</em>'+
+        	        '        </a>'+
+        	        '        </dt>'+
+        	        '        <dd>'+
+        	        '          浏览器单线程上传'+
+        	        '          <b></b>'+
+        	        '        </dd>'+
+        	        '      </dl>'+
+        			'	  <div class="upd"><input id="up_type" type="checkbox" checked="0">&nbsp;&nbsp;设置本次上传方式为默认上传方式。</div>'+
+        	        '    </div>'+
+        	        '  </div>'+
+        	        '</form>'+
+        	      '</div>';
+        	      $( 'body' ).append(html);
+        	      $( 'body' ).append('<div id="popup_mask" />');
+        	      var pageH = $(document).height();
+        	      $( '#popup_mask' ).css( "height", pageH );
+        	      $( '#popup_mask' ).css( "display", "block" );
+        	      $( '#popup_reward' ).fadeIn( "slow" );				
+				return false;
+    		}else if(data.up_type==1){
+    			window.location.href = "/index.php/upload";
+    		}else if(data.up_type==2){
+    			window.location.href = "/index.php/uploadv2";
+    		}
+    	});
+	})	;
+});
+function set_up_type(up_type)
+{
+	if($("#up_type").attr("checked")==true){
+		$.getJSON("/index.php/user/set_up_type/"+up_type);
+	}
+};
+</script>
+</head>
+<body>
+<!-- 全屏代码： AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=allyestest|allyestest|allyestest0410&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End-->
+<!-- toolbar nav -->
+<script id="toolbar-tpl-scriptId" prod="download" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript" domain="http://download.csdn.net"></script>
+    <script type="text/javascript">
+ 		 var protocol = window.location.protocol;
+		  document.write('<script type="text/javascript" src="' +protocol+ '//c.csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></'+'script>');
+	</script>
+<div class="news-nav">
+    <div class="container clearfix">
+        <div class="nav-bar">
+        	<a href="http://download.csdn.net/" >首页</a>
+        	<a href="http://download.csdn.net/category" class="current">资源分类</a>
+        	<a class=" " href="http://download.csdn.net/doc" >精品专辑</a>
+			<a href="http://download.csdn.net/rankings" >排行榜</a>
+			<a href="http://download.csdn.net/help" >帮助</a>
+			<a href="http://download.csdn.net/advanced_search" >高级搜索</a>
+			<!-- a href="http://share.csdn.net" target="_blank">讲义下载</a -->
+			<a href="http://download.csdn.net/my" >我的资源</a>
+        </div>
+	    <div class="search-download">
+        	<form action="http://download.csdn.net/search" method="get" onsubmit="return check_up(this);" name="download_search">
+	        	<input type="text" placeholder="搜索资源" value="" id="tagff" name="q"/>
+	        	<a href="javascript:check_up(download_search);void(0);" class="download-search-bth"></a>
+        	</form>
+	    </div>
+   	</div>
+</div>
+<!-- //toolbar nav -->
+<div id="wrap">
+	<!-- public topnav -->
+	<!-- //public topnav -->
+	<div class="ad_area_1">
+		<div class="ad_w728">
+		<!-- 广告位：下载频道首页头文件上 -->
+				<!--AdForward Begin:-->
+														<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_detail|banner1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+																		<!--AdForward End-->
+		</div>
+		<div class="ad_w220">
+			<!-- 广告位：下载频道首页头文件上  -->
+			<!--AdForward Begin:-->
+												<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_detail|button1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+														<!--AdForward End-->
+		</div>
+	</div>
+ <link rel="stylesheet" type="text/css" href="http://c.csdnimg.cn/public/common/libs/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="http://c.csdnimg.cn/public/themes/default/css/common.css">
+ <link rel="stylesheet" type="text/css" href="http://c.csdnimg.cn/public/static/css/nav.css">
+ <link rel="stylesheet" type="text/css" href="http://c.csdnimg.cn/public/static/css/panels.css">
+ <!--  link href="http://c.csdnimg.cn/public/themes/default/css/form.css" rel="stylesheet" type="text/css" -->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link href="/css/source_detail.css" rel="stylesheet">
+<link href="/css/detail-download.css" rel="stylesheet">
+    <div class="bd clearfix">
+      <div class="fix-layer">
+      		<a href="/download/ii1245712564/8686775" class="enter-download" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'download-detail_jinruxiazaiye']);" target="_blank">
+      				<span class="icon"></span>进入下载页</a>
+      		      		<!-- <a href="#" class="preview"><span class="icon"></span>预览</a>  -->
+        <div class="fav-comm"><a href="javascript:void(0);" id="top_btn_fav" class="fav btn_fav" rel="nofollow" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'download-detail_shoucang']);">4</a><a href="#comment" class="comm" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'download-detail_pinglun']);">6</a></div>
+      	<div class="collect-tip">
+          <div class="popover bottom strength">
+            <div class="arrow"></div>
+            <button class="close">×</button>
+            <!-- <div class="popover-content">收藏成功！点击&nbsp;<a href="#">我的收藏</a>&nbsp;查看收藏的全部资源</div> -->
+            <div class="popover-content" id="top_popover_fav"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 导航下的广告 -->
+      <div class="article">
+      	<!-- 广告位：下载频道首页头文件上728*90 -->
+        <!--AdForward Begin:-->
+        <div class="AD mb-bg">
+					<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_detail|banner2&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+				</div>
+				<!--AdForward End-->
+        <!-- 728*90 -->
+        <div class="bread-crumbs mb-bg"><span><a href="/">下载频道</a></span><em class="to-icon">&gt;</em><span><a href="/category">资源分类</a></span><em class="to-icon">&gt;</em><span><a href="/c-15">课程资源</a></span><em class="to-icon">&gt;</em><span><a href="/c-15002">C/C++</a></span><em class="to-icon">&gt;</em><span>赫夫曼编码</span>
+        </div>
+        <h3  class="title mb-bg" title='赫夫曼编码' ><span><image src="/images/minetype/zip.gif" title="zip文件"></span>赫夫曼编码</h3>
+        <div class="author-share mb-bg clearfix">
+          <div class="pull-left"><a href="/user/ii1245712564" class="user_name">ii1245712564</a>2015-05-11上传</div><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+						  <a class="bds_tsina"></a>
+						  <a class="bds_tqq"></a>
+						  <!-- <a class="shareCount"></a> -->
+					</div>
+							<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6874737"></script>
+							<script type="text/javascript" id="bdshell_js"></script>
+							<script type="text/javascript">
+
+							document.domain = 'csdn.net';
+
+							  var bds_config = {
+							    "snsKey": {
+							      'tsina': '533284365',
+							      'tqq': '801285068'
+							    }
+							  }
+							  document.getElementById("bdshell_js").src =
+							    "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000)
+							</script>
+
+        </div>
+        <div class="cut_intro" style="overflow:hidden;">赫夫曼编码对数据的压缩很有作用，大约可以压缩20%~90%,主要由文件的数据特性决定的！这里是赫夫曼编码的具体实现，主要借助二叉树和优先队列来实现最优前缀编码，也就是赫夫曼编码，赫夫曼</div>
+       <!--  <p class="dis mb-bg">  -->
+                  <!--  </p>  -->
+
+                <div class="information mb-bg clearfix">
+          <div class="info">
+          <div class="wraper-info">
+            <ul class="size-type clearfix">
+              <li><strong>资源积分：</strong><span>0分</span></li>
+              <li><strong>下载次数：</strong><span>150</span></li>
+               							<li><strong>资源类型：</strong><span>代码类</span></li>
+														<li><strong>资源大小：</strong><span>6KB</span></li>
+               <li><strong>资源得分：</strong>
+                              	<span class="stars">
+               		<span class="star-def"></span>
+               		               		<span style="width:75px" class="star-yellow"></span>
+               	</span>
+                </li>
+                <li><span>(12位用户参与评分)</span></li>
+            </ul>
+            <ul class="tags-share">
+              <li>
+              																			<a href="/tag/%E8%B5%AB%E5%A4%AB%E6%9B%BC" class="tag">赫夫曼</a>
+																										<a href="/tag/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97" class="tag">优先队列</a>
+																										<a href="/tag/%E4%BA%8C%E5%8F%89%E6%A0%91" class="tag">二叉树</a>
+													              </li>
+            </ul>
+            </div>
+            <div class="enter-link">
+		              <a href="/download/ii1245712564/8686775" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'download-detail_jinruxiazaiye']);" class="into-download" target="_blank">进入下载页
+		              </a>
+		                           </div>
+            <div class="operating">
+              <link rel="stylesheet" href="http://c.csdnimg.cn/public/static/css/popover.css">
+              			<a href="javascript:void(0);" class="collect" id="btn_fav" rel="nofollow" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'download-detail_shoucang']);">收藏(4)</a>
+              			<a href="#comment" class="comment" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'download-detail_pinglun']);" >评论(6)</a>
+              			<div class="download_rep_suc" style="display:none;" id="rep_suc"></div>			<!-- 显示已经被举报,无需再举报 -->
+               			<a href="javascript:void(0);" id="download_report" data-toggle="modal" class="report" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'download-detail_jubao']);" >举报</a>
+              		<!-- 	<a href="/my/downloads" class="my-comment" rel="nofollow" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'download-detail_daipinglun']);" >我的评论资源</a>  -->
+              <!-- 收藏 -->
+
+              <div class="fav_suc" style="display:none;" id="fav_suc"></div>
+               <div class="collect-tip">
+                <div class="popover bottom strength">
+                  <div class="arrow"></div>
+                  <button class="close">×</button>
+                  <!-- <div class="popover-content">收藏成功！点击&nbsp;<a href="#">我的收藏</a>&nbsp;查看收藏的全部资源</div>  -->
+                  		<div class="popover-content" id="popover_fav"></div>
+                </div>
+              </div>
+            </div>
+            <div id="tip-off" role="dialog" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" type="button" class="close">×</button>
+                    <h4>举报</h4>
+                  </div>
+                  <form role="form" id="reportform" name="certificateform" action="/index.php/report/do_add_report" enctype="multipart/form-data" method="post">
+                    <input type="hidden" id="source_id" name="source_id" value="8686775"></input>
+										<input type="hidden" id="report_username" name="report_username" value=""></input>
+										<input type="hidden" id="to_username" name="to_username" value="ii1245712564"></input>
+
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-xs-12 red">若举报审核通过，可奖励20下载分</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-3">举报人：</div>
+                        <div class="col-xs-9"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-3">被举报人：</div>
+                        <div class="col-xs-9">ii1245712564</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-3">举报的资源分：</div>
+                        <div class="col-xs-9">0</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-3"><span class="red">*</span>类型：</div>
+                        <div class="col-xs-9">
+                          <select class="form-control" name="report_type" id="report_type">
+                            <option style="font-size:12px">请选择类型</option>
+														<option style="font-size:12px">资源无法下载</option>
+														<option style="font-size:12px">资源无法使用</option>
+														<option  style="font-size:12px">标题与实际内容不符</option>
+														<option  style="font-size:12px">含有危害国家安全内容</option>
+														<option  style="font-size:12px">含有反动色情等内容</option>
+														<option  style="font-size:12px">含广告内容</option>
+														<option  style="font-size:12px">版权问题，侵犯个人或公司的版权</option>
+														<option  style="font-size:12px">其他</option>
+                          </select><span id="report_type_error" style="color:red;"></span>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-3"><span class="red">*</span>详细原因：</div>
+                        <div class="col-xs-9">
+                          <textarea rows="5" class="form-control" name="report_description" id="report_description"></textarea>
+                           <span style="color:red" id="report_description_error"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" data-dismiss="modal" class="btn btn-default">取&nbsp;&nbsp;消</button>
+                      <button type="button" class="btn btn-primary" onclick="submit_report()">提&nbsp;&nbsp;交</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            //:coffee
+             // $ ->
+              //  $('#tip-off').modal 'show'
+          </script>
+
+          	<!-- 广告位：资源详细页 头文件下视窗300*250 -->
+          <!--AdForward Begin:-->
+          <div class="ad">
+						<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_detail|pip1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+					</div>
+					<!--AdForward End-->
+          <!-- 300*250 -->
+        </div>
+        
+        <div style="margin-bottom: 15px; margin-top: 15px;" class="clearfix">
+	        <div id="job_down_detail_reco" style="width: 353px;float: left;margin-right: 22px;" class="related clearfix">
+				  <script src="http://c.csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script>
+				  <script type="text/javascript">
+				  csdn.position.show({
+				  sourceType: "download",
+				  tplType: "downDetail",
+				  searchType: "detail",
+				  searchKey: "8686775",
+				  username: "",
+				  containerId: "job_down_detail_reco"  //容器DIV的id。
+				  });
+				  </script>
+			</div>
+						  <div id="edu_down_reco" class="related po_down_detail_big_div">
+			<script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script>
+			<script type="text/javascript">
+			     csdn.position.showEdu({
+			         sourceType: "down",
+			         searchType: "detail",
+			         searchKey: "8686775",
+					 username: "",
+			         recordcount: "5",
+			         containerId: "edu_down_reco" //容器DIV的id。
+			     });
+			</script>
+			</div> 
+			  
+        </div>
+        
+        
+        <div class="tab-switch tracking-ad" data-mod="popu_54">
+          <h3>您可能还需要</h3>
+          <div class="tabs"><a href="#" class="active"></a><a href="#"></a><a href="#"></a><a href="#"></a>
+          </div>
+          <div class="tab-layer">
+
+          </div>
+        </div>
+
+        <!-- 广告位：资源详细页 相关博文上728*90 -->
+        <!--AdForward Begin:-->
+        <div class="AD mb-bg">
+				<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_detail|banner3&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+				</div>
+				<!--AdForward End-->
+        <!-- 728*90 -->
+       <script src="http://download.csdn.net/js/jquery.cookie.js"></script>
+      <script type="text/javascript" src="/js/search-service/main.js" charset="utf-8"></script>
+        <div class="related-part mb-bg clearfix">
+          <div class="related">
+            <div class="blog">
+              <div class="section-list panel panel-default tracking-ad" data-mod="popu_56">
+                <div class="panel-heading">
+                  <h3 class="panel-title">相关博文</h3>
+                </div>
+                <div class="panel-body">
+                  <ul id="blog_download"></ul>
+                </div>
+                <script type="text/javascript" defer>
+                  var title = $( '.article' ).find( 'h3.title' ).attr( 'title' );
+				  var reg=/[^`~!\$%\^\*\(\)=\|\{\}':;',\\\[\\\]\.<>\/\?~！￥%……*\（\）——\|\{\}【】‘；：”“’。，、？]/g;
+				  var titleFilter = title.match(reg).join( '' );   
+				   title = titleFilter;
+				  var $tags = $( '.information' ).find( 'a.tag' );
+                  var bd, tags = [], max = 6;
+				 
+
+                  $tags.each( function ( i, tag ) {
+                    tags.push( $( tag ).html() );
+                  } );
+                  bd = title + ',' + tags.join( ',' );
+
+                  searchService({
+                    urlQuery: 'http://internalapi.csdn.net/search/v2/query?index_name=so_blog&_client_=so_search',
+                    index: 'download',
+                    query: {
+                      text: {
+                        'title,body': bd
+                      }
+                    },
+                    from: 0,
+                    size: max,
+                    fields : [
+                      "url",
+                      "title"
+                    ] ,
+                    his: 3,
+                    appendTo: '#blog_download',
+                    url: 'search'
+                  }, function ( img, data ) {
+                    if ( data.length > 0 )
+                    {
+                      var links = $( '#blog_download' ).find( 'a' );
+                      links.bind( 'click', function () {
+                        _gaq.push(['_trackEvent','function', 'onclick', 'download-detail_xiangguanwenzhang']);
+                      });
+                    }
+                  });
+                </script>
+              </div>
+            </div>
+            </div>
+            <div class="enter-AD">
+             <!-- 广告位：资源详细页 立即下载上视窗300*250 -->
+	            <!--AdForward Begin:-->
+	             <div class="AD">
+								<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_detail|pip2&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+							</div>
+							<!--AdForward End-->
+	            <!-- 300*250 -->
+            </div>
+            </div>
+           <div class="problem">
+              <div class="section-list panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">相关问题</h3>
+                </div>
+                <div class="panel-body">
+                  <ul id="discussion_download"></ul>
+                                <!--ul id="discussion_download">
+                                	                                	                                  <li><a href="" target="_blank"></a></li>
+                                                                  </ul-->
+                </div>
+              </div>
+                <script type="text/javascript" defer>
+                  var title = $( '.article' ).find( 'h3.title' ).attr( 'title' );
+				  var reg=/[^`~!\$%\^\*\(\)=\|\{\}':;',\\\[\\\]\.<>\/\?~！￥%……*\（\）——\|\{\}【】‘；：”“’。，、？]/g;
+				  var titleFilter = title.match(reg).join( '' );
+				  title = titleFilter;
+                  var $tags = $( '.information' ).find( 'a.tag' );
+                  var bd, tags = [], max = 6;
+
+				  
+                  $tags.each( function ( i, tag ) {
+                    tags.push( $( tag ).html() );
+                  } );
+                  bd = title + ',' + tags.join( ',' );
+
+                  searchService({
+                    urlQuery: 'http://internalapi.csdn.net/search/v2/query?index_name=so_discussion&_client_=so_search',
+                    index: 'download',
+                    query: {
+                      text: {
+                        'title,body': bd
+                      }
+                    },
+                    from: 0,
+                    size: max,
+                    fields : [
+                      "url",
+                      "title"
+                    ] ,
+                    his: 3,
+                    appendTo: '#discussion_download',
+                    url: 'search'
+                  }, function ( img, data ) {
+                    if ( data.length > 0 )
+                    {
+                      var links = $( '#discussion_download' ).find( 'a' );
+                      links.bind( 'click', function () {
+                        _gaq.push(['_trackEvent','function', 'onclick', 'download-detail_xiangguanwenzhang']);
+                      });
+                    }
+                  });
+                </script>
+          </div>
+        <!-- 广告位：资源详细页 立即下载下 资源评论上 728*90 -->
+        <!--AdForward Begin:-->
+        <div class="AD mb-bg">
+					<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_detail|banner4&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+				</div>
+				<!--AdForward End-->
+        <!-- 728*90 -->
+        <a name="comment" style="height:10px;display:inline-block"></a>
+        <div class="commend mb-bg">
+          <!-- recommand-->
+          <!--
+          script(language='JavaScript' type='text/javascript' src='/js/comment.js')
+          a(name="comment")
+          .recommand.download_comment(sourceid="5276098")
+
+          -->
+          <div class="section-list panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">资源评论</h3>
+            </div>
+
+            <!-- recommand -->
+					 <script language='JavaScript' defer type='text/javascript' src='/js/comment.js'></script>
+
+						<div class="recommand download_comment panel-body" sourceid="8686775">
+            </div>
+          </div>
+        </div>
+        <!-- 广告位：资源详细页 核心技术类目上728*90 -->
+        <!--AdForward Begin:-->
+        <div class="AD mb-bg">
+					<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_detail|banner5&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+				</div>
+				<!--AdForward End-->
+        <!-- 728*90 -->
+        <div class="tech-classify mb-bg">
+          <div class="section-list panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">核心技术类目</h3>
+            </div>
+            <div class="panel-body">
+            												<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag" title="数据挖掘">全部主题</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272865" title="数据挖掘">Hadoop</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272866" title="数据挖掘">AWS</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272870" title="数据挖掘">移动游戏</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272871" title="数据挖掘">Java</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272872" title="数据挖掘">Android</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272867" title="数据挖掘">Docker</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272869" title="数据挖掘">智能硬件</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272868" title="数据挖掘">Swift</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272925" title="数据挖掘">OpenStack</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272873" title="数据挖掘">iOS</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/erp" title="数据挖掘">ERP</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/vpn" title="数据挖掘">VPN</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://g.csdn.net/5272924" title="数据挖掘">Spark</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/html5" title="数据挖掘">HTML5</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/jquery" title="数据挖掘">jQuery</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/crm" title="数据挖掘">CRM</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/bi" title="数据挖掘">BI</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/javascript" title="数据挖掘">JavaScript</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/spring" title="数据挖掘">Spring</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/ie10" title="数据挖掘">IE10</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/.net" title="数据挖掘">.NET</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/nfc" title="数据挖掘">NFC</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/html" title="数据挖掘">HTML</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/eclipse" title="数据挖掘">Eclipse</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/数据库" title="数据挖掘">数据库</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/wap" title="数据挖掘">WAP</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/apache" title="数据挖掘">Apache</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/api" title="数据挖掘">API</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/ubuntu" title="数据挖掘">Ubuntu</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/sdk" title="数据挖掘">SDK</a>
+																		<a onclick="LogClickCount(this,336);" target="_blank" class="normal" href="http://www.csdn.net/tag/iis" title="数据挖掘">IIS</a>
+									            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aside">
+      	<!-- 广告位：下载频道首页头文件上220*90  -->
+        <!--AdForward Begin:-->
+         <div class="AD mb-bg">
+						<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_detail|button2&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+				</div>
+				<!--AdForward End-->
+        <!-- 220*90 -->
+        <div class="list mb-bg">
+          <div class="list-attr panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">相关推荐</h3>
+            </div>
+            <div class="panel-body">
+              <ul id="res-relatived-right" class="tracking-ad" data-mod="popu_20"></ul>
+            </div>
+          </div><a id="res_relatived_change" href="#" class="change">换一换</a>
+
+          <script type="text/javascript" defer>
+            var title = $( '.article' ).find( 'h3.title' ).attr( 'title' );
+		    var reg=/[^`~!\$%\^\*\(\)=\|\{\}':;',\\\[\\\]\.<>\/\?~！￥%……*\（\）——\|\{\}【】‘；：”“’。，、？]/g;
+		    var titleFilter = title.match(reg).join( '' );
+			title = titleFilter;
+            var $tags = $( '.information' ).find( 'a.tag' );
+            var bd, tags = [], max = 10;
+
+            $tags.each( function ( i, tag ) {
+              tags.push( $( tag ).html() );
+            } );
+            bd = title + ',' + tags.join( ',' );
+
+            searchService({
+              index: 'download',
+              query: {
+                text: {
+                  'title,body': bd
+                }
+              },
+              from: 0,
+              size: max,
+              fields : [
+                "url",
+                "title",
+                "views",
+                "sourcescore",
+                "sourcesize"
+              ] ,
+
+              his: 3,
+              appendTo: '#res-relatived-right',
+              url: 'search'
+            }, function ( img, data ) {
+              var len = data.hits.length;
+
+              if ( len > 0 )
+              {
+                var links = $( '#res-relatived-right' ).find( 'a' );
+                links.bind( 'click', function () {
+                  _gaq.push(['_trackEvent','function', 'onclick', 'download-detail_xiangguanwenzhang']);
+                });
+              }
+              else
+              {
+                $( '#res-relatived-right' ).parents( '.list' ).remove();
+              }
+
+              if ( len <= 5 )
+              {
+                $( '#res_relatived_change' ).hide();
+              }
+              else
+              {
+                $('a#res_relatived_change').click(function(){
+                  change( {
+                    $item: $('#res-relatived-right li'),
+                    from: 5,
+                    len: len,
+                    appendTo: '#res-relatived-right'
+                  } );
+                  return false;
+                });
+              }
+            });
+          </script>
+
+
+        </div><a href="/upload" class="updata-file mb-bg">我要上传</a>
+        <div class="list mb-bg">
+          <div class="list-attr panel panel-default  tracking-ad" data-mod="popu_52">
+            <div class="panel-heading">
+              <h3 class="panel-title">下载该资源的还下载</h3>
+            </div>
+            <div class="panel-body">
+              <ul id="over_download" class="tracking-ad"></ul>
+            </div>
+          </div>
+          <script type="text/javascript" defer>
+            var title = $( '.article' ).find( 'h3.title' ).attr( 'title' );
+            var $tags = $( '.information' ).find( 'a.tag' );
+            var bd, tags = [], max = 5;
+
+            $tags.each( function ( i, tag ) {
+              tags.push( $( tag ).html() );
+            } );
+            bd = title + ',' + tags.join( ',' );
+
+            searchService({
+              index: 'download',
+              query: bd,
+              from: 50,
+              size: max,
+              fields : [
+                "url",
+                "title",
+                "views",
+                "sourcescore",
+                "sourcesize"
+              ] ,
+
+              his: 3,
+              appendTo: '#over_download',
+              url: 'recommend'
+            }, function ( img, data ) {
+              if ( data.length > 0 )
+              {
+                var links = $( '#over_download' ).find( 'a' );
+                links.bind( 'click', function () {
+                  _gaq.push(['_trackEvent','function', 'onclick', 'download-detail_xiangguanwenzhang']);
+                });
+              }
+              else
+              {
+                $( '#over_download' ).parents( '.list' ).remove();
+              }
+            });
+
+          </script>
+        </div>
+       <!--  <div class="list fz14 mb-bg">
+          <div class="section-list panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">相关主题</h3>
+            </div>
+            <div class="panel-body">
+            	            		<a href="http://www.csdn.net/tag//download" class="normal" target="_blank"></a>
+            		            </div>
+          </div>
+        </div> -->
+        <div class="list fz14 mb-bg">
+          <div class="section-list panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">课程资源热门标签</h3>
+            </div>
+            <div class="panel-body">
+            												<a href="/tag/c%2B%2B" title="c++" class="tag">c++</a>
+																			<a href="/tag/c%E8%AF%AD%E8%A8%80" title="c语言" class="tag">c语言</a>
+																			<a href="/tag/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" title="数据结构" class="tag">数据结构</a>
+																			<a href="/tag/c" title="c" class="tag">c</a>
+																			<a href="/tag/%E7%AE%97%E6%B3%95" title="算法" class="tag">算法</a>
+																			<a href="/tag/mfc" title="mfc" class="tag">mfc</a>
+																			<a href="/tag/primer" title="primer" class="tag">primer</a>
+																			<a href="/tag/opengl" title="opengl" class="tag">opengl</a>
+																			<a href="/tag/opencv" title="opencv" class="tag">opencv</a>
+																			<a href="/tag/c%23" title="c#" class="tag">c#</a>
+									            </div>
+          </div>
+        </div>
+        <div class="list mb-bg">
+          <div class="section-list panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">本周热点资源</h3>
+            </div>
+            <div class="panel-body">
+                        <ul>
+                        													<li><a href="/detail/wxmiy/8709479" title="Java经典项目集锦" target="_blank">Java经典项目集锦</a></li>
+																									<li><a href="/detail/tc839706407/8708117" title="Java核心技术 卷I 基础知识 中文版第9版【全】.part1" target="_blank">Java核心技术 卷I 基础知识 中文版第9版【全】.part1</a></li>
+																									<li><a href="/detail/tc839706407/8708119" title="Java核心技术 卷I 基础知识 中文版第9版【全】.part2." target="_blank">Java核心技术 卷I 基础知识 中文版第9版【全】.part2.</a></li>
+																									<li><a href="/detail/dengjianbin/8711033" title="分享30个html5手机网站模板源码" target="_blank">分享30个html5手机网站模板源码</a></li>
+																									<li><a href="/detail/qq27039167/8716561" title="Zend Studio 12.5.1 x86 x64通用破解补丁+注册码20150519" target="_blank">Zend Studio 12.5.1 x86 x64通用破解补丁+注册码20150519</a></li>
+																									<li><a href="/detail/tanpan004/8713583" title="全区高校资助政策网络知识竞赛自动答题" target="_blank">全区高校资助政策网络知识竞赛自动答题</a></li>
+																									<li><a href="/detail/epubitbook/8720061" title="HTML、CSS、JavaScript网页制作从入门到精通" target="_blank">HTML、CSS、JavaScript网页制作从入门到精通</a></li>
+																									<li><a href="/detail/epubitbook/8720191" title="JavaScript入门经典(第5版)" target="_blank">JavaScript入门经典(第5版)</a></li>
+																									<li><a href="/detail/epubitbook/8720339" title="JavaScript框架设计" target="_blank">JavaScript框架设计</a></li>
+																									<li><a href="/detail/epubitbook/8720323" title="网页设计从入门到精通Dreamweaver+Flash+Photoshop+HTML+CSS+JavaScript" target="_blank">网页设计从入门到精通Dreamweaver+Flash+Photoshop+HTML+CSS+JavaScript</a></li>
+												                        </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="AD mb-bg">
+			<!--AdForward Begin:-->
+			<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|download_detail|button3&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+			<!--AdForward End-->
+		</div>
+
+                <div class="list mb-bg">
+          <div class="section-list panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">上传者其他资源</h3>
+            </div>
+            <div class="panel-body">
+                        <ul>
+                        	                          <li><a href="/detail/ii1245712564/8719969" title="桶排序_BUCKETSORT" target="_blank">桶排序_BUCKETSORT</a></li>
+                                                    <li><a href="/detail/ii1245712564/8717167" title="基数排序_RADIXSORT" target="_blank">基数排序_RADIXSORT</a></li>
+                                                    <li><a href="/detail/ii1245712564/8713231" title="zsh与oh-my-zsh终极配置文件" target="_blank">zsh与oh-my-zsh终极配置文件</a></li>
+                                                    <li><a href="/detail/ii1245712564/8657257" title="GunMakefile" target="_blank">GunMakefile</a></li>
+                                                  </ul>
+            </div>
+          </div>
+        </div>
+                <div class="list download mb-bg">
+          <h3>课程资源下载排行</h3>
+          <div class="bd-list">
+          		<div id="con" class="tab_2">
+									<ul id="tags">
+									<li class="selectTag"><a onMouseOver="selectTag('tagContent0',this)" href="javascript:void(0)">本周</a></li>
+									<li><a onMouseOver="selectTag('tagContent1',this)" href="javascript:void(0)">本月</a></li>
+									<li><a onMouseOver="selectTag('tagContent2',this)" href="javascript:void(0)">全部</a></li>
+									</ul>
+									<div id="tagContent">
+										<div class="tagContent selectTag" id="tagContent0">
+											<ul class="top_10">
+																							<li><a href="/detail/qq_28255769/8708073" title="苹果点线广告PPT">苹果点线广告PPT</a></li>
+																							<li><a href="/detail/soft5566/8707697" title="bootstrap v3 离线手册">bootstrap v3 离线手册</a></li>
+																							<li><a href="/detail/df54564sed4/8715201" title="微信电子请帖+jquery版结婚动态请帖+flash动态请帖">微信电子请帖+jquery版结婚动态请帖+flash动态请帖</a></li>
+																							<li><a href="/detail/qq_28331141/8717831" title="C_Primer_Plus（第五版）中文版">C_Primer_Plus（第五版）中文版</a></li>
+																							<li><a href="/detail/kevinwu93/8714079" title="2048小游戏源码（java）">2048小游戏源码（java）</a></li>
+																							<li><a href="/detail/sinat_28375665/8724579" title="个人简介简历类网页模板">个人简介简历类网页模板</a></li>
+																							<li><a href="/detail/abc_email/8724031" title="C# 学习课件 PPT版">C# 学习课件 PPT版</a></li>
+																							<li><a href="/detail/qaz2549066580/8726257" title="C++反汇编与逆向分析技术揭秘">C++反汇编与逆向分析技术揭秘</a></li>
+																							<li><a href="/detail/timeless_2014/8722055" title="数字信号处理的FPGA实现(第3版)中文pdf及源码">数字信号处理的FPGA实现(第3版)中文pdf及源码</a></li>
+																							<li><a href="/detail/ybb_y1b1b1/8720363" title="自制CPU一书配套资源">自制CPU一书配套资源</a></li>
+																						</ul>
+										</div>
+										<div class="tagContent" id="tagContent1">
+											<ul class="top_10">
+																							<li><a href="/detail/lengwuqin/8675333" title="你必须知道的495个C语言问题">你必须知道的495个C语言问题</a></li>
+																							<li><a href="/detail/lengwuqin/8674845" title="C.Primer.Plus（第6版）中文版].（美）普拉达.扫描版.part1">C.Primer.Plus（第6版）中文版].（美）普拉达.扫描版.part1</a></li>
+																							<li><a href="/detail/lengwuqin/8674899" title="C.Primer.Plus（第6版）中文版].（美）普拉达.扫描版.part4">C.Primer.Plus（第6版）中文版].（美）普拉达.扫描版.part4</a></li>
+																							<li><a href="/detail/lengwuqin/8674877" title="C.Primer.Plus（第6版）中文版].（美）普拉达.扫描版.part3">C.Primer.Plus（第6版）中文版].（美）普拉达.扫描版.part3</a></li>
+																							<li><a href="/detail/lengwuqin/8674855" title="C.Primer.Plus（第6版）中文版].（美）普拉达.扫描版.part2">C.Primer.Plus（第6版）中文版].（美）普拉达.扫描版.part2</a></li>
+																							<li><a href="/detail/lengwuqin/8674821" title="C专家编程.part1">C专家编程.part1</a></li>
+																							<li><a href="/detail/lengwuqin/8674829" title="C专家编程.part2">C专家编程.part2</a></li>
+																							<li><a href="/detail/lengwuqin/8674831" title="C专家编程.part3">C专家编程.part3</a></li>
+																							<li><a href="/detail/lengwuqin/8674795" title="C和指针 Pointer on C">C和指针 Pointer on C</a></li>
+																							<li><a href="/detail/lengwuqin/8674803" title="C程序设计 第四版 谭浩强">C程序设计 第四版 谭浩强</a></li>
+																						</ul>
+										</div>
+										<div class="tagContent" id="tagContent2">
+											<ul class="top_10">
+																							<li><a href="/detail/u011104654/8320743" title="JAVA项目开发案例全程实录 第二版 全部源码">JAVA项目开发案例全程实录 第二版 全部源码</a></li>
+																							<li><a href="/detail/qq_25800433/8508587" title="订餐源码，网络订餐">订餐源码，网络订餐</a></li>
+																							<li><a href="/detail/shan165310175/8477249" title="Visual Assist X 10.9.2059破解版">Visual Assist X 10.9.2059破解版</a></li>
+																							<li><a href="/detail/shinian1987/8423651" title="机器学习 第一讲：线性回归">机器学习 第一讲：线性回归</a></li>
+																							<li><a href="/detail/u013830841/8403121" title="2015-01-28更新经典好书PDF电子书下载地址">2015-01-28更新经典好书PDF电子书下载地址</a></li>
+																							<li><a href="/detail/u011577964/8366279" title="Java趣味编程100例">Java趣味编程100例</a></li>
+																							<li><a href="/detail/shinian1987/8430743" title="机器学习 第四讲 Logistic Regression和广义线性模型">机器学习 第四讲 Logistic Regression和广义线性模型</a></li>
+																							<li><a href="/detail/shinian1987/8423659" title="机器学习 第二讲：矩阵的基本运算">机器学习 第二讲：矩阵的基本运算</a></li>
+																							<li><a href="/detail/shinian1987/8423661" title="机器学习 第三讲：从矩阵和概率的角度推导最小均方误差函数">机器学习 第三讲：从矩阵和概率的角度推导最小均方误差函数</a></li>
+																							<li><a href="/detail/happytofly/8634687" title="2015 OpenStack技术大会-深度解析OpenStack与Docker集成-刘光亚（修正版）">2015 OpenStack技术大会-深度解析OpenStack与Docker集成-刘光亚（修正版）</a></li>
+																						</ul>
+										</div>
+									</div>
+								</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- 新 用户开通会员 -->
+            <div id="vip-popup" role="dialog" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" type="button" class="close">×</button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-xs-1"><span class="checkmark"></span></div>
+                      <div class="col-xs-11">
+                        <div class="text" id="vip_message"></div><!-- 开通VIP会员权限，免积分下载 -->
+                        <div class="btns"><a href="http://vip.csdn.net" target='_blank' class='close_open_vip btn_2 btn btn-primary'>立即开通</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!-- 新end 用户开通会员 -->
+   <script type="text/javascript" src="/js/text-stretch.js"></script>
+<!-- //jump windows -->
+ <script language='JavaScript' type='text/javascript' src='http://www.csdn.net/js/jquery.form.js'></script>
+<script type=text/javascript>
+
+function submit_report(){
+
+	var $report_type=	$("#report_type").val();
+	var $report_description= $("#report_description").val();
+	var num=0;
+
+	if($report_type == '请选择类型'){
+		num=num+1;
+		$("#report_type_error").html("举报原因");
+		return false;
+	}else{
+		$("#report_type_error").html('');
+
+	}
+
+	if($report_description == ''){
+		num=num+1;
+		$("#report_description_error").html("描述不能为空");
+		return false;
+	}else{
+	 $("#report_description_error").html("");
+
+	}
+			if(num == 0){
+			xhr = $('#reportform').ajaxSubmit({
+				dataType: 'json',
+				beforeSubmit: function(a,f,o) {
+
+				},
+				error:function(data,s,e)
+				{
+					alert(e);
+				},
+				success: function(data) {
+					if(data.succ==-1){
+							alert("请先登录");
+						}
+
+					if(data.succ==1)
+						{
+							alert("举报成功");
+							$("#tip-off").modal('hide');
+							return true;
+							}
+
+					if(data.succ==2){
+							alert("已举报");
+							}
+						$("#tip-off").modal('hide');
+									return false;
+				}
+
+			});
+			}
+	}
+
+
+$(document).ready(function() {
+
+	$('#btn_fav').click(function(){
+				csdn.showLogin(function(){
+	    		window.location.reload();
+		});
+			});
+
+
+	$('#top_btn_fav').click(function(){
+				csdn.showLogin(function(){
+	    		window.location.reload();
+		});
+			});
+
+	  //vip 下载
+
+    $(".btnvipdownload").click(function(){
+
+    	var username = csdn.getCookie('UserName');
+				if(username == null)
+				{
+					username = csdn.getCookie('UserNick');
+				}
+				var href = this.href;
+				if(username == null){
+					csdn.showLogin(function(){
+						window.location.href = href;
+					});
+					return false;
+				}else{
+
+		    	$.get("/index.php/source/get_user_vip",function(data){
+                var $tip;
+
+								if(data.succ == 1){
+									// 新开 窗口
+									 window.location.href = "http://vip.csdn.net/home/down/8686775";
+                   return false;
+								}else if(data.succ == 2){
+									$("#vip_message").html('用户下载已满');
+									// $("#vip-popup").modal('show');
+								}else if(data.succ == 3){
+									$("#vip_message").html('用户已过期');
+									// $("#vip-popup").modal('show');
+								}else{
+									$("#vip_message").html('开通VIP会员权限，免积分下载');
+									// $("#vip-popup").modal('show');
+								}
+                $tip = $( '#vip-popup' );
+                triggerMark( $tip, 'show' );
+						},"json");
+				}
+
+        })
+
+
+	$('#download_report').click(function(){
+
+		$.post("/index.php/report/select_report", { "id":"8686775" },function(data){
+			if (data.succ == -1) {
+				csdn.showLogin(function(){
+			    		window.location.reload();
+				});
+			} else if(data.succ == 2) {
+    				alert("已举报");
+			} else {
+        var $tip = $( '#tip-off' );
+
+        triggerMark( $tip, 'show' );
+			}
+		}, "json");
+	});
+});
+
+function triggerMark( $tip, st ) {
+  var $mark = mark();
+  var $close = $tip.find( '.close' );
+  var $clBtn = $tip.find( '.btn' );
+
+  if ( st == 'show' )
+  {
+    $( 'body' ).append( $mark );
+    $tip.show();
+    $tip.addClass( 'in' );
+
+    $close.bind( 'click', function () {
+      closeTip( $tip, $mark );
+      return false;
+    } );
+
+    $clBtn.bind( 'click', function () {
+      closeTip( $tip, $mark );
+      // return false;
+    } );
+  }
+}
+
+function mark() {
+  var $mark = $( '<div class="modal-backdrop fade in"></div>' );
+  return $mark;
+}
+
+function closeTip( $tip, $mark ) {
+  $mark.remove();
+  $tip.removeClass( 'in' );
+  $tip.hide();
+}
+
+function selectTag(showContent,selfObj){
+	// 操作标签
+	var tag = document.getElementById("tags").getElementsByTagName("li");
+	var taglength = tag.length;
+	for(i=0; i<taglength; i++){
+		tag[i].className = "";
+	}
+	selfObj.parentNode.className = "selectTag";
+	// 操作内容
+	for(i=0; j=document.getElementById("tagContent"+i); i++){
+		j.style.display = "none";
+	}
+	document.getElementById(showContent).style.display = "block";
+}
+
+</script>
+<!-- script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/publib_footer.js?6xng4="></script> -->
+ <script defer data-main="/js/switch.tab.config" defer src='/js/libs/require.js' ></script>
+ <script src="/js/detail.js"></script>
+ <script src="/js/change.js"></script>
+ <!--[if !IE]>
+ <script src="http://c.csdnimg.cn/public/common/libs/bootstrap/js/bootstrap.min.js"></script>
+ <![endif]-->
+ <script defer src="/js/comment.reply.js"></script>
+<!-- 计数  -->
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=158 border=0 width=0 height=0>");</script>
+	<!-- public footer -->
+	<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+	
+	<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-download.js"></script>
+
+	<!-- //public footer -->
+</div>
+<script type="text/javascript">
+		document.write('<script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date()/120000).toString(36) + '="></'+'script>');
+	</script>
+<script type="text/javascript">
+
+	function setTab(m,n){
+		var tli=document.getElementById("menu"+m).getElementsByTagName("a");
+		var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+		for(i=0;i<tli.length;i++){
+			tli[i].className=i==n?"current1 current2":"";
+			mli[i].style.display=i==n?"block":"none";
+		}
+	}
+
+	function check_up(thisform){
+		var key=$.trim(thisform.q.value);
+		if(key==""){
+			alert("关键字不能为空！");
+		}
+		else{
+			//key=key.replace(/\+/g,"%2B").replace(/\//g,"%2F");
+			key =  encodeURIComponent(key)
+			var url="http://download.csdn.net/search?q="+key;
+			window.location.href=url;
+		}
+		return false;
+	}
+
+</script>
+
+<script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>
+  <!-- ask 全局悬浮按钮  -->
+   					<link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" rel="stylesheet" type="text/css" />
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/wmd.js"></script>
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/showdown.js"></script>
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/libs/prettify.js"></script>
+			<script type="text/javascript" src="http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js"></script>
+    </body>
+</html><!-- 浮标代码： AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|homepage|floating_1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script> 
+<!--AdForward End--> 
+<!-- 弹窗广告 AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=csdn|homepage|WebIM_1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End-->
